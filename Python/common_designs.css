@@ -1,0 +1,205 @@
+body{
+    /* background-color: rgba(109, 217, 220, 0.329); */
+    /* font-family: 'Cagliostro', sans-serif;
+    font-family: 'Mukta', sans-serif; */
+    font-size: large;
+}
+
+.index{
+    font-family: 'Cagliostro', sans-serif;
+    font-family: 'Mukta', sans-serif;
+    font-size: large;
+    padding: 100px 25px 0px 25px;
+    background-color:rgba(158, 228, 230, 0.092);
+}
+
+.lectures{
+    margin: 25px 0px 25px 0px;
+}
+
+.english{
+    font-family: 'Cagliostro', sans-serif;
+    font-family: 'Mukta', sans-serif;
+}
+
+.hindi{
+  font-family: "Eczar", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.content{
+    text-align: left;
+    padding: 20px;
+    background-color:rgba(158, 228, 230, 0.092);
+    margin: -10px;
+    
+}
+
+.iframeContainer{
+    display: none;
+    height: 400px;
+    width: 100%;
+}
+
+iframe{
+    height: 100%;
+    width: 100%;
+}
+
+.Name{
+    font-size: 20px;
+    padding: 5px;
+    margin: 50px 0px 100px 0px;
+    text-align: left;
+    color: rgb(100,219,223);
+    -webkit-text-stroke-width: 0.1px;
+    -webkit-text-stroke-color: rgba(125, 125, 125, 0.444);
+    
+    
+}
+
+.divider{
+    height: 1px;
+    background-color: rgb(100, 100, 100);
+}
+
+
+.images{
+    height: 200px;
+    width: 280px;
+    box-shadow: black 5px;
+    display: block;
+    margin: 15px auto 50px auto;
+}
+
+pre{
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin-top: 2vh;
+    margin-bottom: 0.5vh;
+    
+}
+
+.images_short{
+    height: 50px;
+    width: 50px;
+    margin-bottom: 9.5vh;
+    margin-top: 0px;
+}
+
+.code{
+    background-color:#272727;
+    color:white;
+    padding: 10px;
+    text-align: left;
+}
+
+.container{
+    text-align: center;
+}
+
+.heading{
+    font-size: 250%;
+    color: rgb(32, 32, 32);
+    -webkit-text-stroke: #272727 3px;
+    
+}
+
+.ending{
+    font-size: 150%;
+    color: blueviolet;
+}
+
+
+
+.comments{
+    color:rgb(72, 159, 9);
+}
+
+.OUTPUT{
+    background-color:black;
+    color:white;
+    padding:5px 0px 5px 15px;
+}
+
+.toggleBtn{
+    background-color: rgb(77, 208, 145);
+    height: 50px;
+    width: auto;
+    font-size: 17px;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid gray;
+}
+
+.windows{
+    padding:5px;
+    background-color: rgba(0, 255, 255, 0.051);
+}
+
+.mac{
+    padding: 5px;
+    background-color: rgba(255, 0, 0, 0.05);
+}
+
+.hilightR{
+    background-color: rgba(255, 0, 0, 0.2);
+}
+
+.hilightB{
+    background-color: rgba(0, 255, 255, 0.2);
+}
+
+.hilightBlack{
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.hilightPur{
+    background-color: rgba(244, 178, 240, 0.2);
+}
+
+.hilightG{
+    background-color: rgba(77, 208, 145, 0.2);
+}
+
+.hilightR, .hilightB, .hilightBlack, .hilightPur, .hilightG{
+    padding: 10px 0px 10px 3px;
+}
+
+.horizontal_scroll{
+    margin:4px 4px;
+    padding: 4px;
+    background-color: #0000000b;
+    overflow-x:auto;
+    overflow-y: visible;
+    white-space: nowrap;
+    display: flex;
+
+}
+
+.images_scroll{
+    height: 300px;
+    width: 380px;
+    margin: 15px 80px 50px 20px;
+}
+
+.horizontal_scroll::-webkit-scrollbar{
+    height: 10px;
+}
+
+#progress-bar-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+  }
+
+#progress-bar {
+    height: 100px; /* Adjust the height of your custom image */
+    width: auto;
+    display: block;
+    filter: grayscale(100%); /* Make the image initially colorless */
+}
+
