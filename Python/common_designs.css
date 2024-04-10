@@ -103,7 +103,7 @@ pre{
 .heading{
     font-size: 250%;
     color: rgb(32, 32, 32);
-    -webkit-text-stroke: #272727 3px;
+    -webkit-text-stroke: #272727 1px;
     
 }
 
