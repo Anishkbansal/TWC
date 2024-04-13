@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+    <!-- style css -->
+    <link rel='stylesheet' href='common_designs.css'>
+
+    <!--font english-->
+    <link rel='preconnect' href='https://fonts.googleapis.com'>
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+    <link href='https://fonts.googleapis.com/css2?family=Cagliostro&family=Mukta&display=swap' rel='stylesheet'>
+
+    <!-- font-hindi -->
+    <link rel='preconnect' href='https://fonts.googleapis.com'>
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+    <link href='https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&display=swap' rel='stylesheet'>
+    <title>Intro do datatypes</title>
+</head>
+<body class='english'>
+    <div id='progress-bar-container'>
+        <img id='progress-bar' src='Image resource/peepo_updated.png' alt='Progress Indicator'>
+    </div>
+    
+    <div class='container'>
+        <h1 class='heading english'><u>Introduction to Datatypes</u></h1>
+        <div class='divider'></div>
+
+        <div class='content'>
+
+        <img src='Image resource\Peepo_teachingPY.PNG' alt='Welcome welcome_folks peepo teaching snake on his neck' class='images'><br>
+
+        <b class='Name'>Peepo: </b><br>
+        <pre class='english hilightPur'>Welcome Dosto to another Python lecture. 
+Now, we will learn about Data Types. this is one intesting lecture , but to some people it Datatypes = "booooringg" and "little confuuuusing" at the start. But they understand it eventually by practice. 
+so shall we start? 
+        </pre><br>
+
+<!-- horizontal scroll tell why datatypes -->
+
+        <b>SLide left for more images: </b>
+        <pre class="english hilightG">
+        <b class="Name">Peepo:</b>
+                        <div class="horizontal_scroll">
+                                <img src="Image resource/Why Datatypes/Slide1.PNG" alt="meme1" class="images_scroll">
+                                <img src="Image resource/Why Datatypes/Slide2.PNG" alt="meme1" class="images_scroll">
+                                <img src="Image resource/Why Datatypes/Slide3.PNG" alt="meme1" class="images_scroll">
+
+                        </div>
+                </pre>
+
+                <!-- subheading 1 -->
+
+        <h1 class="subheading english hilightR">The basic Strings, Numbers, and floats.</h1><br>
+
+        <b class="Name">Peepo: </b><br>
+        <pre class="english">Strings are simple. anythin you write in between the quotation marks ("" or '' or ``) or you might say inverted commas, is a string.
+            You can use them to create personalized messages, build websites, and even generate memes. 🤣 Imagine the possibilities - you could create a meme generator that spits out hilarious images based on the user's input.
+for example
+<pre class="code">
+    <code>
+Str1 = "Hello World!"
+str1 = "I should keep practicing" <p class="comments">#notice the difference in variable name? they are different variables</p>
+
+print(str1, Str1)
+print(type(str1), type(Str1))   <p class="comments">The type() function takes a value as arguments and tell the datatype of that value</p>
+    </code>
+</pre><br>
+OUTPUT:
+<pre class="OUTPUT">
+Hello World! I should keep practicing
+&lt;class 'str'&gt; &lt;class 'str'&gt;    <p class="comments">str means string this output means the variables stores a String value</p>
+</pre>
+
+
+        </pre><br>
+
+        <b class="Name">Peepo: </b><br>
+        <pre class="english">Integers are floats contains numerical values. integers can be anything like 1,4,69,78,-89, -78   (basically everything between negative infinty and infinity).
+if you add decimals to the integers, they become floats.floats can be anything 1.2, 1.0, 0.0, 15849*5.548 etcetera.
+Numbers are the backbone of all sorts of applications, from financial tracking to scientific calculations. And let's not forget about the classic "guess the number" game - a timeless classic that's sure to impress your friends.
+
+<pre class="code">
+    <code>
+float1 = 0.5
+float2 = 1.0
+integer1 = 50
+integer2 = 10
+experiment1 = float1 * integer1 <p class="comments"> the symbol * means to multiply</p>
+experiment2 = integer1 * integer2 <p class="comments">you can perform any function on integers or floats such as addition, division, exponentiation etc</p>
+experiment3 = float1 * float2
+
+print(type(float1), type(integer1))   <p class="comments">#this means to say that print type of float1 and type of integer1</p><br>
+print(experiment1, type(experiment1))
+print(experiment2, type(experiment2))
+print(experiment3, type(experiment3))
+
+    </code>
+</pre><br>
+
+<pre class="OUTPUT">
+&lt;class 'float'&gt; &lt;class 'int'&gt;
+25.0 &lt;class 'float'&gt;  <p class="comments">#here 25 is a valid integer but the answer coming out to be 25.0 which is a float. <p class="hilightG">whenever you multiply an integer of float with a float, the answer is always a float</p></p><br>
+500 &lt;class 'int'&gt;
+0.5 &lt;class 'float'&gt;
+</pre>
+
+        </pre><br>
+
+        <b class="Name">Peepo: </b><br>
+        <pre class="english">Now, in some places strings can be tricky. because they might come in as disguise as an integer
+
+        <pre class="code">
+            <code>
+a = "1"   <p class="comments"> Now, can you tell if it is a String or a Integer. Ofcourse you can, unless you are Dora. The difference is that here the number 1 is enclosed into quotations and as I said , if it in quotatins, its a String. </p>
+b = "2"   <p class="comments">We have tried adding integers, are you curious about what happens when we add two strings?</p>
+print(type(a))
+print(a + b)
+            </code>
+        </pre><br>
+<pre class="OUTPUT">
+&lt;class 'str'&gt;
+12       <pre class="comments">#yes "1" and "2" is "12". your computer is not going crazy. Addition of strings concatinates both of them means when one ends other string willl start right after that. it did not give answer 3 because even tough strings are "1" and "2" Poor Python does not know what 1 and 2 are.
+you can only add string not multiply, divide, subtract etc.
+</pre><br>
+</pre>
+        </pre><br>
+
+    <h1 class="subheading hilightB">Booleans and None</h1>
+    <b class="Name">Peepo: </b><br>
+    <pre class="english">These are simple creatures. Boolean hold value of true and false. and None value as the name suggests hold nothing. its empty. just like your wallet(just kidding dont get mad its a joke. (huh people gets offended quickly)) 
+"Peepo to himself: no timepass bro, stop diverting the topic, focus focus. hocus pocus!!🤯"
+ahem! anyways. lets see some examples.
+
+<pre class="code">
+    <code>
+bool1 = True  <p class="comments">First letter or True is capital</p>
+n1 = None  <p class="comments">keep in mind that the first letter of None is capital. otherwise it will give error. unless you have a variable names null</p>
+
+
+print(bool1, type(bool1))
+print(n1, type(n1))
+    </code>
+</pre><br>
+<pre class="OUTPUT">
+True &lt;class 'bool'&gt;
+None &lt;class 'NoneType'&gt;
+</pre>
+    </pre><br>
+
+    <b class="Name">Peepo: </b><br>
+    <pre class="english">ok now one question, can you tell answer all of these questions einstein? 
+1. bool1 = "True"  ... what is its datatype?
+2.print(bool1+"hello") ... what will be the output?
+3.c = 0.5 +0.3    ... what will be its datatype?
+4. print("1" + 2) ... what will be output? 
+
+you can also try running these programs on your pc to check answers
+    </pre><br>
+
+    <b class="Name">Einstein: </b><br>
+    <pre class="english">sure i can answer
+1. its a string
+2. Truehello
+3.0.7  will be the sum and its datatype is float
+4. it will throw an error because you can not add a string with an integer.
+
+    </pre><br>
+
+    <b class="Name">Peepo: </b><br>
+    <pre class="english">Eggcelent. i mean excelent (sorry i was hungry).
+Now, we know basics of Datatypes now do you know how do we add the strings "1" and "2" to give output 3 (integer).? 
+No? lets get to know about typecasting
+
+    </pre><br>
+
+    <b class="Name">Peepo: </b><br>
+    <pre class="english">To add the strings as they are integers, we need to convert them to integer first. We can use: 
+1. int() funtion to convert valid string to integer or rounding of a float to an int
+2. str() function to convert anything to a string
+3. bool() function to convert valid string into a Boolean
+4. float() function to change any int to a float or string to a float
+
+
+<pre class="code">
+    <code>
+a = 5
+b = "85"
+c = "True"
+d = None 
+<p class="comments">#print(a+b) will give error</p>
+b = int(b)  <p class="comments">this means that change to integer, the value of b and store it into b <br> now b is an integer. ***Note*** that if b was anything other that numeric value like "h" or "sexy" etc. then int ()will throw error. because sexy cannot be an integer</p>
+print(a+b)
+
+c = bool(c)    <p class="comments">c was a string before, now its a Boolean</p>
+print(c, type(c))
+
+a = str(a)  <p class="comments">now, a is a String </p>
+b = str(b)  <p class="comments">(firstly, b was string. then we changed it to integer. now we changed it again to string.) try to guess what a+b will print now</p>
+print(a+b)
+
+d = str(d)
+print(d+a, type(d))
+
+    </code>
+</pre><br>
+
+<pre class="OUTPUT">
+90
+True &lt;class 'bool'&gt;
+585
+None5 &lt;class 'str'&gt;
+</pre>
+
+    </pre><br>
+
+    <b class="Name">Peepo: </b><br>
+    <pre class="english">Now i want all of you to hop on your pc screen and actually try these. experiment on these. failure is best way to learn. if you have any trouble i am here to teach. also did you get the feeel about Datatypes? comment your feedback</pre><br>
+
+
+    <b class="Name">System:</b><br>
+    <pre class="english hilightG">You leveled up in python(level-2)... you now have power to start the lecture quiz by clicking start activity from the homepage and dont worry it will be easy</pre>
+    <br><br><br>
+
+    <b>SLide left for more images: </b>
+    <pre class="english hilightPur">
+        <b class="Name">Peepo:</b>
+                        <div class="horizontal_scroll">
+                                <img src="Image resource/meme1.png" alt="meme1" class="images_scroll">
+                                <img src="Image resource/Fact1.png" alt="fact1" class="images_scroll">
+
+                        </div>
+                </pre>
+
+    <h1 class="ending">Next Lecture: Operators in Python(easiest)</h1>
+
+
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+</html>

@@ -107,6 +107,12 @@ pre{
     
 }
 
+.subheading{
+    font-size: 200%;
+    color: rgb(32, 32, 32);
+    -webkit-text-stroke: #272727 1px;
+}
+
 .ending{
     font-size: 150%;
     color: blueviolet;
@@ -181,7 +187,7 @@ pre{
 
 .images_scroll{
     height: 300px;
-    width: 380px;
+    width: auto;
     margin: 15px 80px 50px 20px;
 }
 
