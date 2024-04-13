@@ -1,0 +1,201 @@
+{
+  "courses": {
+    "Android Studio": {
+      "imageResourceURL": "https://firebasestorage.googleapis.com/v0/b/talk-with-computer.appspot.com/o/courseImg%2Fstudio_logo.png?alt=media&token=554f82b7-3790-416d-9c48-a8c003706f52",
+      "lectures": "",
+      "name": "Android Studio"
+    },
+    "C Sharp": {
+      "imageResourceURL": "https://firebasestorage.googleapis.com/v0/b/talk-with-computer.appspot.com/o/courseImg%2Fc_sharp_logo.png?alt=media&token=7a74c993-26a5-4dd3-9441-6d634dd5ede5",
+      "lectures": "",
+      "name": "C Sharp"
+    },
+    "C++": {
+      "imageResourceURL": "https://firebasestorage.googleapis.com/v0/b/talk-with-computer.appspot.com/o/courseImg%2Fc_plus_logo.png?alt=media&token=2ed24f8f-22b5-48bc-9351-324c864da9cb",
+      "lectures": "",
+      "name": "C++"
+    },
+    "CSS": {
+      "imageResourceURL": "https://firebasestorage.googleapis.com/v0/b/talk-with-computer.appspot.com/o/courseImg%2Fcss_logo.png?alt=media&token=bb2cd107-e608-4503-9e92-833431b188e0",
+      "lectures": "",
+      "name": "CSS"
+    },
+    "HTML": {
+      "imageResourceURL": "https://firebasestorage.googleapis.com/v0/b/talk-with-computer.appspot.com/o/courseImg%2Fhtml_logo.png?alt=media&token=5811327f-63d0-4a86-975e-6fffbe141e52",
+      "lectures": "",
+      "name": "HTML"
+    },
+    "Java": {
+      "imageResourceURL": "https://firebasestorage.googleapis.com/v0/b/talk-with-computer.appspot.com/o/courseImg%2Fjava_logo.png?alt=media&token=dc269c0b-1ab2-4bc6-9166-f2adf73b906c",
+      "keyword": {
+        "if": {
+          "function": "used to give conditions",
+          "name": "if, conditional"
+        },
+        "int": {
+          "function": "it is a datatype represents numbers",
+          "name": "int data type"
+        }
+      },
+      "lectures": {
+        "intro to java": {
+          "hasDescription": "true",
+          "hasProject": "false",
+          "hasTest": "false",
+          "lectureName": "intro to java",
+          "lecturePreview": "intro to java what is java?"
+        },
+        "var in java": {
+          "hasDescription": "true",
+          "hasProject": "true",
+          "hasTest": "true",
+          "lectureName": "intro to var",
+          "lecturePreview": "what are variables in java?"
+        }
+      },
+      "name": "Java"
+    },
+    "JavaScript": {
+      "imageResourceURL": "https://firebasestorage.googleapis.com/v0/b/talk-with-computer.appspot.com/o/courseImg%2Fjavascript_logo.png?alt=media&token=a5d06f59-a484-4c43-a11a-596275858d6f",
+      "lectures": "",
+      "name": "JavaScript"
+    },
+    "Python": {
+      "imageResourceURL": "https://firebasestorage.googleapis.com/v0/b/talk-with-computer.appspot.com/o/courseImg%2Fpython_logo.png?alt=media&token=e38942fc-4b5e-471d-8ce4-88b3e747acdc",
+      "keyword": {
+        "exit": {
+          "description": "The exit() function in Python is used to exit or terminate the current running script or program. You can use it to stop the execution of the program at any point. When the exit() function is called, the program will immediately stop running and exit.  The syntax of the exit() function is:  exit([status]) Here, status is an optional argument that represents the exit status of the program. The exit status is an integer value that indicates the reason for program termination. By convention, a status of 0 indicates successful execution, and any non-zero status indicates an error or abnormal termination.  If the status argument is omitted or not provided, the default value of 0 is used.  Here's an example usage of the exit() function:  print(\"Before exit\") exit(1) print(\"After exit\")  # This line will not be executed In this example, the program will print \"Before exit\", but when the exit() function is called with a status of 1, the program will terminate immediately without executing the remaining code. Therefore, the line \"After exit\" will not be printed.  How to Use the exit() Function in Python Let's now write a Python script and demonstrate how you can use the exit function properly in a real world scenario.   Explain import sys  def main():     try:         print(\"Welcome to the program!\")                  # Check for termination condition         user_input = input(\"Do you want to exit the program? (y/n): \")         if user_input.lower() == \"y\":             exit_program()                  # Continue with other operations              except Exception as e:         print(f\"An error occurred: {e}\")         exit_program()  def exit_program():     print(\"Exiting the program...\")     sys.exit(0)  if __name__ == \"__main__\":     main() Code explanation:  The script starts by importing the sys module, which provides access to the exit() function. The main() function serves as the entry point of the program. You can add your code and operations within this function. Within the main() function, you can perform various operations. In this example, you simply print a welcome message and ask the user if they want to exit. After receiving user input, you check if the user wants to exit by comparing their input to \"y\" (case-insensitive). If the condition is true, you call the exit_program() function to terminate the script. The exit_program() function prints a message indicating that the program is exiting and then calls sys.exit(0) to terminate the program. The argument 0 passed to sys.exit() indicates a successful termination. You can choose a different exit code if needed. Finally, you check if the script is being executed as the main module by using the __name__ variable. If it is, you call the main() function to start the program. Best Practices When Using the exit() Function Here are some best practices for using the exit() function effectively:  Import the sys module: Before using the exit() function, you need to import the sys module at the beginning of your script. Include the following line of code:  import sys Determine the exit condition: Identify the condition or situation where you want to exit the program. This can be based on user input, a specific event, an error condition, or any other criteria that require the program to stop.  Use sys.exit() to terminate the program: When the exit condition is met, call the sys.exit() function to halt the program's execution. You can pass an optional exit status code as an argument to the function, indicating the reason for termination.  Again, a status code of 0 is typically used to indicate successful program completion, while non-zero values represent different types of errors or exceptional conditions.  if condition_met:     sys.exit()  # Terminate the program with status code 0 You can also pass a status code to provide additional information:  if error_occurred:     sys.exit(1)  # Terminate the program with status code 1 indicating an error Clean up resources (optional): If your program uses resources that need to be properly closed or released before termination, you can include cleanup code before calling sys.exit(). For example, closing open files or releasing network connections. This ensures that resources are handled appropriately, even if the program is terminated unexpectedly.  Document exit conditions: It's important to document the specific exit conditions in your code and provide comments indicating why the program is being terminated. This helps other developers understand the purpose and behavior of the exit() calls.  Conclusion In summary, this article showed you how to utilize the exit() function in Python to terminate program execution. Optionally, an exit status code can be passed as an argument, providing additional information about the reason for termination.  By adhering to these best practices, you can effectively utilize the sys.exit() function in Python to stop a program when necessary.  It is crucial to exercise caution and judiciously employ this function, and only use it in appropriate circumstances when you want to forcefully halt the execution of your Python script under certain conditions or when you need to terminate the program abruptly.  Some scenarios where you might want to use the exit() function: error handling, conditional termination, testing and debugging, and script completion.  Let's connect on Twitter and on LinkedIn. You can also subscribe to my YouTube channel.  Happy Coding!",
+          "function": "exits the program",
+          "name": "exit function"
+        },
+        "for": {
+          "description": "In computer programming, loops are used to repeat a block of code.  For example, if we want to show a message 100 times, then we can use a loop. It's just a simple example; you can achieve much more with loops.  There are 2 types of loops in Python:  for loop while loop Learn Python with Challenges Solve challenges and become a Python expert.   Python for Loop In Python, a for loop is used to iterate over sequences such as lists, tuples, string, etc. For example,   Explain languages = ['Swift', 'Python', 'Go', 'JavaScript']  # run a loop for each item of the list for language in languages:     print(language) Run Code Output  Swift Python Go JavaScript In the above example, we have created a list called languages.  Initially, the value of language is set to the first element of the array,i.e. Swift, so the print statement inside the loop is executed.  language is updated with the next element of the list, and the print statement is executed again. This way, the loop runs until the last element of the list is accessed.  for Loop Syntax The syntax of a for loop is:  for val in sequence:     # statement(s) Here, val accesses each item of sequence on each iteration. The loop continues until we reach the last item in the sequence.  Flowchart of Python for Loop How for loop works in Python Working of Python for loop Example: Loop Through a String for x in 'Python':     print(x) Run Code Output  P y t h o n Python for Loop with Python range() A range is a series of values between two numeric intervals.  We use Python's built-in function range() to define a range of values. For example,  values = range(4) Here, 4 inside range() defines a range containing values 0, 1, 2, 3.  In Python, we can use for loop to iterate over a range. For example,   Explain # use of range() to define a range of values values = range(4)  # iterate from i = 0 to i = 3 for i in values:     print(i) Run Code Output  0 1 2 3 In the above example, we have used the for loop to iterate over a range from 0 to 3.  The value of i is set to 0 and it is updated to the next number of the range on each iteration. This process continues until 3 is reached.  Iteration\tCondition\tAction 1st\tTrue\t0 is printed. i is increased to 1. 2nd\tTrue\t1 is printed. i is increased to 2. 3rd\tTrue\t2 is printed. i is increased to 3. 4th\tTrue\t3 is printed. i is increased to 4. 5th\tFalse\tThe loop is terminated Note: To learn more about the use of for loop with range, visit Python range().  Using a for Loop Without Accessing Items It is not mandatory to use items of a sequence within a for loop. For example,   Explain languages = ['Swift', 'Python', 'Go']  for language in languages:     print('Hello')     print('Hi') Run Code Output  Hello Hi Hello Hi Hello Hi Here, the loop runs three times because our list has three items. In each iteration, the loop body prints 'Hello' and 'Hi'. The items of the list are not used within the loop.  If we do not intend to use items of a sequence within the loop, we can write the loop like this:   Explain languages = ['Swift', 'Python', 'Go']  for _ in languages:     print('Hello')     print('Hi') Run Code The _ symbol is used to denote that the elements of a sequence will not be used within the loop body.  Python for loop with else A for loop can have an optional else block. The else part is executed when the loop is exhausted (after the loop iterates through every item of a sequence). For example,   Explain digits = [0, 1, 5]  for i in digits:     print(i) else:     print(\"No items left.\") Run Code Output  0 1 5 No items left. Here, the for loop prints all the items of the digits list. When the loop finishes, it executes the else block and prints No items left.  Note: The else block will not execute if the for loop is stopped by a break statement.",
+          "function": "its a loop yeah",
+          "name": "for loop"
+        },
+        "int": {
+          "description": "lol",
+          "function": "turn the str num to int",
+          "name": "int()"
+        },
+        "print": {
+          "description": "lol pritn",
+          "function": "print the given value",
+          "name": "print function"
+        }
+      },
+      "lectures": {
+        "01 How to install Python": {
+          "descriptionLink": "https://anishkbansal.github.io/TWC/Python/01.InstallPython(English).html",
+          "hasDescription": "true",
+          "hasProject": "false",
+          "hasTest": "false",
+          "lectureName": "How to install Python",
+          "lecturePreview": "install Python on your own pc",
+          "quiz": "\"\""
+        },
+        "02 Introduction to Python": {
+          "descriptionLink": "https://anishkbansal.github.io/TWC/Python/02.IntroductionToPython(English).html",
+          "hasDescription": "true",
+          "hasProject": "false",
+          "hasTest": "false",
+          "lectureName": "Introduction to Python",
+          "lecturePreview": "Introduction to python and variables",
+          "quiz": ""
+        },
+        "03 DataTypes in Python": {
+          "descriptionLink": "https://anishkbansal.github.io/Talk-With-Computer/02.IntroductionToPython(English).html",
+          "hasDescription": "true",
+          "hasProject": "true",
+          "hasTest": "false",
+          "lectureName": "Introduction to DataTypes in Python",
+          "lecturePreview": "String, Integer, Float, Complex, Boolean, None....",
+          "projectLink": "https://anishkbansal.github.io/TWC/Python/Projects/lecture%20projects/05.project.python.html",
+          "quiz": ""
+        },
+        "04 operators in Python": {
+          "descriptionLink": "https://anishkbansal.github.io/Talk-With-Computer/02.IntroductionToPython(English).html",
+          "hasDescription": "true",
+          "hasProject": "true",
+          "hasTest": "false",
+          "lectureName": "Introduction to operators in Python",
+          "lecturePreview": "+, -, *, ==, <=, >=, >, != ...",
+          "projectLink": "https://anishkbansal.github.io/TWC/Python/Projects/lecture%20projects/05.project.python.html",
+          "quiz": ""
+        },
+        "Empty Lecture": {
+          "descriptionLink": "",
+          "hasDescription": "false",
+          "hasProject": "false",
+          "hasTest": "false",
+          "lectureName": "",
+          "lecturePreview": "",
+          "projectLink": "",
+          "quiz": ""
+        }
+      },
+      "name": "Python"
+    },
+    "ReactJs": {
+      "imageResourceURL": "https://firebasestorage.googleapis.com/v0/b/talk-with-computer.appspot.com/o/courseImg%2Freact_logo.png?alt=media&token=e24f76da-c398-4b92-b4e4-a6e1a4bafbea",
+      "lectures": "",
+      "name": "ReactJs"
+    },
+    "SQL": {
+      "imageResourceURL": "https://firebasestorage.googleapis.com/v0/b/talk-with-computer.appspot.com/o/courseImg%2Fsql_logo.png?alt=media&token=a210b701-5b40-4af7-8895-be162c91959f",
+      "lectures": "",
+      "name": "SQL"
+    }
+  },
+  "default_profile": {
+    "imgUrl": "https://firebasestorage.googleapis.com/v0/b/talk-with-computer.appspot.com/o/profile%20pics%2Fdefault%2Fapp_icon_peepo.png?alt=media&token=95889fd8-657b-449c-bad4-4cb159aed3bb"
+  },
+  "profileOptions": {
+    "profile1": {
+      "imageResourceURL": "https://firebasestorage.googleapis.com/v0/b/talk-with-computer.appspot.com/o/profile%20pics%2Foptions%2Fapp_icon_peepo.png?alt=media&token=974005db-7990-431d-8218-f3a3784383e4",
+      "name": "Cute Peepo"
+    },
+    "profile2": {
+      "imageResourceURL": "https://firebasestorage.googleapis.com/v0/b/talk-with-computer.appspot.com/o/profile%20pics%2Foptions%2Fdefault_profile.png?alt=media&token=b49ad6fe-8c2e-4a2d-a212-95eb3a4e81a7",
+      "name": "Default"
+    },
+    "profile3": {
+      "imageResourceURL": "https://firebasestorage.googleapis.com/v0/b/talk-with-computer.appspot.com/o/profile%20pics%2Foptions%2Fjava_logo.png?alt=media&token=a6dde472-69d8-45bc-bc5c-06281fc4a9bb",
+      "name": "Java Jabra fan"
+    },
+    "profile4": {
+      "imageResourceURL": "https://firebasestorage.googleapis.com/v0/b/talk-with-computer.appspot.com/o/profile%20pics%2Foptions%2Fpeepo_updated.png?alt=media&token=20eaeebf-f2d9-42af-98ff-eebe03e9ad30",
+      "name": "Hello peepo"
+    },
+    "profile5": {
+      "imageResourceURL": "https://firebasestorage.googleapis.com/v0/b/talk-with-computer.appspot.com/o/profile%20pics%2Foptions%2Fpython_logo.png?alt=media&token=e85ce63b-34ee-4947-acf1-1d0c0f3396f1",
+      "name": "python python"
+    }
+  },
+  "users": {
+    "oJV6usUh7paqgSXMU56uZsxFQ3r1": {
+      "CurrentLeague": "Code Voyager",
+      "DateJoined": "26/11/2023",
+      "Rank": "Code Cadet",
+      "profilePicUrl": "https://firebasestorage.googleapis.com/v0/b/talk-with-computer.appspot.com/o/profile%20pics%2Foptions%2Fapp_icon_peepo.png?alt=media&token=974005db-7990-431d-8218-f3a3784383e4",
+      "selectedCourse": "Python",
+      "username": "Venominsaane"
+    },
+    "wUY4ZXPWDvXInI39YiMyJ4kF9xG3": {
+      "CurrentLeague": "Code Voyager",
+      "DateJoined": "26/11/2023",
+      "Rank": "Code Cadet",
+      "profilePicUrl": "https://firebasestorage.googleapis.com/v0/b/talk-with-computer.appspot.com/o/profile%20pics%2Foptions%2Fdefault_profile.png?alt=media&token=b49ad6fe-8c2e-4a2d-a212-95eb3a4e81a7",
+      "selectedCourse": "Python",
+      "username": "Anish K Bansal"
+    },
+    "wnyMDU1rxHfQQmNSd8DfHq42Gkl2": {
+      "CurrentLeague": "Code Voyager",
+      "DateJoined": "03/12/2023",
+      "Rank": "Code Cadet",
+      "profilePicUrl": "",
+      "selectedCourse": "Python",
+      "username": "abcd"
+    }
+  }
+}
