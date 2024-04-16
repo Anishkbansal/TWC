@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+    <!-- style css -->
+    <link rel='stylesheet' href='common_designs.css'>
+
+    <!--font english-->
+    <link rel='preconnect' href='https://fonts.googleapis.com'>
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+    <link href='https://fonts.googleapis.com/css2?family=Cagliostro&family=Mukta&display=swap' rel='stylesheet'>
+
+    <!-- font-hindi -->
+    <link rel='preconnect' href='https://fonts.googleapis.com'>
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+    <link href='https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&display=swap' rel='stylesheet'>
+    <title>Conditionals is Python</title>
+</head>
+<body class='english'>
+    <div id='progress-bar-container'>
+        <img id='progress-bar' src='Image resource/peepo_updated.png' alt='Progress Indicator'>
+    </div>
+    
+    <div class='container'>
+        <h1 class='heading english'><u>Conditionals is Python</u></h1>
+        <div class='divider'></div>
+
+        <div class='content'>
+
+            <img src='Image resource\Peepo_teachingPY.PNG' alt='Welcome welcome_folks peepo teaching snake on his neck' class='images'><br>
+
+            <b class="Name">Jenna: </b><br>
+            <pre class="english">If the sun is rising, its morning. 
+If the sun is setting, its evening. 
+If the sun is at the top, its noon.
+else If none of this matches, its night. or sunless sky.
+            </pre><br>
+
+            <b class="Name">Brook: </b><br>
+            <pre class="english">Woof! sunless sky</pre><br>
+            <img src="Image resource/Brook Barking.png" alt="" class="images_short">
+
+            <b class="Name">Einstein: </b><br>
+            <pre class="english">If you are 18 or above 18, then you are an adult
+else, you are not an adult.
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Nice work guys these are some good examples of if-else statements. or Conditionals</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">just like this the Conditionals in Python are that easy. lets have a look at the syntax
+<pre class='code'>
+<code>
+if(56+13>106):     <pre class='comments'># if, just like we know, means if. in the brackets, it takes arguments that return boolean value. we studies that > operator return boolean.and a colon at the end ':'</pre>
+    print(56+13, "is greater than ", 106)   <pre class='comments'># if the condition in if statement inside the brackets is True, then, all the code under if statement will be executed.
+and did you notice that there is some space before the print statement here, well thats called indentation. its our way of telling Python that the code belongs to the if statement</pre>
+
+else:    <pre class='comments'># if the argument of if statement is False, then the else statement will be executed. in Python, the else statement is completely Optional.</pre>
+    print(56+13 ," is not greater than. ", 136)
+
+</code>
+</pre><br>
+
+OUTPUT:
+
+<pre class='OUTPUT'>
+
+69  is not greater than.  136
+
+</pre>
+            </pre><br>
+
+            <button class="toggleBtn">Toggle IDE</button>
+            <div class="iframeContainer" >
+            <iframe  frameborder="0"></iframe>
+            </div><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">You can also write like this, 
+
+<pre class='code'>
+<code>
+morning = True
+if(morning):    <pre class='comments'># the argument here, is morning which is equals to True, so code in if stament will be executed</pre>
+    print("its morning")  
+</code>
+</pre><br>
+
+OUTPUT:
+
+<pre class='OUTPUT'>
+
+its morning
+
+</pre>
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english hilightR">Now, lets try the examples given above with if else statements
+
+<pre class='code '>
+<code>
+time = input("please tell what time it is in hours only (if its 12:45, type 12): ")  <pre class='comments'># This is an input statement. when you run this, in the terminal, Python will ask user some input using the statement you provide as input argument. and yeah the output type of input is always a String. even if user types in a number</pre>
+<pre class='comments'># so here, user will type in some number and it will be stored in variable time as a string. </pre>
+<pre class='comments'># to perform calculation on variable time, we need to convert it to an integer, so </pre>
+time = int(time)
+
+if(time>=3):
+    print("Good morning Sir/Mam ")
+if(time>=12):
+    print("Good afternoon Sir/Mam")
+if(time>=18):
+    print("Good evening Sir/Mam")
+if(time>=24):
+    print("sir/mam please tell time according to earth, it has only 24 hours in a day.")
+else:
+    print("Good Night Sir/Mam")
+
+    <pre class='comments'># now lets try and run the program. you also type this and run it on your own pc. its fun </pre>
+
+
+</code>
+</pre><br>
+
+OUTPUT:
+
+<pre class='OUTPUT'>
+
+please tell what time it is in hours only (if its 12:45, type 12): <i>15</i>   <pre class='comments'># the number you type here is up to you, I decided to type 15, you can even type anything even in english. but the int(), function will throw error and your program will stop.</pre>
+Good morning Sir/Mam 
+Good afternoon Sir/Mam
+
+<pre class='comments'># oops it forgot to add less than conditions. due to that our first two if statement were True, so both were executed
+lets alter it so that only one statement is true at a time.
+</pre>
+</pre>
+
+<pre class='code'>
+<code>
+
+if(time>=3 and time&lt;12):   <pre class='comments'># the keyword 'and' will return True if both the operators returns True if even on of them is False, then the if statement will get False and would not execute</pre>
+    print("Good morning Sir/Mam ")
+if(time>=12 and time&lt;=18):
+    print("Good afternoon Sir/Mam")
+if(time>=18 and time&lt;=20):
+    print("Good evening Sir/Mam")
+if(time>=24):
+    print("sir/mam please tell time according to earth, it has only 24 hours in a day.")
+else:
+    print("Good Night Sir/Mam")
+
+</code>
+</pre><br>
+
+OUTPUT:
+
+<pre class='OUTPUT'>
+please tell what time it is in hours only (if its 12:45, type 12): <i>19</i>  <pre class='comments'># i decided that the time is 19 now.</pre> 
+Good evening Sir/Mam     <pre class='comments'># 19 is both greater than 18 and less than 20. you check that other if statements' argument is false at time  = 19</pre>
+</pre>
+
+        <b class="english">experiment with different times in your pc</b>
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">lets see if you can understand this example. try to understand it on your own, I will try not to explain. if you cant understand, go to chatGpt, Claude,or PeepoBot in our apppp, etc copy paste the code, and tell him to explain it in simple words
+
+here comes the example
+            </pre><br>
+
+            <button class="toggleBtn">Toggle IDE</button>
+            <div class="iframeContainer" >
+            <iframe  frameborder="0"></iframe>
+            </div><br>
+
+<pre class='code'>
+<code>
+
+prefer = input("hey what do you like, food or drinks? ")
+if(prefer == "food"):
+    meal = input("oh you like to eat, are you vegetarian or you can eat anything(nonvegetarian)? ")
+    if(meal == "vegetarian"):
+        print("oh nice, you are a vegetarian")
+    if(meal=="nonvegetarian"):
+        print("oh nice, you are a nonvegetarian")
+    else:
+        print("please give a valid input from choices 'vegetarian' and 'nonvegetarian'")
+    print("first if statement executed")
+
+if(prefer == "drinks"):
+    temp = input("did you that you can drink your drink but not food your food? . anyways do you like your drinks hot or cold? ")
+    if(temp == "hot"):
+        print("oh nice, you like hot")
+    if(temp == "cold"):
+        print("oh nice you like cold")
+    print("i like cold")
+    else:
+        print("please enter valid temperature from options, hot or cold ")
+    print("second if statement executed")
+else:
+    print("please enter valid preference from options food or drinks ")
+
+
+</code>
+</pre><br>
+
+OUTPUT:
+
+<pre class='OUTPUT'>
+
+hey what do you like, food or drinks? <i>drinks</i>    <pre class='comments'># you can type anything i decided to type drinks</pre>
+did you that you can drink your drink but not food your food? . anyways do you like your drinks hot or cold? <i>cold</i>
+oh nice you like cold
+i like cold
+second if statement executed
+
+</pre>
+
+<button class="toggleBtn">Toggle IDE</button>
+<div class="iframeContainer" >
+<iframe  frameborder="0"></iframe>
+</div><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Noice everyone. this lecture had so much code and you survived that. we learned if else statements, nested if else and input statemtnt today. Congrats. THe difficulty is going to increase now...khikhikhi</pre><br>
+            <img src="Image resource/Peepo_teachingPY.PNG" alt="" class="images">
+
+            <b class="Name">Einstein: </b><br>
+            <pre class="english">Hey wait. dont click that button yet. there is a project in this lecture. I insist all of you to click on this lecture from home and click projects button. you will like it.</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Now i want all of you to hop on your pc screen and actually try these. experiment on these. failure is best way to learn. if you have any trouble i am here to teach. also did you get the feeel about Conditionals? comment your feedback</pre><br>
+            
+            <br><br><br>
+            
+            <b>SLide left for more images: </b>
+            <pre class="english hilightB">
+               <b class="Name">Peepo:</b>
+                <div class="horizontal_scroll">
+                    <img src="Image resource/meme2.png" alt="meme2" class="images_scroll">
+                    <img src="Image resource/fact2.png" alt="fact2" class="images_scroll">
+                </div>
+            </pre>
+            
+            <h1 class="ending">Next Lecture: Loops in Python(power of machine)</h1>
+
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+</html>
