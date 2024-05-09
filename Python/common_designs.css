@@ -3,6 +3,7 @@ body{
     /* font-family: 'Cagliostro', sans-serif;
     font-family: 'Mukta', sans-serif; */
     font-size: large;
+    overflow-x: hidden;
 }
 
 .index{
@@ -68,7 +69,7 @@ iframe{
 
 .images{
     height: 200px;
-    width: 280px;
+    width: auto;
     box-shadow: black 5px;
     display: block;
     margin: 15px auto 50px auto;
@@ -210,3 +211,10 @@ pre{
     filter: grayscale(100%); /* Make the image initially colorless */
 }
 
+.gag{
+    border: 1px dashed black;
+    padding: 5px;
+    /* background-color: rgba(119, 119, 119, 0.226); */
+    background-image: url("https://www.pngkey.com/png/detail/161-1612812_drawing-cloud-48-printable-cloud-pattern.png");
+    background-repeat: no-repeat;
+}

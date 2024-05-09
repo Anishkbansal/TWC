@@ -10,7 +10,7 @@
 		"scope": "html",
 		"prefix": "name image",
 		"body": [
-			"<b class=\"Name\">$1</b><br>",
+			"<b class=\"Name\">$1:</b><br>",
             "<pre class=\"english\">$2</pre><br>",
             "<img src=\"$3\" alt=\"\" class=\"$4\"><br>"
 		],
@@ -105,7 +105,7 @@
 		"scope": "html",
 		"prefix": "comments",
 		"body": [
-			"<pre class='comments'># $1</pre>"
+			"<b class='comments'># $1</b>"
 		],
 		"description": "Log output to console"
 	},
