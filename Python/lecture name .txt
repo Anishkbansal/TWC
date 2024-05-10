@@ -1,0 +1,8 @@
+1 install py
+2 intro to py
+3 datatypes
+4 operators
+5 conditionals
+6 match-case
+7  loops
+8  lists
