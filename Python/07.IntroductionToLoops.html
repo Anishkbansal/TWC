@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+    <!-- style css -->
+    <link rel='stylesheet' href='common_designs.css'>
+
+    <!--font english-->
+    <link rel='preconnect' href='https://fonts.googleapis.com'>
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+    <link href='https://fonts.googleapis.com/css2?family=Cagliostro&family=Mukta&display=swap' rel='stylesheet'>
+
+    <!-- font-hindi -->
+    <link rel='preconnect' href='https://fonts.googleapis.com'>
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+    <link href='https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&display=swap' rel='stylesheet'>
+    <title>Introduction to Loops in Python</title>
+</head>
+<body class='english'>
+    <div id='progress-bar-container'>
+        <img id='progress-bar' src='Image resource/Brook Barking.png' alt='Progress Indicator'>
+    </div>
+    
+    <div class='container'>
+        <h1 class='heading english'><u>Introduction to Loops in Python</u></h1>
+        <div class='divider'></div>
+
+        <div class='content'>
+
+<img src='Image resource\Peepo_teachingPY.PNG' alt='Welcome welcome_folks peepo teaching snake on his neck' class='images'><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Wow you are very consistent. I did not thaught that you would reach lecture seven. but Congrats.
+because today we are learning a very fun thing. Loops
+
+Types of loops in Python:
+1) for loops
+2) while loops
+3) nested loop (means a loop inside a loop inside a loop inside a loop inside a loop..)
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english hilightPur">now in first Lecture i said something about printing 100000000 numbers automatically.
+Lets see an example of for loop first and understand it.
+
+<pre class='code'>
+<code>
+i = 0    
+for(i&lt;100):       <b class='comments'>#this is basic syntax of for loop. now, "for" here is a keyword. "i" here is a variable. what this line means to say is hey python enter this loop. and check the condition. keep running to code inside of loop again and again until condition gets wrong </b> 
+    print(i)         <b class='comments'># now Python whil check the condition is 0 is less than 100 which is true so it will run the code and print the value of i which is currently zero.</b>
+    i = i + 1        <b class='comments'># now to increase the value of i we say that python, take value of i and add one to i. this will now make i = 1 and the loop will run again</b>
+
+<b class='comments'># the loop will run again and i will increase again. we call this increase to increment. we are adding 1 to i so we are incrementing i with 1. 
+now eventually i will reach the value of 2 and 3 and 4 all the way to 100. and when it reaches 100, 100 is  not less than 100 so condition is false Python will know to exit the loop.
+</b>
+<b class='comments'># Now if you dont increment i, the value of i will never increase, it will not ever reach 100 and stay zero always. which will cause Python to keep running the loop forever.until you close the program.
+it is not recommended to run an infinite loop like that since it uses your ram which will eventually reach its limit and your program will crash.
+</b>
+
+</code>
+</pre><br>
+
+OUTPUT:
+
+<pre class='OUTPUT'>
+1
+2
+3
+4
+5
+......
+
+</pre>
+
+<button class="toggleBtn">Toggle IDE</button>
+<div class="iframeContainer" >
+<iframe  frameborder="0"></iframe>
+</div><br>
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english hilightR">Now we can write the same thing with range function. lets see
+
+<pre class='code'>
+<code>
+for i in range(0,100, 1):   <b class='comments'># now this creates a new variable i and says to Python the hey, check the valur of i from all the numbers between 0 and 100. Python will say yes. and run the code between this for loop keeping the value of i = 0 first
+run the code and go back to the top to change the value of i to 2 and then all the way upto 99. wait 99? yes since 100 is not less than 100 so it stops at 99.
+</b>
+<b class='comments'># You might say what is the third argument about?. well its the iteration argument. it tells Python how many number to add in i to change its value. the default is 1 so even if you dont put the third argument Python will understand that its 1.</b>
+    print(i)
+
+    <b class='comments'># keep in note that you can not use this variable i anywhere else out of the loop. because its a local variable and is bound to the for loop only.</b>
+for j in range(0, 20,3):
+    print(j)
+</code>
+</pre><br>
+
+OUTPUT:
+
+<pre class='OUTPUT'>
+<b class='comments'># first loop</b>
+0
+1
+2
+3
+4
+5
+6
+......
+<b class='comments'># 2nd loop</b>
+0
+3   <b class='comments'># it iterated i by 3      i = i+3  which is i = 0+3</b>
+6   <b class='comments'># i = 3+3</b>
+9
+12
+15
+18   <b class='comments'># next number should be 21 but since 21 is not in the range of 0 to 20 so we will end the loop here.</b>
+
+
+</pre>
+
+<button class="toggleBtn">Toggle IDE</button>
+<div class="iframeContainer" >
+<iframe  frameborder="0"></iframe>
+</div><br>
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english hilightG">Now  lets do while loop
+
+<pre class='code'>
+<code>
+<b class='comments'># while loop does not create local variables like for loop so we need to predefine our variable</b>
+hfhd = 100
+while hfhd>0:   <b class='comments'># it means to say that until hfhd remains grater than 100, run the code under this.</b>
+    print(hfhd)
+    hfhd = hfhd-1   <b class='comments'># iterating by -1</b>
+
+<b class='comments'># If you have any problem running this, check if you have done correct indentation.</b>
+</code>
+</pre><br>
+
+OUTPUT:
+
+<pre class='OUTPUT'>
+100
+99
+98
+...
+1  <b class='comments'># It wont print 0 because 0 is not less than 0 nor greater than 0.</b>
+
+</pre>
+
+<button class="toggleBtn">Toggle IDE</button>
+<div class="iframeContainer" >
+<iframe  frameborder="0"></iframe>
+</div><br>
+            </pre><br>
+            
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Now while loop takes a boolean value (True or False) . so we can also write like
+While True:
+    print("this is infinite loop since it will never get false.")
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Nice now we understand loops. let me give you an example of a nested loop and see if you can understand it.
+
+<pre class='code'>
+<code>
+trait= [" big ", " small ", " cute ", " attractive ", " fat "]
+noun = [" dog ", " girl ", " boy ", " dinasaour "]
+verb = [" danced ", " sleeps ", " jumps ", " plays ", " sings "]    
+<b class='comments'># these are three lists. dont worry if you dont understand it we will learn about lists soon</b>
+for i in trait:         <b class='comments'># now the list trait here, gives i range of elements in the list trait. so while running the program i will have values stored in trait one by one.</b>
+    <b class='comments'># firstly i will have it value as "big"</b> 
+    for j in noun:   <b class='comments'># we created another variable that store value of noun one by one</b>   
+        <b class='comments'># firstly it will have dog</b>
+        for k in verb:
+            print(i + j + k)    
+print("nested loop ended")   
+
+</code>
+</pre><br>
+
+OUTPUT:
+
+<pre class='OUTPUT'>
+<b class='comments'># now lets understand python's workflow here.first it will run loop i and store value "big" in it</b>
+<b class='comments'># then it will see oh there is another loop, it will store first elemnt in list noun i.e "dog" to the variable j</b>
+<b class='comments'># then will be like oh one more loop and store "danced" in k and run the code in k to print the values</b>
+ big  dog  danced 
+ big  dog  sleeps  <b class='comments'># it will iterate k and store second element of verb in k i.e sleeps</b>
+ big  dog  jumps 
+ ......
+ big  girl  danced   <b class='comments'># when it finish iterating k to its last possible value it will come out of k loop. but wait there is another loop out of the k, i.e the j loop. so it will iterate the j.</b>
+ <b class='comments'># now it will rerun the code in the j. which is the k loop so Python will run k loop again.</b>
+ big  girl  sleeps
+ big  girl  jumps
+ .....
+
+ big  dinasaour danced
+ ....
+ big dinasaour sings   <b class='comments'># here Python reached end of k so it will come out of k. and see that j loop is also at its end. so it will come out of j and see that there is an i loop. oh shoot
+now python will iterate the value of i and run the code in i again.
+ </b>
+ small  dog  jumped
+ small  dog  sleeps
+ .....
+
+ fat  dinasaour  sings  <b class='comments'># now this is also the end of loop i. Python will come out and see there is no other loop. so it will run the code out of the loops.</b>
+nested loop ended
+</pre>
+
+<b class='comments'># huh, i knew it would make it confusing. </b>
+
+<button class="toggleBtn">Toggle IDE</button>
+<div class="iframeContainer" >
+<iframe  frameborder="0"></iframe>
+</div><br>
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">So we are done with the loops. and guys tere is another project in this lecture so dont forget to do that. see you in the next one</pre><br>
+            
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Now i want all of you to hop on your pc screen and actually try these. experiment on these. failure is best way to learn. if you have any trouble i am here to teach. also did you get the feeel about loops? comment your feedback</pre><br>
+            
+            
+            <br><br><br>
+            
+            <b>SLide left for more images: </b>
+            <pre class="english hilightPur">
+               <b class="Name">Peepo:</b>
+                <div class="horizontal_scroll">
+                    <img src="" alt="meme1" class="images_scroll">
+                    <img src="" alt="fact1" class="images_scroll">
+                </div>
+            </pre>
+            
+            <h1 class="ending">Next Lecture: More Datatypes in Python(Lists etc)</h1>
+
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+</html>
