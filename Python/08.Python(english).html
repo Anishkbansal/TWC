@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+    <!-- style css -->
+    <link rel='stylesheet' href='common_designs.css'>
+
+    <!--font english-->
+    <link rel='preconnect' href='https://fonts.googleapis.com'>
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+    <link href='https://fonts.googleapis.com/css2?family=Cagliostro&family=Mukta&display=swap' rel='stylesheet'>
+
+    <!-- font-hindi -->
+    <link rel='preconnect' href='https://fonts.googleapis.com'>
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+    <link href='https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&display=swap' rel='stylesheet'>
+    <title>Python libraries</title>
+</head>
+<body class='english'>
+    <div id='progress-bar-container'>
+        <img id='progress-bar' src='Image resource/peepoAngry.png' alt='Progress Indicator'>
+    </div>
+    
+    <div class='container'>
+        <h1 class='heading english'><u>Python libraries</u></h1>
+        <div class='divider'></div>
+
+        <div class='content'>
+
+<img src='Image resource\Peepo_teachingPY.PNG' alt='Welcome welcome_folks peepo teaching snake on his neck' class='images'><br>
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">This will be a short lecture so without any time waste lets get straight into the lecture.
+Now, Python is an open source language which means that anyone can view the source code.now over the years people have wrote code in python and made that code public for other people to use
+we call them libraries. a python library is some code written my some person which you can use for your own efficiency.
+
+there are many types of libraries. some are inbuilt and some are not. the inbuilt libraries comes with the python package when you download python. others can be downloaded using <b>pip</b>
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">pip is a software that downloads any library into your python. well how to use it? 
+in the terminal, all you have to do is write        pip install &lt;name of the library you want to install> &lt;another library after the space if you want to install>   if multiple libraries at once, seperate the names with space     
+and it will be installed.    you can also specify the version you want to download by typing pip install &lt;name>==&lt;version>
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">now lets suppose you write a very good program which also uses a wide variety of libraries. now, you want to share your program to your friend.
+there a strong chance that your friend might not have all the libraries you used to write program. he will get error and laugh at you.
+and installing those libraries one by one is hectic. so what we do is we can create a text file. name it anything we want.
+
+now in that text file we will put all the libraries we used. and the use    pip install -r &lt;path to the file we created>.txt       all the libraries that arre written in txt file will be downloaded
+<b class='comments'># usually people name it requirements.txt</b>
+            </pre><br>
+
+            <b class="Name">Peepo:</b><br>
+            <pre class="english">something like This</pre><br>
+            <img src="Image resource/requirementsTXT PIp.png" alt="" class="images"><br>
+
+        <b class="Name">Peepo: </b><br>
+        <pre class="english">you can also uninstall a library by replacing install with uninstall </pre><br>
+
+        <b class="Name">Peepo: </b><br>
+        <pre class="english">now suppose you wrote a code wayyy back in time and you are trying to run that code. but you forgot that the file uses older versions of libraries. which got recently updated. 
+Now you would not really modify the code as per the newer version. so what you do is while writing some commercial code, you create a virtual enviroment which is like a seperate storage box which will store your libraries and is not affected by what is installed in your Global Python.
+how do we create that enviroment?
+        </pre><br>
+
+        <b class="Name">Peepo: </b><br>
+        <pre class="english">in the terminal type       python -m venv &lt; path >     replace &lt; path >  with what path of your file and name you want to give to your virtual env.
+
+it is now created. remember virtual enviroment uses different library than global python which mean python installed in your computer that works without virtual enviroment.
+so if you have any library installed in global python, you have to reinstall it in your virtual enviroment if you want it to work.
+
+        </pre><br>
+
+        <b class="Name">Peepo: </b><br>
+        <pre class="english">so we have created our virtual enviroment now lets activate it to let python know that we are using it for this project
+you just need to type.    &lt;venv>/Scripts/anctivate.bat     or     &lt;venv>/Scripts/anctivate.ps1         remember to replace &lt;venv> with name of your virtual enviroment.
+        </pre><br>
+        <img src="Image resource/enviromentcreate.png" alt="" class="images">
+
+        <b class="Name">Peepo: </b><br>
+        <pre class="english">now we are done with almost everything but how do we actually use these libraries. 
+for that here comes the import statement. you type it like        import &lt;name>        replace &lt;name> with name of the library. 
+you can also give the imported library a variable name. by using      import &lt;name> as &lt;variable_name>    replace &lt;variable_name> with name of your variable
+
+for example.. 
+import pandas as pd         pnadas is name of library and pd is a variable
+
+etcetera.
+        </pre><br>
+        
+        <b class="Name">Peepo: </b><br>
+        <pre class="english">now we can use any function that is present in the imported library</pre><br>
+
+        <b class="Name">Peepo: </b><br>
+        <pre class="english">Now i want all of you to hop on your pc screen and actually try these. experiment on these. failure is best way to learn. if you have any trouble i am here to teach. also did you get the feeel about pip? comment your feedback</pre><br>
+
+        <b class="Name">Peepo: </b><br>
+            <pre class="english">and.... we are done  and guys tere is another project in this lecture so dont forget to do that. see you in the next one</pre><br>
+        
+        
+        <br><br><br>
+        
+        <b>SLide left for more images: </b>
+        <pre class="english ">
+           <b class="Name">Peepo:</b>
+            <div class="horizontal_scroll">
+                <img src="" alt="meme1" class="images_scroll">
+                <img src="" alt="fact1" class="images_scroll">
+            </div>
+        </pre>
+        
+        <h1 class="ending">Next Lecture: Lists in Python(more datatypes)</h1>
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+</html>
