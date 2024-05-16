@@ -126,3 +126,14 @@ document.addEventListener("DOMContentLoaded", function() {
   addCopyButtons();
 });
 
+window.addEventListener('scroll', function() {
+  // Change 80 to the percentage of the page height where you want the music to start playing
+  var triggerPercentage = 70;
+  var triggerPosition = (document.documentElement.scrollHeight - window.innerHeight) * (triggerPercentage / 100);
+  if (window.scrollY > triggerPosition) {
+    document.getElementById('bgMusic').play();
+  } else {
+    document.getElementById('bgMusic').pause();
+  }
+});
+

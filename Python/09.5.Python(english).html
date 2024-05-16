@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+    <!-- style css -->
+    <link rel='stylesheet' href='common_designs.css'>
+
+    <!--font english-->
+    <link rel='preconnect' href='https://fonts.googleapis.com'>
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+    <link href='https://fonts.googleapis.com/css2?family=Cagliostro&family=Mukta&display=swap' rel='stylesheet'>
+
+    <!-- font-hindi -->
+    <link rel='preconnect' href='https://fonts.googleapis.com'>
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+    <link href='https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&display=swap' rel='stylesheet'>
+    <title>Lists,Tuples, Dictionary, Strings in Python.</title>
+</head>
+<body class='english'>
+    <div id='progress-bar-container'>
+        <img id='progress-bar' src='Image resource/Einstein.png' alt='Progress Indicator'>
+    </div>
+    
+    <div class='container'>
+        <h1 class='heading english'><u>Lists,Tuples, Dictionary, Strings in Python.</u></h1>
+        <div class='divider'></div>
+
+        <audio id="bgMusic" loop>
+            <source src="../TheEndingSong.mp3" type="audio/mpeg">
+          </audio>
+
+        <div class='content'>
+
+<img src='Image resource\Peepo_teachingPY.PNG' alt='Welcome welcome_folks peepo teaching snake on his neck' class='images'><br>
+            
+            <b class="Name">Jenna:</b><br>
+            <pre class="english">Welcome everyone to this lecture . I am Peepo, my name is Jenna. Today we will learn new keywords ha...ha...ha...ha.......</pre><br>
+            <img src="Image resource/Jenna.png" alt="" class="images"><br>
+
+            <b class="Name">Einstein: </b><br>
+            <pre class="english">Guys egnore her, she is still in shock from last lecture. I told her already that she dont need to learn them as you do math formulas. you will automatically remember the important ones and even if you dont any AI or google will help you get to know about it better.</pre><br>
+
+            <b class="Name">Woof: </b><br>
+            <pre class="english">Woof Woof!  anyways what even is this  it  you are talking about?</pre><br>
+
+            <b class="Name">Einstein: </b><br>
+            <pre class="english">HUH! these are List methods, tuple methods,etc.</pre><br>
+
+            <b class="Name">Einstein: </b><br>
+            <pre class="english">I dont want this lecture to be big and boring so lets get started. </pre><br>
+
+            <b class="Name">Einstein: </b><br>
+            <pre class="english">so, we studies lists in previous part of this lecture, we learnt that lists are mutable and iterable meaning we can change their values.
+what if you want to create something immutable. something that does not change. if tried to change, it throws error and stops the program.(wait dont skip lecture here, tuples are not useless. we can handle the error and we will learn that soon.)
+
+*********  TUPLES  **********
+<pre class='code'>
+<code>
+tup = (56,56,89,785,44,654,8,9,2,5)  <b class='comments'># creating a tuple work exactly like a list but instead of square bracket i.e [], we use normal brackets i.e ()</b>
+EmptyTuple = ()  <b class='comments'># this is creating empty tuple, just the brackets. remember that, EmptyTuple is JUST A VARIABLE. you can replace it with your name if you want to</b>
+print("original tuple ", tup)
+
+
+print(tup[1::2]) <b class='comments'># slicing is also same but.. slicing a tuple also returns a new tuple which you can store in a variable</b>
+slicedTuple = tup[1 :: 2]
+print(" tuple after slicing", slicedTuple)
+
+
+print("number of times 56 occured in this tuple is. ", tup.count(56)) #same as list. 
+
+<b class='comments'># almost all the methods are same.  NOW i will list down methods which you cannot use on tuples and methods for tuples which are not in list</b>
+<b class='comments'># **1** index(index_number) , **2**  all(tup)  returns True if all elements of tuple are True , **3** sorted(tup)  sorts the tuple works like sort which return new tuple as a result. , **4** len(tup)  same as list</b>
+
+<b class='comments'># List methods that are not for tuple</b>
+<pre class="comments"># append, extend, insert, remove, pop, clear, reverse, copy etc</pre>
+
+<b class='comments'># Now if i say,  </b>
+name2 = tup   <b class='comments'># this works same as a list and gives a new name to tup. both name2 and tup refer to same object in memory.</b>
+
+<b class='comments'># to create a new tuple with same value we can use </b>
+name2 = tuple(tup)      <b class='comments'># this is tuple function. also used to convert a list into a tuple.</b>
+<b class='comments'># or you can use slicing. </b>
+name2  = tup[:]
+
+</code>
+</pre><br>
+
+<pre class='code'>
+<code>
+    <b class='comments'># cleaner code</b>
+tup = (56,56,89,785,44,654,8,9,2,5)  
+EmptyTuple = ()  
+print("original tuple ", tup)
+
+
+print(tup[1::2])
+slicedTuple = tup[1 :: 2]
+print(" tuple after slicing", slicedTuple)
+
+
+print("number of times 56 occured in this tuple is. ", tup.count(56))
+name2 = tup
+name2 = tuple(tup)      
+name2  = tup[:]
+
+
+</code>
+</pre><br>
+
+OUTPUT:
+
+<pre class='OUTPUT'>
+original tuple  (56, 56, 89, 785, 44, 654, 8, 9, 2, 5)
+(56, 785, 654, 9, 5)
+ tuple after slicing (56, 785, 654, 9, 5)
+number of times 56 occured in this tuple is.  2
+
+</pre>
+
+<button class="toggleBtn">Toggle IDE</button>
+<div class="iframeContainer" >
+<iframe  frameborder="0"></iframe>
+</div><br>
+
+            </pre><br>
+
+            <b class="Name">Einstein: </b><br>
+            <pre class="english">We are done with tuples. lets move on to dictionary.
+
+*********DICTIONARY*********
+
+Dictionaries in Python are unordered collections of items. Unlike sequences (like lists or tuples) which are indexed by a range of numbers, dictionaries are indexed by keys. Each key is unique and maps to a corresponding value. Dictionaries are enclosed in curly braces {}, and each key-value pair is separated by a colon :.
+its like oxford english dictionary. where you can imagine keys as difficult words and values as their explanation.
+<pre class='code'>
+<code>
+empty_dict = {}
+dict = {"lol":"BigLOL",  "number_key": 50 , 77341 : "big number (its a value here." , 5:50 , True  : "no key should be repeated." , False:False}
+    
+print(dict)     <b class='comments'># you cannot put list or dict as keys. what about values? experiment putting different types in it like list tuple dictionary etc.</b>
+
+print(77341 in dict)  <b class='comments'># return true if the item is a key in the dictionary. which is true here.</b>
+
+<b class='comments'># since dictionaries dont follow any sequence, you can use index function or any slicing.</b>
+
+for key, value in dict:
+    print("value of  ", key , "is", value)
+
+<b class='comments'># if you study maths. you will be familiar with rooster form of a relation. you can create dictionaries with that kind of thing</b>
+dict = {x : x*x for x in range(0,11)}    <b class='comments'># this is an inline forloop. like        print(i) for in range(0,6)</b>
+
+
+
+</code>
+<code>
+empty_dict = {}
+dict0 = {"lol":"BigLOL",  "number_key": 50 , 77341 : "big number (its a value here." , 5:50 , True  : "no key should be repeated." , "False":False}
+    
+dict2 = {
+    "you can" : 1,
+    "also create" : 2,
+    "dict like this" : "easy to read"
+}
+
+print(dict0)     <b class='comments'># you cannot put list or dict as keys. what about values? experiment putting different types in it like list tuple dictionary etc.</b>
+
+print(77341 in dict0)  <b class='comments'># return true if the item is a key in the dictionary. which is true here.</b>
+
+<b class='comments'># since dictionaries dont follow any sequence, you can use index function or any slicing.</b>
+
+for key, value in dict0.items():
+    print("value of  ", key , "is", value)
+
+<b class='comments'># if you study maths. you will be familiar with rooster form of a relation. you can create dictionaries with that kind of thing</b>
+dict1 = {x : x*x for x in range(0,11)}
+<b class='comments'># this will run a for loop and during each iteration, it will create a new key value pair with x being the value of iteration.
+<pre>#first, x will be 0 : 0*0  = 0:0, then it will be 1 : 1*1 = 1:1 ,   then   2:2*2  = 2:4 ..... 10:100</pre>
+</b>
+<b class="comments">#so try to predict value of dict2</b>
+print(dict1)
+
+<b class='comments'># you can use clear and copy in dictionaries.</b>
+print(dict1.get(77341, "default value"))  <b class='comments'># this tell you value using the key. 2nd argument is default which is returned when no key is found mathing 1st argument.. if not provide, its returns None.</b>
+
+
+print(dict1.items()) <b class='comments'># returns key value pairs as tuples. and form a list out of all tuples generated. like [(key1,value1), (key2,value2)]</b>
+print(dict1.keys) <b class='comments'># returns all the keys as a list</b>
+print(dict1.values) <b class='comments'># returns all the values as a list</b>
+<b class='comments'># oh wait i frogrot the paranthesis.  this will print memory address of dict1's keys and values. it is where the object are actally stored in the memory.</b>
+print(dict1.keys())   <b class='comments'># so dont forget paranthesis</b>
+print(dict1.values())
+
+
+print(dict1.pop(2))  <b class='comments'># takes the key as argument and returns its value. so this will print 4 which is value of 2 in dict1</b>
+print(dict1.popitem())  <b class='comments'># removes the item and returns whole key value pair as tuple.(key,value).  but you cannot specify what to remove. it removes at random since dictionary dont have any sequence</b>
+
+
+dict.update(dict1)  <b class='comments'># add all the key value pair of dict in the argument to the dict this function is being run on</b>
+print(dict0)   
+
+<b class='comments'># you can update new keys like this</b>
+dict0["key"] = "new value"    #if the key does not exist, it will create new ones
+dict0["lol"] = "helo"     # if the key exists, it will replace its value with the new value which is "helo" in this case
+
+</code>
+</pre><br>
+cleaner code
+<pre class='code'>
+<code>
+empty_dict = {}
+dict0 = {"lol":"BigLOL",  "number_key": 50 , 77341 : "big number (its a value here." , 5:50 , True  : "no key should be repeated." , "False":False}
+dict2 = {
+    "you can" : 1,
+    "also create" : 2,
+    "dict like this" : "easy to read"
+}
+
+
+print(dict0)
+print(77341 in dict0)
+    
+for key, value in dict0.items():
+    print("value of  ", key , "is", value)
+    
+dict1 = {x : x*x for x in range(0,11)}
+    
+print(dict1)
+    
+print(dict1.get(77341, "default value"))
+    
+print(dict1.items()) 
+print(dict1.keys) 
+print(dict1.values)
+
+print(dict1.keys())
+print(dict1.values())
+    
+
+print(dict1.pop(2))  
+print(dict1.popitem())
+    
+dict.update(dict1)  
+print(dict0)
+    
+dict0["key"] = "new value"    
+dict0["lol"] = "helo"
+
+</code>
+</pre><br>
+OUTPUT:
+
+<pre class='OUTPUT'>
+{'lol': 'BigLOL', 'number_key': 50, 77341: 'big number (its a value here.', 5: 50, True: 'no key should be repeated.', 'False': False}
+True
+value of   lol is BigLOL
+value of   number_key is 50
+value of   77341 is big number (its a value here.
+value of   5 is 50
+value of   True is no key should be repeated.
+value of   False is False
+{0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81, 10: 100}
+default value
+dict_items([(0, 0), (1, 1), (2, 4), (3, 9), (4, 16), (5, 25), (6, 36), (7, 49), (8, 64), (9, 81), (10, 100)])   
+<built-in method keys of dict object at 0x000001D5B7003EC0>
+<built-in method values of dict object at 0x000001D5B7003EC0>
+4
+(10, 100)
+{'lol': 'BigLOL', 'number_key': 50, 77341: 'big number (its a value here.', 5: 50, True: 'no key should be repeated.', 'False': False}
+</pre>
+
+<button class="toggleBtn">Toggle IDE</button>
+<div class="iframeContainer" >
+<iframe  frameborder="0"></iframe>
+</div><br>
+            </pre><br>
+
+
+            <b class="Name hilightG">Einstein: </b><br>
+            <pre class="english">Dictionaries are used in storing datasets.like in json.this is helpful in storing user prefrences in any app. Peepo have also used Dictionaries to make this app.
+We are done with a dictionary so lets move on to se..</pre><br>
+
+            <div class="gag">
+                <b class="Name">Peepo: </b><br>
+                <pre class="english">Hello folks. I am back. no i am not someone's back. I am front. oh wait i am not front to. i am me.
+So hello folks. miss me?. I am back and fully charged. (shit i said back again). so lets see what you have learned.
+                </pre><br>
+            </div>
+
+            <b class="Name hilightR">Peepo: </b><br>
+            <pre class="english">So a quick project time. try to create a dictionary with word meanings in python </pre><br>
+
+            <b class="Name hilightPur">Peepo: </b><br>
+            <pre class="english">Oh wait i am not satisfied. lets do one project together before ending this part of lecture and moving to next
+
+Suppose you have a paragraph. and you want to count how many times a word comes in it. what you can do? Lets see.
+<pre class='code'>
+<code>
+para = "hello my name is Peepo. i Teach Programming. there is also a basic computer lecture if you want to learn about basic computer working. so that you can be productive on a pc. or know how to use pc as someone who does know a thing about Pc. THe AI has been doing wonders recently so there is also a course about how to use existing AI or Make your own AI"
+
+<b class='comments'># so this is our paragraph. wondering why instead of double quotes, it is in triple single quotes i.e '''. well to write a multiline string that extends to more than one line, we use these quotes simple.</b>
+
+<b class='comments'># **with for dictionaries**</b>
+<b class='comments'># we will make pairs of words and their occurences ok.</b>
+<b class='comments'># first we will lower case our para so that counting of capital and small words is not different.</b>
+
+para = para.lower()  <b class='comments'># this will turn everythin in para to lowerCase.  you can use upper()  for upperCase (capital letters)</b>
+
+<b class='comments'># now we will count number of characters this string got.</b>
+char_no = 0   <b class='comments'># default value to be zero</b>
+for char in para:
+    char_no = char_no + 1
+print(char_no)
+
+<b class='comments'># Now lets count words.and make a dictionary</b>
+
+words = para.split()  <b class='comments'># this string split string into individual words and forms a list. try and count total no of words in this para</b>
+print("words as a list are ", words)
+word_Count = {}  <b class='comments'># empty dictionary to store values</b>
+
+for word in words:
+    word_Count[word] = word_Count.get(word, 0) + 1  <b class='comments'># we give word initital value. if word is not present in dict, it will make a new word and assign its default value as 0 as specified</b>   
+<b class='comments'># after that, it will add 1 so the vlaue of word and store it as new value of word. note here that word does not actually have a meaning, it can even be abraka_dabara. </b>
+
+for word, freq in word_Count.items():
+print(f"{word}: {freq}")  <b class='comments'># wait what is this string?  we call it an f-string.
+    <pre># instead of writing  print(f"variable1 is ", var1 , "variable2 is ", var2,.... so on) 
+        we can use f string which allows us to enclose variables into curly bracket i.e {}. all we have to do is type f before starting the string. so the above code becomes, print(f"variable1 is {var1} and variable2 is {var2}")
+    </pre>
+<b class='comments'># if there is a syntaxt error in app's IDE, copy this string instead</b>
+print(word, ":", freq)
+</b>
+</code>
+</pre><br>
+
+<pre class="code">
+<code>
+<b class='comments'># cleaner code</b>
+para = "hello my name is Peepo. i Teach Programming. there is also a basic computer lecture if you want to learn about basic computer working. so that you can be productive on a pc. or know how to use pc as someone who does know a thing about Pc. THe AI has been doing wonders recently so there is also a course about how to use existing AI or Make your own AI"
+
+para = para.lower()
+char_no = 0   
+for char in para:
+    char_no = char_no + 1
+print(char_no)
+
+
+words = para.split()  
+print("words as a list are ", words)
+word_Count = {}
+for word in words:
+    word_Count[word] = word_Count.get(word, 0) + 1
+for word, freq in word_Count.items():
+    #print(f"{word}: {freq}")
+    print(word, ":", freq)
+
+</code>
+</pre><br>
+
+
+OUTPUT:
+
+<pre class='OUTPUT'>
+run code in IDe dont be lazy.
+
+</pre>
+
+<button class="toggleBtn">Toggle IDE</button>
+<div class="iframeContainer" >
+<iframe  frameborder="0"></iframe>
+</div><br>
+            </pre><br>
+
+            <b class="Name">See you in next one guys: </b><br>
+            <pre class="english">Peepo</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Now i want all of you to hop on your pc screen and actually try these. experiment on these. failure is best way to learn. if you have any trouble i am here to teach. also did you get the feeel about dictionaries? comment your feedback</pre><br>
+            
+            
+            <br><br><br>
+            
+            <b>SLide left for more images: </b>
+            <pre class="english ">
+               <b class="Name">Peepo:</b>
+                <div class="horizontal_scroll">
+                    <img src="" alt="meme1" class="images_scroll">
+                    <img src="" alt="fact1" class="images_scroll">
+                </div>
+            </pre>
+            
+            <h1 class="ending">Next Lecture: Strings and sets in Python(part 3 of this one)</h1>
+
+
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+</html>

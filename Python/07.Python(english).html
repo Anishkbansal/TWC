@@ -52,7 +52,7 @@ for(i&lt;100):       <b class='comments'>#this is basic syntax of for loop. now,
     print(i)         <b class='comments'># now Python whil check the condition is 0 is less than 100 which is true so it will run the code and print the value of i which is currently zero.</b>
     i = i + 1        <b class='comments'># now to increase the value of i we say that python, take value of i and add one to i. this will now make i = 1 and the loop will run again</b>
 
-<b class='comments'># the loop will run again and i will increase again. we call this increase to increment. we are adding 1 to i so we are incrementing i with 1. 
+<b class='comments'># the loop will run again and i will increase again. we call this increase, to increment. we are adding 1 to i so we are incrementing i with 1. 
 now eventually i will reach the value of 2 and 3 and 4 all the way to 100. and when it reaches 100, 100 is  not less than 100 so condition is false Python will know to exit the loop.
 </b>
 <b class='comments'># Now if you dont increment i, the value of i will never increase, it will not ever reach 100 and stay zero always. which will cause Python to keep running the loop forever.until you close the program.
@@ -223,6 +223,70 @@ nested loop ended
             </pre><br>
 
             <b class="Name">Peepo: </b><br>
+            <pre class="english">The last thing in this lecture, what is continue and break. Jenna please explain, by battery is low.</pre><br>
+
+            <b class="Name">Jeena: </b><br>
+            <pre class="english">ok. so the break keyword is used in a loop and it creak the loop completely and work as a door for python to come out of the loop. like breaking out of the loop.
+
+<pre class='code'>
+<code>
+for i in range(0,4):
+    print(i)
+    if(i==2):
+        break      <b class='comments'># when i is 2 meaning the condition is true and the break will be executed. Python will come out of the loop without any more iterations.</b>
+
+</code>
+</pre><br>
+
+OUTPUT:
+
+<pre class='OUTPUT'>
+0
+1
+2
+
+</pre>
+
+we got the break statement now, what continue statement do?
+continue statement forces the loop to stop everything it is doing ad move on to the next iteration.
+suppose you have 5 lines of code inside a loop and there is a continue statement at the 2nd line. so when python reaches line 2, it will stop everything and moves on to next iteration of the loop which means that the lines after continue staement will not be executed
+
+
+<pre class='code'>
+<code>
+for i in range(0,5):
+    print("printing for first time ", i)
+    if(i==3):
+        continue
+    print("printing for second time.", i)
+
+</code>
+</pre><br>
+
+OUTPUT:
+
+<pre class='OUTPUT'>
+printing for first time  0
+printing for second time. 0
+printing for first time  1
+printing for second time. 1
+printing for first time  2
+printing for second time. 2
+printing for first time  3        <b class='comments'># why 3 was not printed the for the third time?. think..</b>
+printing for first time  4
+printing for second time. 4
+
+</pre>  
+
+<button class="toggleBtn">Toggle IDE</button>
+<div class="iframeContainer" >
+<iframe  frameborder="0"></iframe>
+</div><br>
+            </pre><br>
+
+
+
+            <b class="Name">Jenna: </b><br>
             <pre class="english">So we are done with loops.</pre><br>
 
             
