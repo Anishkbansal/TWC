@@ -147,6 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const zoomInButton = document.getElementById('zoomIn');
   const zoomOutButton = document.getElementById('zoomOut');
   const progressBar = document.getElementById('progress-bar');
+  const body = document.body;
   
 
   let scale = 1;
@@ -157,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
           overlay.style.display = 'flex';
           overlayImage.src = image.src;
           progressBar.style.display = "none";
-          document.body.classList.add('no-scroll');
+          body.style.overflow = "hidden";
           
       });
   });
@@ -167,14 +168,15 @@ document.addEventListener('DOMContentLoaded', () => {
         overlay.style.display = 'flex';
         overlayImage.src = image_scroll.src;
         progressBar.style.display = "none";
-        document.body.classList.remove('no-scroll');
+        body.style.overflow = "hidden";
     });
 });
 
   closeButton.addEventListener('click', () => {
       overlay.style.display = 'none';
-      resetZoom();
       progressBar.style.display = "block";
+      body.style.overflow = "auto";
+      resetZoom();
   });
 
   overlayImage.addEventListener('wheel', (event) => {
@@ -212,6 +214,8 @@ document.addEventListener('DOMContentLoaded', () => {
       overlayImage.style.transform = `scale(${scale})`;
       overlayImage.style.left = '0';
       overlayImage.style.top = '0';
+      progressBar.style.display = "block";
+      body.style.overflow = "auto";
   }
 
   // Drag functionality
