@@ -157,6 +157,8 @@ document.addEventListener('DOMContentLoaded', () => {
           overlay.style.display = 'flex';
           overlayImage.src = image.src;
           progressBar.style.display = "none";
+          document.body.classList.add('no-scroll');
+          
       });
   });
 
@@ -165,6 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
         overlay.style.display = 'flex';
         overlayImage.src = image_scroll.src;
         progressBar.style.display = "none";
+        document.body.classList.remove('no-scroll');
     });
 });
 
