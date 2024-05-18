@@ -140,42 +140,47 @@ window.addEventListener('scroll', function() {
 
 document.addEventListener('DOMContentLoaded', () => {
   const images = document.querySelectorAll('.images');
-  const images_scroll = document.querySelectorAll('.images_scroll')
+  const images_scroll = document.querySelectorAll('.images_scroll');
   const overlay = document.getElementById('overlay');
   const overlayImage = document.getElementById('overlayImage');
   const closeButton = document.getElementById('closeButton');
   const zoomInButton = document.getElementById('zoomIn');
   const zoomOutButton = document.getElementById('zoomOut');
   const progressBar = document.getElementById('progress-bar');
-  const body = document.body;
-  
 
   let scale = 1;
   const zoomSpeed = 0.1;
+  let isDragging = false;
+  let startX, startY, initialLeft, initialTop;
+  let initialDistance = 0;
+  let isPinching = false;
 
   images.forEach(image => {
       image.addEventListener('click', () => {
-          overlay.style.display = 'flex';
-          overlayImage.src = image.src;
-          progressBar.style.display = "none";
-          body.style.overflow = "hidden";
-          
+        const scrollY = window.scrollY;
+        overlay.style.top = `${scrollY}px`;
+        overlay.style.display = 'flex';
+        overlayImage.src = image.src;
+        document.body.classList.add('no-scroll');
+        progressBar.style.display = "none";
       });
   });
 
   images_scroll.forEach(image_scroll => {
     image_scroll.addEventListener('click', () => {
-        overlay.style.display = 'flex';
-        overlayImage.src = image_scroll.src;
-        progressBar.style.display = "none";
-        body.style.overflow = "hidden";
+      const scrollY = window.scrollY;
+      overlay.style.top = `${scrollY}px`
+      overlay.style.display = 'flex';
+      overlayImage.src = image_scroll.src;
+      document.body.classList.add('no-scroll');
+      progressBar.style.display = "none";
     });
-});
+  });
 
   closeButton.addEventListener('click', () => {
       overlay.style.display = 'none';
+      document.body.classList.remove('no-scroll');
       progressBar.style.display = "block";
-      body.style.overflow = "auto";
       resetZoom();
   });
 
@@ -206,6 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (event.target === overlay) {
           overlay.style.display = 'none';
           resetZoom();
+          document.body.classList.remove('no-scroll');
       }
   });
 
@@ -214,13 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
       overlayImage.style.transform = `scale(${scale})`;
       overlayImage.style.left = '0';
       overlayImage.style.top = '0';
-      progressBar.style.display = "block";
-      body.style.overflow = "auto";
   }
-
-  // Drag functionality
-  let isDragging = false;
-  let startX, startY, initialLeft, initialTop;
 
   overlayImage.addEventListener('mousedown', (event) => {
       event.preventDefault(); // Prevent default drag behavior
@@ -247,28 +247,51 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   overlayImage.addEventListener('touchstart', (event) => {
-      isDragging = true;
-      startX = event.touches[0].clientX;
-      startY = event.touches[0].clientY;
-      initialLeft = parseInt(window.getComputedStyle(overlayImage).left) || 0;
-      initialTop = parseInt(window.getComputedStyle(overlayImage).top) || 0;
+      if (event.touches.length === 1) {
+          isDragging = true;
+          startX = event.touches[0].clientX;
+          startY = event.touches[0].clientY;
+          initialLeft = parseInt(window.getComputedStyle(overlayImage).left) || 0;
+          initialTop = parseInt(window.getComputedStyle(overlayImage).top) || 0;
+      } else if (event.touches.length === 2) {
+          isPinching = true;
+          initialDistance = getDistance(event.touches[0], event.touches[1]);
+          scale = parseFloat(overlayImage.style.transform.replace(/[^0-9.-]/g, '')) || 1;
+      }
   });
 
   overlayImage.addEventListener('touchmove', (event) => {
-      if (isDragging) {
+      if (isDragging && event.touches.length === 1) {
           const dx = event.touches[0].clientX - startX;
           const dy = event.touches[0].clientY - startY;
           overlayImage.style.left = `${initialLeft + dx}px`;
           overlayImage.style.top = `${initialTop + dy}px`;
+      } else if (isPinching && event.touches.length === 2) {
+          const currentDistance = getDistance(event.touches[0], event.touches[1]);
+          scale *= currentDistance / initialDistance;
+          scale = Math.min(Math.max(0.5, scale), 3); // Restrict scale between 0.5 and 3
+          overlayImage.style.transform = `scale(${scale})`;
+          initialDistance = currentDistance;
       }
   });
 
-  overlayImage.addEventListener('touchend', () => {
-      isDragging = false;
+  overlayImage.addEventListener('touchend', (event) => {
+      if (event.touches.length < 2) {
+          isPinching = false;
+      }
+      if (event.touches.length === 0) {
+          isDragging = false;
+      }
   });
 
   // Prevent native drag behavior
   overlayImage.addEventListener('dragstart', (event) => {
       event.preventDefault();
   });
+
+  function getDistance(touch1, touch2) {
+      const dx = touch2.clientX - touch1.clientX;
+      const dy = touch2.clientY - touch1.clientY;
+      return Math.sqrt(dx * dy + dy * dy);
+  }
 });
