@@ -137,3 +137,131 @@ window.addEventListener('scroll', function() {
   }
 });
 
+
+document.addEventListener('DOMContentLoaded', () => {
+  const images = document.querySelectorAll('.images');
+  const images_scroll = document.querySelectorAll('.images_scroll')
+  const overlay = document.getElementById('overlay');
+  const overlayImage = document.getElementById('overlayImage');
+  const closeButton = document.getElementById('closeButton');
+  const zoomInButton = document.getElementById('zoomIn');
+  const zoomOutButton = document.getElementById('zoomOut');
+  const progressBar = document.getElementById('progress-bar');
+  
+
+  let scale = 1;
+  const zoomSpeed = 0.1;
+
+  images.forEach(image => {
+      image.addEventListener('click', () => {
+          overlay.style.display = 'flex';
+          overlayImage.src = image.src;
+          progressBar.style.display = "none";
+      });
+  });
+
+  images_scroll.forEach(image_scroll => {
+    image_scroll.addEventListener('click', () => {
+        overlay.style.display = 'flex';
+        overlayImage.src = image_scroll.src;
+        progressBar.style.display = "none";
+    });
+});
+
+  closeButton.addEventListener('click', () => {
+      overlay.style.display = 'none';
+      resetZoom();
+      progressBar.style.display = "block";
+  });
+
+  overlayImage.addEventListener('wheel', (event) => {
+      event.preventDefault();
+      if (event.deltaY < 0) {
+          scale += zoomSpeed;
+      } else {
+          scale -= zoomSpeed;
+      }
+      scale = Math.min(Math.max(0.5, scale), 3); // Restrict scale between 0.5 and 3
+      overlayImage.style.transform = `scale(${scale})`;
+  });
+
+  zoomInButton.addEventListener('click', () => {
+      scale += zoomSpeed;
+      scale = Math.min(scale, 3); // Max scale of 3
+      overlayImage.style.transform = `scale(${scale})`;
+  });
+
+  zoomOutButton.addEventListener('click', () => {
+      scale -= zoomSpeed;
+      scale = Math.max(scale, 0.5); // Min scale of 0.5
+      overlayImage.style.transform = `scale(${scale})`;
+  });
+
+  overlay.addEventListener('click', (event) => {
+      if (event.target === overlay) {
+          overlay.style.display = 'none';
+          resetZoom();
+      }
+  });
+
+  function resetZoom() {
+      scale = 1;
+      overlayImage.style.transform = `scale(${scale})`;
+      overlayImage.style.left = '0';
+      overlayImage.style.top = '0';
+  }
+
+  // Drag functionality
+  let isDragging = false;
+  let startX, startY, initialLeft, initialTop;
+
+  overlayImage.addEventListener('mousedown', (event) => {
+      event.preventDefault(); // Prevent default drag behavior
+      isDragging = true;
+      startX = event.clientX;
+      startY = event.clientY;
+      initialLeft = parseInt(window.getComputedStyle(overlayImage).left) || 0;
+      initialTop = parseInt(window.getComputedStyle(overlayImage).top) || 0;
+      overlayImage.style.cursor = 'grabbing';
+  });
+
+  document.addEventListener('mousemove', (event) => {
+      if (isDragging) {
+          const dx = event.clientX - startX;
+          const dy = event.clientY - startY;
+          overlayImage.style.left = `${initialLeft + dx}px`;
+          overlayImage.style.top = `${initialTop + dy}px`;
+      }
+  });
+
+  document.addEventListener('mouseup', () => {
+      isDragging = false;
+      overlayImage.style.cursor = 'grab';
+  });
+
+  overlayImage.addEventListener('touchstart', (event) => {
+      isDragging = true;
+      startX = event.touches[0].clientX;
+      startY = event.touches[0].clientY;
+      initialLeft = parseInt(window.getComputedStyle(overlayImage).left) || 0;
+      initialTop = parseInt(window.getComputedStyle(overlayImage).top) || 0;
+  });
+
+  overlayImage.addEventListener('touchmove', (event) => {
+      if (isDragging) {
+          const dx = event.touches[0].clientX - startX;
+          const dy = event.touches[0].clientY - startY;
+          overlayImage.style.left = `${initialLeft + dx}px`;
+          overlayImage.style.top = `${initialTop + dy}px`;
+      }
+  });
+
+  overlayImage.addEventListener('touchend', () => {
+      isDragging = false;
+  });
+
+  // Prevent native drag behavior
+  overlayImage.addEventListener('dragstart', (event) => {
+      event.preventDefault();
+  });
+});

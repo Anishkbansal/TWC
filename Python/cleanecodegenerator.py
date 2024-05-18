@@ -6,30 +6,23 @@ def remove_comments(code):
 
 code = """
 
-s1 = {1,2,3, "hello"}
-s2 = {3,4,5,6,6} # i repeated 6 here but while you run the code. python will automaticallly merge the two sixes into one six
-list = [45,5,8,4,5,7,8,"hello", "hello"]
-s3 = set(list)
-s1.add(4) 
-s1.add(1)  # it already exists so it does nothing it wont create new item
-s1.remove(2)
+# 1.) newline   blackslash n i.e "\n"  moves the cursor to next 
+# symabols and codes
+# to print special character or symbols like greek letter ∅, ▰, Ⅻ, ↆ, √, ∞, ∫, ψ, Ω  etc
+# the format is \CODE  replace code with code of symbol. you can search for codes online like search what is code for greek letter omega in python
 
+print("code for \u2205 is \\u2205")
+print("code for \u25AC is \\u25AC")
+print("code for \u216B is \\u216B")
+print("code for \u27E6 is \\u27E6")
+print("code for \u221A is \\u221A")
+print("code for \u221E is \\u221E")
+print("code for \u222B is \\u222B")
+print("code for \u03C8 is \\u03C8")
+print("code for \u03A9 is \\u03A9")
 
- union operator is reperesented by     |   
-
-print(s1 | s2)  # combines both the sets without any duplication.
-
-# intersection operator is represented by    &    (its not and symbol in python and is written as and only. )
-print(s1 & s2)  # return the item which is commen in both of them.
-
-print(s1-s2)  # removes items of s2 from s1. if any
-print(s2-s1)  # removes items of s1 from s2. if any
-
-# frozen set is one which is immutable. its like no duplicate item tuple.
-s = frozenset(s1 | s2)
-
-
-
+# or a simple way, just go online search for symbol and copy paste it
+print("the symbols are , ∅, ▰, Ⅻ, ↆ, √, ∞, ∫, ψ, Ω ")
 
 
 """

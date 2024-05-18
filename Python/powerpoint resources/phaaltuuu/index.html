@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Isolate and Zoom</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="image-gallery">
+        <img src="../../Image resource/boy.png" class="images" alt="Image 1">
+        <img src="../../Image resource/girl.png" class="images" alt="Image 2">
+        <img src="../../Image resource/install_Python1Win.png" class="images" alt="Image 3">
+    </div>
+
+    <div id="overlay" class="overlay">
+        <span id="closeButton" class="close-btn">&times;</span>
+        <img id="overlayImage" class="overlay-img" src="" alt="Isolated Image">
+        <div class="zoom-controls">
+            <button id="zoomIn" class="zoom-btn">+</button>
+            <button id="zoomOut" class="zoom-btn">-</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
