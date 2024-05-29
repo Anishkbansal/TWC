@@ -144,8 +144,8 @@ body.no-scroll {
     }
 
     .overlay-img {
-        max-width: 40%;
-        max-height: 40%;
+        max-width: 90%;
+        max-height: 90%;
         transition: transform 0.3s;
         cursor: grab;
         position: relative;
@@ -249,7 +249,7 @@ pre{
 }
 
 .hilightPur{
-    background-color: rgba(244, 178, 240, 0.2);
+    background-color: rgba(244, 178, 240, 0.5);
 }
 
 .hilightG{

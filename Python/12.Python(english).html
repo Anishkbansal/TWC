@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+    <!-- style css -->
+    <link rel='stylesheet' href='common_designs.css'>
+
+    <!--font english-->
+    <link rel='preconnect' href='https://fonts.googleapis.com'>
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+    <link href='https://fonts.googleapis.com/css2?family=Cagliostro&family=Mukta&display=swap' rel='stylesheet'>
+
+    <!-- font-hindi -->
+    <link rel='preconnect' href='https://fonts.googleapis.com'>
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+    <link href='https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&display=swap' rel='stylesheet'>
+    <title>Custom Functions in Python</title>
+</head>
+<body class='english'>
+    <div id='progress-bar-container'>
+        <img id='progress-bar' src='Image resource/app_icon_peepo.png' alt='Progress Indicator'>
+    </div>
+
+    <div id='overlay' class='overlay'>
+        <span id='closeButton' class='close-btn'>&times;</span>
+        <img id='overlayImage' class='overlay-img' src='' alt='Isolated Image'>
+        <div class='zoom-controls'>
+           <button id='zoomIn' class='zoom-btn'>+</button>
+           <button id='zoomOut' class='zoom-btn'>-</button>
+        </div>
+   </div>
+
+    <div class='container'>
+        <h1 class='heading english'><u>Custom Functions in Python</u></h1>
+        <div class='divider'></div>
+
+        <audio id='bgMusic' loop>
+             <source src='../TheEndingSong.mp3' type='audio/mpeg'>
+        </audio>
+
+        <div class='content'>
+
+<img src='Image resource\Peepo_teachingPY.PNG' alt='Welcome welcome_folks peepo teaching snake on his neck' class='images'><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">have you ever wonder why there are paranthesis after each function we use? in print() they are to hold arguments. then why are they in list.copy()  ? </pre><br>
+
+            <b class="Name">Einstein: </b><br>
+            <pre class="english">Thats because this is the format of funcitons. its our way of telling python that this is a function. and the parenthesis work as a door which helps Python to call the function. calling a function means executing the code inside it. running a function.</pre><br>
+
+            <b class="Name">Jenna: </b><br>
+            <pre class="english">How do we actually create a function?</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">A more refined and professional defination would be 
+In Python, a function is a reusable block of code that performs a specific task. It allows you to write code in a modular way, making it easier to organize, maintain, and reuse pieces of your code. Functions can take inputs (called arguments or parameters) and return outputs (called return values).
+            </pre><br>
+
+            <b class="Name">Brook: </b><br>
+            <pre class="english">Woof! why do we need to complicate program by creating more custom functions. there are lot already.</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Well functions are to simplify the program. if you have a pice of code you want to use at multiple locations, we can wrap that code into one function.and call that function again and again</pre><br>
+
+            <b class="Name">Einstein: </b><br>
+            <pre class="english">why cant you write same code inside a function again and again?</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">well you can. but if you want the same functionality at like 20 places, and you accidentaly made some logical mistake in the program. you would have to edit is in alll 20 places.
+whereas if you create a function, you would have to just edit at one place. this maintains code consistency meaning code will be easier to edit, read and understand.
+
+functions also help to break out tasks. like someone asked you your morning routine. well suppose you perform a certain set of tasks every morning. those are your function. first wakeup function is called, then snoozing the alarm and sleeping again function is called (just kidding), then maybe restroom function, then brush and then maybe bath function might get called.
+what we did is break out the big morning routine task into smaller parts. in python functions also let us split that kinds of task
+
+suppose you want average of certain list of numbers. you first add them, then count number  of numbers, then divide the sum by number of numbers. to get the average. see thats three tasks. you can add this to one function or split them.
+and if you split the functions, you can also change the order they are being clled like bath fuunction being called before wake up... some might also give error khikhi.
+NOTE that this is just an example you wont be using different function for spliting a small function. that yould increase number of lines in code and complexitty. meaning if a SMALL thing can be done with one function without making it complecated, then you should do it.
+
+
+In Python, you define a function using the def keyword, followed by the function name, parentheses () for arguments (if any), and a colon :. The function body is indented and contains the code that will be executed when the function is called.
+
+<pre class='code'>
+<code>
+<b class='comments'># How do we actually create a function?</b>
+def FunctionName(argument1, argument2, moreArguments):
+    print("function code")
+    print(argument1)     <b class='comments'># the arguments, when definning a function, behave as a variable</b>
+    print(argument2)     <b class='comments'># what is the value of those variables? the value you put as a argument while calling a function.</b>
+    print(moreArguments)
+    return(argument1)    <b class='comments'># the return keyword should mark the end of function, any code after this will not be executed</b>
+<b class='comments'># but what does return do? well we talked in previous lectures that some functions like pop() return the element removed, meaning we can store it in a variable. these both are same thing. 
+..... this function here returns the value of argument1.
+</b>
+
+<b class='comments'># 1) we use ' def ' to write a custom function. then we write the function name, it can be anything except prebuilt python keywords. then we define the arguments by putting brackets. you can leave them empty(if your function does not have any arguments like list.copy() ) or you can have as many arguments as you want. </b>
+<b class='comments'># 2) then do not forget to write the semicolon i.e  :   after definning arguments. you can seperate different arguments by comma.</b>
+<b class='comments'># 3) the we just write function code.  remember to give indentation. why? to let Python know that this code is written under this function. this code belongs to this function.</b>
+
+<b class='comments'># HOw do we run the function?</b>
+FunctionName("arg1" , "arg2", "arg3")   <b class='comments'># i put the value of first argument as "arg1" so while running the function the argument in this place which is argument1 here, will be replace by this value i.e "arg1"</b>  
+ret = FunctionName(45, 56, 95)
+print(ret)
+
+<b class='comments'># we have been doing thins since start. </b>
+
+</code>
+</pre><br>
+Clean code
+<pre class="code">
+<code>
+def FunctionName(argument1, argument2, moreArguments):
+    print("function code")
+    print(argument1)
+    print(argument2)
+    print(moreArguments)
+    return(argument1)
+
+FunctionName("arg1", "arg2", "arg3")
+ret = FunctionName(45, 56, 95)
+print(ret)
+</code>
+</pre><br>
+
+OUTPUT:
+
+<pre class='OUTPUT'>
+function code
+arg1
+arg2
+arg3
+function code
+45
+56
+95
+45
+
+</pre>
+
+<button class="toggleBtn">Toggle IDE</button>
+<div class="iframeContainer" >
+<iframe  frameborder="0"></iframe>
+</div><br>
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">let us see more useful examples of functions. more the examples and practice, the better.
+    
+<pre class='code'>
+<code>
+def average(number_of_numbers):
+    sum = 0    <b class='comments'># initialising sum  = 0</b>
+    for i in range(1, number_of_numbers+1):      <b class='comments'># adding a loop . we added 1 in 2nd argument because rnage function count UNTIL 2nd arg not including it. so we add one to include itlike. range(0,5) will count till 4 but we want 5 number so we add one range(0,6) that count till 5 </b>
+        n = int(input(f"enter the {i}th number: \n "))     <b class='comments'># we ask user numbers he want avg of.</b>
+        sum  = sum + n    <b class='comments'># adding the numbers each iteration</b>
+    average = sum/number_of_numbers      <b class='comments'># if you dont know what average is, its sum of all numbers divided by how many numbers are thre.</b>
+    return(average)
+
+n = int(input("how many numbers you want average of? \n"))
+avg = average(n)
+
+
+</code>
+</pre><br>
+<pre class="code">
+<code>
+def average(number_of_numbers):
+    sum = 0        
+    for i in range(1, number_of_numbers+1):              
+        n = int(input(f"enter the {i}th number: \n "))             
+        sum  = sum + n        
+    average = sum/number_of_numbers          
+    return(average)
+
+n = int(input("how many numbers you want average of? \n"))
+avg = average(n)
+
+</code>
+</pre>
+
+OUTPUT:
+
+<pre class='OUTPUT'>
+how many numbers you want average of? 
+ <b class="interact">10</b> 
+enter the 1th number:
+ <b class="interact">1</b> 
+enter the 2th number:
+ <b class="interact">2</b> 
+enter the 3th number:
+ <b class="interact">3</b> 
+enter the 4th number:
+ <b class="interact">4</b> 
+enter the 5th number:
+ <b class="interact">5</b> 
+enter the 6th number:
+ <b class="interact">6</b> 
+enter the 7th number:
+ <b class="interact">7</b> 
+enter the 8th number:
+ <b class="interact">8</b> 
+enter the 9th number:
+ <b class="interact">9</b> 
+enter the 10th number:
+ <b class="interact">10</b> 
+average is  5.5
+
+</pre>
+
+<button class="toggleBtn">Toggle IDE</button>
+<div class="iframeContainer" >
+<iframe  frameborder="0"></iframe>
+</div><br>
+        </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english hilightB">Now try and make a function that multiplies first n natural numbers.</pre><br>
+
+            <b class="Name">Einstein: </b><br>
+            <pre class="english hilightR">Peepo, what if we dont know how many arguments user mught pass into the function?</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english hilightPur">good. we use *args and **kwargs syntx. (with the stars).
+<strong>*args (non-keyword argument)</strong>
+The *args syntax allows you to pass an arbitrary(means random) number of non-keyword arguments to a function. The arguments are collected into a tuple within the function.
+
+<pre class='code'>
+<code>
+def func_args(*args):
+    print(args , type(args))
+
+func_args(1, 2, 3)  
+func_args("hello", True, [1, 2, 3]) 
+
+</code>
+</pre><br>
+In the above example, the print_args function can accept any number of arguments, and they are collected into the args tuple.
+You can also use *args in combination with other regular argument
+
+OUTPUT:
+
+<pre class='OUTPUT'>
+(1, 2, 3) &lt;class 'tuple'>
+('hello', True, [1, 2, 3]) &lt;class 'tuple'>
+
+</pre>
+
+<strong>**Kwargs (keyword arguments)</strong>
+The **kwargs syntax allows you to pass an arbitrary number of keyword arguments to a function. The arguments are collected into a dictionary within the function, where the keys are the argument names, and the values are the argument values
+<pre class='code'>
+<code>
+def func_kwargs(**kwargs):
+    print(kwargs , type(kwargs))
+
+func_kwargs(name="Peepo", age=2)
+func_kwargs(city="Love", country="Peepo_Heart", population="number of users of this app")
+
+</code>
+</pre><br>
+
+OUTPUT:
+
+<pre class='OUTPUT'>
+{'name': 'Peepo', 'age': 2} &lt;class 'dict'>
+{'city': 'Love', 'country': 'Peepo_Heart', 'population': 'number of users of this app'} &lt;class 'dict'>
+
+</pre>
+In this example, name is a regular argument, *args collects the non-keyword arguments (1, 2, 3) into a tuple, and **kwargs collects the keyword arguments (age=30, city="London") into a dictionary.
+Using *args and **kwargs allows you to write functions that can handle a flexible number of arguments, which can be useful in various situations, such as when dealing with user input or when working with functional programming techniques like higher-order functions.
+
+<button class="toggleBtn">Toggle IDE</button>
+<div class="iframeContainer" >
+<iframe  frameborder="0"></iframe>
+</div><br>
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">now suppose you have lots of functions in the program. and you forgot what a function does, we use docstring for that
+we define what a function does with a string staring right when the function body starts. 
+now we are familiar with comments.  what? i did not teach it? well comments are code that is ignored by the python. python does not executes them. why comments? help us to know about our program better.
+how do we write comments? we have been doing that from start. just write a # before starting a comment in python.like  <b class='comments'># Python please ignore it</b>
+now what if you want multiline comment, we use ''' '''  yes the multistring thingy triple quotes. just dont store it nto a variable and it becomes a DOCSTRING. 
+we usually write them at starting of functions, classes, etc.
+
+what is use? i just told. it is used to explain the function to yourself in case you forgot what it does
+
+<pre class='code'>
+<code>
+def sum(a,b):
+    ''' expected input: integer
+number of argument: 2
+output: returns sum of both the arguments '''
+    return a+b 
+
+print(sum(5,6))
+<b class='comments'># oh no i forgot what sum does, wait i wrote a docstring, lets print docstring in terminal to remember what it does again</b>
+print(sum.__doc__)   <b class='comments'># __doc__  is a syntax that tells python to give docstring. so thats how docstring are different from comments. python does not completely ignores them</b>
+
+<b class='comments'># oh now i remember what this function does, good thing i wrote a docstring. the function was complex, reading it would have taken lot of time</b>
+
+</code>
+</pre><br>
+
+OUTPUT:
+
+<pre class='OUTPUT'>
+11
+ expected input: integer
+number of argument: 2
+output: returns sum of both the arguments
+
+</pre>
+
+<button class="toggleBtn">Toggle IDE</button>
+<div class="iframeContainer" >
+<iframe  frameborder="0"></iframe>
+</div><br>
+<strong>NOTE that docstring is directly below function if you write even one line of code the docstring becomes a comment. and the print will return none</strong>
+
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">We are done with this lecture, we will continue learning side by side on future lectures. </pre><br>
+            
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">if i am missing something, Please write that into the feedback section.</pre><br>
+        
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Now i want all of you to hop on your pc screen and actually try these. experiment on these. failure is best way to learn. if you have any trouble i am here to teach. also did you get the feeel about Function? comment your feedback</pre><br>
+            
+            
+            <br><br><br>
+            
+            <b>SLide left for more images: </b>
+            <pre class="english hilgihtG">
+               <b class="Name">Peepo:</b>
+                <div class="horizontal_scroll">
+                    <img src="Image resource/python memes/meme3.png" alt="meme1" class="images_scroll">
+                    <img src="Image resource/python memes/Fact4.png" alt="fact1" class="images_scroll">
+                </div>
+            </pre>
+            
+            <h1 class="ending">Next Lecture: Recursion in Python(Recursion)</h1>
+
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+</html>

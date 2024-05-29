@@ -6,24 +6,28 @@ def remove_comments(code):
 
 code = """
 
-# 1.) newline   blackslash n i.e "\n"  moves the cursor to next 
-# symabols and codes
-# to print special character or symbols like greek letter ∅, ▰, Ⅻ, ↆ, √, ∞, ∫, ψ, Ω  etc
-# the format is \CODE  replace code with code of symbol. you can search for codes online like search what is code for greek letter omega in python
+class PeepoError(Exception):
+    pass # pass means skip   
+                   # its not like a fucntion remember
 
-print("code for \u2205 is \\u2205")
-print("code for \u25AC is \\u25AC")
-print("code for \u216B is \\u216B")
-print("code for \u27E6 is \\u27E6")
-print("code for \u221A is \\u221A")
-print("code for \u221E is \\u221E")
-print("code for \u222B is \\u222B")
-print("code for \u03C8 is \\u03C8")
-print("code for \u03A9 is \\u03A9")
+class AuthenticationError(Exception):  # the word Exception here is not a variable. its a inbuilt python class and we are inheriting that class. (ignore this inherit path dont worry about it)
+    pass
 
-# or a simple way, just go online search for symbol and copy paste it
-print("the symbols are , ∅, ▰, Ⅻ, ↆ, √, ∞, ∫, ψ, Ω ")
+just know that we created an error AuthenticationError  just like ValueError IndexError etc
 
+def authenticate(username, password): 
+    if username == "Peepo":
+        raise PeepoError("Username must not be Peepo.")
+    if len(password) < 8:
+        raise AuthenticationError("Password must be at least 8 characters long.")
+    print("User authenticated successfully.")
+
+try:
+    authenticate('user', '12345')
+except AuthenticationError as e:    # AuthenticationError as e means get the error and store it in the variable e. e is a variable can be anything.
+    print(f"Authentication failed: {e}")
+
+authenticate('Peepo', 'passowrd')  # this is not in try because if someone tries to login with Peepo we will close the program and dont let him use it again
 
 """
 

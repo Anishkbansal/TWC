@@ -191,13 +191,13 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
           scale -= zoomSpeed;
       }
-      scale = Math.min(Math.max(0.5, scale), 3); // Restrict scale between 0.5 and 3
+      scale = Math.min(Math.max(0.5, scale), 5); // Restrict scale between 0.5 and 3
       overlayImage.style.transform = `scale(${scale})`;
   });
 
   zoomInButton.addEventListener('click', () => {
       scale += zoomSpeed;
-      scale = Math.min(scale, 3); // Max scale of 3
+      scale = Math.min(scale, 5); // Max scale of 3
       overlayImage.style.transform = `scale(${scale})`;
   });
 
@@ -212,6 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
           overlay.style.display = 'none';
           resetZoom();
           document.body.classList.remove('no-scroll');
+          progressBar.style.display = "block";
       }
   });
 

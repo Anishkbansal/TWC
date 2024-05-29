@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+    <!-- style css -->
+    <link rel='stylesheet' href='common_designs.css'>
+
+    <!--font english-->
+    <link rel='preconnect' href='https://fonts.googleapis.com'>
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+    <link href='https://fonts.googleapis.com/css2?family=Cagliostro&family=Mukta&display=swap' rel='stylesheet'>
+
+    <!-- font-hindi -->
+    <link rel='preconnect' href='https://fonts.googleapis.com'>
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+    <link href='https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&display=swap' rel='stylesheet'>
+    <title>Exception/Error handling in Python</title>
+</head>
+<body class='english'>
+    <div id='progress-bar-container'>
+        <img id='progress-bar' src='Image resource/peepo_updated.png' alt='Progress Indicator'>
+    </div>
+
+    <div id='overlay' class='overlay'>
+        <span id='closeButton' class='close-btn'>&times;</span>
+        <img id='overlayImage' class='overlay-img' src='' alt='Isolated Image'>
+        <div class='zoom-controls'>
+           <button id='zoomIn' class='zoom-btn'>+</button>
+           <button id='zoomOut' class='zoom-btn'>-</button>
+        </div>
+   </div>
+
+    <div class='container'>
+        <h1 class='heading english'><u>Exception/Error handling in Python</u></h1>
+        <div class='divider'></div>
+
+        <audio id='bgMusic' loop>
+             <source src='../TheEndingSong.mp3' type='audio/mpeg'>
+        </audio>
+
+        <div class='content'>
+
+<img src='Image resource\Peepo_teachingPY.PNG' alt='Welcome welcome_folks peepo teaching snake on his neck' class='images'><br>
+            <b class="Name">Einstein: </b><br>
+            <pre class="english">
+i = int(input("enter a number only no letter : "))
+print(i)
+
+OUTPUT:
+enter a number only no letter : <b class="interact">jenna</b>
+<pre style="color: red;">Traceback (most recent call last):
+  File "e:\description resourses\Python\14 trial.py", line 1, in &lt;module>
+    i = int(input("enter a number only no letter : "))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'jenna'</pre>
+            </pre><br>
+
+            <b class="Name">Einstein: </b><br>
+            <pre class="english">ahhhhhh. </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">What happened Einstein.</pre><br>
+
+            <b class="Name">Einstein: </b><br>
+            <pre class="english">I want to make a program which print user's number, but jenna keeps writing her name instead of a number. the int() function gives error. since python does not know how to convert  'jenna'  into an integer</pre><br>
+
+            <b class="Name">Einstein: </b><br>
+            <pre class="english">this thing stops the program and wont execute anything after the error line.i also want to give a custom error and stops the program if i is greater than 1,000,000,000 since if i run loop with that it would crash the memory</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">oh so want to handle such errors where some nasty users try to break the code. or you want to access some data from a site but since site's server is down, you cant anymore and program gives error?</pre><br>
+
+            <b class="Name">Einstein: </b><br>
+            <pre class="english">yess and the program after that does not run, it just exits like here, the print did not run. because it print would have runned, it would give me error that i is not defined.</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">its very simple to fix it with try and except blocks/functions/keyword</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">let us see some types of error first. basic types.  '
+Syntax Errors: These are mistakes in the code's structure and must be fixed for the code to run.
+Exceptions: These occur when the code is syntactically correct but an error occurs during execution.
+Here's a list of some common exceptions:
+
+ValueError: Raised when a function receives an argument of the right type but inappropriate value.
+TypeError: Raised when an operation or function is applied to an object of inappropriate type.
+IndexError: Raised when trying to access an element outside the bounds of a list.
+KeyError: Raised when a dictionary key is not found.
+
+and more....
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english hilightB">lets us first see try and except the basic error handeling.
+try:           <b class='comments'># the try block containes the code that potentially cause error</b>
+    numerator = 10
+    denominator = 0
+    result = numerator / denominator
+    print(result)
+except:        <b class='comments'># if the error occurs, the except block will cath the exception/error.</b>
+    print("Oops! You can't divide by zero!")
+else:
+    print("the program has no errors")   <b class='comments'># if the try blocks run successfuly(no except block executed) the else block will run.</b>
+
+
+print("more code")
+    <b class='comments'># other important code which you want to execute no matter what.</b>
+
+
+OUTPUT:
+Oops! You can't divide by zero! 
+more code     <b class='comments'># if you run without error handeling this print wont even run because the line previous to it would cause program to crash/stop</b>
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english hilightG">you can also specify if there is certain type of error you need to go in except block
+try:
+    num = int(input("Enter a number: "))
+    result = 10 / num
+except ZeroDivisionError:           <b class='comments'># if zero division error occurs mean is num is zero then, this block will execute</b>
+    print("Cannot divide by zero!")
+except ValueError:                  <b class='comments'># if value error mean the value is not a valid integer, then this block will execute</b>
+    print("That's not a valid number!")
+else:                               <b class='comments'># if none of the above except blocks execute, this else block will execute.</b>
+    print(f"Result is {result}") 
+finally:
+    print("no matter what i will run")  <b class='comments'># this finally block will run no matter there an exception or not.</b> 
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english hilightB">
+<pre class='code'>
+<code>
+try:
+    num = int(input("enter a num: "))
+    l = [456,521,2]
+    print(l[num])
+except ValueError:
+    print("not a valid integer, be careful sir")
+except IndexError:
+    print("index is out of range sir")
+    print(l)
+finally:
+    print("all done")
+
+</code>
+</pre><br>
+
+OUTPUT:
+
+<pre class='OUTPUT'>
+enter a num: <b class="interact">Peepo</b>
+not a valid integer, be careful sir
+enter a num: <b class="interact">1</b>
+521
+enter a num: <b class="interact">6</b>
+index is out of range sir
+[456, 521, 2]
+all done
+
+</pre>
+
+<button class="toggleBtn">Toggle IDE</button>
+<div class="iframeContainer" >
+<iframe  frameborder="0"></iframe>
+</div><br>
+            </pre><br>
+
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">try and think how above example works</pre><br>
+
+            <b class="Name">Einstein: </b><br>
+            <pre class="english">hey Peepo, the finally keyword always works right?.so what is the need of it why wont we write something like this only
+try:
+    print?("try")
+except:
+    print("error")
+
+print("all done")  <b class='comments'># this print will also run always, then why finally???</b>
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Nice ques. Lets see try and except in functions.
+<pre class='code'>
+<code>
+def func():
+    try:
+        print(this is not a string)
+        return 0
+    except:
+        print("this is a string")
+        return 1
+
+    print("this will not run always")
+
+print(func())
+func()
+</code>
+</pre><br>
+
+OUTPUT:
+
+<pre class='OUTPUT'>
+1
+this is a string    <b class='comments'># wait why did not the print command run?. because after a function returns something nothing after that execute, the function  just exits</b>
+</pre>
+
+<pre class='code'>
+<code>
+<b class='comments'># now lets see with finally. finally breaks the bounds and run even after you return something</b>
+def func():
+    try:
+        print(this is not a string)
+        return 0
+    except:
+        print("this is a string")
+        return 1
+    finally:
+        print("this will run always")   <b class='comments'># bro finally is finall.if i say i will run finall. so i will run and thats final no matter what.</b>
+
+print(func())
+func()
+
+</code>
+</pre><br>
+
+OUTPUT:
+
+<pre class='OUTPUT'>
+1
+this is a string
+this will run always
+
+</pre>
+
+<button class="toggleBtn">Toggle IDE</button>
+<div class="iframeContainer" >
+<iframe  frameborder="0"></iframe>
+</div><br>
+
+<pre class="hilightR">but where is real world will you use finally? well suppose you are retreiving data, if successful you return the retreuved data.. if failed, you return the error that occured. but what if you want to clean up files after that (some data gets installed some dont which might cause error so you might want to delete that) , undo changes , delete some file  etc  you can put those commands in finally, and they will run always. so thats the use of finally. (can be asked in interviews)
+
+let me also give you a professional defination if some of you did not understand the casual way
+
+The finally block is used in scenarios where certain actions must be performed regardless of whether an exception occurred or not. This typically involves resource management tasks such as closing files, releasing locks, closing network connections, or cleaning up any other kind of resources that the program is using.
+
+Why Use finally?
+Resource Management: Ensures that resources like files, network connections, or database connections are properly closed or released, preventing resource leaks.
+Consistency: Guarantees that certain critical code will execute, maintaining the consistency and reliability of your application.
+Cleanup Actions: Allows for cleanup operations that should happen whether an error occurred or not, ensuring a tidy and predictable program state.
+
+Example
+Consider a scenario where you are working with files. You need to ensure that a file is closed properly after you've finished reading from or writing to it, even if an error occurs during file operations.
+
+
+here is the example code  <b>if you dont understand this dont read will will learn about file opening next.</b>
+<pre class='code'>
+<code>
+def read_file(file_path):
+    try:
+        file = open(file_path, 'r')
+        data = file.read()
+        print(data)
+    except FileNotFoundError:
+        print(f"Error: The file at {file_path} does not exist.")
+    except IOError:
+        print(f"Error: An I/O error occurred while handling the file at {file_path}.")
+    finally:
+        # Ensures that the file is closed no matter what
+        if 'file' in locals():
+            file.close()
+            print("File has been closed.")
+
+# Usage
+read_file('example.txt')
+
+
+</code>
+</pre><br>
+
+OUTPUT:
+
+<pre class='OUTPUT'>
+
+
+</pre>
+
+<button class="toggleBtn">Toggle IDE</button>
+<div class="iframeContainer" >
+<iframe  frameborder="0"></iframe>
+</div><br>
+</pre>
+            </pre><br>
+
+
+            <b class="Name">Einstein: </b><br>
+            <pre class="english">Peepo thats good. but wait i also said something about giving custom error. how do i do that.</pre><br>
+        
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">sure we will disscus that. why and where custom error are used, how to use them, and then we will see some examples
+            
+<pre class='code'>
+<code>
+<b class='comments'># for example your code wants a certain data</b>
+i = int(input("enter a number between 0-100: "))
+
+if(i&lt;=0 or i>=100):
+    raise ValueError("value should be between 0 and 100 ")  <b class='comments'># if this error executes the code after this line will not work.</b>
+<b class='comments'># we are raising the ValueError when we want.</b>
+</code>
+</pre><br>
+
+OUTPUT:
+
+<pre class='OUTPUT'>
+enter a number between 0-100: <b class="interact">50</b>
+
+<b class='comments'># attempt2</b>
+enter a number between 0-100: <b class="interact">5015</b>
+    <pre style="color: red;">
+Traceback (most recent call last):
+File "e:\description resourses\Python\14 trial.py", line 4, in <module>
+    raise ValueError("value should be between 0 and 100 ")
+    ValueError: value should be between 0 and 100
+    </pre>
+</pre>
+
+<button class="toggleBtn">Toggle IDE</button>
+<div class="iframeContainer" >
+<iframe  frameborder="0"></iframe>
+</div><br>
+            
+            </pre><br>
+
+            <b class="Name">jenna: </b><br>
+            <pre class="english">that was easy but why do we actually need to give errors?. why we want our programs to stop?</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">well suppose you are running a for loop to open gta5 during each iterations. your pc hav handle 5 gta5 running at the same time, you take input from user about how many gta5 you want to open.
+if the user types some absurd big number like 1000, your computer wont handle that. you would want the code to stop there only. if the value is greater. you can use exit() command, but that wont provide user information about why the program is closed which error does. it tell that this line is causing problem. you only want to run gta5 code if the value is between a range and want to close if not, WE RAISE ERROR/EXCEPTION
+
+
+<b>another example:</b>
+suppose you go to a shop and you order a pack of oranges, now the shopkeeper accidentaly gives you watermelons. you wont take that home thinking they are oranges right?. you will tell yourself to not execute the goHome() command of your mind and stop the program here.You can use a simple if else
+if(oranges):
+    goHome()
+
+EatOranges()
+
+but this wont give you the reason why the program did not work and also the code after if-else will also run so you need to raise error to stop! 
+
+            </pre><br>
+
+            <b class="Name">jenna: </b><br>
+            <pre class="english">Ohhh!. so thats the reason we need error. but can you give an example of programing for Brook to understand better.</pre><br>
+
+            <b class="Name">Brook: </b><br>
+            <pre class="english">woof??</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">ok sure,and while we do that lets learn about custom errors. ValueError, IndexError etc are inbuilt what is we want some of our own like PeepoError....
+
+but how dow we do that? we do that by creating a custom class. now what is a class? we will learn it in next phase for now just look at the syntax . dont get overwhelmed by what is this class thingy
+<pre class='code'>
+<code>
+class PeepoError(Exception):
+    pass <b class='comments'># pass means skip</b>   
+                   <b class='comments'># its not like a fucntion remember</b>
+
+class AuthenticationError(Exception):  <b class='comments'># the word Exception here is not a variable. its a inbuilt python class and we are inheriting that class. (ignore this inherit path dont worry about it)</b>
+    pass
+
+<b>just know that we created an error AuthenticationError  just like ValueError IndexError etc</b>
+
+def authenticate(username, password): 
+    if username == "Peepo":
+        raise PeepoError("Username must not be Peepo.")
+    if len(password) < 8:
+        raise AuthenticationError("Password must be at least 8 characters long.")
+    print("User authenticated successfully.")
+
+try:
+    authenticate('user', '12345')
+except AuthenticationError as e:    <b class='comments'># AuthenticationError as e means get the error and store it in the variable e. e is a variable can be anything.</b>
+    print(f"Authentication failed: {e}")
+
+authenticate('Peepo', 'passowrd')  <b class='comments'># this is not in try because if someone tries to login with Peepo we will close the program and dont let him use it again</b>
+</code>
+</pre><br>
+
+ clean code
+<pre class='code'>
+<code>
+class PeepoError(Exception):
+    pass
+
+class AuthenticationError(Exception):      
+    pass
+
+def authenticate(username, password):
+    if username == "Peepo":
+        raise PeepoError("Username must not be Peepo.")
+    if len(password) < 8:
+        raise AuthenticationError("Password must be at least 8 characters long.")
+
+    print("User authenticated successfully.")
+
+try:
+    authenticate('user', '12345')
+except AuthenticationError as e:        
+    print(f"Authentication failed: {e}")
+
+authenticate('Peepo', 'passowrd')
+
+</code>
+</pre><br>
+
+OUTPUT:
+
+<pre class='OUTPUT'>
+Authentication failed  the error is this please be careful next time: Password must be at least 8 characters long. <b class='comments'># this is the error message we are printing in the function</b>
+****************************************
+<pre style="color: red;">
+Traceback (most recent call last):
+File "e:\description resourses\Python\14 trial.py", line 22, in <module>
+    authenticate('Peepo', 'passowrd')
+    File "e:\description resourses\Python\14 trial.py", line 9, in authenticate
+    raise PeepoError("Username must not be Peepo.")
+    <b>PeepoError: Username must not be Peepo</b>
+    </pre>
+    <b class='comments'># this is the error and code after the line where error occured i.e (error in line 22 because of line 9 as the error says) will not run.</b>
+</pre>
+
+<button class="toggleBtn">Toggle IDE</button>
+<div class="iframeContainer" >
+<iframe  frameborder="0"></iframe>
+</div><br>
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">try and think what kind of programs can be who require error handling. try and build them in your own pc. thanks of sticking around this long</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Now i want all of you to hop on your pc screen and actually try these. experiment on these. failure is best way to learn. if you have any trouble i am here to teach. also did you get the feeel about error Handling? comment your feedback</pre><br>
+            
+            
+            <br><br><br>
+            
+            <h1 class="ending">Next Lecture: reading and writing files in Python</h1>
+
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+</html>

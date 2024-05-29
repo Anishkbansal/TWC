@@ -85,17 +85,28 @@
         }
       },
       "lectures": {
-        "01 How to install Python": {
-          "descriptionLink": "https://anishkbansal.github.io/TWC/Python/01.InstallPython(English).html",
+        "00 InstallVsCode": {
+          "LectureId": "000000",
+          "descriptionLink": "https://anishkbansal.github.io/TWC/Python/00.InstallVsCode.html",
           "hasDescription": "true",
           "hasProject": "false",
           "hasTest": "false",
-          "lectureName": "How to install Python",
+          "lectureName": "How to install VsCode (optional)",
+          "lecturePreview": "install vsCode for code efficiency"
+        },
+        "01 How to install Python": {
+          "LectureId": "000000",
+          "descriptionLink": "https://anishkbansal.github.io/TWC/Python/01.Python(english).html",
+          "hasDescription": "true",
+          "hasProject": "false",
+          "hasTest": "false",
+          "lectureName": "01 How to install Python",
           "lecturePreview": "install Python on your own pc",
           "quiz": "\"\""
         },
         "02 Introduction to Python": {
-          "descriptionLink": "https://anishkbansal.github.io/TWC/Python/02.IntroductionToPython(English).html",
+          "LectureId": "011002",
+          "descriptionLink": "https://anishkbansal.github.io/TWC/Python/02.Python(english).html",
           "hasDescription": "true",
           "hasProject": "false",
           "hasTest": "false",
@@ -104,9 +115,10 @@
           "quiz": ""
         },
         "03 DataTypes in Python": {
-          "descriptionLink": "https://anishkbansal.github.io/Talk-With-Computer/02.IntroductionToPython(English).html",
+          "LectureId": "011003",
+          "descriptionLink": "https://anishkbansal.github.io/TWC/Python/03.Python(english).html",
           "hasDescription": "true",
-          "hasProject": "true",
+          "hasProject": "false",
           "hasTest": "false",
           "lectureName": "Introduction to DataTypes in Python",
           "lecturePreview": "String, Integer, Float, Complex, Boolean, None....",
@@ -114,16 +126,66 @@
           "quiz": ""
         },
         "04 operators in Python": {
-          "descriptionLink": "https://anishkbansal.github.io/Talk-With-Computer/02.IntroductionToPython(English).html",
+          "LectureId": "011004",
+          "descriptionLink": "https://anishkbansal.github.io/TWC/Python/04.Python(english).html",
           "hasDescription": "true",
-          "hasProject": "true",
+          "hasProject": "false",
           "hasTest": "false",
           "lectureName": "Introduction to operators in Python",
           "lecturePreview": "+, -, *, ==, <=, >=, >, != ...",
-          "projectLink": "https://anishkbansal.github.io/TWC/Python/Projects/lecture%20projects/05.project.python.html",
           "quiz": ""
         },
+        "05 conditionals in Python": {
+          "LectureId": "011005",
+          "descriptionLink": "https://anishkbansal.github.io/TWC/Python/05.Python(english).html",
+          "hasDescription": "true",
+          "hasProject": "true",
+          "hasTest": "false",
+          "lectureName": "Introduction to Conditionals in Python",
+          "lecturePreview": "if-else, nested if-else. input()",
+          "projectLink": "https://anishkbansal.github.io/TWC/Python/Projects/lecture%20projects/05.project.python.html",
+          "projectSolution": {
+            "TrueSolution": "",
+            "comments": {
+              "commentId": {
+                "codeSnippet": "",
+                "time": "",
+                "userID": ""
+              }
+            }
+          },
+          "quiz": ""
+        },
+        "06 Match-Case statement": {
+          "LectureId": "011006",
+          "descriptionLink": "https://anishkbansal.github.io/TWC/Python/06.Python(english).html",
+          "hasDescription": "true",
+          "hasProject": "false",
+          "hasTest": "false",
+          "lectureName": "match-case Statements",
+          "lecturePreview": "their functionality is same as if else. used for modern Python"
+        },
+        "07 Loops in Python": {
+          "LectureId": "011007",
+          "descriptionLink": "https://anishkbansal.github.io/TWC/Python/07.Python(english).html",
+          "hasDescription": "true",
+          "hasProject": "false",
+          "hasTest": "false",
+          "lectureName": "Loops in Python",
+          "lecturePreview": "for loop, while loop, and some examples"
+        },
+        "08 libraries in Python": {
+          "LectureId": "11008",
+          "descriptionLink": "https://anishkbansal.github.io/TWC/Python/08.Python(english).html",
+          "hasDescription": "true",
+          "hasProject": "true",
+          "hasTest": "false",
+          "lectureName": "Libraries in Python",
+          "lecturePreview": "import, pip, pandas, scikit-learn, virtual enviroment...",
+          "projectLink": "https://anishkbansal.github.io/TWC/Python/Projects/lecture%20projects/08.project.python.html"
+        },
         "Empty Lecture": {
+          "LectureId": "000000",
           "descriptionLink": "",
           "hasDescription": "false",
           "hasProject": "false",
@@ -173,29 +235,64 @@
     }
   },
   "users": {
-    "oJV6usUh7paqgSXMU56uZsxFQ3r1": {
+    "1VrqBk0tVvca8kS9hJtAhIRftik2": {
       "CurrentLeague": "Code Voyager",
-      "DateJoined": "26/11/2023",
+      "DateJoined": "10/05/2024",
+      "LectureIdList": {
+        "-NxWK3AoCs1UuGLjM0fd": "000000"
+      },
       "Rank": "Code Cadet",
-      "profilePicUrl": "https://firebasestorage.googleapis.com/v0/b/talk-with-computer.appspot.com/o/profile%20pics%2Foptions%2Fapp_icon_peepo.png?alt=media&token=974005db-7990-431d-8218-f3a3784383e4",
-      "selectedCourse": "Python",
-      "username": "Venominsaane"
+      "profilePicUrl": "",
+      "selectedCourse": "",
+      "username": "nishu"
     },
-    "wUY4ZXPWDvXInI39YiMyJ4kF9xG3": {
+    "LUdMTJKx8WXaiIMmhFayAUuNllk1": {
       "CurrentLeague": "Code Voyager",
-      "DateJoined": "26/11/2023",
-      "Rank": "Code Cadet",
-      "profilePicUrl": "https://firebasestorage.googleapis.com/v0/b/talk-with-computer.appspot.com/o/profile%20pics%2Foptions%2Fdefault_profile.png?alt=media&token=b49ad6fe-8c2e-4a2d-a212-95eb3a4e81a7",
-      "selectedCourse": "Python",
-      "username": "Anish K Bansal"
-    },
-    "wnyMDU1rxHfQQmNSd8DfHq42Gkl2": {
-      "CurrentLeague": "Code Voyager",
-      "DateJoined": "03/12/2023",
+      "DateJoined": "10/05/2024",
+      "LectureIdList": {
+        "-NxWLVv_fpNpjz_BXXnI": "000000",
+        "-NxWNFUzuL9p9_F45y-b": "000000",
+        "-NxWNpBqUR3tzlk_Nb1C": "011002",
+        "-NxWOpBfiG52g3gXIi64": "011003",
+        "-NxWVYIi9_aCCrqnMt4e": "011004"
+      },
       "Rank": "Code Cadet",
       "profilePicUrl": "",
       "selectedCourse": "Python",
-      "username": "abcd"
+      "username": "nishu"
+    },
+    "avilpgz404WPlhfEkfURLQYmyFC3": {
+      "CurrentLeague": "Code Voyager",
+      "DateJoined": "12/04/2024",
+      "LectureIdList": {
+        "-NvIClMYNRX-gY_Q1KNF": "000000",
+        "-NvIDOaJ2PQQUb0zBWUG": "011002",
+        "-NvIEaenXiv8gXQn2d1M": "011003",
+        "-NvaDcbZWelkyboNbUFt": "011004",
+        "-NvaDdi4F2qjRfPK0IS5": "011005",
+        "-NxW8y1F4XGw_rau1VOs": "011006",
+        "-Nxc7A389LvUHSVDVTqr": "011007",
+        "-Nxc7bHBp9w_4DO9Nj7A": "11008",
+        "-NxcAUmmP9gKTg4tJc10": "000000"
+      },
+      "Rank": "Code Cadet",
+      "profilePicUrl": "",
+      "selectedCourse": "Python",
+      "username": "anish"
+    },
+    "ct8sdY67VGXOKmmU17UsI0NrutL2": {
+      "CurrentLeague": "Code Voyager",
+      "DateJoined": "28/04/2024",
+      "LectureIdList": {
+        "-NwZyOg_1J4LjZHcAdyC": "000000",
+        "-NwZzn3nJO7Atm-obLvL": "011002",
+        "-Nw_2t7PahL5T6Rmk6Z0": "011002",
+        "-Nw_3v2okk6EcjqenYFD": "011003"
+      },
+      "Rank": "Code Cadet",
+      "profilePicUrl": "",
+      "selectedCourse": "Python",
+      "username": "nishu"
     }
   }
 }

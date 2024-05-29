@@ -302,9 +302,62 @@ OUTPUT:
 <div class="iframeContainer" >
 <iframe  frameborder="0"></iframe>
 </div><br>
+</pre><br>
 
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">one last thing before we go is know about enumerate function
+sometimes during for we if we want to know what index is the iteration in, we can use temporary variable
+l1 = [456,5,45,15,6,4]
+index = 0
+for i in l1:
+    print("index is ", index , "element on this is ", i)
+    index = index + 1
+
+we can make it easier with enumerate
+<pre class='code'>
+<code>
+<b class='comments'># task = whenever 4rd index element comes print("fourth")</b>
+l2 = [561,44,854,1,2,7,89]
+for index,value in enumerate(l2):  <b class='comments'># enumerate will also give you index.... here index and value are variable. index/firstvariable will iterate range(0,len(l2)) and mark will hold the values.</b>
+    print(index , value)
+    if(index == 4):
+        print(value , "is the" , index , "th element")
+        print("fourth")
+<b class='comments'># try printing print(enumerate(l2)) see what it gives.(if you dont know what that is, that is the location of the element in the memory)</b>
+
+<b class='comments'># you can aslo specify the start number</b>
+for num,value in enumerate(l2, start = 1):
+    print(num, value)
+</code>
+</pre><br>
+
+OUTPUT:
+
+<pre class='OUTPUT'>
+0 561
+1 44
+2 854
+3 1
+4 2
+2 is the 4 th element
+fourth
+5 7
+6 89
+1 561
+2 44
+3 854
+4 1
+5 2
+6 7
+7 89
+
+</pre>
+
+<button class="toggleBtn">Toggle IDE</button>
+<div class="iframeContainer" >
+<iframe  frameborder="0"></iframe>
+</div><br>
             </pre><br>
-
 
             <b class="Name">Peepo: </b><br>
             <pre class="english">Good thing FINALLY the biggest chapter of Peepo and Einstein together. thanks Einstein for taking my place in first lecture. i hope you understand all. IF you have any problem ask PeepoBOt or any AI.</pre><br>
