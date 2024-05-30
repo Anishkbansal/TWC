@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+    <!-- style css -->
+    <link rel='stylesheet' href='../common_designs.css'>
+
+    <!--font english-->
+    <link rel='preconnect' href='https://fonts.googleapis.com'>
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+    <link href='https://fonts.googleapis.com/css2?family=Cagliostro&family=Mukta&display=swap' rel='stylesheet'>
+
+    <!-- font-hindi -->
+    <link rel='preconnect' href='https://fonts.googleapis.com'>
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+    <link href='https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&display=swap' rel='stylesheet'>
+    <title>managing(reading, writing) files/data</title>
+</head>
+<body class='english'>
+    <div id='progress-bar-container'>
+        <img id='progress-bar' src='' alt='Progress Indicator'>
+    </div>
+
+    <div id='overlay' class='overlay'>
+        <span id='closeButton' class='close-btn'>&times;</span>
+        <img id='overlayImage' class='overlay-img' src='' alt='Isolated Image'>
+        <div class='zoom-controls'>
+           <button id='zoomIn' class='zoom-btn'>+</button>
+           <button id='zoomOut' class='zoom-btn'>-</button>
+        </div>
+   </div>
+
+    <div class='container'>
+        <h1 class='heading english'><u>managing(reading, writing) files/data</u></h1>
+        <div class='divider'></div>
+
+        <audio id='bgMusic' loop>
+             <source src='../TheEndingSong.mp3' type='audio/mpeg'>
+        </audio>
+
+        <div class='content'>
+
+<img src='Image resource\Peepo_teachingPY.PNG' alt='Welcome welcome_folks peepo teaching snake on his neck' class='images'><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">now suppose we have a file in our system or web which contains lot of emails or phone numbers. and we want to get one email of a guy from that file. and change his number to something else 
+how do we do that? fo have to access that file, read it and edit it. lets us see how we do that 
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english hilightB">
+with open('filePath' , 'mode')  as variable:    <b class='comments'># open is a function and this line tells python to <b>use</b> open fuction (with open) and open function asks what file you want to open as arguments
+and what mode you want it in. you want to edit it? write something? read the content etc and we have to specify taht as two arguments</b>
+    operations on the files
+    
+    
+<b class='comments'># let us suppose we have a file named mailData which has mails of users and their phone numbers</b>
+
+<b class='comments' ># ******** mailData *********</b>
+<pre class="code">
+Peepo@Twc.com  124764627  <b class='comments'># this is random number</b>
+Brook@Twc.com  154783542  <b class='comments'># you might have gmail.com instead of Twc.com</b>
+Jenna@Twc.com  479215678
+rohit@Twc.com  479216897
+charn@Twc.com  485679010
+Einstein@Twx.com 4897523498   <b class='comments'># what a coincidence that above names were all 5 letters lol</b>
+ATM@gmail.com  4587921462
+bnhvgbj@gmail.com  8965894237
+RDJFromWish@gmail.com  5479361456
+</pre><br>
+
+<pre class="code">
+<b class='comments'># ********** python file **********</b>
+with open('mailData' , 'r') as data:      <b class='comments'># r means in read mode. you cant edit in this mode just read the contents. like a library book. throws error is file not found . this is the default mode even if 2nd parameter not given</b>
+    content = data.read()   <b class='comments'># this will read the contents and store into the variable content</b>
+    print(content)
+    data.close()   <b class='comments'># this closes the file we opened. why we need to close it anyways? because otherwise it will eat up the ram. and if you start something you should end it. just like this course</b>
+
+with open('newFile' , 'w') as temporary:    <b class='comments'># w means write mode. it removes all existinf content of file and write whatever you say. creates a new file is file not found</b>
+    temporary.write(content)
+    temporary.close()
+
+<b class='comments'># remember that this checks for files in the working directory you are in if your python file and read file are both in a nested folder in the directory then you need to specify the folder too.</b>
+<b class='comments'># with open(folderName/filename) as file:  </b>
+
+<pre class='comments'>''' file structure
+mainDirectory
+    -folder1
+    -folderName
+        -python.py
+        -filename     ''' 
+        </pre>
+
+
+with open('mailData' , 'a') as data:      <b class='comments'># this open file in append mode. meaning it allows you to write but does not overwrite the content</b>
+    data.write("forgottenEmail@gmail.com  54796316584")  <b class='comments'># added one email.</b>
+    data.close()
+
+<b class='comments'># you can also write above code like this it will not require indetation problems.</b>
+data = open('mailData' , 'a')
+data.write("2ndforgotEmail@gmail.com  4791356912")
+data.close
+
+
+    <b class='comments'># you can also specify read or write type by using t,b </b>
+        with open('mailData' , 'rt' ):    <b class='comments'># rt mean read in text format. </b>
+        with open('mailData' , 'rb'):  <b class='comments'># this will read in binary format. (use it for binary files like pdf, png, jpg, exe etc)</b>
+        <b class='comments'># t is default and python wil know its t is nothing specified</b>
+    </pre>
+</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english higlightR">there is one project for you. so remember to check it when the lecture ends            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english hilightPur">after this email example let us see another example. of cracking someone's password. khikhikhi. 
+<pre class='code'>
+<code>
+<b class='comments'># create a text file that hold most used passwords like 1234, abcd, password, etc. there is a website that give you file that holds millions of most used passwords. but for simplicitywe will be creating our own</b>
+<b class='comments'># then we will get text from that file, split it using whitespace to get all passwords in a list. </b>
+<b class='comments'># then we will ask user for password he wants to set. and using for loop iterate through list tocheck if any element in list matches with user's password. and if it does, we print it and voila, we now know the password </b>
+
+<b class='comments'>#  ********** password.txt file ***********</b>
+123456789
+12345678
+12345
+1234567
+admin
+123123
+qwerty
+abc123
+monkey
+111111
+password1
+qwerty123
+dragon
+1234
+baseball
+iloveyou
+trustno1
+sunshine
+princess
+football
+welcome
+Peepo 
+.....         etc   
+</code>
+
+<pre class="code">
+<code>
+<b class='comments'># ************* Python File ************</b>
+with open('password' , 'r') as passwordFile:
+    content = passwordFile.read()
+    passwordList = content.split()   <b class='comments'># passwordList will become [123456789,12345678,12345,1234567.....]</b>
+    passwordFile.close()
+
+    <pre class='comments'># you can also use, passwordFile.readline() to read line by line.
+passwordList = []
+with open('Python/16 password' , 'r') as passwordFile:
+    while True:
+        line = passwordFile.readline()
+        print(line)
+        passwordList.append(line)
+       # passwordList will become [123456789,12345678,12345,1234567.....]
+        if not line:
+            break
+    passwordFile.close()
+    print(passwordList)
+    </pre>
+
+
+username = input("please enter your username: ")
+<b class='comments'># we create a list of password containing user's username</b>
+possiblePasswords = [username + "@1" , username + "1@" , username + "123" , username , username + "abc" , username + "1$"] 
+passwordList.extend(possiblePasswords)
+while True:
+    userPassword = input("please enter you password: ")
+    confirmPassword = input("please confirm your password: ")
+    tries = 0
+    if userPassword == confirmPassword:
+        print(tries)
+        break
+    else:
+        tries = tries + 1
+        print("you have ", 3-tries , "left")
+    if tries==3:
+        print("you have exceeded try limit. you have to create your account again. ")
+        break
+
+<b class='comments'># right now the user password is stored in userPassword variable. and we can just use print(userPassword). but this is just an example and you might not have user's password stored in a simple variable. you have to apply password and then check if the possward is True</b>
+
+found = "not-found"
+for i in passwordList:
+    if i==userPassword:
+        print("Sir, i have hacked the user's password for you and it is, : " , i)
+        found = "found"
+        break
+    if i != userPassword:
+        print(i, "is not the user's password")
+    
+if found == "not-found":
+    print("i cannot hack the user's password sir, its too strong ")
+
+<b class='comments'># this is a short list but if you use that millions password list the chances of finding are better</b>
+</code>
+</pre>
+</pre><br>
+
+OUTPUT:
+
+<pre class='OUTPUT'>
+please enter your username: Peepo
+please enter you password: Peepo@21
+please confirm your password: Peepo1@
+you have  2 left
+please enter you password: Peepo1@
+please confirm your password: Peepo1@
+0
+123456789 is not the user's password
+12345678 is not the user's password
+12345 is not the user's password
+1234567 is not the user's password
+admin is not the user's password
+123123 is not the user's password
+qwerty is not the user's password
+abc123 is not the user's password
+monkey is not the user's password
+111111 is not the user's password
+password1 is not the user's password
+qwerty123 is not the user's password
+dragon is not the user's password
+1234 is not the user's password
+baseball is not the user's password
+iloveyou is not the user's password
+trustno1 is not the user's password
+sunshine is not the user's password
+princess is not the user's password
+football is not the user's password
+welcome is not the user's password
+Peepo is not the user's password
+Sir, i have hacked the user's password for you and it is, :  Peepo1@
+
+</pre>
+
+<b>the toggle ide button is disabled for now because it is recomended to run this code in your pc</b>
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">so do you like that? fetching the passwords. with this if you know, in a website you can keep trying passwords. and if it matches, the wbsite will login.
+
+we saw readlines, now lets see write lines. 
+
+<pre class="code">
+file = open("filename" , 'w')
+lines = ["line1\n" , "line2\n" , "line3\n"]
+file.writelines(lines)   <b class='comments'># takes iterable object as argument like list, tuple,etc</b>
+file.close()
+
+<b class='comments'># why dont you try to print type of file here.   whatever whill come will tell you that this is running in module io  file io: the inbuilt module. </b>
+</pre>
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">remember that you dont have to remember all these. while writing this lecture, i was having some problem i have to revise Python, search google etc. this is not an exam that you have to remember everything. Interviews will check your logic building not learning skills</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">let us see some more function in file handeling
+suppose you want to edit some data in a file, like editing the 54th character of line 85. you will first read,then split etc. instead we can use seek() and tell()
+
+file.txt:
+123456789Peepo is a badass
+
+<pre class="code">
+with open('file.txt' , 'r') as f:
+<b class='comments'># move to the 7th byte in the file</b>
+    f.seek(7)
+
+    print(f.tell())
+    data = f.read(5)  <b class='comments'># reads from the postion of f.seek(). read the next five bytes i.e the argument given</b>
+    print(data)
+</pre>
+
+<pre class="OUTPUT">
+7
+89Peepo is a badass
+</pre>
+
+<b class='comments'># now if you dont know where in the world are you reading from in the file, we use tell()  which tells us our position. </b>
+this helps in keeping track of the position
+</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">lets us see turncate() now.
+<pre class="code">
+<code>
+with open("file.txt" , 'w') as f:
+    f.write("Peepo is very good")
+    f.turncate(8)   <b class='comments'># if i want my file to conatain certain number of letters.i want to turncate it, cut it. it will be cut till 5 characters.</b>
+    f.close()
+<b class='comments'># so the file file.txt will now only contain -> Peepo is</b>
+with open('file.txt' , 'a') as f:
+    f.write("...")
+    f.close()
+
+<b class='comments'># the file.txt will now contain -> Peepo is...</b>
+</code>
+</pre>
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Now i want all of you to hop on your pc screen and actually try these. experiment on these. failure is best way to learn. if you have any trouble i am here to teach. also did you get the feeel about file io? comment your feedback</pre><br>
+            
+            
+            <br><br><br>
+            
+            <h1 class="ending">Next Lecture: map,filter,reduce etc in Python(advanced list manipulation)</h1>
+
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+</html>
