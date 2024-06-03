@@ -47,7 +47,7 @@ function addCopyButtons() {
   codeElements.forEach(function(element) {
     // Create a copy button
     var copyButton = document.createElement("button");
-    copyButton.innerHTML = "<img src='Image resource/CopyButtonSymbol.png' alt='Copy Code'>";
+    copyButton.innerHTML = "<img src='images/CopyButtonSymbol.png' alt='Copy Code'>";
     copyButton.title = "Copy Code Without Comments";
     copyButton.onclick = function() {
       copyCodeWithoutComments(element);

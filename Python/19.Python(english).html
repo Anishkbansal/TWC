@@ -90,7 +90,7 @@ soup = BeautifulSoup(html , 'html.parser')     <b class='comments'># parsing mea
 <b class='comments'># retreive all anchor tags  (anchor tags hold the link in a page)</b>
 tags = soup('a')   <b class='comments'># this gives list of all the tags in the document.</b>
 for tag in tags:
-    print(tag.get('href' , None))   <b class='comments'># href is the link.</b>
+    print(tag.get('href') , tag.getText())   <b class='comments'># href is the link. and text is text</b>
 
 <b class='comments'># an anchor tag in html looks like This     &lt;a href="https://hostname.com ">some text &lt;/a></b>
 
@@ -101,9 +101,9 @@ OUTPUT:
 
 <pre class='OUTPUT'>
 enter the url: <b class="interact">https://anishbansal.pythonanywhere.com/data/sample.html</b>
-https://google.com
-https://youtube.com
-https://anishbansal.pythonanywhere.com/data/sample.html
+https://google.com  Google.com wanna go?
+https://youtube.com Youtube
+https://anishbansal.pythonanywhere.com/data/sample.html  this website
 
 </pre>
 
@@ -112,6 +112,9 @@ https://anishbansal.pythonanywhere.com/data/sample.html
 <iframe  frameborder="0"></iframe>
 </div><br>
             </pre><br>
+            
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">if you want to retreive tag which have a certain class?  you can do tags = soup("tagName.className") which in the above example will become tags = soup("a.className")</pre><br>
 
             <b class="Name">Peepo: </b><br>
             <pre class="english">thats how you web crawl, one link to other to other.  this marks the beginning of a browser. thats how they are created</pre><br>
