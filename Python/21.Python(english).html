@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+    <!-- style css -->
+    <link rel='stylesheet' href='../common_designs.css'>
+
+    <!--font english-->
+    <link rel='preconnect' href='https://fonts.googleapis.com'>
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+    <link href='https://fonts.googleapis.com/css2?family=Cagliostro&family=Mukta&display=swap' rel='stylesheet'>
+
+    <!-- font-hindi -->
+    <link rel='preconnect' href='https://fonts.googleapis.com'>
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+    <link href='https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&display=swap' rel='stylesheet'>
+    <title>JSON parsing in Python</title>
+</head>
+<body class='english'>
+    <div id='progress-bar-container'>
+        <img id='progress-bar' src='Image resource/Peepo.PNG' alt='Progress Indicator'>
+    </div>
+
+    <div id='overlay' class='overlay'>
+        <span id='closeButton' class='close-btn'>&times;</span>
+        <img id='overlayImage' class='overlay-img' src='' alt='Isolated Image'>
+        <div class='zoom-controls'>
+           <button id='zoomIn' class='zoom-btn'>+</button>
+           <button id='zoomOut' class='zoom-btn'>-</button>
+        </div>
+   </div>
+
+    <div class='container'>
+        <h1 class='heading english'><u>JSON parsing in Python</u></h1>
+        <div class='divider'></div>
+
+        <audio id='bgMusic' loop>
+             <source src='../TheEndingSong.mp3' type='audio/mpeg'>
+        </audio>
+
+        <div class='content'>
+
+<img src='Image resource\Peepo_teachingPY.PNG' alt='Welcome welcome_folks peepo teaching snake on his neck' class='images'><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">now lets talk about the new serialisation format. now xml is good, its more powerful than json and json is simpler. this is why json is used more in simpler programs.</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">now we remember how xml looker like. lets see what json looks like. json looks more like nested dictionaries
+<b class='comments'># this is real data used to make this app</b>
+<b class='comments'># json looks like a nested dictionary so try to connect it with dictionaries and see if you can imagine it</b>
+<pre class="hilightG" style="background-color: rgba(77, 208, 145, 0.5);">
+
+{                             <b class='comments'># opening of dictionary</b>
+    "databaseName" : "TWC app Database",
+    "users" : {                        <b class='comments'># now,users is a key that has a dictionary as its value</b>
+        "UserID-1": {                    <b class='comments'># user id is also a key in the value dictionary of users.</b>
+            "username" : "Peepo",       <b class='comments'># we seperate key value pairs by commas so we added a comma here, username is one key which hold value Peepo. </b>
+            "selectedCourse" : "Python",
+            "DateJoined" : "10/05/2024",
+            "rank" : "code-cadet",
+            "Operator" : true,          <b class='comments'># boolean value</b>
+            "LectureCompletedList" : [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]        <b class='comments'># did not add quotes since its a string</b>
+        },
+        "UserID-2": {
+            "username" : "Einstein",
+            "selectedCourse" : "Python",
+            "DateJoined" : "12/06/2024",
+            "rank" : "code-cadet",
+            "Operator" : false,
+            "LectureCompletedList" : [1,2,3,4,5,6,7,8,9,10,11,12] 
+        }
+    },
+    "courses" : "all courses with their data ..."            <b class='comments'># not writing whole since its big</b>
+}
+
+</pre>
+
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">{"users":{"UserID-1":{"username":"Peepo","DateJoined":"10/05/2024","rank":"code-cadet","Operator":true,"LectureCompletedList":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]} ......}}
+            </pre><br>
+You can also write like this but its too hard to understand so everyone use the beautiful version i showed above.
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Now this is how a json file looks like. i think it will be easy to understand</pre><br>
+
+            <pre class="english hilightPur">
+                <b class="Name">Peepo:</b>
+                 <div class="horizontal_scroll">
+                     <img src="" alt="meme1" class="images_scroll">
+                 </div>
+             </pre>
+
+             <b class="Name">Peepo: </b><br>
+             <pre class="english">the parsing is similar to previous one just a change of words. lets see
+<pre class='code'>
+<code>
+import urllib.request
+import json
+
+response = urllib.request.urlopen('https://anishbansal.pythonanywhere.com/data/TWC.json')
+json_data = ''
+for line in response:
+    json_data += line.decode()             <b class='comments'># getting json data</b>
+print(json_data)
+
+print("************************")         <b class='comments'># added starts to beautify the output</b>
+
+dict = json.loads(json_data)              <b class='comments'># in xml we had ET.fromstring(xml_data)     in json we have json.load()</b>
+
+print(dict , type(dict))       <b class='comments'># now the data loaded is a dictionary</b>
+
+print("********************")
+
+print('database Name: ' , dict["databaseName"])      <b class='comments'># so we can run operations of dictionary on it</b>
+ 
+print("user1 username: " , dict["users"]["UserID-1"]["username"])
+
+print("user 2 details: ", dict["users"]["UserID-2"])     <b class='comments'># this outputs dictionary as the value of UserID-2 is a dictionary</b>
+
+
+</code>
+</pre><br>
+
+OUTPUT:
+
+<pre class='OUTPUT'>
+{
+    "databaseName" : "TWC app Database",
+    "users" : {
+        "UserID-1": {
+            "username" : "Peepo",
+            "DateJoined" : "10/05/2024",
+            "rank" : "code-cadet",
+            "Operator" : true,
+            "LectureCompletedList" : [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+        },
+        "UserID-2": {
+            "username" : "Einstein",
+            "selectedCourse" : "Python",
+            "DateJoined" : "12/06/2024",
+            "rank" : "code-cadet",
+            "Operator" : false,
+            "LectureCompletedList" : [1,2,3,4,5,6,7,8,9,10,11,12]
+        }
+    },
+    "courses" : "all courses with their data ..."
+}
+************************
+{'databaseName': 'TWC app Database', 'users': {'UserID-1': {'username': 'Peepo', 'DateJoined': '10/05/2024', 'rank': 'code-cadet', 'Operator': True, 'LectureCompletedList': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]}, 'UserID-2': {'username': 'Einstein', 'selectedCourse': 'Python', 'DateJoined': '12/06/2024', 'rank': 'code-cadet', 'Operator': False, 'LectureCompletedList': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]}}, 'courses': 'all courses with their data ...'} &lt;class 'dict'>
+********************
+database Name:  TWC app Database
+user1 username:  Peepo
+user 2 details:  {'username': 'Einstein', 'selectedCourse': 'Python', 'DateJoined': '12/06/2024', 'rank': 'code-cadet', 'Operator': False, 'LectureCompletedList': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]}
+
+</pre>
+
+</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">see json is simple right. its just a dictionary.in javascript its called object but much like dictionaries in python.</pre><br>
+
+            <b class="Name">Einstein: </b><br>
+            <pre class="english">then why we even study xml since json is very good</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">bad question. now, xml is more powerful than json. it can handle more complex data but it itself is complex. and json is simple little kid. so if you can use json use json. but if you go in higher data, you might have to use xml sometimes.</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Now i want all of you to hop on your pc screen and actually try these. experiment on these. failure is best way to learn. if you have any trouble i am here to teach. also did you get the feeel about json parsing? comment your feedback</pre><br>
+            
+            
+            <br><br><br>
+            
+            <h1 class="ending">Next Lecture: using Api with Python.(Applicaton oriented architecturess) </h1>
+        </div>
+    </div>
+</body>
+<script src="../index.js"></script>
+</html>

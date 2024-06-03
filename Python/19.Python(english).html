@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+    <!-- style css -->
+    <link rel='stylesheet' href='../common_designs.css'>
+
+    <!--font english-->
+    <link rel='preconnect' href='https://fonts.googleapis.com'>
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+    <link href='https://fonts.googleapis.com/css2?family=Cagliostro&family=Mukta&display=swap' rel='stylesheet'>
+
+    <!-- font-hindi -->
+    <link rel='preconnect' href='https://fonts.googleapis.com'>
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+    <link href='https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&display=swap' rel='stylesheet'>
+    <title>Web scraping in Python</title>
+</head>
+<body class='english'>
+    <div id='progress-bar-container'>
+        <img id='progress-bar' src='Image resource/girl.png' alt='Progress Indicator'>
+    </div>
+
+    <div id='overlay' class='overlay'>
+        <span id='closeButton' class='close-btn'>&times;</span>
+        <img id='overlayImage' class='overlay-img' src='' alt='Isolated Image'>
+        <div class='zoom-controls'>
+           <button id='zoomIn' class='zoom-btn'>+</button>
+           <button id='zoomOut' class='zoom-btn'>-</button>
+        </div>
+   </div>
+
+    <div class='container'>
+        <h1 class='heading english'><u>Web scraping in Python</u></h1>
+        <div class='divider'></div>
+
+        <audio id='bgMusic' loop>
+             <source src='../TheEndingSong.mp3' type='audio/mpeg'>
+        </audio>
+
+        <div class='content'>
+
+<img src='Image resource\Peepo_teachingPY.PNG' alt='Welcome welcome_folks peepo teaching snake on his neck' class='images'><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">scraping is just a program pretending to  be a browser. looks at webpages, extracts information and loop.
+searvch engines(like chrome,youtube search) also scrape web pages. scraping is also called web crawling. what a browser does is simply handle links. 
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">why to scrape?
+first things first, be careful while scraping because it ,might not be legal scraping some of the data. 
+we scrape to get data from web.  get some of your data back from somewhere . monitor a site. to make a database.
+
+why some scraping illegal?
+because some people who makes websites dont like it, the content you scrape might be copyrighted. you might violate terms of service. so if you  are legally scraping a website, do read its terms and service. 
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">now, for that, we need to parse html and html is a very messy language. so to fix it we have a library called beautiful soup . yes its a library name. i am nor craving for soup.
+first we have to install this soup so 
+you can also go to beautiful Soup website and download the zip file and extract it to a folder named bs4 in your working directory of project and just use             from bs4 import BeautifulSoup
+            </pre><br>
+
+            <b>beautiful soup installation</b>
+            <b>SLide left for more images: </b>
+            <pre class="english ">
+               <b class="Name">Peepo:</b>
+                <div class="horizontal_scroll">
+                    <img src="Image resource/python memes/Fact3.png" alt="meme1" class="images_scroll">
+                    <img src="Image resource/python memes/meme4.png" alt="fact1" class="images_scroll">
+                </div>
+            </pre>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">now we have beautiful soup python files in the folder bs4 of our directory. 
+<pre class='code'>
+<code>
+    <b class='comments'># imports</b>
+import urllib.request, urllib.parse, urllib.error
+from bs4 import BeautifulSoup
+
+url = input("enter the url: ")
+html = urllib.request.urlopen(url).read()
+soup = BeautifulSoup(html , 'html.parser')     <b class='comments'># parsing means analiseing</b>
+<b class='comments'># it makes messy stuff into beautiful</b>
+
+<b class='comments'># retreive all anchor tags  (anchor tags hold the link in a page)</b>
+tags = soup('a')   <b class='comments'># this gives list of all the tags in the document.</b>
+for tag in tags:
+    print(tag.get('href' , None))   <b class='comments'># href is the link.</b>
+
+<b class='comments'># an anchor tag in html looks like This     &lt;a href="https://hostname.com ">some text &lt;/a></b>
+
+</code>
+</pre><br>
+
+OUTPUT:
+
+<pre class='OUTPUT'>
+enter the url: <b class="interact">https://anishbansal.pythonanywhere.com/data/sample.html</b>
+https://google.com
+https://youtube.com
+https://anishbansal.pythonanywhere.com/data/sample.html
+
+</pre>
+
+<button class="toggleBtn">Toggle IDE</button>
+<div class="iframeContainer" >
+<iframe  frameborder="0"></iframe>
+</div><br>
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">thats how you web crawl, one link to other to other.  this marks the beginning of a browser. thats how they are created</pre><br>
+
+            <b>dont worry guys if this does not work for you</b>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">so that was html parsing. making messy html into clean and understanable and reteiving certain tag/links</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Now i want all of you to hop on your pc screen and actually try these. experiment on these. failure is best way to learn. if you have any trouble i am here to teach. also did you get the feeel about html parsing? comment your feedback</pre><br>
+            
+            
+            <br><br><br>
+            
+            <b>SLide left for more images: </b>
+            <pre class="english hilightR">
+               <b class="Name">Peepo:</b>
+                <div class="horizontal_scroll">
+                    <img src="" alt="meme1" class="images_scroll">
+                    <img src="" alt="fact1" class="images_scroll">
+                </div>
+            </pre>
+            
+            <h1 class="ending">Next Lecture: xml and json parsing in Python(sending data)</h1>
+
+        </div>
+    </div>
+</body>
+<script src="../index.js"></script>
+</html>

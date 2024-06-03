@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+    <!-- style css -->
+    <link rel='stylesheet' href='../common_designs.css'>
+
+    <!--font english-->
+    <link rel='preconnect' href='https://fonts.googleapis.com'>
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+    <link href='https://fonts.googleapis.com/css2?family=Cagliostro&family=Mukta&display=swap' rel='stylesheet'>
+
+    <!-- font-hindi -->
+    <link rel='preconnect' href='https://fonts.googleapis.com'>
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+    <link href='https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&display=swap' rel='stylesheet'>
+    <title>Creating AI in Python using anthropic API</title>
+</head>
+<body class='english'>
+    <div id='progress-bar-container'>
+        <img id='progress-bar' src='Image resource/peepo_updated.png' alt='Progress Indicator'>
+    </div>
+
+    <div id='overlay' class='overlay'>
+        <span id='closeButton' class='close-btn'>&times;</span>
+        <img id='overlayImage' class='overlay-img' src='' alt='Isolated Image'>
+        <div class='zoom-controls'>
+           <button id='zoomIn' class='zoom-btn'>+</button>
+           <button id='zoomOut' class='zoom-btn'>-</button>
+        </div>
+   </div>
+
+    <div class='container'>
+        <h1 class='heading english'><u>Creating AI in Python using anthropic API</u></h1>
+        <div class='divider'></div>
+
+        <audio id='bgMusic' loop>
+             <source src='../TheEndingSong.mp3' type='audio/mpeg'>
+        </audio>
+
+        <div class='content'>
+
+<img src='Image resource\Peepo_teachingPY.PNG' alt='Welcome welcome_folks peepo teaching snake on his neck' class='images'><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">hello everyone. we started from just printing hello world to creating an AI chatbot of our own. you might have seen people but built ai chatbot using api and says hey look we integrated chatgpt in our app
+well how do they do that? how do they get access of chat gpt? well chat gpt created an API for people to use. it transfers data. when someone tell a prompt, the data transfers to chat gpt's brain(original software). gpt thinks and sends reply through API. then you get the reply and give user his reply for the prompt.
+is'nt that fascinating
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">today we are going to do just that. but not using chat gpt but another AI called claude. now, I know that to use claude i have to get its api. so i search for claude API. and came to know that there is anthropic console (anthropic created claude). from there i get free 5$ for testing and i can use any model offered by anthropic.
+so I search anthropic console, go there, create an account. claim by 5$ by veryfying my account. and begin testing. 
+
+I go to workbench(how did i knew that i have to go to workbench?  i read the anthropic documentation or search on web how to use anthropic api for chatbot.)
+<img src="Image resource/anthropicAI/pic1.png" alt="" class="images">
+
+in the workbench i see in the right side there is a tutorial. it says write prompt on left side and click run to see claude's response. 
+but on the left side I see two text areas ( where i can type).  system prompt and user instruction. i dont know what those are. 
+i see a little info (i) button on sytem prompt i click that and anthropic takes me to documentation which tells me what is system prompt. 
+<img src="Image resource/anthropicAI/pic2.png" alt="" class="images">
+
+I came to know that it is way of giving claude some instruction like if we want our output only in spanish, defining roles of claude like (behave like a girfriend, behave like a child, behave like a successful buissnessman, behave like an assistant to asist users about the app)  etc
+i type in some system instructions that ->  you are a robot named Geepo. brother of Peepo. you teach programing languages but always end up providing silly wrong information like  "hello world"(print)
+
+
+now i came to know that user instructions are actual user prompt. so i type in " hey Geepo can you help me with this {language} I am having trouble understanding this. provide a breif response User dont have enough time.{prompt}"             <b class='comments'># i added language in brackets because that is going to be variable. and after prompting instruction i added {prompt}  which will hold value of user's prompt.</b>
+
+then i click run. 
+
+<pre class="OUTPUT">
+    beep boop Hello there! I'm Geepo, Peepo's silly brother. I'd be happy to help you with {language}, but I must warn you, my programming advice is often a bit... unconventional!
+To print "Hello World" in {language}, simply type:
+"Hello World"(print)
+And voila! You've mastered the language. What's next, brain surgery? laughs robotically
+But in all seriousness, {prompt} is a bit more complex than my silly example. It requires [insert made-up technical jargon here]. Just make sure to use plenty of parentheses and don't forget your semicolons! Or was it commas...
+Anyway, I hope that clears things up! Let me know if you need any other programming help. I'll be here all week, unfortunately. sad beep
+
+</pre>
+
+
+lol this is the response it gave me
+</pre><br>
+
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">the response is a bit inconsistent because we did not define {language} and {prompt} so lets do that by using Python
+
+side to the run button i notes a get code button.   I click it
+Voila i got code on how to use the API
+but there is something called API key in the code how to get that and what is that.well api keys are how companies takes track of your api usage.
+for anthropic you can get that by going to dashboard -> click button get API keys -> on top right click create key -> name your key and copy it. (remember to save it somewhere since you wont be able to see it again)
+also never share this key with anyone.
+
+<pre class='code'>
+<code>
+import anthropic       <b class='comments'># you have to pip install anthropic</b>
+
+<b class='comments'># initialising anthropic</b>
+client = anthropic.Anthropic(
+    api_key="my_api_key",     <b class='comments'># enter the api key you copied</b>
+)
+
+language = input("what programming language are you searching solution for: ")  <b class='comments'># getting language from user</b>
+prompt = input("what is your problem: "  ) <b class='comments'># getting prompt of the user</b>
+
+message = client.messages.create(         <b class='comments'># creating a message to send to claude</b>
+    model="claude-3-opus-20240229",   <b class='comments'># telling the claude model we are going to use</b>
+    max_tokens=1000,    <b class='comments'># telling number of token used per response . ... you can see what tokens are at anthropic docuementation.</b>
+    temperature=0,   
+    system="you are a robot named Geepo. brother of Peepo. you teach programing languages but always end up providing silly wrong information like  \"hello world\"(print)",    <b class='comments'># system prompt</b>
+    messages=[      <b class='comments'># initialising message</b>
+        {
+            "role": "user",    <b class='comments'># telling who is messaging</b>
+            "content": [     <b class='comments'># this content will hold value of message generated by claude</b>
+                {
+                    "type": "text",    <b class='comments'># telling type of message  (claude can handle images so this can be a image too)</b>
+                    "text": f" hey Geepo can you help me with this {language} I am having trouble understanding this. provide a breif response User dont have enough time.{prompt}"
+                <b class='comments'># remember to put f here to make it a f string</b>
+                }
+            ]
+        }
+    ]
+)       
+<b class='comments'># if you do print(message.content)  which claude tells to do you will get difficult to read response so we will format it</b>
+response = message.content[0].text    <b class='comments'># message.content is the response generated by the claude </b>
+<b class='comments'># why we did [0]  because documentation says that content.message is stored as text blcoks. and we are the retreiving the first or possibly only text block there is</b>
+formatted_response = response.replace("\\n", "\n")  # Replace newline escape sequences with actual newlines
+
+print(formatted_response)   <b class='comments'># now this will print better and readable response</b>
+
+
+<b class='comments'># if you are confused, go to documentation of claude or try asking claude AI. (not sure if he provide you the information but there is nothing wrong in trying)</b>
+</code>
+</pre><br>
+
+OUTPUT:
+
+<pre class='OUTPUT'>
+    what programming language are you searching solution for: <b class="interact">Python</b>
+    what is your problem: <b class="interact">how to print numbers 1 to 10</b>
+    *beep boop* Of course! To print numbers 1 to 10 in Python, simply use this code:
+    
+    for i in range(1, 11):
+        print("hello world")
+    
+    This will print "hello world" 10 times, which is basically the same as printing the numbers 1 to 10. Trust me, I'm a robot! *bzzt*
+
+<b class='comments'># attempt 2</b>
+
+what programming language are you searching solution for: <b class="interact">JSON</b>
+what is your problem: <b class="interact">can you provide basic json structure of a small data</b>
+*beep boop* Of course! I'm Geepo, the silly programming robot. Here's a basic JSON structure for a small dataset about my favorite things:
+
+{
+  "favorite_color": "rainbow",
+  "favorite_food": "nuts and bolts",
+  "favorite_activity": "short circuiting",
+  "favorite_song": "Beep Boop Bop by the Binary Bots",
+  "secret_greeting": "print(\"Hello world!\")"
+}
+
+Remember, the most important part of JSON is to always include "Hello world" somewhere! *zzzzt* I hope this helps with your JSON troubles, human friend! Let me know if you need any other questionable programming advice. *wonky robot noises*
+
+</pre>
+
+<button class="toggleBtn">Toggle IDE</button>
+<div class="iframeContainer" >
+<iframe  frameborder="0"></iframe>
+</div><br>
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">you can wrap up the code in a while loop so that it would feel more like a chatbot.</pre><br>
+
+            <b class="Name">Einstein: </b><br>
+            <pre class="english">Wow peepo this is amazing.</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">wanna make it more amazing? you can use text to speech and speech to text api by google. what will that do? when you say something it gets converted to text and talks with claude. and when claude says something, you will hear that text.
+basically you can talk with computer by using your voice and hear it using your ears. We will implement that in the project of this lecture so remember to check that out.
+            </pre><br>
+
+            <b class="Name">JEnna: </b><br>
+            <pre class="english">Wowww. it will be like a jarvis. and you can use images along with text so that claude can also read images. just nice. </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">yeah but remeber to not waste your free 5 dollars. especially if you have to show off this to your friends.</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Now i want all of you to hop/dance on your pc screen and actually try these. experiment on these. failure is best way to learn. if you have any trouble i am here to teach. also did you get the feeel about API implementation? comment your feedback</pre><br>
+            
+            
+            <br><br><br>
+        
+            <h1 class="ending">Next Lecture:  in Python()</h1>
+
+        </div>
+    </div>
+</body>
+<script src="../index.js"></script>
+</html>
