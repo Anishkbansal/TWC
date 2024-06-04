@@ -19,7 +19,99 @@
         <div class="content">
             <br />
             <b class="Name">Peepo: </b><br />
-            <pre class="english"></pre><br />
+            <pre class="english">Hi everyone. today we will see Inheritance.  its a powerful feature and based on programming rule number 1 do not repeat yourself.</pre><br />
+        
+            <b class="Name">jenna: </b><br>
+            <pre class="english">Yes I learned not to repeat Myself the hard way. because i was writing a complex code. it had like 130 files. now, i wanted to change the location of alll the files. but when i did , My program Broke :(  because all those 130 files have been refrenced in the program, and i have to change the path to each 130 file. It took lots of time and patience</pre><br>
+
+            <b class="Name">Einstein: </b><br>
+            <pre class="english">yeah, it happened with me too </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">anyways lets talk about Inheritance 
+now, suppose there is a person, who has some traits, like he loves his wife, he loves ramen, he is tall, he is fit. etc 
+now, that guy had a child. assuming the child will have all of the traits of his father. he will also have some of his own traits like short-temper, deep-voice etc
+means that the child has everything his father had/have along with traits of his own. 
+we can then say that the child inherited his parent (father)
+why the inheritance helped? the dna of the child does not have to recreate the father's traits. it already have them in it.
+
+IN PYTHON 
+inheritance is exactly like the above example.
+* when we make a new class, we can reuse an existing class and inherit all methods of an existing class. we can also add new methods to our new class.
+* the new class (called child ) have access to all the methods of the old class (called parent) and some of its own too.
+
+child classes are also caled subclasses. 
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">lets see code 
+<pre class='code'>
+<code>
+# Let's define a Dad class
+class Dad:
+    def __init__(self, name, age, favorite_food, hair_color):
+        self.name = name
+        self.age = age
+        self.favorite_food = favorite_food
+        self.hair_color = hair_color
+
+    def teach_life_lesson(self):
+        print(f"{self.name} says: Always eat your {self.favorite_food}!")
+
+    def go_White(self):
+        self.hair_color = "White"
+
+# Now let's create a Son class that inherits from Dad
+class Son(Dad):
+    def __init__(self, name, age, favorite_food, hair_color, grade):   <b class='comments'># grade is son's own trait</b>
+        # Call the __init__ method of the Dad class
+        super().__init__(name, age, favorite_food, hair_color)  <b class='comments'># super()  is used to call init of parent class</b>
+        <b class='comments'># this code allows son to have same variables as dad</b>
+        self.grade = grade
+
+    def play_music(self):
+        print(f"{self.name} is playing music instead of studying!")
+
+    # Override the go_White method from Dad
+    def go_White(self):
+        print(f"{self.name} swears he'll never go bald!")
+
+# Create a Dad instance
+Anish = Dad("Anish", 45, "Ramen", "black")
+Anish.teach_life_lesson()  # Output: Anish says: Always eat your Ramen!
+Anish.go_White()  # Output: Anish.hair_color becomes White
+
+# Create a Son instance
+Rohit = Son("Rohit", 12, "ice cream", "blonde", "B+")
+Rohit.teach_life_lesson()  # Output: Rohit says: Always eat your ice cream!   <b class='comments'># son inherited this method from its parent class. </b>
+Rohit.play_music()  # Output: Rohit is playing music instead of studying!
+Rohit.go_White()  # Output: Rohit swears he'll never go bald!   <b class='comments'># this method has bee defined in son class</b>
+
+# NOTE: you cannot use methods of child class on on parent class instance
+
+</code>
+</pre><br>
+
+OUTPUT:
+
+<pre class='OUTPUT'>
+Anish says: Always eat your Ramen!
+Rohit says: Always eat your ice cream!
+Rohit is playing music instead of studying!
+Rohit swears he'll never go bald!
+</pre>
+
+<button class="toggleBtn">Toggle IDE</button>
+<div class="iframeContainer" >
+<iframe  frameborder="0"></iframe>
+</div><br>
+            </pre><br>
+
+            <!-- dont forget to add a video explain this code -->
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english"></pre><br>
+
         </div>
     </div>
 </body>

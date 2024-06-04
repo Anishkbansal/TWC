@@ -6,3 +6,4 @@ lect 20 data parsing ppt line 101 (define nodes and children too)
 ptoject for lect 20 woked out xml example
  explainjson structure video lect 21
  solved project lect 23 integrating voice system
+ video in lect 27
