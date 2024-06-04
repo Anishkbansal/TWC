@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+    <!-- style css -->
+    <link rel='stylesheet' href='../common_designs.css'>
+
+    <!--font english-->
+    <link rel='preconnect' href='https://fonts.googleapis.com'>
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+    <link href='https://fonts.googleapis.com/css2?family=Cagliostro&family=Mukta&display=swap' rel='stylesheet'>
+
+    <!-- font-hindi -->
+    <link rel='preconnect' href='https://fonts.googleapis.com'>
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+    <link href='https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&display=swap' rel='stylesheet'>
+    <title>More about Objects</title>
+</head>
+<body class='english'>
+    <div id='progress-bar-container'>
+        <img id='progress-bar' src='Image resource/girl.png' alt='Progress Indicator'>
+    </div>
+
+    <div id='overlay' class='overlay'>
+        <span id='closeButton' class='close-btn'>&times;</span>
+        <img id='overlayImage' class='overlay-img' src='' alt='Isolated Image'>
+        <div class='zoom-controls'>
+           <button id='zoomIn' class='zoom-btn'>+</button>
+           <button id='zoomOut' class='zoom-btn'>-</button>
+        </div>
+   </div>
+
+    <div class='container'>
+        <h1 class='heading english'><u>More about Objects</u></h1>
+        <div class='divider'></div>
+
+        <audio id='bgMusic' loop>
+             <source src='../TheEndingSong.mp3' type='audio/mpeg'>
+        </audio>
+
+        <div class='content'>
+
+<img src='Image resource\Peepo_teachingPY.PNG' alt='Welcome welcome_folks peepo teaching snake on his neck' class='images'><br>
+
+            <h1 class="subheading">Object Lifecycle</h1>
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">HI everyone. lets talk some more about objects
+objects are created, used and destroyed 
+constructor and destructor methods are called at the moment of creation and destruction respectively.(they are both optional to use)
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english"><b>Constructor </b>
+the purpose of constructor is to set up some instance variable to have proper values when object is created.  basically its an initialiser.
+<pre class="code">
+class Hello:
+    def __init__(self):
+        self.hello = "Hello"
+        print("I am Constructor.")
+    
+    def speak(self):
+        self.hello  = self.hello + " World!"
+        print(hello)
+
+    def __del__(self):
+        print("i am destructed")
+
+hel = Hello()   <b class='comments'># now hel is an object. hel takes some space in the memory.</b>
+hel.speak()    <b class='comments'># using speak method in the object</b>
+hel.speak()
+
+<b class='comments'># the del method willl be called when there are no more refrences to the object are left</b>
+
+
+<b class='comments'># if we reassign, the destructor is called (optional)</b>
+hel = "Peepo"      <b class='comments'># reassigning the value of hel from an object to a string "Peepo". no refrence remained of object hel.</b>
+<b class='comments'># but we want the memory used as object back! that is why to remove the object completely from the memory, __del__ is used</b>
+<b class='comments'># now we have the memory back and a string uses less memory than an object. so our program is memory efficient. it will use less RAM to run</b>
+print(hel)
+</pre>
+<pre class="OUTPUT">
+I am Constructor.
+Hello World!
+Hello World! World!
+i am destructed   <b class='comments'># this is called when i got rid of all object's refrences. and object no longer exists</b>
+Peepo
+</pre>
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">you can also delete the object by using       del objName        .</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">each instance has its own copy of instance variables. 
+class Employee:
+    def __init__(self,name):
+        self.name = name
+        print(self.name)
+
+a = Emoployee("Charan")  <b class='comments'># this has the variable a.name = Charan</b>
+b = Employee("Rohit")    <b class='comments'># this has the variable b.name = Rohit</b>
+<b class='comments'># both are different object and their variables are different too</b>
+
+<b class='comments'># I revised it from previous class in case you were confused</b>
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Now i want all of you to hop on your pc screen and actually try these. experiment on these. failure is best way to learn. if you have any trouble i am here to teach. also did you get the feeel about Objects? comment your feedback</pre><br>
+            
+            
+            <br><br><br>
+            
+            <h1 class="ending">Next Lecture: Inheritance in Python</h1>
+
+        </div>
+    </div>
+</body>
+<script src="../index.js"></script>
+</html>

@@ -37,7 +37,74 @@ window.addEventListener('scroll', () => {
     });
   }
 
-// Function to create a copy button for each <pre> element with class 'code'
+
+// dynamic html generation
+
+//head tag 
+function getRelativePath(src) {
+  if (window.location.pathname.includes('Projects/lecture%20projects')) { return `../../${src}`;} 
+  else { return src; }
+}
+
+const links = [
+  { rel: 'stylesheet', href: getRelativePath("../common_designs.css") },
+  { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+  { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: 'anonymous' },
+  { href: 'https://fonts.googleapis.com/css2?family=Cagliostro&family=Mukta&display=swap', rel: 'stylesheet' },
+  { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+  { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: 'anonymous' },
+  { href: 'https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&display=swap', rel: 'stylesheet' }
+];
+
+// Loop through the array and create link elements
+links.forEach(linkDetails => {
+  const link = document.createElement('link');
+
+  // Set attributes for each link element
+  Object.keys(linkDetails).forEach(attr => {
+      link.setAttribute(attr, linkDetails[attr]);
+  });
+
+  // Append the link element to the head section
+  document.head.appendChild(link);
+
+  console.log('Link added to head:', link);
+});
+
+// adding body content
+const overlayDiv = document.createElement('div');
+overlayDiv.id = 'overlay';
+overlayDiv.className = 'overlay';
+overlayDiv.innerHTML = `
+    <span id='closeButton' class='close-btn'>&times;</span>
+    <img id='overlayImage' class='overlay-img' src='' alt='Isolated Image'>
+    <div class='zoom-controls'>
+       <button id='zoomIn' class='zoom-btn'>+</button>
+       <button id='zoomOut' class='zoom-btn'>-</button>
+    </div>
+`;
+document.body.insertBefore(overlayDiv, document.body.firstChild.nextSibling);
+
+// Create audio element
+const audio = document.createElement('audio');
+audio.id = 'bgMusic';
+audio.loop = true;
+audio.innerHTML = `
+<source src='${getRelativePath("../TheEndingSong.mp3")}' type='audio/mpeg'>
+`
+document.querySelector('div.container').appendChild(audio);
+
+// Create img element
+const img = document.createElement('img');
+img.src = getRelativePath("Image resource/Peepo_teachingPY.PNG")
+img.alt = 'Welcome welcome_folks peepo teaching snake on his neck';
+img.className = 'images';
+document.querySelector('div.content').insertBefore(img , document.querySelector('div.content').firstChild);
+
+console.log('Content added to body');
+
+
+
 // Function to create a copy button for each <pre> element with class 'code'
 function addCopyButtons() {
   // Get all <pre> elements with class 'code'
@@ -47,7 +114,7 @@ function addCopyButtons() {
   codeElements.forEach(function(element) {
     // Create a copy button
     var copyButton = document.createElement("button");
-    copyButton.innerHTML = "<img src='images/CopyButtonSymbol.png' alt='Copy Code'>";
+    copyButton.innerHTML = "<img src='../images/CopyButtonSymbol.png' alt='Copy Code'>";
     copyButton.title = "Copy Code Without Comments";
     copyButton.onclick = function() {
       copyCodeWithoutComments(element);
