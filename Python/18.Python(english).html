@@ -197,7 +197,9 @@ try:
         <b class='comments'># Send an HTTP GET request this request for data from the server</b>
         request = f"GET {file_path} HTTP/1.1\r\nHost: {host}\\r\\n\\r\\n"   <b class='comments'># the thing \r\n\r\n  marks the end of html header and start of body. you will know it during web development</b>
         mysocket.sendall(request.encode())   <b class='comments'># this code sends the request to server in an encoded way (encoded into bytes). like secret code language</b>
-        <b class='comments'># by default it encodes into UTF-8 . you can search for utf-8 from ai using the prompt: why was uthf-8 foremd.what is utf=8 , use of it, and how does it encode strings.</b>
+       
+        <b class='comments'># by default it encodes into UTF-8 . you can search for utf-8 from ai using the prompt1 (DONT USE THIS one): why was uthf-8 foremd.what is utf=8 , use of it, and how does it encode strings.</b>
+        <b class='comments hilightBlack'># you can use PROMPT: can you please explain why is utf-8. with a story of the past. include information given below: utf-8 uses, why it is default? what was before utf-8 and what was its problem? what was the need of an encoding system at all </b>
 
         <b class='comments'># Receive the response</b>
         response = b''    <b class='comments'># now website will give some respose and this will recieve it and save it in response variable</b>
