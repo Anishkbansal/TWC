@@ -1,62 +1,39 @@
 <!DOCTYPE html>
-<html lang='en'>
+
+<html lang="en">
+
 <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-
-    <!-- style css -->
-    <link rel='stylesheet' href='../common_designs.css'>
-
-    <!--font english-->
-    <link rel='preconnect' href='https://fonts.googleapis.com'>
-    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-    <link href='https://fonts.googleapis.com/css2?family=Cagliostro&family=Mukta&display=swap' rel='stylesheet'>
-
-    <!-- font-hindi -->
-    <link rel='preconnect' href='https://fonts.googleapis.com'>
-    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-    <link href='https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&display=swap' rel='stylesheet'>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Intro do Operators</title>
 </head>
-<body class='english'>
-    <div id='progress-bar-container'>
-        <img id='progress-bar' src='Image resource/peepo_updated.png' alt='Progress Indicator'>
+
+<body class="english">
+    <div id="progress-bar-container">
+        <img alt="Progress Indicator" id="progress-bar" src="Image resource/peepo_updated.png" />
     </div>
 
-    <div id="overlay" class="overlay">
-        <span id="closeButton" class="close-btn">&times;</span>
-        <img id="overlayImage" class="overlay-img" src="" alt="Isolated Image">
-        <div class="zoom-controls">
-            <button id="zoomIn" class="zoom-btn">+</button>
-            <button id="zoomOut" class="zoom-btn">-</button>
-        </div>
-    </div>
-    
-    <div class='container'>
-        <h1 class='heading english'><u>Introduction to Operators</u></h1>
-        <div class='divider'></div>
-
-        <div class='content'>
-
-<img src='Image resource\Peepo_teachingPY.PNG' alt='Welcome welcome_folks peepo teaching snake on his neck' class='images'><br>
-
-            <b class="Name">Jenna: </b><br>
-            <pre class="english">Guys today Peepo is not coming i am here to teach</pre><br>
-            <img src="Image resource/Jenna.png" alt="" class="images"><br>
-
-            <b class="Name">Jenna: </b><br>
-            <pre class="english">Today we will learn about Operators. Operators are the doctors who operate the patient....</pre><br>
-
-            <b class="Name">Peepo: </b><br>
-            <pre class="english">oops oops oops wait. I guess i have to come today. Sorry for inconvinience.</pre><br>
-            <img src="Image resource/Peepo sliding.png" alt="image of peepo coming in hurry" class="images">
-
-            <b class="Name">Peepo: </b><br>
-            <pre class="english">please, have a seat Jenna. so Operators are the ones who does certain operations like comparing values, adding values etc. there are three types in Python and lets go through them one by ones</pre><br>
-
+    <div class="container">
+        <h1 class="heading english"><u>Introduction to Operators</u></h1>
+        <div class="divider"></div>
+        <div class="content">
+            <br />
+            <b class="Name">Jenna: </b><br />
+            <pre class="english">Guys today Peepo is not coming i am here to teach</pre><br />
+            <img alt="" class="images" src="Image resource/Jenna.png" /><br />
+            <b class="Name">Jenna: </b><br />
+            <pre
+                class="english">Today we will learn about Operators. Operators are the doctors who operate the patient....</pre>
+            <br />
+            <b class="Name">Peepo: </b><br />
+            <pre class="english">oops oops oops wait. I guess i have to come today. Sorry for inconvinience.</pre><br />
+            <img alt="image of peepo coming in hurry" class="images" src="Image resource/Peepo sliding.png" />
+            <b class="Name">Peepo: </b><br />
+            <pre
+                class="english">please, have a seat Jenna. so Operators are the ones who does certain operations like comparing values, adding values etc. there are three types in Python and lets go through them one by ones</pre>
+            <br />
             <h1 class="subheading">Arithematic Operators</h1>
-
-            <b class="Name">Peepo: </b><br>
+            <b class="Name">Peepo: </b><br />
             <pre class="english">These are used for basic mathematical operations. 
 <pre class="hilightG">
     
@@ -69,11 +46,10 @@
 7. '**' operator. It is used as exponentiation operator 
 
 </pre>
-            </pre><br>
-
-            <b class="Name">Peepo: </b><br>
+            </pre><br />
+            <b class="Name">Peepo: </b><br />
             <pre class="english">Lets use examples. 
-<pre class='code'>
+<pre class="code">
 <code>
 a = 5
 b = 2
@@ -85,119 +61,131 @@ print(a/b)
 print(a//b)   <pre class="comments">#the floor division operator divides the number and round off to give integer.and it always round of towars smaller number
 for examples 7/2 or (3.5) you think might be 4 but, 3 is smaller so output will be 3. and tell the output if -7/2 or (-3.4). try it in your terminal(search in windows search bar and you will find terminal)
     </pre>
-print(a%b)
-print(a**b)
+            print(a%b)
+            print(a**b)
 
 
-a+=b <pre class='comments'># increments/adds the given value and store it in the same variable(container). similar to:
+            a+=b
+            <pre class="comments"># increments/adds the given value and store it in the same variable(container). similar to:
  a = a+b</pre>
-print(a)
-a-=b <pre class='comments'># decrements/subtract the given value and store it in the same variable(container). similar to:
+            print(a)
+            a-=b
+            <pre class="comments"># decrements/subtract the given value and store it in the same variable(container). similar to:
  a = a-b</pre>
-print(a)
+            print(a)
 
-</code>
-</pre><br>
+            </code>
+            </pre><br />
 
-OUTPUT:
+            OUTPUT:
 
-<pre class='OUTPUT'>
+            <pre class="OUTPUT">
 7  <pre class="comments"># (5+2) = 7</pre>
-3  <pre class='comments'># (5-2) = 3</pre>
-10  <pre class='comments'># 5*2 = 10</pre>
-2.5  <pre class='comments'># 5/2 = 2.5</pre>
-2  <pre class='comments'># floor of 2.5 = 2</pre>
-1  <pre class='comments'># 2*2 = 4  remainder = 1</pre>
-25  <pre class='comments'># 5^2 = 5*5 = 25</pre>
-7  <pre class='comments'># 5+2 = 7</pre>
-5  <pre class='comments'># 7-2 = 5</pre>
+            3
+            <pre class="comments"># (5-2) = 3</pre>
+            10
+            <pre class="comments"># 5*2 = 10</pre>
+            2.5
+            <pre class="comments"># 5/2 = 2.5</pre>
+            2
+            <pre class="comments"># floor of 2.5 = 2</pre>
+            1
+            <pre class="comments"># 2*2 = 4  remainder = 1</pre>
+            25
+            <pre class="comments"># 5^2 = 5*5 = 25</pre>
+            7
+            <pre class="comments"># 5+2 = 7</pre>
+            5
+            <pre class="comments"># 7-2 = 5</pre>
 
 
 
-</pre>
-            </pre><br>
-
+            </pre>
+            </pre><br />
             <button class="toggleBtn">Toggle IDE</button>
-            <div class="iframeContainer" >
-            <iframe  frameborder="0"></iframe>
-            </div><br>
-
-            <b class="Name">Einstein: </b><br>
-            <pre class="english">Operators are Easy. khikhikhi</pre><br>
-
-            <b class="Name">Peepo: </b><br>
-            <pre class="english">*(throuws duster)  hey thats my style. khikhikhi</pre><br>
-
+            <div class="iframeContainer">
+                <iframe frameborder="0"></iframe>
+            </div><br />
+            <b class="Name">Einstein: </b><br />
+            <pre class="english">Operators are Easy. khikhikhi</pre><br />
+            <b class="Name">Peepo: </b><br />
+            <pre class="english">*(throuws duster)  hey thats my style. khikhikhi</pre><br />
             <h1 class="subheading">Comparison Operators: </h1>
-
-            <b class="Name">Peepo: </b><br>
+            <b class="Name">Peepo: </b><br />
             <pre class="english">Alright, Comparison Operators are even easier lets list them first and then write code for them
 
 <pre class="hilightR">
-<pre class='comments'>#They always give boolean value</pre>
-1. '==' checks if both values are equal. returns True if they are equal
-2. '!=' checks if both values are not euqal. returns True if they are not equal
-3. '<' checks if value is less than the other. returns True if it is less
-4. '>' checks if value is greater than the other. returns True if it is greater
-5. '<=' checks if value is less or equal to other. returns True if it is
-6. '>=' checks if value is grater or equal to the other. returns True if it is 
+<pre class="comments">#They always give boolean value</pre>
+            1. '==' checks if both values are equal. returns True if they are equal
+            2. '!=' checks if both values are not euqal. returns True if they are not equal
+            3. '&lt;' checks if value is less than the other. returns True if it is less
+            4. '&gt;' checks if value is greater than the other. returns True if it is greater
+            5. '&lt;=' checks if value is less or equal to other. returns True if it is
+            6. '&gt;=' checks if value is grater or equal to the other. returns True if it is
 
-</pre>
+            </pre>
 
-            </pre><br>
-
-            <b class="Name">Peepo: </b><br>
+            </pre><br />
+            <b class="Name">Peepo: </b><br />
             <pre class="english">Lets take examples
 
-<pre class='code'>
+<pre class="code">
 <code>
 a = 10
 b = 4
 c = 10
 
-1. print(a==b, type(a==b))   <pre class='comments'># equal equals to operator</pre>
-2. print(a!=b)  <pre class='comments'># not equals to</pre>
-3. print(c!=a)  
-4. print(a&lt;b)    <pre class='comments'># less than operator</pre>
-5. print(a>b)   <pre class='comments'># greater than operator</pre>
-6. print(a>c)  
-7. print(c<=b)  <pre class='comments'># less than equals to operator</pre>
-8. print(c>=b)  <pre class='comments'># greater than equals to operator</pre>
-9. print(a>=c)
+1. print(a==b, type(a==b))   <pre class="comments"># equal equals to operator</pre>
+            2. print(a!=b)
+            <pre class="comments"># not equals to</pre>
+            3. print(c!=a)
+            4. print(a&lt;b)
+            <pre class="comments"># less than operator</pre>
+            5. print(a&gt;b)
+            <pre class="comments"># greater than operator</pre>
+            6. print(a&gt;c)
+            7. print(c&lt;=b)
+            <pre class="comments"># less than equals to operator</pre>
+            8. print(c&gt;=b)
+            <pre class="comments"># greater than equals to operator</pre>
+            9. print(a&gt;=c)
 
 
-</code>
-</pre><br>
+            </code>
+            </pre><br />
 
-OUTPUT:
+            OUTPUT:
 
-<pre class='OUTPUT'>
+            <pre class="OUTPUT">
 
-1. False &lt;class 'bool'&gt; <pre class='comments'># 10 is not equal to 4 . and == returns true if they were equal</pre>
-2. True <pre class='comments'># != returns True if they are not equal</pre>
-3. False <pre class='comments'># 10 is equal to 10</pre>
-4. False <pre class='comments'># 10 is not less than 4</pre>
-5. True <pre class='comments'># 10 is greater than 4</pre>
-6. False <pre class='comments'># 10 is not greater than 10</pre>
-7. False
-8. True
-9. True <pre class='comments'># 10 is not greater than 10 but but. its equals to 10</pre>
+1. False &lt;class 'bool'&gt; <pre class="comments"># 10 is not equal to 4 . and == returns true if they were equal</pre>
+            2. True
+            <pre class="comments"># != returns True if they are not equal</pre>
+            3. False
+            <pre class="comments"># 10 is equal to 10</pre>
+            4. False
+            <pre class="comments"># 10 is not less than 4</pre>
+            5. True
+            <pre class="comments"># 10 is greater than 4</pre>
+            6. False
+            <pre class="comments"># 10 is not greater than 10</pre>
+            7. False
+            8. True
+            9. True
+            <pre class="comments"># 10 is not greater than 10 but but. its equals to 10</pre>
 
-</pre>
-            </pre><br>
-
+            </pre>
+            </pre><br />
             <button class="toggleBtn">Toggle IDE</button>
-            <div class="iframeContainer" >
-            <iframe  frameborder="0"></iframe>
-            </div><br>
-
-            <b class="Name">Peepo: </b><br>
-            <pre class="english">I hope these will be easy for you all. if you have any problem contact 46415. I mean contact Peepo bot</pre><br>
-
-
+            <div class="iframeContainer">
+                <iframe frameborder="0"></iframe>
+            </div><br />
+            <b class="Name">Peepo: </b><br />
+            <pre
+                class="english">I hope these will be easy for you all. if you have any problem contact 46415. I mean contact Peepo bot</pre>
+            <br />
             <h1 class="subheading">Logical Operators</h1>
-
-            <b class="Name">Peepo: </b><br>
+            <b class="Name">Peepo: </b><br />
             <pre class="english">Logical operators are similar to Comparison operators. Lets list them down first
 
 <pre class="hilightPur">
@@ -207,66 +195,68 @@ OUTPUT:
 4. 'is not'. True of both values does not refer to same container/object (like != which also compares the address of the value)
 </pre>
 
-<pre class='code'>
+            <pre class="code">
 <code>
-print('a' in 'apple')  <pre class='comments'># True if 'a' exists in string 'apple'</pre>
-print('a' not in 'apple') <pre class='comments'># True if 'a' does not exists in string 'apple'</pre>
-print('z' not in 'apple') <pre class='comments'># True if 'z' does not exists in string 'apple'</pre>
-a = [56, 76, 98]
-c = [56, 76, 98]
-b = a
-print(a is c)
-print(a is b)
+print('a' in 'apple')  <pre class="comments"># True if 'a' exists in string 'apple'</pre>
+            print('a' not in 'apple')
+            <pre class="comments"># True if 'a' does not exists in string 'apple'</pre>
+            print('z' not in 'apple')
+            <pre class="comments"># True if 'z' does not exists in string 'apple'</pre>
+            a = [56, 76, 98]
+            c = [56, 76, 98]
+            b = a
+            print(a is c)
+            print(a is b)
 
-</code>
-</pre><br>
+            </code>
+            </pre><br />
 
-OUTPUT:
-
-
-<pre class='OUTPUT'>
-
-True <pre class='comments'># the first letter of 'apple' is 'a'</pre>
-False
-True
-False  <pre class='comments'># a and c may have same values but they hold two different places in the memory</pre>
-True  <pre class='comments'># (b = a) is like giving another name to a. so both b and a are refrencing the same value and at the same address</pre>
+            OUTPUT:
 
 
-</pre>
-            </pre><br>
+            <pre class="OUTPUT">
 
+True <pre class="comments"># the first letter of 'apple' is 'a'</pre>
+            False
+            True
+            False
+            <pre class="comments"># a and c may have same values but they hold two different places in the memory</pre>
+            True
+            <pre
+                class="comments"># (b = a) is like giving another name to a. so both b and a are refrencing the same value and at the same address</pre>
+
+
+            </pre>
+            </pre><br />
             <button class="toggleBtn">Toggle IDE</button>
-            <div class="iframeContainer" >
-            <iframe  frameborder="0"></iframe>
-            </div><br>
-
-            <b class="Name">Peepo: </b><br>
-            <pre class="english">congrats we have completed the lecture about operators. now there are so many operators. do you have to learn them all? No!. you just need to know that something like this exists and in this upcoming AI era just knowing how things work is enough.</pre><br>
-
-            <b class="Name">Brook: </b><br>
-            <pre class="english">Woof! Woof!</pre><br>
-
-            <b class="Name">Peepo: </b><br>
-            <pre class="english">Now i want all of you to hop on your pc screen and actually try these. experiment on these. failure is best way to learn. if you have any trouble i am here to teach. also did you get the feeel about Operators? comment your feedback</pre><br>
-
-            <br><br><br>
-
+            <div class="iframeContainer">
+                <iframe frameborder="0"></iframe>
+            </div><br />
+            <b class="Name">Peepo: </b><br />
+            <pre
+                class="english">congrats we have completed the lecture about operators. now there are so many operators. do you have to learn them all? No!. you just need to know that something like this exists and in this upcoming AI era just knowing how things work is enough.</pre>
+            <br />
+            <b class="Name">Brook: </b><br />
+            <pre class="english">Woof! Woof!</pre><br />
+            <b class="Name">Peepo: </b><br />
+            <pre
+                class="english">Now i want all of you to hop on your pc screen and actually try these. experiment on these. failure is best way to learn. if you have any trouble i am here to teach. also did you get the feeel about Operators? comment your feedback</pre>
+            <br />
+            <br /><br /><br />
             <b>SLide left for more images: </b>
             <pre class="english hilightPur">
                <b class="Name">Peepo:</b>
                                 <div class="horizontal_scroll">
-                                       <img src="Image resource/python memes/meme1.png" alt="meme1" class="images_scroll">
-                                       <img src="Image resource/python memes/Fact1.png" alt="fact1" class="images_scroll">
+                                       <img alt="meme1" class="images_scroll" src="Image resource/python memes/meme1.png"/>
+                                       <img alt="fact1" class="images_scroll" src="Image resource/python memes/Fact1.png"/>
 
                               </div>
                         </pre>
-
-         <h1 class="ending">Next Lecture: Conditionals in Python(important)</h1>
-         <h6 class="english">The difficulty level is going to get higher after the conditionals</h6>
-
+            <h1 class="ending">Next Lecture: Conditionals in Python(important)</h1>
+            <h6 class="english">The difficulty level is going to get higher after the conditionals</h6>
         </div>
     </div>
 </body>
 <script src="../index.js"></script>
+
 </html>

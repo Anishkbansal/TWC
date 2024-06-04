@@ -1,59 +1,35 @@
 <!DOCTYPE html>
-<html lang='en'>
+
+<html lang="en">
+
 <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <!-- style css -->
-    <link rel='stylesheet' href='../common_designs.css'>
-
     <!--font english-->
-    <link rel='preconnect' href='https://fonts.googleapis.com'>
-    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-    <link href='https://fonts.googleapis.com/css2?family=Cagliostro&family=Mukta&display=swap' rel='stylesheet'>
-
     <!-- font-hindi -->
-    <link rel='preconnect' href='https://fonts.googleapis.com'>
-    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-    <link href='https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&display=swap' rel='stylesheet'>
     <title>Recursion in Python</title>
 </head>
-<body class='english'>
-    <div id='progress-bar-container'>
-        <img id='progress-bar' src='Image resource/girl.png' alt='Progress Indicator'>
+
+<body class="english">
+    <div id="progress-bar-container">
+        <img alt="Progress Indicator" id="progress-bar" src="Image resource/girl.png" />
     </div>
+    <div class="container">
+        <h1 class="heading english"><u>Recursion in Python</u></h1>
+        <div class="divider"></div>
 
-    <div id='overlay' class='overlay'>
-        <span id='closeButton' class='close-btn'>&times;</span>
-        <img id='overlayImage' class='overlay-img' src='' alt='Isolated Image'>
-        <div class='zoom-controls'>
-           <button id='zoomIn' class='zoom-btn'>+</button>
-           <button id='zoomOut' class='zoom-btn'>-</button>
-        </div>
-   </div>
-
-    <div class='container'>
-        <h1 class='heading english'><u>Recursion in Python</u></h1>
-        <div class='divider'></div>
-
-        <audio id='bgMusic' loop>
-             <source src='../TheEndingSong.mp3' type='audio/mpeg'>
-        </audio>
-
-        <div class='content'>
-
-<img src='Image resource\Peepo_teachingPY.PNG' alt='Welcome welcome_folks peepo teaching snake on his neck' class='images'><br>
-
-            <b class="Name">Peepo: </b><br>
-            <pre class="english">Welcome everyone. this is Peepo talking. yes i know that you know who i am because you can read the name written in blue above this text...</pre><br>
-
-            <b class="Name">Einstein: </b><br>
-            <pre class="english">Wait, did you just break the 4th wall? </pre><br>
-
-            <b class="Name">Peepo: </b><br>
-            <pre class="english">whats that? anyways lets start with our lecture.</pre><br>
-
-            <b class="Name">Peepo: </b><br>
+        <div class="content">
+            <br />
+            <b class="Name">Peepo: </b><br />
+            <pre
+                class="english">Welcome everyone. this is Peepo talking. yes i know that you know who i am because you can read the name written in blue above this text...</pre>
+            <br />
+            <b class="Name">Einstein: </b><br />
+            <pre class="english">Wait, did you just break the 4th wall? </pre><br />
+            <b class="Name">Peepo: </b><br />
+            <pre class="english">whats that? anyways lets start with our lecture.</pre><br />
+            <b class="Name">Peepo: </b><br />
             <pre class="english hilightG">So today we will know about Recursion.
 recursions are basically functions. but whats the difference? well when we call the function itself inside of the same function. we call it recursion.
 
@@ -67,16 +43,16 @@ def average(c,d)
     return(avg)
 </code>
 </pre>
-    
-<b class='comments'># simple program to find average of two numbers.</b>
 
-now suppose a function fun . so can we call the function fun inside of fun itself ? 
-            </pre><br>
+            <b class="comments"># simple program to find average of two numbers.</b>
 
-            <b class="Name">Einstein: </b><br>
-            <pre class="english">I gues since you are talking about it. we can call it. but how could it be possible and why do we actually want to do that?</pre><br>
-
-            <b class="Name">Peepo: </b><br>
+            now suppose a function fun . so can we call the function fun inside of fun itself ?
+            </pre><br />
+            <b class="Name">Einstein: </b><br />
+            <pre
+                class="english">I gues since you are talking about it. we can call it. but how could it be possible and why do we actually want to do that?</pre>
+            <br />
+            <b class="Name">Peepo: </b><br />
             <pre class="english">yes you are right we can call a function inside itself, inside its own body(the code it contains [the indented block]) .   However, it's essential to have a base case that stops the recursion to avoid an infinite loop.
 
 <pre class="enlgish hilightPur">
@@ -88,7 +64,7 @@ factorial(6) = 6*5*4*3*2*1
 factorial(5) =   5*4*3*2*1
 factorial(4) =     4*3*2*1  
 factorial(3) =       3*2*1
-factorial(0) = 1   <b class='comments'># by defination</b>
+factorial(0) = 1   <b class="comments"># by defination</b>
 
 NOTE that the factorial of zero is 1.   why? dont ask me i did not invent it.
 
@@ -99,11 +75,11 @@ in same manner,
 <strong>factorial(n) = n * factorail(n-1)  = n* (n-1) * factorial( (n-1) - 1 ) </strong>unless n-1 is zero 
 I think we are getting somewhere
 
-<pre class='code'>
+<pre class="code">
 <code>
 def factorial(n):
     if(n==0 or n==1):
-        return 1    <b class='comments'># because zero factorial is one. and if by chance n-1 == 0 then we dont multiply the factorial by zero. or even go the negative integers.</b>
+        return 1    <b class="comments"># because zero factorial is one. and if by chance n-1 == 0 then we dont multiply the factorial by zero. or even go the negative integers.</b>
     else:
         facto = n * factorial(n-1) 
         return facto
@@ -111,41 +87,40 @@ n = int(input("tell me the you want factorial of : \n"))
 print(factorial(n))
 
 
-<b class='comments'># for fun, try putting the value of n = 100  and try to read that number. python did 100 two digit multiplication in split second</b>
-<b class='comments'># you can also try factorail(1000) khikhikhi  nah! it wont work because Python has a recursion limit about how many times you can call a function inside itself</b>
-<b class='comments'># number of times you call a function in itself is called its depth . </b>
-<b class='comments'># surprisingly you can get factorial of 999 max but it gives me error at 1000. while my normal calculator only count upto 170!</b>
+<b class="comments"># for fun, try putting the value of n = 100  and try to read that number. python did 100 two digit multiplication in split second</b>
+<b class="comments"># you can also try factorail(1000) khikhikhi  nah! it wont work because Python has a recursion limit about how many times you can call a function inside itself</b>
+<b class="comments"># number of times you call a function in itself is called its depth . </b>
+<b class="comments"># surprisingly you can get factorial of 999 max but it gives me error at 1000. while my normal calculator only count upto 170!</b>
 
 </code>
-</pre><br>
+</pre><br />
 
-OUTPUT:
+            OUTPUT:
 
-<pre class='OUTPUT'>
-<b class='comments'># run 1</b>
+            <pre class="OUTPUT">
+<b class="comments"># run 1</b>
 tell me the you want factorial of : 
 <b class="interact">5</b>
 120
-<b class='comments'># run 2</b>
+<b class="comments"># run 2</b>
 tell me the you want factorial of : 
 <b class="interact">9</b>
 362880
-<b class='comments'># run 3</b>
+<b class="comments"># run 3</b>
 tell me the you want factorial of : 
 <b class="interact">3</b>
 6
 
 </pre>
 
-<button class="toggleBtn">Toggle IDE</button>
-<div class="iframeContainer" >
-<iframe  frameborder="0"></iframe>
-</div><br>
+            <button class="toggleBtn">Toggle IDE</button>
+            <div class="iframeContainer">
+                <iframe frameborder="0"></iframe>
+            </div><br />
 
-</pre>   
-            </pre><br>
-
-            <b class="Name">Einstein: </b><br>
+            </pre>
+            </pre><br />
+            <b class="Name">Einstein: </b><br />
             <pre class="english">Well Peepo we can use a for loop to get the same functionality, why use recursion when it has a limit and for loop does not
 
 <pre class="code">
@@ -157,23 +132,19 @@ def factorial(n):
     return result
 </code>
 </pre>
-            </pre><br>
-
-            <b class="Name">Peepo: </b><br>
+            </pre><br />
+            <b class="Name">Peepo: </b><br />
             <pre class="english">Well this is just a simple recusrsive program. but some complex program may be very hard to read in iterative method like for loop. 
 recursion is elegent used for complex programs but still iterative is better because it also uses less memory.
 In general, you should prefer recursion when the problem has a natural recursive structure or when the recursive solution is significantly more concise and readable than the iterative approach. However, if performance or memory usage is a concern, or if the iterative solution is simpler to understand, then an iterative approach might be preferred.
-            </pre><br>
-
-            <b class="Name">Einstein: </b><br>
-            <pre class="english">then basically recursion has no use. </pre><br>
-
-            <b class="Name">Peepo: </b><br>
+            </pre><br />
+            <b class="Name">Einstein: </b><br />
+            <pre class="english">then basically recursion has no use. </pre><br />
+            <b class="Name">Peepo: </b><br />
             <pre class="english">the simple answer, it depends. some programs are better written in recursion way. because they use a reccursive approach.
 I am confusing you i guess. i just mean to say that if you understand recursion its good. and if you dont, dont worry you will be good to go. but must know that something like this exists.and its concept
-            </pre><br>
-
-            <b class="Name">Peepo: </b><br>
+            </pre><br />
+            <b class="Name">Peepo: </b><br />
             <pre class="english hilightR">lets have some more examples. 
 <strong>Example: Fibbonaci series</strong>
 first let us know what is fibbonaci series
@@ -192,11 +163,11 @@ f(n) = f(n-1) + f(n-2)
 
 
 first try to make it yourself, and only then see this code. promise me. 
-<pre class='code'>
+<pre class="code">
 <code>
 def fibonacci(n):
     # Base cases
-    if n <= 0:
+    if n &lt;= 0:
         return 0
     elif n == 1:
         return 1
@@ -208,11 +179,11 @@ n = int(input("what number of the series you want to see? "))
 print(fibonacci(n))
 
 </code>
-</pre><br>
+</pre><br />
 
-OUTPUT:
+            OUTPUT:
 
-<pre class='OUTPUT'>
+            <pre class="OUTPUT">
 what number of the series you want to see? <b class="interact">1</b>
 1
 what number of the series you want to see? <b class="interact">2</b> 
@@ -227,33 +198,32 @@ number of the series you want to see? <b class="interact">10</b>
 55
 </pre>
 
-<button class="toggleBtn">Toggle IDE</button>
-<div class="iframeContainer" >
-<iframe  frameborder="0"></iframe>
-</div><br>
+            <button class="toggleBtn">Toggle IDE</button>
+            <div class="iframeContainer">
+                <iframe frameborder="0"></iframe>
+            </div><br />
 
-            </pre><br>
-
-            <b class="Name">Peepo: </b><br>
-            <pre class="english">Thats about today's lecture See you in next one. I say once again if you did not understand this, do not worry.</pre><br>
-
-            <b class="Name">Peepo: </b><br>
-            <pre class="english">Now i want all of you to hop on your pc screen and actually try these. experiment on these. failure is best way to learn. if you have any trouble i am here to teach. also did you get the feeel about Recursion? comment your feedback</pre><br>
-            
-            
-            <br><br><br>
-            
+            </pre><br />
+            <b class="Name">Peepo: </b><br />
+            <pre
+                class="english">Thats about today's lecture See you in next one. I say once again if you did not understand this, do not worry.</pre>
+            <br />
+            <b class="Name">Peepo: </b><br />
+            <pre
+                class="english">Now i want all of you to hop on your pc screen and actually try these. experiment on these. failure is best way to learn. if you have any trouble i am here to teach. also did you get the feeel about Recursion? comment your feedback</pre>
+            <br />
+            <br /><br /><br />
             <b>SLide left for more images: </b>
             <pre class="english hilightB">
                <b class="Name">Peepo:</b>
                 <div class="horizontal_scroll">
-                    <img src="Image resource/python memes/fact5.png" alt="fact1" class="images_scroll">
+                    <img alt="fact1" class="images_scroll" src="Image resource/python memes/fact5.png"/>
                 </div>
             </pre>
-            
             <h1 class="ending">Next Lecture: Error handing in Python(prevent those red messages)</h1>
         </div>
     </div>
 </body>
 <script src="../index.js"></script>
+
 </html>

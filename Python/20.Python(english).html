@@ -1,66 +1,42 @@
 <!DOCTYPE html>
-<html lang='en'>
+
+<html lang="en">
+
 <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <!-- style css -->
-    <link rel='stylesheet' href='../common_designs.css'>
-
     <!--font english-->
-    <link rel='preconnect' href='https://fonts.googleapis.com'>
-    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-    <link href='https://fonts.googleapis.com/css2?family=Cagliostro&family=Mukta&display=swap' rel='stylesheet'>
-
     <!-- font-hindi -->
-    <link rel='preconnect' href='https://fonts.googleapis.com'>
-    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-    <link href='https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&display=swap' rel='stylesheet'>
     <title>XML parsing</title>
 </head>
-<body class='english'>
-    <div id='progress-bar-container'>
-        <img id='progress-bar' src='Image resource/Jenna.png' alt='Progress Indicator'>
+
+<body class="english">
+    <div id="progress-bar-container">
+        <img alt="Progress Indicator" id="progress-bar" src="Image resource/Jenna.png" />
     </div>
+    <div class="container">
+        <h1 class="heading english"><u>XML parsing</u></h1>
+        <div class="divider"></div>
 
-    <div id='overlay' class='overlay'>
-        <span id='closeButton' class='close-btn'>&times;</span>
-        <img id='overlayImage' class='overlay-img' src='' alt='Isolated Image'>
-        <div class='zoom-controls'>
-           <button id='zoomIn' class='zoom-btn'>+</button>
-           <button id='zoomOut' class='zoom-btn'>-</button>
-        </div>
-   </div>
-
-    <div class='container'>
-        <h1 class='heading english'><u>XML parsing</u></h1>
-        <div class='divider'></div>
-
-        <audio id='bgMusic' loop>
-             <source src='../TheEndingSong.mp3' type='audio/mpeg'>
-        </audio>
-
-        <div class='content'>
-
-<img src='Image resource\Peepo_teachingPY.PNG' alt='Welcome welcome_folks peepo teaching snake on his neck' class='images'><br>
-
-            <b class="Name">Peepo: </b><br>
+        <div class="content">
+            <br />
+            <b class="Name">Peepo: </b><br />
             <pre class="english">Now http request/response is usesd to transfer documents,images or data. but we needed a more formal way to which both server and your program agreed to. wee needed a way to represent data between applications and accross network.
 now there are two commonly used formats.  XML and JSON . 
 
-now XML is Extensible Markup Language  is a markup language and file format for storing, transmitting, and reconstructing arbitrary data. It defines a set of rules for encoding documents in a format that is both human-readable and machine-readable.XML documents are formed by elements enclosed in tags, where each tag is surrounded by angle brackets &lt; and >
+now XML is Extensible Markup Language  is a markup language and file format for storing, transmitting, and reconstructing arbitrary data. It defines a set of rules for encoding documents in a format that is both human-readable and machine-readable.XML documents are formed by elements enclosed in tags, where each tag is surrounded by angle brackets &lt; and &gt;
 
 JSON is  JavaScript Object Notation. is a lightweight data interchange format that is easy for humans to read and write, and easy for machines to parse and generate. JSON data is represented in name/value pairs, usually written as key/value pairs.  like dictionaries
 
-            </pre><br>
-
+            </pre><br />
             <pre class="subheading">XML and its parsing</pre>
-            <b class="Name">Peepo: </b><br>
+            <b class="Name">Peepo: </b><br />
             <pre class="english">let us see XML first
 
 Structure:
 
-* XML documents are formed by elements enclosed in tags, where each tag is surrounded by angle brackets < and >.
+* XML documents are formed by elements enclosed in tags, where each tag is surrounded by angle brackets &lt; and &gt;.
 * Elements can have attributes that provide additional information about the element.
 * XML documents must have a single root/parent (like a boss) element that contains all other elements.
 
@@ -83,55 +59,50 @@ example of xml data:
 &lt;/person&gt;
     
 </pre>
-</pre><br>
-
-            <b class="Name">Peepo: </b><br>
-            <pre class="english">Now suppose you have a python program that produces data for example dictionary. now you want to send it through network. the data is going through the network. so humans have built a protocol to send data. we call that <b>wire protocol</b></pre><br>
-
-            <b class="Name">Peepo: </b><br>
+            </pre><br />
+            <b class="Name">Peepo: </b><br />
+            <pre
+                class="english">Now suppose you have a python program that produces data for example dictionary. now you want to send it through network. the data is going through the network. so humans have built a protocol to send data. we call that <b>wire protocol</b></pre>
+            <br />
+            <b class="Name">Peepo: </b><br />
             <pre class="english">Data leaves from one system go through network and enter the other system simple
 now we cant be sure what program that other computer have, it could be java, php, javascript etc.so we are not actually sending python data, we are sending data. that connect through languages. so if other program is using java. python dictionary will be java hashmap. xml and json helps this conversion. transering the non language specific data, not language.
 
 it does not matter what the sweetbox looks like, what matters is the sweets inside.   suppose you have two sweet boxes one at home and one kilometers/miles away. you want to transfer sweets of one to other. but you cant take the box itself. what you do is transfer those sweets into another portable box, travel with that and then transfer.
 the box at your home is your program, xml/json (two of the wire formats) are the portable containers which hold sweets (data) , and the other box is destination's program. 
 
-</pre><br>
-
-            <b class="Name">Einstein: </b><br>
-            <pre class="english">Peepo can you show with some images</pre><br>
-
+</pre><br />
+            <b class="Name">Einstein: </b><br />
+            <pre class="english">Peepo can you show with some images</pre><br />
             <pre class="english hilightR">
                 <b class="Name">Peepo:</b>
                  <div class="horizontal_scroll">
-                     <img src="" alt="meme1" class="images_scroll">
-                     <img src="" alt="fact1" class="images_scroll">
+                     <img alt="meme1" class="images_scroll" src=""/>
+                     <img alt="fact1" class="images_scroll" src=""/>
                  </div>
              </pre>
-
-             <b class="Name">Peepo: </b><br>
-             <pre class="english">now lets see what is xml schema. XML Schema (XSD), also known as XML Schema Definition (XSD), is a language used to define the structure and data types of XML documents. It provides a way to validate the content of XML documents to ensure they conform to predefined rules and structures
+            <b class="Name">Peepo: </b><br />
+            <pre class="english">now lets see what is xml schema. XML Schema (XSD), also known as XML Schema Definition (XSD), is a language used to define the structure and data types of XML documents. It provides a way to validate the content of XML documents to ensure they conform to predefined rules and structures
 used as contracts that i will only accept this data if it is in a particular format . its like creating a test for the incoming data. is the data passes, that is said to validate
 
 the scema is what both programs follow, so if programs starts breaking up, throwing error we know whose fault it is by checking the scema, (your program fault, other program fault, data fault)
-</pre><br>
-
-            <b class="Name">Peepo: </b><br>
-            <pre class="english">The xml nodes that can have children are complex and ones who cant are simple.</pre><br>
-<!-- add the video explaining also teach how to read schema  -->
+</pre><br />
+            <b class="Name">Peepo: </b><br />
+            <pre class="english">The xml nodes that can have children are complex and ones who cant are simple.</pre>
+            <br />
+            <!-- add the video explaining also teach how to read schema  -->
             <pre class="english hilightPur">
                 <b class="Name">Peepo:</b>
                  <div class="horizontal_scroll">
-                     <img src="" alt="meme1" class="images_scroll">
-                     <img src="" alt="fact1" class="images_scroll">
+                     <img alt="meme1" class="images_scroll" src=""/>
+                     <img alt="fact1" class="images_scroll" src=""/>
                  </div>
              </pre>
-
-            <b class="Name">Peepo: </b><br>
+            <b class="Name">Peepo: </b><br />
             <pre class="english">i dont want you all to remember these but know that these things, what each attribute means, etc, exists and can be readable.
 i want you to know that this schema exists and you can use it to ressolve agreements/contract.
-            </pre><br>
-
-            <b class="Name">Peepo: </b><br>
+            </pre><br />
+            <b class="Name">Peepo: </b><br />
             <pre class="english">Now we know what xml is, lets try to parse/analyse it.
 
 
@@ -145,16 +116,17 @@ for line in response:
     print(line.decode().strip("\n"))   # now line is a byte list so we convert it to string using decode(). 
 </pre>
 
-but wait this prints the code, not store it in a variable. how do i store it.. ahh i forgot. wait let me ask Peepo Bot or chat gpt real quick
-<pre class="english hilightG">
+            but wait this prints the code, not store it in a variable. how do i store it.. ahh i forgot. wait let me ask
+            Peepo Bot or chat gpt real quick
+            <pre class="english hilightG">
 prompt: "(give the ai your code .... )  hey, this is a code i wrote. i wrote this so that i can get xml data from the web. the location of file is correct and the code prints the correct value of the desired file. 
 but now instead of printing, i want to save this string in a variable instead of printing and since it is an xml file, i want correct indentation to be stored. also print that string."
 </pre>
 
 
-<pre class='code'>
+            <pre class="code">
 <code>
-import xml.etree.ElementTree as ET   <b class='comments'># importing the library needed to parse</b>
+import xml.etree.ElementTree as ET   <b class="comments"># importing the library needed to parse</b>
 import urllib.request
 
 response = urllib.request.urlopen('https://anishbansal.pythonanywhere.com/data/person.xml')
@@ -165,17 +137,17 @@ print(xml_data)
 
 print("************************")
 
-<b class='comments'># we parse it like we parsed html data in beautiful soup</b>
-<b class='comments'># we format some messy string data to get ourselves an object. (you will learn objects in OOP's ...) </b>
+<b class="comments"># we parse it like we parsed html data in beautiful soup</b>
+<b class="comments"># we format some messy string data to get ourselves an object. (you will learn objects in OOP's ...) </b>
 
-xmlTree = ET.fromstring(xml_data)  <b class='comments'># now this takes xml_data our messy string, and returns a beautiful object and save it in variable tree</b>
+xmlTree = ET.fromstring(xml_data)  <b class="comments"># now this takes xml_data our messy string, and returns a beautiful object and save it in variable tree</b>
 
-print('name :' , xmlTree.find('name').text)   <b class='comments'># find the tag name, and .text()   retreives the text</b>
+print('name :' , xmlTree.find('name').text)   <b class="comments"># find the tag name, and .text()   retreives the text</b>
 
-print('real Email ? : ' , xmlTree.find('email').get('realEmail'))   <b class='comments'># this gets the attribute value</b>
+print('real Email ? : ' , xmlTree.find('email').get('realEmail'))   <b class="comments"># this gets the attribute value</b>
 
-list = xmlTree.findall('students/student')  <b class='comments'># it says there there are student tags under students, find all of them and len() returns length of the list formed</b>
-<b class='comments'># list is list of objects(list of tress with tag student). .. student objects.</b>
+list = xmlTree.findall('students/student')  <b class="comments"># it says there there are student tags under students, find all of them and len() returns length of the list formed</b>
+<b class="comments"># list is list of objects(list of tress with tag student). .. student objects.</b>
 
 print("student count : " , len(list))
 
@@ -183,11 +155,11 @@ for student in list:
     print('name: ' , student.text)
 
 </code>
-</pre><br>
+</pre><br />
 
-OUTPUT:
+            OUTPUT:
 
-<pre class='OUTPUT'>
+            <pre class="OUTPUT">
 &lt;person&gt;
     &lt;name&gt;Peepo&lt;/name&gt;
     &lt;students&gt;
@@ -208,25 +180,24 @@ name Jenna
 name Brook
 name You
 </pre>
-            </pre><br>
-
-            <b class="Name">Peepo: </b><br>
+            </pre><br />
+            <b class="Name">Peepo: </b><br />
             <pre class="english">Now this could throw error, suppose there is some problem with the xml.. some slash is missing, not proper indentation etc
 
-            </pre><br>
-
-            <b class="Name">Peepo: </b><br>
-            <pre class="english">Now i want all of you to hop on your pc screen and actually try these. experiment on these. failure is best way to learn. if you have any trouble i am here to teach. also did you get the feeel about xml parsin? comment your feedback</pre><br>
-            
-            <b class="Name">Peepo: </b><br>
-            <pre class="english">now we are done with basics of xml now lets move to JSON in the next lecture. and since it is becoming difficult for you this lecture has a project. do that.</pre><br>
-            <br><br><br>
-            </pre>
-            
+            </pre><br />
+            <b class="Name">Peepo: </b><br />
+            <pre
+                class="english">Now i want all of you to hop on your pc screen and actually try these. experiment on these. failure is best way to learn. if you have any trouble i am here to teach. also did you get the feeel about xml parsin? comment your feedback</pre>
+            <br />
+            <b class="Name">Peepo: </b><br />
+            <pre
+                class="english">now we are done with basics of xml now lets move to JSON in the next lecture. and since it is becoming difficult for you this lecture has a project. do that.</pre>
+            <br />
+            <br /><br /><br />
             <h1 class="ending">Next Lecture: JSON parsing in Python</h1>
-
         </div>
     </div>
 </body>
 <script src="../index.js"></script>
+
 </html>

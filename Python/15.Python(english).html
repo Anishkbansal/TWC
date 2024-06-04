@@ -1,80 +1,51 @@
 <!DOCTYPE html>
-<html lang='en'>
+
+<html lang="en">
 
 <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <!-- style css -->
-    <link rel='stylesheet' href='../common_designs.css'>
-
     <!--font english-->
-    <link rel='preconnect' href='https://fonts.googleapis.com'>
-    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-    <link href='https://fonts.googleapis.com/css2?family=Cagliostro&family=Mukta&display=swap' rel='stylesheet'>
-
     <!-- font-hindi -->
-    <link rel='preconnect' href='https://fonts.googleapis.com'>
-    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-    <link href='https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&display=swap' rel='stylesheet'>
     <title>OS Module</title>
 </head>
 
-<body class='english'>
-    <div id='progress-bar-container'>
-        <img id='progress-bar' src='Image resource/Brook Barking.png' alt='Progress Indicator'>
+<body class="english">
+    <div id="progress-bar-container">
+        <img alt="Progress Indicator" id="progress-bar" src="Image resource/Brook Barking.png" />
     </div>
+    <div class="container">
+        <h1 class="heading english"><u>OS module</u></h1>
+        <div class="divider"></div>
 
-    <div id='overlay' class='overlay'>
-        <span id='closeButton' class='close-btn'>&times;</span>
-        <img id='overlayImage' class='overlay-img' src='' alt='Isolated Image'>
-        <div class='zoom-controls'>
-            <button id='zoomIn' class='zoom-btn'>+</button>
-            <button id='zoomOut' class='zoom-btn'>-</button>
-        </div>
-    </div>
-
-    <div class='container'>
-        <h1 class='heading english'><u>OS module</u></h1>
-        <div class='divider'></div>
-
-        <audio id='bgMusic' loop>
-            <source src='../TheEndingSong.mp3' type='audio/mpeg'>
-        </audio>
-
-        <div class='content'>
-
-            <img src='Image resource\Peepo_teachingPY.PNG' alt='Welcome welcome_folks peepo teaching snake on his neck'
-                class='images'><br>
-
-            <b class="Name">Peepo: </b><br>
+        <div class="content">
+            <br />
+            <b class="Name">Peepo: </b><br />
             <pre class="english">Hello everyone. how are you all? lets get started with this lecture. 
-        </pre><br>
-
-            <b class="Name">Peepo: </b><br>
+        </pre><br />
+            <b class="Name">Peepo: </b><br />
             <pre class="english">now just like we can import libraries we can also import our own python files to other files. and all the code will be shared with the other file. 
 but what if there is some you want to run only if the user is running the main file. and not running it by importing to some other file?.for example
 
-<b class='comments'># you want this code to run in everyfile it is imported to/ this file running indirectly</b>
+<b class="comments"># you want this code to run in everyfile it is imported to/ this file running indirectly</b>
 print("thanks for importing this file to your project")
 
-<b class='comments'># you want this code to run if user run this file directly</b>
+<b class="comments"># you want this code to run if user run this file directly</b>
 print("hello and welcome, here is how you can import this file to your project")
 
 how do you tell Python that which to be run when?. because even if you import it it would still run in other file.
-        </pre><br>
-
-            <b class="Name">Peepo: </b><br>
+        </pre><br />
+            <b class="Name">Peepo: </b><br />
             <pre class="english">for that we use __name__ = "__main__"  this tells python to run the below code when this file is the main executing file (the one we are running directly)
-<b class='comments'># simply, when you run a program the __name__ keyword get set to "__main__" automaticlly when you run program directly.but if this script/code/file is imported as module in other file, the __name__ gets set to module's name</b>
-</pre><br>
-
-            <b class="Name">Peepo:</b><br>
+<b class="comments"># simply, when you run a program the __name__ keyword get set to "__main__" automaticlly when you run program directly.but if this script/code/file is imported as module in other file, the __name__ gets set to module's name</b>
+</pre><br />
+            <b class="Name">Peepo:</b><br />
             <pre class="english">
-<pre class='code'>
+<pre class="code">
 <code>
-<b class='comments'># let us create a folder 'files' and two python files in it. Peepo.py and Brook.py . </b>
-<b class='comments'># ***** in Brook.py *******</b>
+<b class="comments"># let us create a folder 'files' and two python files in it. Peepo.py and Brook.py . </b>
+<b class="comments"># ***** in Brook.py *******</b>
 
 print("thanks for importing")
 
@@ -84,68 +55,67 @@ def Brook():
 def BrookSum(a,b):
     print("your sum is ", a+b)
 
-if __name__ == "__main__":    <b class='comments'># checking if this file is running as main</b>
+if __name__ == "__main__":    <b class="comments"># checking if this file is running as main</b>
     print("welcome to Brook.py ")
-    Brook()   <b class='comments'># calling the function Brook</b>
+    Brook()   <b class="comments"># calling the function Brook</b>
 
     def BrookOnly():
         print("this is a Brook only function and can't call it in other files. ")
 
 
-<b class='comments'>#****** IN Peepo.py **********</b>
+<b class="comments">#****** IN Peepo.py **********</b>
 
 
-#from DIRECTORY_NAME import FILE_NAME as VARIABLE NAME   <b class='comments'># this is a function. REPLACE directory name with name of your directory/folder. REPLACE FILE_NAME with name of your python file. REPLACE VARIABLE_NAME if you want any variable (optional, can remove as VARIABLE_NAME part if dont want any variable.)</b>
+#from DIRECTORY_NAME import FILE_NAME as VARIABLE NAME   <b class="comments"># this is a function. REPLACE directory name with name of your directory/folder. REPLACE FILE_NAME with name of your python file. REPLACE VARIABLE_NAME if you want any variable (optional, can remove as VARIABLE_NAME part if dont want any variable.)</b>
 
 from files import Brook
-<b class='comments'># now we can use any Brook.py 's functions</b>
+<b class="comments"># now we can use any Brook.py 's functions</b>
 a = 5
 b = 2
-#  print(MODULE_NAME.FUNC_NAME(ARGUMENTS))      <b class='comments'># replace MODULE_NAME with the name of the module and FUNC_NAME with the name of the function you want to call and replace ARGUMENTS with arguments if any.</b> 
-<b class='comments'># the # represent comment which mean the commented line will not be run by python and is for your own convenience</b>
+#  print(MODULE_NAME.FUNC_NAME(ARGUMENTS))      <b class="comments"># replace MODULE_NAME with the name of the module and FUNC_NAME with the name of the function you want to call and replace ARGUMENTS with arguments if any.</b> 
+<b class="comments"># the # represent comment which mean the commented line will not be run by python and is for your own convenience</b>
 
-Brook.Brook()   <b class='comments'># calling the function Broook in the file Brook.py</b>
-print(Brook.BrookSum(a,b))     <b class='comments'># calling BrookSum from Brook.py</b>
+Brook.Brook()   <b class="comments"># calling the function Broook in the file Brook.py</b>
+print(Brook.BrookSum(a,b))     <b class="comments"># calling BrookSum from Brook.py</b>
 
-# Brook.BrookOnly()   <b class='comments'># trying to call function defined in main of Brook.py . which will not work and show error that the function is not defined</b>
+# Brook.BrookOnly()   <b class="comments"># trying to call function defined in main of Brook.py . which will not work and show error that the function is not defined</b>
 try:
     Brook.BrookOnly()
-except Exception as e:       <b class='comments'># Exception is not a variable its a keyword which hold Exception</b>
+except Exception as e:       <b class="comments"># Exception is not a variable its a keyword which hold Exception</b>
     print(e)
 
 </code>
-</pre><br>
+</pre><br />
 
-OUTPUT:
+            OUTPUT:
 
-<pre class='OUTPUT'>
-<b class='comments'># if we run Brook.py </b>
-thanks for importing    <b class='comments'># the code outside main will also run we are just preventing other files from certain code. the code of this file will run</b>
+            <pre class="OUTPUT">
+<b class="comments"># if we run Brook.py </b>
+thanks for importing    <b class="comments"># the code outside main will also run we are just preventing other files from certain code. the code of this file will run</b>
 welcome to Brook.py 
 hello this is brook and welcome to brook
 
-<b class='comments'># if we run Peepo.py</b>
+<b class="comments"># if we run Peepo.py</b>
 thanks for importing
 hello this is brook and welcome to brook
 ('your sum is ', 7)
 module 'Brook' has no attribute 'BrookOnly'
 
 </pre>
-            </pre><br>
-
-            <b class="Name">Peepo: </b><br>
+            </pre><br />
+            <b class="Name">Peepo: </b><br />
             <pre class="english hilightB">Now let is see Python os Module. it is a inbuilt module by which you can perform system operations such as opening a app, deleting a file, renaming, etc. 
 import os
-print(os.getcwd())  <b class='comments'># this will print cwd -> current working directory</b>
-os.chdir('/path/to/new/directory') <b class='comments'># this will change your current working directory</b>
-print(os.listdir('.'))  <b class='comments'># list all files in the directory  '.' represents the current directory </b>
-os.mkdir('new_folder')   <b class='comments'># make directory creates a new directoryand new-folder represents name of the new directory/folder</b>
-os.remove('folder/file name')  <b class='comments'># this removes the files</b>
-os.rename('old name' , 'new name')  <b class='comments'># renames the file</b>
-os.system("command")  <b class='comments'># runs commands in the system powershell</b>
+print(os.getcwd())  <b class="comments"># this will print cwd -&gt; current working directory</b>
+os.chdir('/path/to/new/directory') <b class="comments"># this will change your current working directory</b>
+print(os.listdir('.'))  <b class="comments"># list all files in the directory  '.' represents the current directory </b>
+os.mkdir('new_folder')   <b class="comments"># make directory creates a new directoryand new-folder represents name of the new directory/folder</b>
+os.remove('folder/file name')  <b class="comments"># this removes the files</b>
+os.rename('old name' , 'new name')  <b class="comments"># renames the file</b>
+os.system("command")  <b class="comments"># runs commands in the system powershell</b>
 
 let us write some program keeping this directory in mind
-<img src="Image resource/lect15Images/initia.png" alt="" class="images">
+<img alt="" class="images" src="Image resource/lect15Images/initia.png"/>
 we have this as own initial directory
 
 <pre class="code">
@@ -196,11 +166,11 @@ print("\nFinal directory contents:", os.listdir('.'))
 </code>
 </pre>
 
-and our directoyr now becomes like This
-<img src="Image resource/lect15Images/fina.png" alt="" class="images">
+            and our directoyr now becomes like This
+            <img alt="" class="images" src="Image resource/lect15Images/fina.png" />
 
-<pre class="OUTPUT">
-<b class='comments'># output is:  </b>
+            <pre class="OUTPUT">
+<b class="comments"># output is:  </b>
 Current working directory: E:\files_twx
 Initial directory contents: ['configuration.py', 're dngthr', 're hdxfhb', 're hijbnjkng', 're jdrgtfnhj', 're jhxtgn', 're ubnf', 'unw gsz', 'UNW hbnxt', 'unw lk', 'unw nghL', 'unwfesg']
 
@@ -235,10 +205,8 @@ Renamed 're ubnf' to 'important_file_11'
 
 Final directory contents: ['configuration.py', 'cute_file_0', 'cute_file_1', 'cute_file_2', 'cute_file_3', 'cute_file_4', 'important_file_10', 'important_file_11', 'important_file_6', 'important_file_7', 'important_file_8', 'important_file_9']
 </pre>
-            </pre><br>
-
-
-            <b class="Name">Peepo: </b><br>
+            </pre><br />
+            <b class="Name">Peepo: </b><br />
             <pre class="english">now you might say that Peepo, even i can do this and faster, by manually renaming. haha.. 
 yes you can do it. but the code will not always be long. it is easy to type
 
@@ -246,34 +214,31 @@ for index, fileName in enumerate(os.listdir('.')):
     os.rename(fileName, new_name)
 
 this two line code can be written in seconds and help with minutes of work/mental exhausiton of renaming 100's of files manually 
-            </pre><br>
-
-            <b class="Name">TWC CREATOR: </b><br>
-            <pre class="english hilightR">even while making this app, i have made 15 lectures until now, i named them Python_Lecture_no1 . but then i wanted to change it and did not wanted too manually change 17 lectures so i write this code in 30 seconds and renamed all files to 01.Python(english).html and more.</pre><br>
-
-            <b class="Name">everyone: </b><br>
-            <pre class="english">Obliged to have you sir.</pre><br>
-
-            <b class="Name">TWC CREATOR: </b><br>
-            <pre class="english">Thanks. now everyone dont make such big lectures, divide it into parts, and now start new one alright everyone see you next time</pre><br>
-
-            <b class="Name">Peepo: </b><br>
-            <pre class="english">Now i want all of you to hop on your pc screen and actually try these. experiment on these. failure is best way to learn. if you have any trouble i am here to teach. also did you get the feeel about os module? comment your feedback</pre><br>
-            
-            
-            <br><br><br>
-            
+            </pre><br />
+            <b class="Name">TWC CREATOR: </b><br />
+            <pre
+                class="english hilightR">even while making this app, i have made 15 lectures until now, i named them Python_Lecture_no1 . but then i wanted to change it and did not wanted too manually change 17 lectures so i write this code in 30 seconds and renamed all files to 01.Python(english).html and more.</pre>
+            <br />
+            <b class="Name">everyone: </b><br />
+            <pre class="english">Obliged to have you sir.</pre><br />
+            <b class="Name">TWC CREATOR: </b><br />
+            <pre
+                class="english">Thanks. now everyone dont make such big lectures, divide it into parts, and now start new one alright everyone see you next time</pre>
+            <br />
+            <b class="Name">Peepo: </b><br />
+            <pre
+                class="english">Now i want all of you to hop on your pc screen and actually try these. experiment on these. failure is best way to learn. if you have any trouble i am here to teach. also did you get the feeel about os module? comment your feedback</pre>
+            <br />
+            <br /><br /><br />
             <b>SLide left for more images: </b>
             <pre class="english hilightB">
                <b class="Name">Peepo:</b>
                 <div class="horizontal_scroll">
-                    <img src="" alt="meme1" class="images_scroll">
-                    <img src="" alt="fact1" class="images_scroll">
+                    <img alt="meme1" class="images_scroll" src=""/>
+                    <img alt="fact1" class="images_scroll" src=""/>
                 </div>
             </pre>
-            
             <h1 class="ending">Next Lecture: read,write etc files in Python(data handeling)</h1>
-
         </div>
     </div>
 </body>

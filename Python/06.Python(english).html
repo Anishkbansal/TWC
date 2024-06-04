@@ -1,57 +1,35 @@
 <!DOCTYPE html>
-<html lang='en'>
+
+<html lang="en">
+
 <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <!-- style css -->
-    <link rel='stylesheet' href='../common_designs.css'>
-
     <!--font english-->
-    <link rel='preconnect' href='https://fonts.googleapis.com'>
-    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-    <link href='https://fonts.googleapis.com/css2?family=Cagliostro&family=Mukta&display=swap' rel='stylesheet'>
-
     <!-- font-hindi -->
-    <link rel='preconnect' href='https://fonts.googleapis.com'>
-    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-    <link href='https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&display=swap' rel='stylesheet'>
     <title>Match Case statement</title>
 </head>
-<body class='english'>
-    <div id='progress-bar-container'>
-        <img id='progress-bar' src='Image resource/girl.png' alt='Progress Indicator'>
+
+<body class="english">
+    <div id="progress-bar-container">
+        <img alt="Progress Indicator" id="progress-bar" src="Image resource/girl.png" />
     </div>
 
-    <div id="overlay" class="overlay">
-        <span id="closeButton" class="close-btn">&times;</span>
-        <img id="overlayImage" class="overlay-img" src="" alt="Isolated Image">
-        <div class="zoom-controls">
-            <button id="zoomIn" class="zoom-btn">+</button>
-            <button id="zoomOut" class="zoom-btn">-</button>
-        </div>
-    </div>
-    
-    <div class='container'>
-        <h1 class='heading english'><u>Match Case statement</u></h1>
-        <div class='divider'></div>
-
-        <div class='content'>
-
-<img src='Image resource\Peepo_teachingPY.PNG' alt='Welcome welcome_folks peepo teaching snake on his neck' class='images'><br>
-
-
-            <b class="Name">Peepo: </b><br>
+    <div class="container">
+        <h1 class="heading english"><u>Match Case statement</u></h1>
+        <div class="divider"></div>
+        <div class="content">
+            <br />
+            <b class="Name">Peepo: </b><br />
             <pre class="english">Hello everyone, Hope you tried the project and even if you did'nt Python will come to your home and bite you. 
 sory sory no no you are my presious learners nothing would happen to you. ... what?  presiousis wrong?. oh sory i studies english from harvard so it happens.
 
 Now, back to serious. Today we will study about match-case statements. Now it is like if else statements. If someone asks you about modern Python. He expects you to know match-case. so lets learn what actually are these.
-            </pre><br>
-
-            <b class="Name">Einstein: </b><br>
-            <pre class="english">It will probably be something easy since it Python.</pre><br>
-
-            <b class="Name">Peepo: </b><br>
+            </pre><br />
+            <b class="Name">Einstein: </b><br />
+            <pre class="english">It will probably be something easy since it Python.</pre><br />
+            <b class="Name">Peepo: </b><br />
             <pre class="english">Sure it is. match-case is something new in Python 3.10 so not everyone uses it much but its important to know about it
 a match statement will compare given variable's value to different conditions, also known as pattern. it will keep comparing until it matches with one condition.
 
@@ -63,9 +41,9 @@ it has three parts.
 lets clear it with a program
 Einstein, show us the example...
 
-<pre class='code'>
+<pre class="code">
 <code>
-choice = input("what pet would you like? ") <b class='comments'># take user input</b>
+choice = input("what pet would you like? ") <b class="comments"># take user input</b>
 if(choice=="dog"):
     print("oh you want a black dog whoose bite could even break a boulder? ")
 if(choice=="cat"):
@@ -82,38 +60,35 @@ else:
     print("we dont sell that kind of monstrosity.. i mean pets.")
 
 </code>
-</pre><br>
+</pre><br />
 
-OUTPUT:
-what pet would you like? <b class="interact">My best friend</b>  <b class='comments'># i will donate user provided input with blue colour from now on</b>
-we dont sell ta=hat kind of monstrosity.. i mean pets.
+            OUTPUT:
+            what pet would you like? <b class="interact">My best friend</b> <b class="comments"># i will donate user
+                provided input with blue colour from now on</b>
+            we dont sell ta=hat kind of monstrosity.. i mean pets.
 
-<pre class='OUTPUT'>
+            <pre class="OUTPUT">
 
 
 </pre>
-            </pre><br>
-
-            <b class="Name gag">Peepo: </b><br>
-            <pre class="english">Nicely done but i told you to write in math-case format.. its if else.</pre><br>
-
-            <b class="Name gag">Jenna: </b><br>
-            <pre class="english">but you said that it is similar to if else</pre><br>
-
-            <b class="Name gag">Peepo: </b><br>
-            <pre class="english">Yeah but they dont look same!!!</pre><br>
-            
-            <b class="Name">Peepo: </b><br>
+            </pre><br />
+            <b class="Name gag">Peepo: </b><br />
+            <pre class="english">Nicely done but i told you to write in math-case format.. its if else.</pre><br />
+            <b class="Name gag">Jenna: </b><br />
+            <pre class="english">but you said that it is similar to if else</pre><br />
+            <b class="Name gag">Peepo: </b><br />
+            <pre class="english">Yeah but they dont look same!!!</pre><br />
+            <b class="Name">Peepo: </b><br />
             <pre class="english">Now, lets try it with match-case statement. it would go like This
 
-<pre class='code'>
+<pre class="code">
 <code>
-choice = input("what pet would you like? ")  <b class='comments'># this will take input from the user.</b>
-match choice:   <b class='comments'># it means to say that python, match the value of varibale choice with given cases. and if any of the cases match, execute the code of that statement and come out of the match case</b>
-    case "dog": <b class='comments'># Hey Python, i got a case where user might say "dog". check if the variable choice matches with it. if yes then execute its code.</b>  
+choice = input("what pet would you like? ")  <b class="comments"># this will take input from the user.</b>
+match choice:   <b class="comments"># it means to say that python, match the value of varibale choice with given cases. and if any of the cases match, execute the code of that statement and come out of the match case</b>
+    case "dog": <b class="comments"># Hey Python, i got a case where user might say "dog". check if the variable choice matches with it. if yes then execute its code.</b>  
         print("oh you want a black 'dog' whoose bite could even break a boulder? ")
         print("this is case dog")
-    case "cat":   <b class='comments'># the "dog" didnt match?. alright you can try matching choice with "cat"</b>
+    case "cat":   <b class="comments"># the "dog" didnt match?. alright you can try matching choice with "cat"</b>
         print("oh you want a cute little cat that sleeps all the time. ")
     case "bird":
         print("oh you want birds that could fly very hig, you can ride them, and throw fire from their mouths? ")
@@ -123,107 +98,99 @@ match choice:   <b class='comments'># it means to say that python, match the val
         print("oh you want vending machine that gives mon.. wait what a vending machine pet!!?")
     case "doll":
         print("oh so you want a doll. i have nothing else to say")
-    case _:  <b class='comments'># what? no case matched? in that case i have to play my trunp card. the universal case which can match with any value. we denote this with underscore i.e ?(_). This underscore means anything. means anything. its like an else statement. (its not mandatory to put it).
+    case _:  <b class="comments"># what? no case matched? in that case i have to play my trunp card. the universal case which can match with any value. we denote this with underscore i.e ?(_). This underscore means anything. means anything. its like an else statement. (its not mandatory to put it).
 it matches whatever the vale you are trying to match it with. </b>
         print("we dont sell that monstrosity.. i mean pets. ")
 
-print("match-case statement ended.")  <b class='comments'># now when the match case statement is finished. the program after that will execute.</b>
+print("match-case statement ended.")  <b class="comments"># now when the match case statement is finished. the program after that will execute.</b>
 
 </code>
-</pre><br>
+</pre><br />
 
-OUTPUT:
-<pre class='OUTPUT'>
-<b class='comments'># Attemt 1</b>
+            OUTPUT:
+            <pre class="OUTPUT">
+<b class="comments"># Attemt 1</b>
 what pet would you like? <b class="interact">fish</b>
 oh you want a fish that has teeth bigger than burj khalifa and has sharp scales.
 match-case statement ended.
 </pre>
 
-<pre class="OUTPUT">
-<b class='comments'># Attempt 2</b>
+            <pre class="OUTPUT">
+<b class="comments"># Attempt 2</b>
 what pet would you like? <b class="interact">doll</b>
 oh so you want a doll. i have nothing else to say
 match-case statement ended.
 </pre>
 
-<pre class="OUTPUT">
-<b class='comments'># Attempt 3</b>
-what pet would you like? <b class="interact">A jellyfish bigger than the sun</b>    <b class='comments'># now this matches with nothing but the universal symbol( _ ). its like pocket or doraemon which can hold anything. even things that dont exits like None datatype.</b>
-we dont sell that monstrosity.. i mean pets.   <b class='comments'># the match matches with the case so the code of case will execute</b>
+            <pre class="OUTPUT">
+<b class="comments"># Attempt 3</b>
+what pet would you like? <b class="interact">A jellyfish bigger than the sun</b>    <b class="comments"># now this matches with nothing but the universal symbol( _ ). its like pocket or doraemon which can hold anything. even things that dont exits like None datatype.</b>
+we dont sell that monstrosity.. i mean pets.   <b class="comments"># the match matches with the case so the code of case will execute</b>
 </pre>
 
-<p class="english">you can try out for yourself here</p>
-<button class="toggleBtn">Toggle IDE</button>
-<div class="iframeContainer" >
-<iframe  frameborder="0"></iframe>
-</div><br>
-            </pre><br>
-
-            <b class="Name">Peepo: </b><br>
+            <p class="english">you can try out for yourself here</p>
+            <button class="toggleBtn">Toggle IDE</button>
+            <div class="iframeContainer">
+                <iframe frameborder="0"></iframe>
+            </div><br />
+            </pre><br />
+            <b class="Name">Peepo: </b><br />
             <pre class="english">you can also add exceptions to our universal case. we will call it default case from now on because it sounds professional
 
-<pre class='code'>
+<pre class="code">
 <code>
 rank = int(input("enter your rank:  "))
 match rank:
     case 5:
         print("nice you are good ")
-    case _ if x = 56:   <b class='comments'># this simply means case 56:  if you apply logic. if cant understand ask Peepo. </b>
+    case _ if x = 56:   <b class="comments"># this simply means case 56:  if you apply logic. if cant understand ask Peepo. </b>
         print("case 56")
-    case _ if x !=106  <b class='comments'># now this is an exception. we use != operator usually for exceptionss here. it simply means. Hey Python. Match any value of x here, if x is not equal to 106.</b>
+    case _ if x !=106  <b class="comments"># now this is an exception. we use != operator usually for exceptionss here. it simply means. Hey Python. Match any value of x here, if x is not equal to 106.</b>
         print(x)
 
 </code>
-</pre><br>
+</pre><br />
 
-OUTPUT:
+            OUTPUT:
 
-<pre class='OUTPUT'>
+            <pre class="OUTPUT">
 enter your rank: <b class="interact"> -500 </b>
 -500
 
-<b class='comments'># attempt 2</b>
+<b class="comments"># attempt 2</b>
 enter your rank: <b class="interact">56</b>
 case 56
 
-<b class='comments'># attempt 3</b>
+<b class="comments"># attempt 3</b>
 enter your rank: <b class="interact">106</b>
 </pre>
 
-<button class="toggleBtn">Toggle IDE</button>
-<div class="iframeContainer" >
-<iframe  frameborder="0"></iframe>
-</div><br>
-            </pre><br>
-
-            <b class="Name">Peepo: </b><br>
+            <button class="toggleBtn">Toggle IDE</button>
+            <div class="iframeContainer">
+                <iframe frameborder="0"></iframe>
+            </div><br />
+            </pre><br />
+            <b class="Name">Peepo: </b><br />
             <pre class="english">if one of the case statement matches. all the statements under that (if any) will not execute. will not even get checked. 
 if match-case is not working for you please check you python version is latest or greater than 3.10  you can check version by typing ( python --version ) in the terminal. if you have lower version, just install newer version it will update.
-            </pre><br>
-
-
-            <b class="Name">Peepo: </b><br>
-            <pre class="english">Great we are done with match-case. Now i want all of you to hop on your pc screen and actually try these. experiment on these. failure is best way to learn. if you have any trouble i am here to teach. also did you get the feeel about ? comment your feedback</pre><br>
-            
-            
-            <br><br><br>
-            
+            </pre><br />
+            <b class="Name">Peepo: </b><br />
+            <pre
+                class="english">Great we are done with match-case. Now i want all of you to hop on your pc screen and actually try these. experiment on these. failure is best way to learn. if you have any trouble i am here to teach. also did you get the feeel about ? comment your feedback</pre>
+            <br />
+            <br /><br /><br />
             <b>SLide left for more images: </b>
-            <pre class="english ">
+            <pre class="english">
                <b class="Name">Peepo:</b>
                 <div class="horizontal_scroll">
-                    <img src="Image resource/python memes/Fact1.png" alt="meme1" class="images_scroll">
-                    <img src="Image resource/python memes/fact2.png" alt="fact1" class="images_scroll">
+                    <img alt="meme1" class="images_scroll" src="Image resource/python memes/Fact1.png"/>
+                    <img alt="fact1" class="images_scroll" src="Image resource/python memes/fact2.png"/>
                 </div>
             </pre>
-            
             <h1 class="ending">Next Lecture: Loops in Python(useful and fun)</h1>
-
-            
-
         </div>
     </div>
 </body>
 <script src="../index.js"></script>
+
 </html>

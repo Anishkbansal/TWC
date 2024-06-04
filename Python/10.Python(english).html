@@ -1,108 +1,82 @@
 <!DOCTYPE html>
-<html lang='en'>
+
+<html lang="en">
+
 <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <!-- style css -->
-    <link rel='stylesheet' href='../common_designs.css'>
-
     <!--font english-->
-    <link rel='preconnect' href='https://fonts.googleapis.com'>
-    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-    <link href='https://fonts.googleapis.com/css2?family=Cagliostro&family=Mukta&display=swap' rel='stylesheet'>
-
     <!-- font-hindi -->
-    <link rel='preconnect' href='https://fonts.googleapis.com'>
-    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-    <link href='https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&display=swap' rel='stylesheet'>
     <title>Escape Sequences</title>
 </head>
-<body class='english'>
-    <div id='progress-bar-container'>
-        <img id='progress-bar' src='Image resource/peepo_updated.png' alt='Progress Indicator'>
+
+<body class="english">
+    <div id="progress-bar-container">
+        <img alt="Progress Indicator" id="progress-bar" src="Image resource/peepo_updated.png" />
     </div>
+    <div class="container">
+        <h1 class="heading english"><u>Escape Sequences</u></h1>
+        <div class="divider"></div>
 
-    <div id="overlay" class="overlay">
-        <span id="closeButton" class="close-btn">&times;</span>
-        <img id="overlayImage" class="overlay-img" src="" alt="Isolated Image">
-        <div class="zoom-controls">
-            <button id="zoomIn" class="zoom-btn">+</button>
-            <button id="zoomOut" class="zoom-btn">-</button>
-        </div>
-    </div>
-    
-    <div class='container'>
-        <h1 class='heading english'><u>Escape Sequences</u></h1>
-        <div class='divider'></div>
-
-        <audio id='bgMusic' loop>
-             <source src='../TheEndingSong.mp3' type='audio/mpeg'>
-        </audio>
-
-        <div class='content'>
-
-<img src='Image resource\Peepo_teachingPY.PNG' alt='Welcome welcome_folks peepo teaching snake on his neck' class='images'><br>
-
-            <b class="Name">Peepo: </b><br>
-            <pre class="english">hello , welcome everyone.</pre><br>
-            <b class="Name">Brook: </b><br>
-            <pre class="english">Woooooof! Woof!</pre><br>
-            <b class="Name">Peepo: </b><br>
-            <pre class="english">You are oddly excited today!. hey Jeena are you alright?</pre><br>
-            <b class="Name">Jenna: </b><br>
-            <pre class="english">Lisft, tupppals, sesring, aaa aua auuuuaaa.</pre><br>
-            <img src="Image resource/Jenna.png" alt="" class="images"><br>
-
-            <b class="Name">Einstein:</b><br>
-            <pre class="english">Dont worry Peepo she is still in shock. from 9th lecture and its 3 parts. they were easy.</pre><br>
-
-            <b class="Name">Peepo: </b><br>
+        <div class="content">
+            <br />
+            <b class="Name">Peepo: </b><br />
+            <pre class="english">hello , welcome everyone.</pre><br />
+            <b class="Name">Brook: </b><br />
+            <pre class="english">Woooooof! Woof!</pre><br />
+            <b class="Name">Peepo: </b><br />
+            <pre class="english">You are oddly excited today!. hey Jeena are you alright?</pre><br />
+            <b class="Name">Jenna: </b><br />
+            <pre class="english">Lisft, tupppals, sesring, aaa aua auuuuaaa.</pre><br />
+            <img alt="" class="images" src="Image resource/Jenna.png" /><br />
+            <b class="Name">Einstein:</b><br />
+            <pre
+                class="english">Dont worry Peepo she is still in shock. from 9th lecture and its 3 parts. they were easy.</pre>
+            <br />
+            <b class="Name">Peepo: </b><br />
             <pre class="english">easy for you but not for everyone. some found it vry difficult. some even left this course after those lectures.
 Dont worry about Jenna, She will be fine in this lecture. just let her talk to PeepoBot and tell her that no need to stress out and learn everythin
-            </pre><br>
-
-            <b class="Name">Einstein: </b><br>
-            <pre class="english">I tried but no work.</pre><br>
-
-            <b class="Name">Peepo: </b><br>
+            </pre><br />
+            <b class="Name">Einstein: </b><br />
+            <pre class="english">I tried but no work.</pre><br />
+            <b class="Name">Peepo: </b><br />
             <pre class="english">Jenna look, the Python program you created works without error. are you happy that you made something andit works abselutely fine?.
 Look! She is all good now.
-            </pre><br>
-
-            <b class="Name">Peepo: </b><br>
+            </pre><br />
+            <b class="Name">Peepo: </b><br />
             <pre class="english hilightPur">lets get started with today's lecture. 
 Escape Sequences
 Escape sequences are like secret passages in Python strings that allow us to include special characters or control codes that are otherwise difficult to type directly. They're like magic spells that transport us to new realms of possibility!
 
-<pre class='code'>
+<pre class="code">
 <code>
-<b class='comments'># 1.) newline   blackslash n i.e "\n"  moves the cursor to next line</b>
+<b class="comments"># 1.) newline   blackslash n i.e "\n"  moves the cursor to next line</b>
 print("this is line 1 \n oh wait its a newline so python will write everythin after newline in next line this makes me line 2. \n this makes me line 3")
 a = input("hello, this will allow you to give input in next line if i put \n at the next line. this improves user interface. \n so tell who is your favorite character? \n")
 print(a)
 
-<b class='comments'># 2.) \\ backslash</b>
-print(" this is newline \\n  this is backslash \\\\")   <b class='comments'># in the input line above, i wanted to put \n as a string but i could not. python does not understand things you want.he just starts a new line. so to tell python to print backslash as a backslash in a string, we use double backslash i.e \\</b>
+<b class="comments"># 2.) \\ backslash</b>
+print(" this is newline \\n  this is backslash \\\\")   <b class="comments"># in the input line above, i wanted to put \n as a string but i could not. python does not understand things you want.he just starts a new line. so to tell python to print backslash as a backslash in a string, we use double backslash i.e \\</b>
 
-<b class='comments'># 3.) \t tab</b>
-print("apple\tbananas")   <b class='comments'># adds a tab character i.e  "    "  just some space.</b>
+<b class="comments"># 3.) \t tab</b>
+print("apple\tbananas")   <b class="comments"># adds a tab character i.e  "    "  just some space.</b>
 
 
-<b class='comments'># 4.) escape quotes.</b>
-<b class='comments'># ** have you ever wonder how to add double quotes in a string?. if you try to add them python thinks that the string ends here like   s =  " she said "hello" "  how do you write this string?. python will understand only " she said " and think string ends here.and since hello is undefined, it will give error since python does not know what hello means.</b>
-<b class='comments'># ** you can try putting single quotes in a double quote string. like  s= "she said 'love' "  this will work as expected. but what if you want double string only(you can start string with `` also). then? </b>
-<b class='comments'># ** in cases like these we use string escape sequence. we tell python that this double quote does not ends the string here, include this in string</b>
+<b class="comments"># 4.) escape quotes.</b>
+<b class="comments"># ** have you ever wonder how to add double quotes in a string?. if you try to add them python thinks that the string ends here like   s =  " she said "hello" "  how do you write this string?. python will understand only " she said " and think string ends here.and since hello is undefined, it will give error since python does not know what hello means.</b>
+<b class="comments"># ** you can try putting single quotes in a double quote string. like  s= "she said 'love' "  this will work as expected. but what if you want double string only(you can start string with `` also). then? </b>
+<b class="comments"># ** in cases like these we use string escape sequence. we tell python that this double quote does not ends the string here, include this in string</b>
 print("she said \"Peepo is love\" ")
 
 
-<b class='comments'># if you want to escape all backslashes in a string, suppose you are working with a url then you have to type \\ for each \ .not efficient. we use r literal its brother of f string</b>
-print(r":\Users\StudyMaterial") <b class='comments'># this string ,it has r before it starts, this will egnore all backslashes</b>
+<b class="comments"># if you want to escape all backslashes in a string, suppose you are working with a url then you have to type \\ for each \ .not efficient. we use r literal its brother of f string</b>
+print(r":\Users\StudyMaterial") <b class="comments"># this string ,it has r before it starts, this will egnore all backslashes</b>
 
 
-<b class='comments'># symabols and codes</b>
-<b class='comments'># to print special character or symbols like greek letter ∅, ▰, Ⅻ, ↆ, √, ∞, ∫, ψ, Ω  etc</b>
-<b class='comments'># the format is \CODE  replace code with code of symbol. you can search for codes online like search what is code for greek letter omega in python</b>
+<b class="comments"># symabols and codes</b>
+<b class="comments"># to print special character or symbols like greek letter ∅, ▰, Ⅻ, ↆ, √, ∞, ∫, ψ, Ω  etc</b>
+<b class="comments"># the format is \CODE  replace code with code of symbol. you can search for codes online like search what is code for greek letter omega in python</b>
 
 print("code for \u2205 is \\u2205")
 print("code for \u25AC is \\u25AC")
@@ -115,14 +89,14 @@ print("code for \u03C8 is \\u03C8")
 print("code for \u03A9 is \\u03A9")
 
 
-<b class='comments'># or a simple way, just go online search for symbol and copy paste it</b>
+<b class="comments"># or a simple way, just go online search for symbol and copy paste it</b>
 print("the symbols are , ∅, ▰, Ⅻ, ↆ, √, ∞, ∫, ψ, Ω ")
 
 </code>
-</pre><br>
+</pre><br />
 
-CLEAN CODE WITHOUT COMMENTS 
-<pre class='code'>
+            CLEAN CODE WITHOUT COMMENTS
+            <pre class="code">
 <code>
 print("this is line 1 \n oh wait its a newline so python will write everythin after newline in next line this makes me line 2. \n this makes me line 3")
 a = input("hello, this will allow you to give input in next line if i put \n at the next line. this improves user interface. \n so tell who is your favorite character? \n")
@@ -150,11 +124,11 @@ print("code for \u03A9 is \\u03A9")
 print("the symbols are , ∅, ▰, Ⅻ, ↆ, √, ∞, ∫, ψ, Ω ")
 
 </code>
-</pre><br>
+</pre><br />
 
-OUTPUT:
+            OUTPUT:
 
-<pre class='OUTPUT'>
+            <pre class="OUTPUT">
 
 this is line 1 
 oh wait its a newline so python will write everythin after newline in next line this makes me line 2.
@@ -180,36 +154,32 @@ the symbols are , ∅, ▰, Ⅻ, ↆ, √, ∞, ∫, ψ, Ω
     
 </pre>
 
-<button class="toggleBtn">Toggle IDE</button>
-<div class="iframeContainer" >
-    <iframe  frameborder="0"></iframe>
-</div><br>
-</pre><br>
-
-<img src="Image resource/PeepoBOT_examplePart1.png" alt="" class="images">
-<img src="Image resource/PeepoBOT_examplePart2.png" alt="" class="images">
-
-
-<b class="Name">Peepo: </b><br>
-<pre class="english">Now i want all of you to hop on your pc screen and actually try these. experiment on these. failure is best way to learn. if you have any trouble i am here to teach. also did you get the feeel about escape sequences? comment your feedback</pre><br>
-
-
-<br><br><br>
-
-<b>SLide left for more images: </b>
-<pre class="english ">
+            <button class="toggleBtn">Toggle IDE</button>
+            <div class="iframeContainer">
+                <iframe frameborder="0"></iframe>
+            </div><br />
+            </pre><br />
+            <img alt="" class="images" src="Image resource/PeepoBOT_examplePart1.png" />
+            <img alt="" class="images" src="Image resource/PeepoBOT_examplePart2.png" />
+            <b class="Name">Peepo: </b><br />
+            <pre
+                class="english">Now i want all of you to hop on your pc screen and actually try these. experiment on these. failure is best way to learn. if you have any trouble i am here to teach. also did you get the feeel about escape sequences? comment your feedback</pre>
+            <br />
+            <br /><br /><br />
+            <b>SLide left for more images: </b>
+            <pre class="english">
    <b class="Name">Peepo:</b>
     <div class="horizontal_scroll">
-        <img src="Image resource/python memes/meme4.png" alt="meme4" class="images_scroll">
-        <img src="Image resource/python memes/fact4.png" alt="fact4" class="images_scroll">
+        <img alt="meme4" class="images_scroll" src="Image resource/python memes/meme4.png"/>
+        <img alt="fact4" class="images_scroll" src="Image resource/python memes/fact4.png"/>
     </div>
 </pre>
-
-<h1 class="ending hilightR">Next Lecture: 1 begginer, 1 intermediate, 1 advanced Project in Python( Phase One End )</h1>
-<h3 class="english hilightR">Congrats everyone</h3>
-
-</div>
+            <h1 class="ending hilightR">Next Lecture: 1 begginer, 1 intermediate, 1 advanced Project in Python( Phase
+                One End )</h1>
+            <h3 class="english hilightR">Congrats everyone</h3>
+        </div>
     </div>
 </body>
 <script src="../index.js"></script>
+
 </html>

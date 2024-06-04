@@ -1,24 +1,40 @@
-class Hello:
-    def __init__(self):
-        self.hello = "Hello"
-        print("I am Constructor.")
+import os
+from bs4 import BeautifulSoup
+
+# Directory containing HTML files
+directory = 'E:/Lecture Description/Python/Projects/lecture projects'
+
+# Image tag to search for
+image_tag_str = '<img src="Image resource\\Peepo_teachingPY.PNG" alt="Welcome welcome_folks peepo teaching snake on his neck" class="images"><br>'
+
+# Function to check and remove the image tag from HTML files
+def check_and_remove_image_tag(file_path):
+    with open(file_path, 'r', encoding='utf-8') as file:
+        soup = BeautifulSoup(file, 'html.parser')
     
-    def speak(self):
-        self.hello  = self.hello + " World!"
-        print(self.hello)
+    # Find the specific image tag
+    image_tag = soup.find('img', {
+        'src': 'Image resource\\Peepo_teachingPY.PNG',
+        'alt': 'Welcome welcome_folks peepo teaching snake on his neck',
+        'class': 'images'
+    })
+    
+    if image_tag:
+        # Confirm with the user
+        print(f"File: {file_path}")
+        print(f"Found image tag: {image_tag}")
+        confirm = input("Do you want to remove this tag from the file? (yes/no): ").strip().lower()
+        
+        if confirm == 'yes':
+            image_tag.decompose()  # Remove the image tag
+            with open(file_path, 'w', encoding='utf-8') as file:
+                file.write(str(soup))
+            print(f"Image tag removed from {file_path}\n")
+        else:
+            print(f"No changes made to {file_path}\n")
 
-    def __del__(self):
-        print("i am destructed")
-
-hel = Hello()   # now hel is an object. hel takes some space in the memory.
-hel.speak()    # using speak method in the object
-hel.speak()
-
-# the del method willl be called when there are no more refrences to the object are left
-
-
-# if we reassign, the destructor is called (optional)
-hel = "Peepo"      # reassigning the value of hel from an object to a string "Peepo". no refrence remained of object hel.
-# but we want the memory used as object back! that is why to remove the object completely from the memory, __del__ is used
-# now we have the memory back and a string uses less memory than an object. so our program is memory efficient. it will use less RAM to run
-print(hel)
+# Iterate over HTML files in the specified directory
+for filename in os.listdir(directory):
+    if filename.endswith(".html"):
+        file_path = os.path.join(directory, filename)
+        check_and_remove_image_tag(file_path)

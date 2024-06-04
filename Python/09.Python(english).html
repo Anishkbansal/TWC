@@ -1,99 +1,70 @@
 <!DOCTYPE html>
-<html lang='en'>
+
+<html lang="en">
+
 <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <!-- style css -->
-    <link rel='stylesheet' href='../common_designs.css'>
-
     <!--font english-->
-    <link rel='preconnect' href='https://fonts.googleapis.com'>
-    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-    <link href='https://fonts.googleapis.com/css2?family=Cagliostro&family=Mukta&display=swap' rel='stylesheet'>
-
     <!-- font-hindi -->
-    <link rel='preconnect' href='https://fonts.googleapis.com'>
-    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-    <link href='https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&display=swap' rel='stylesheet'>
     <title>Lists,Tuples, Dictionary, Strings in Python.</title>
 </head>
-<body class='english'>
 
-
-
-    <div id='progress-bar-container'>
-        <img id='progress-bar' src='Image resource/girl.png' alt='Progress Indicator'>
+<body class="english">
+    <div id="progress-bar-container">
+        <img alt="Progress Indicator" id="progress-bar" src="Image resource/girl.png" />
     </div>
+    <div class="container">
+        <h1 class="heading english"><u>Lists,Tuples, Dictionary, Strings in Python.</u></h1>
+        <div class="divider"></div>
 
-    <div id="overlay" class="overlay">
-        <span id="closeButton" class="close-btn">&times;</span>
-        <img id="overlayImage" class="overlay-img" src="" alt="Isolated Image">
-        <div class="zoom-controls">
-            <button id="zoomIn" class="zoom-btn">+</button>
-            <button id="zoomOut" class="zoom-btn">-</button>
-        </div>
-    </div>
-    
-    <div class='container'>
-        <h1 class='heading english'><u>Lists,Tuples, Dictionary, Strings in Python.</u></h1>
-        <div class='divider'></div>
-
-        <audio id="bgMusic" loop>
-            <source src="../TheEndingSong.mp3" type="audio/mpeg">
-          </audio>
-
-        <div class='content'>
-
-<img src='Image resource\Peepo_teachingPY.PNG' alt='Welcome welcome_folks peepo teaching snake on his neck' class='images'><br>
-
-            <b class="Name">Einstein: </b><br>
-            <pre class="english">Alright so we will learn them one by one.</pre><br>
-
+        <div class="content">
+            <br />
+            <b class="Name">Einstein: </b><br />
+            <pre class="english">Alright so we will learn them one by one.</pre><br />
             <div class="gag">
-                <b class="Name">Jenna: </b><br>
-                <pre class="english">Where is Peepo?</pre><br>
-
-                <b class="Name">Einstein: </b><br>
-                <pre class="english">His battery is low. he will teach after Tuples.</pre><br>
-                <b class="Name">Brook:</b><br>
-                <pre class="english">(sad) Woof</pre><br>
-                <img src="Image resource/Brook_Sad.png" alt="" class="images_short"><br>
+                <b class="Name">Jenna: </b><br />
+                <pre class="english">Where is Peepo?</pre><br />
+                <b class="Name">Einstein: </b><br />
+                <pre class="english">His battery is low. he will teach after Tuples.</pre><br />
+                <b class="Name">Brook:</b><br />
+                <pre class="english">(sad) Woof</pre><br />
+                <img alt="" class="images_short" src="Image resource/Brook_Sad.png" /><br />
             </div>
-            
-            <b class="Name">Einstein: </b><br>
+            <b class="Name">Einstein: </b><br />
             <pre class="english">well we all know about shopping list. how it contains all the things from groceries to dairy to snacks to laundary etc. so many types of things.
 in Python lists are also like than it can store every datatype. a list can also store a literal list inside itself.
 
-<pre class='code'>
+<pre class="code">
 <code>
-MyList = ["hello", 25, "Peepo", None, True, [56, 10] ]   <b class='comments'># we enclose list inside square brackets i.e []  . we seperate the elements by commas</b>
-<b class='comments'># the number of element is called index. in lists, the starting index is zero (0) which means that the zeroeth element (whoose index is zero) in this list is "hello", and its fifth element is [56, 10] which is a list itself. </b>
+MyList = ["hello", 25, "Peepo", None, True, [56, 10] ]   <b class="comments"># we enclose list inside square brackets i.e []  . we seperate the elements by commas</b>
+<b class="comments"># the number of element is called index. in lists, the starting index is zero (0) which means that the zeroeth element (whoose index is zero) in this list is "hello", and its fifth element is [56, 10] which is a list itself. </b>
 
 print(MyList)
-print(MyList[2])     <b class='comments'># Name[x] this is the syntax of getting the element at the given index. if you replace Name with the name of your list and x with the number of index you want to get.</b>
-print(MyList[5][0]) <b class='comments'># this code here means that get the element at index 5, and give zeroeth index element of <b>that</b> element</b>
-print(MyList[0][2])  <b class='comments'># String also behaves as a list in the backend (list of characters ) so this code will give 2nd index of element at the first index of MyList</b>
-print(MyList[2][-2])  <b class='comments'># you can even put negative indexes in this. 0 -1 will send to end of the list. so -1 index will be the last element of the list. -2 -> 2nd last. i will put up and image of this. </b>
-print(MyList[0:2])   <b class='comments'># Now this is called list slicing. we slice out a part from the list. and this is how we tell Python about what part to slice. </b>
-<b class='comments'># Name[initial:ending:iterate ] replacing Name with name of your list, .</b>
-<b class='comments'># initial with index you want to start slicing from, </b>
-<b class='comments'># ending with end you want to stop at + 1  (+1 because it works like a for loop and check index less than the index provided. example if index 3 is at ending place, it will print till index 2. )</b>
-<b class='comments'># replace iterate with the number you want to jump through indexes like in a for loop. its default value is 1</b>
+print(MyList[2])     <b class="comments"># Name[x] this is the syntax of getting the element at the given index. if you replace Name with the name of your list and x with the number of index you want to get.</b>
+print(MyList[5][0]) <b class="comments"># this code here means that get the element at index 5, and give zeroeth index element of <b>that</b> element</b>
+print(MyList[0][2])  <b class="comments"># String also behaves as a list in the backend (list of characters ) so this code will give 2nd index of element at the first index of MyList</b>
+print(MyList[2][-2])  <b class="comments"># you can even put negative indexes in this. 0 -1 will send to end of the list. so -1 index will be the last element of the list. -2 -&gt; 2nd last. i will put up and image of this. </b>
+print(MyList[0:2])   <b class="comments"># Now this is called list slicing. we slice out a part from the list. and this is how we tell Python about what part to slice. </b>
+<b class="comments"># Name[initial:ending:iterate ] replacing Name with name of your list, .</b>
+<b class="comments"># initial with index you want to start slicing from, </b>
+<b class="comments"># ending with end you want to stop at + 1  (+1 because it works like a for loop and check index less than the index provided. example if index 3 is at ending place, it will print till index 2. )</b>
+<b class="comments"># replace iterate with the number you want to jump through indexes like in a for loop. its default value is 1</b>
 
 
-print(MyList[:1], MyList[3:])  <b class='comments'># if not initial index is provided, it will start from the list's staring. and if no ending is told, it will print till end of the list</b>
-print(MyList[2::2])   <b class='comments'># the ending not provided so it will print till end of list and iterate is provided which is 2. so Python will print every other element. </b>
-print(MyList[-3:-1])  <b class='comments'># you can also add negative values.  try adding a negative iteration value.and see what happens. i wil not tell</b>
+print(MyList[:1], MyList[3:])  <b class="comments"># if not initial index is provided, it will start from the list's staring. and if no ending is told, it will print till end of the list</b>
+print(MyList[2::2])   <b class="comments"># the ending not provided so it will print till end of list and iterate is provided which is 2. so Python will print every other element. </b>
+print(MyList[-3:-1])  <b class="comments"># you can also add negative values.  try adding a negative iteration value.and see what happens. i wil not tell</b>
 
 
 </code>
-</pre><br>
+</pre><br />
 
-<pre class="english">you can copy paste this code</pre>
-<pre class='code'>
+            <pre class="english">you can copy paste this code</pre>
+            <pre class="code">
 <code>
-<b class='comments'># this is clean code for clean execution in the IDE</b>
+<b class="comments"># this is clean code for clean execution in the IDE</b>
 MyList = ["hello", 25, "Peepo", None, True, [56, 10] ]   
 print(MyList)
 print(MyList[2])
@@ -107,12 +78,12 @@ print(MyList[2::2])
 print(MyList[-3:-1])
 
 </code>
-</pre><br>
+</pre><br />
 
 
-OUTPUT:
+            OUTPUT:
 
-<pre class='OUTPUT'>
+            <pre class="OUTPUT">
 ['hello', 25, 'Peepo', None, True, [56, 10]]
 Peepo
 56
@@ -124,98 +95,98 @@ p
 [None, True]
 </pre>
 
-<button class="toggleBtn">Toggle IDE</button>
-<div class="iframeContainer" >
-<iframe  frameborder="0"></iframe>
-</div><br>
-            </pre><br>
-
-            <b class="Name">Einstein: </b><br>
-            <pre class="english">This was List slicing. if you did not understand it. Copy the code, Go to Peepobot and ask it to explain thoroughly</pre><br>
-
-            <b class="Name">Brook: </b><br>
+            <button class="toggleBtn">Toggle IDE</button>
+            <div class="iframeContainer">
+                <iframe frameborder="0"></iframe>
+            </div><br />
+            </pre><br />
+            <b class="Name">Einstein: </b><br />
+            <pre
+                class="english">This was List slicing. if you did not understand it. Copy the code, Go to Peepobot and ask it to explain thoroughly</pre>
+            <br />
+            <b class="Name">Brook: </b><br />
             <pre class="english">Now lets move on to List Methods.List is Mutable. Mutable means we can change its value.
             
-<pre class='code'>
+<pre class="code">
 <code>
 Lst = [1,35,565,65,45,56,34,21]
 print(Lst)
-Lst.append(103)   <b class='comments'># append(x) add an item to the list at the end where x is the item you want to append the list with</b> 
+Lst.append(103)   <b class="comments"># append(x) add an item to the list at the end where x is the item you want to append the list with</b> 
 Lst.append(103+3)
-Lst.append(10>30)
+Lst.append(10&gt;30)
 print("List after using 3 append", Lst)
-Lst.extend([56,56,True]) <b class='comments'># extend(l) add an List of items to the list. where l is the list. extend() takes iterable things meaning whose value can be returned one by one using a for loop like list,strings,tuples etc</b>
-<b class='comments'># if you are confused in iterable, try to print each number of a big number one by one like 1452 becomes 1     2    5    2   etc. and do the same with a list or string</b>
+Lst.extend([56,56,True]) <b class="comments"># extend(l) add an List of items to the list. where l is the list. extend() takes iterable things meaning whose value can be returned one by one using a for loop like list,strings,tuples etc</b>
+<b class="comments"># if you are confused in iterable, try to print each number of a big number one by one like 1452 becomes 1     2    5    2   etc. and do the same with a list or string</b>
 
 print("List after using extend", Lst)
 
-Lst.insert(2, "imposter")  <b class='comments'># insert(x,y) is like big brother of append which also allowes you to specify the index you want to place the new element at</b>
-<b class='comments'># here, x or first argument will be the index number and second will be the item you want to insert</b>
+Lst.insert(2, "imposter")  <b class="comments"># insert(x,y) is like big brother of append which also allowes you to specify the index you want to place the new element at</b>
+<b class="comments"># here, x or first argument will be the index number and second will be the item you want to insert</b>
 print("list after insert", Lst)
 
 if("imposter" in Lst):
-    Lst.remove("imposter")   <b class='comments'># remove(x)  where x is the element you want to remove. this function removes the first occurence of item in the list. If the item is not present in the list IT WILL THROW ERROR</b>
-<b class='comments'># so to avoid error we usually wrap the remove(x) in an if else statement. like did here</b>
+    Lst.remove("imposter")   <b class="comments"># remove(x)  where x is the element you want to remove. this function removes the first occurence of item in the list. If the item is not present in the list IT WILL THROW ERROR</b>
+<b class="comments"># so to avoid error we usually wrap the remove(x) in an if else statement. like did here</b>
 print("list after remove", Lst)
 
-item_popped = Lst.pop(4)   <b class='comments'># works same as remove but more flexible. and also it TAKES INDEX NUMBER AS ARGUMENT NOT THE ELEMENT ITSELF LIKE remove()...... (1) if no argument is provided, removes the last item. (2) returns the item removed which means you can store it in a variable</b>
+item_popped = Lst.pop(4)   <b class="comments"># works same as remove but more flexible. and also it TAKES INDEX NUMBER AS ARGUMENT NOT THE ELEMENT ITSELF LIKE remove()...... (1) if no argument is provided, removes the last item. (2) returns the item removed which means you can store it in a variable</b>
 print("popped ", item_popped, "from the list", Lst)
 
-print("the number 65 occurs at index, ", Lst.index(65))  <b class='comments'># returns the index of first occurenece of the item given as argument in the list. ERROR IF(ITEM NOT IN LIST)</b> 
+print("the number 65 occurs at index, ", Lst.index(65))  <b class="comments"># returns the index of first occurenece of the item given as argument in the list. ERROR IF(ITEM NOT IN LIST)</b> 
 
-print("the number of times 56 occurs in this list is ", Lst.count(56))   <b class='comments'># as the name suggest, takes item as argument and count no of times an item appears in the list</b>
+print("the number of times 56 occurs in this list is ", Lst.count(56))   <b class="comments"># as the name suggest, takes item as argument and count no of times an item appears in the list</b>
 
-Lst.reverse()   <b class='comments'># works as expected. flips the order of the list. meaning first item at last and last one at the first</b>
+Lst.reverse()   <b class="comments"># works as expected. flips the order of the list. meaning first item at last and last one at the first</b>
 print("List after reverse", Lst)
 
-Lst.sort()  <b class='comments'># sort the list form lowest to highest . You can also sort lists with strings in it. Try it please</b>
+Lst.sort()  <b class="comments"># sort the list form lowest to highest . You can also sort lists with strings in it. Try it please</b>
 print("list after sorting ", Lst)
-Lst.sort(reverse = True)  <b class='comments'># is the argument reverse=True is given it will sort the opposite. Highest to Lowest</b>
+Lst.sort(reverse = True)  <b class="comments"># is the argument reverse=True is given it will sort the opposite. Highest to Lowest</b>
 print("list after reverse sorting, " Lst)
 
-a = Lst    <b class='comments'># FOCUS HERE... this will NOT create new list called a with same element as Lst. infact this will give another name to Lst.</b>
-a.append("imposter2")  <b class='comments'># since a and Lst are same person. so weather you call Peepo is Dumb or ROBOT_TUTOR is dumb it means same thing so here also, appending a or appending using Lst is same as both refer to the same list</b>
+a = Lst    <b class="comments"># FOCUS HERE... this will NOT create new list called a with same element as Lst. infact this will give another name to Lst.</b>
+a.append("imposter2")  <b class="comments"># since a and Lst are same person. so weather you call Peepo is Dumb or ROBOT_TUTOR is dumb it means same thing so here also, appending a or appending using Lst is same as both refer to the same list</b>
 print("list after appending by its new name 'a' ", Lst)
 
-b = Lst.copy()   <b class='comments'># if you actually wantt to create a copy of a list you can use copy(). now b is a different list.</b>
+b = Lst.copy()   <b class="comments"># if you actually wantt to create a copy of a list you can use copy(). now b is a different list.</b>
 
-listLength = Lst.len()   <b class='comments'># return number of items in the list as an integer</b>
+listLength = Lst.len()   <b class="comments"># return number of items in the list as an integer</b>
 print("length of the list is ", listLength)
 
-bo = Lst.contains("imposter2")    <b class='comments'># contains() checks is the item specified is present in the list or not . it returns a BOOLEAN value.</b>
+bo = Lst.contains("imposter2")    <b class="comments"># contains() checks is the item specified is present in the list or not . it returns a BOOLEAN value.</b>
 if bo:
     Lst.remove("imposter2")
 
-Lst.clear()  <b class='comments'># takes nothing as argument and works exactly as the name suggest. clear all the item in the list</b>
+Lst.clear()  <b class="comments"># takes nothing as argument and works exactly as the name suggest. clear all the item in the list</b>
 print("list after clearing", Lst)
 
-<b class='comments'># YOU CAN ALSO USE COMPARISON  OPERATORS ON THE LIST</b>
-<b class='comments'># how it works is, it compares each item one by one. just like it compares string ( i told you to try comparing strings have you did?)</b>
+<b class="comments"># YOU CAN ALSO USE COMPARISON  OPERATORS ON THE LIST</b>
+<b class="comments"># how it works is, it compares each item one by one. just like it compares string ( i told you to try comparing strings have you did?)</b>
 l1 = [1,2,4,5,-1,0]
 l2 = [1,2,3,8,5,7]
 l3 = [1,2,3,8,5,7]
 l4 = [1,2]
 print("l1 is ", l1, "l2 is ", l2, "l3 is ", l3, "l4 is ", l4)
-print("is l1 greater than l2?", l1>l2)
+print("is l1 greater than l2?", l1&gt;l2)
 print("is l2 equal to l3", l2==l3)
 
 print("l1+l2 will concatinate both lists ", l1+l2)
-print("l4*3 will be " l4*3)  <b class='comments'># multiplying will concatinate list with itself n number of times.if n is the number you multiply the list with</b>
+print("l4*3 will be " l4*3)  <b class="comments"># multiplying will concatinate list with itself n number of times.if n is the number you multiply the list with</b>
 
 MAKE A PPT OF ALLL OF THIS!!!!!!!!!!
 </code>
-</pre><br>
+</pre><br />
 
-<pre class='code'>
+            <pre class="code">
 <code>
-<b class='comments'># A cleaner look!</b>
+<b class="comments"># A cleaner look!</b>
 Lst = [1,35,565,65,45,56,34,21]
 print(Lst)
 
 
 Lst.append(103)   
 Lst.append(103+3)
-Lst.append(10>30)
+Lst.append(10&gt;30)
 print("List after using 3 append", Lst)
 
 
@@ -267,32 +238,32 @@ Lst.clear()
 print("list after clearing", Lst)
 
 
-<b class='comments'># using operators</b>
+<b class="comments"># using operators</b>
 l1 = [1,2,4,5,-1,0]
 l2 = [1,2,3,8,5,7]
 l3 = [1,2,3,8,5,7]
 l4 = [1,2]
 print("l1 is ", l1, "l2 is ", l2, "l3 is ", l3, "l4 is ", l4)
-print("is l1 greater than l2?", l1>l2)
+print("is l1 greater than l2?", l1&gt;l2)
 print("is l2 equal to l3", l2==l3)
 
 print("l1+l2 will concatinate both lists ", l1+l2)
 print("l4*3 will be " l4*3)
 
 </code>
-</pre><br>
+</pre><br />
 
-OUTPUT:
+            OUTPUT:
 
-<pre class='OUTPUT'>
+            <pre class="OUTPUT">
 
 
 </pre>
 
-<button class="toggleBtn">Toggle IDE</button>
-<div class="iframeContainer" >
-<iframe  frameborder="0"></iframe>
-</div><br>
+            <button class="toggleBtn">Toggle IDE</button>
+            <div class="iframeContainer">
+                <iframe frameborder="0"></iframe>
+            </div><br />
 
             <b>SLide left for more images: </b>
             <pre class="english hilightPur">
@@ -301,42 +272,39 @@ OUTPUT:
                 </div>
             </pre>
 
-            </pre><br>
-            <b class="Name">Einstein: </b><br>
+            </pre><br />
+            <b class="Name">Einstein: </b><br />
             <pre class="english">HUH! you must be tired with all these functions at one. JEnna is already throwing tantrums. 
     But do you really need to learn all of these? simple answer NO. you just need to know that something like this exists. and try to experiment so you dont grasp wrong concept.
     there is no need to actually learn these. these might come in handy while interviewing, exams, but not real life since the future is going to be mostly AI assisted so Ai will remember it for you. you just have to make things work.
     
     So thats to much for today. we actually need to split this lecture in two parts, so see you in next part.  and yeah dont tell peepo about that dumb joke I made.i dont wanna break my leg. 
-            </pre><br>
-
-            <b class="Name">Someone: </b><br>
-            <pre class="english">but shir Einshtein. waht is the real use of knowing these lists methods, where will i use them ever hehe.  </pre><br>
-
-            <b class="Name">Einstein: </b><br>
+            </pre><br />
+            <b class="Name">Someone: </b><br />
+            <pre
+                class="english">but shir Einshtein. waht is the real use of knowing these lists methods, where will i use them ever hehe.  </pre>
+            <br />
+            <b class="Name">Einstein: </b><br />
             <pre class="english">Buddy lets finish the lecture first. we will surely discuss its real world use with a project too. 
 and if you wanna know more about coding with AI. go to courses and select the AI course. it might not be out yet but it will come soon.
-            </pre><br>
-
-            <b class="Name">Einstein: </b><br>
-            <pre class="english">Now i want all of you to hop on your pc screen and actually try these. experiment on these. failure is best way to learn. if you have any trouble i am here to teach. also did you get the feeel about Lists? comment your feedback</pre><br>
-            
-            
-            <br><br><br>
-            
+            </pre><br />
+            <b class="Name">Einstein: </b><br />
+            <pre
+                class="english">Now i want all of you to hop on your pc screen and actually try these. experiment on these. failure is best way to learn. if you have any trouble i am here to teach. also did you get the feeel about Lists? comment your feedback</pre>
+            <br />
+            <br /><br /><br />
             <b>SLide left for more images: </b>
             <pre class="english hilightR">
                <b class="Name">Peepo:</b>
                 <div class="horizontal_scroll">
-                    <img src="" alt="meme1" class="images_scroll">
-                    <img src="" alt="fact1" class="images_scroll">
+                    <img alt="meme1" class="images_scroll" src=""/>
+                    <img alt="fact1" class="images_scroll" src=""/>
                 </div>
             </pre>
-            
             <h1 class="ending">Next Lecture: Tuples in Python(part 2 of this one.)</h1>
-
         </div>
     </div>
 </body>
 <script src="../index.js"></script>
+
 </html>

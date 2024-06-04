@@ -1,126 +1,102 @@
 <!DOCTYPE html>
-<html lang='en'>
+
+<html lang="en">
+
 <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <!-- style css -->
-    <link rel='stylesheet' href='../common_designs.css'>
-
     <!--font english-->
-    <link rel='preconnect' href='https://fonts.googleapis.com'>
-    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-    <link href='https://fonts.googleapis.com/css2?family=Cagliostro&family=Mukta&display=swap' rel='stylesheet'>
-
     <!-- font-hindi -->
-    <link rel='preconnect' href='https://fonts.googleapis.com'>
-    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-    <link href='https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&display=swap' rel='stylesheet'>
     <title>String and sets in python</title>
 </head>
-<body class='english'>
-    <div id='progress-bar-container'>
-        <img id='progress-bar' src='' alt='Progress Indicator'>
+
+<body class="english">
+    <div id="progress-bar-container">
+        <img alt="Progress Indicator" id="progress-bar" src="" />
     </div>
+    <div class="container">
+        <h1 class="heading english"><u>String and sets in python</u></h1>
+        <div class="divider"></div>
 
-    <div id="overlay" class="overlay">
-        <span id="closeButton" class="close-btn">&times;</span>
-        <img id="overlayImage" class="overlay-img" src="" alt="Isolated Image">
-        <div class="zoom-controls">
-            <button id="zoomIn" class="zoom-btn">+</button>
-            <button id="zoomOut" class="zoom-btn">-</button>
-        </div>
-    </div>
-    
-    <div class='container'>
-        <h1 class='heading english'><u>String and sets in python</u></h1>
-        <div class='divider'></div>
-
-        <audio id='bgMusic' loop>
-             <source src='../TheEndingSong.mp3' type='audio/mpeg'>
-        </audio>
-
-        <div class='content'>
-
-<img src='Image resource\Peepo_teachingPY.PNG' alt='Welcome welcome_folks peepo teaching snake on his neck' class='images'><br>
-
-            <b class="Name">Peepo: </b><br>
-            <pre class="english">lets get started right away</pre><br>
-
-            <b class="Name">Peepo: </b><br>
+        <div class="content">
+            <br />
+            <b class="Name">Peepo: </b><br />
+            <pre class="english">lets get started right away</pre><br />
+            <b class="Name">Peepo: </b><br />
             <pre class="english">well we have already studied about strings in previous lectures like f-string, some string methods etc. which we will discuss here also. with some code
 well what was need of reading about strings different from other datatypes? because strings are different.  the String behaves as a List of characters joined like beads. anything inside quotes, is a string.
 
-<pre class='code'>
+<pre class="code">
 <code>
 str1  = "this is a string"
 str2 = 'this is also a string'
 str3 = '''this is a multiline string'''
 
-<b class='comments'># Jenna: So, Peepo, strings are like sentences we say every day, but inside quotes?</b>
-<b class='comments'># Peepo: exactly</b>
+<b class="comments"># Jenna: So, Peepo, strings are like sentences we say every day, but inside quotes?</b>
+<b class="comments"># Peepo: exactly</b>
 
-<b class='comments'># lets move to some basic string operations.</b>
+<b class="comments"># lets move to some basic string operations.</b>
 
-<b class='comments'># since string are iterable and immutable(this thing is different from list). and behaves almost like a list. we can do slicing of a string like a fruit.</b>
+<b class="comments"># since string are iterable and immutable(this thing is different from list). and behaves almost like a list. we can do slicing of a string like a fruit.</b>
 
 s = "Hello      I am / Peepo, i hope / must be having a exciting [] learning curve and please take a break after this lecture"
 print(s[4] , "is 4th index of string s")
 print(s[1:8], "is 1 to 7th index of string s")
 
-<b class='comments'># Einstein: what if we access index that does not exist?</b>
-<b class='comments'># Peepo: you will get an index error. trying to get something that does not exists. Python will be lost finding that dont be cruel for Python.</b>
+<b class="comments"># Einstein: what if we access index that does not exist?</b>
+<b class="comments"># Peepo: you will get an index error. trying to get something that does not exists. Python will be lost finding that dont be cruel for Python.</b>
 
 print("length of string is", len(s))
-print("IN LOWERCASE: ", s.lower())  <b class='comments'># turns all characters in string to lowerCase</b>
-print("in uppercase: ", s.upper())  <b class='comments'># turns all characters in string to upperCase</b>
+print("IN LOWERCASE: ", s.lower())  <b class="comments"># turns all characters in string to lowerCase</b>
+print("in uppercase: ", s.upper())  <b class="comments"># turns all characters in string to upperCase</b>
 
-s.strip()  <b class='comments'># you can strip of string of unwanted peices of characters.😳poor string. the strip method takes an argument and if none provided. it just strips the whitespaces i.e empty spaces like                      &lt;- this</b>
-s.strip(" / ") <b class='comments'># you can also provide multiple string characters without any spaces . add space for your convenience</b>
-s.strip(" . [] ") <b class='comments'># this is a dot, square brackets. removes whitespace even then.</b>
+s.strip()  <b class="comments"># you can strip of string of unwanted peices of characters.😳poor string. the strip method takes an argument and if none provided. it just strips the whitespaces i.e empty spaces like                      &lt;- this</b>
+s.strip(" / ") <b class="comments"># you can also provide multiple string characters without any spaces . add space for your convenience</b>
+s.strip(" . [] ") <b class="comments"># this is a dot, square brackets. removes whitespace even then.</b>
 
 
-print("if Peepo is replaced with Einstein, this string will be, " s.replace("Peepo", "einstein")) <b class='comments'># replace() takes two arguments, the first one is what you wantt to replace in string and second is what you want in its place instead</b>
+print("if Peepo is replaced with Einstein, this string will be, " s.replace("Peepo", "einstein")) <b class="comments"># replace() takes two arguments, the first one is what you wantt to replace in string and second is what you want in its place instead</b>
 l = "     Love You       "
-print(l.replace(" ", "❤️"))  <b class='comments'># notice first argument is just one space/whitespace</b>
+print(l.replace(" ", "❤️"))  <b class="comments"># notice first argument is just one space/whitespace</b>
 
 
-<b class='comments'># The split() method is like a pair of scissors that can cut this long string into smaller pieces wherever you tell it to cut</b>
-<b class='comments'># If you don't tell it where to cut, it will cut the string wherever there are spaces. So, if you do</b>
+<b class="comments"># The split() method is like a pair of scissors that can cut this long string into smaller pieces wherever you tell it to cut</b>
+<b class="comments"># If you don't tell it where to cut, it will cut the string wherever there are spaces. So, if you do</b>
 
-print("strip func without any argument: ", s.strip()) <b class='comments'># it strips by whitespace and forms a list of seperated words</b>
-<b class='comments'># lets make a shorter string for ease of teaching</b>
+print("strip func without any argument: ", s.strip()) <b class="comments"># it strips by whitespace and forms a list of seperated words</b>
+<b class="comments"># lets make a shorter string for ease of teaching</b>
 xs = "hello students i am Peepo"
 print("strip func on xs string with argument  = 'o' : ", xs.strip("o"))
 o_strip_xs = xs.strip("o")
 print("to strip by individual characters, use empty string as argument " , xs.strip(""))
 
-<b class='comments'># now we have a list of cutted string. suppose we are editing a paragraph given by user or trying to count no of words. or trying to edit string using list methods. this is useful. </b>
-<b class='comments'># an intresting project is to reverse the string like string is "Talk With Computer" and convert it to "retupmoC htiC klaT" or "Computer With Talk" </b>
+<b class="comments"># now we have a list of cutted string. suppose we are editing a paragraph given by user or trying to count no of words. or trying to edit string using list methods. this is useful. </b>
+<b class="comments"># an intresting project is to reverse the string like string is "Talk With Computer" and convert it to "retupmoC htiC klaT" or "Computer With Talk" </b>
 
-<b class='comments'># now we have a list cutout from string. and we performed actions we wanted. and now we want string back to be a string.</b>
-<b class='comments'># there is join function for that</b>
-print("string after joining now, " , "".join(o_strip_xs)) <b class='comments'># the argument of join is what string you want to join.</b>
-<b class='comments'># Einstein: what does that string before join means???.</b>
-<b class='comments'># good you are attentive. (why am i being a typical teacher huh!) ... this is the string you want in between your list item while joining them. did'nt understand? lets use ecample</b>
+<b class="comments"># now we have a list cutout from string. and we performed actions we wanted. and now we want string back to be a string.</b>
+<b class="comments"># there is join function for that</b>
+print("string after joining now, " , "".join(o_strip_xs)) <b class="comments"># the argument of join is what string you want to join.</b>
+<b class="comments"># Einstein: what does that string before join means???.</b>
+<b class="comments"># good you are attentive. (why am i being a typical teacher huh!) ... this is the string you want in between your list item while joining them. did'nt understand? lets use ecample</b>
 
 l1= ["hello", "i", "am", "Brook"]
-print( "".join(l1)) <b class='comments'># python will first try to join first two strings.but it is not intelligent like us to know to put a space between words. it will put whatever it is told to.</b>
-<b class='comments'># so if empty string is given it wont put anythin between and output = helloiamBrook</b>
-<b class='comments'># if you put a space </b>
-print(" ".join(l1)) <b class='comments'># output: hello i am Brook</b>
-print(" join ".join(l1)) <b class='comments'># hello join i join am join Brook</b>
-print("😎".join(l1)) <b class='comments'># output: hello😎i😎am😎Brook</b>
-<b class='comments'># i hope you understand. if you dont, either you will understand by experience or use ai to write code that might use this method</b>
+print( "".join(l1)) <b class="comments"># python will first try to join first two strings.but it is not intelligent like us to know to put a space between words. it will put whatever it is told to.</b>
+<b class="comments"># so if empty string is given it wont put anythin between and output = helloiamBrook</b>
+<b class="comments"># if you put a space </b>
+print(" ".join(l1)) <b class="comments"># output: hello i am Brook</b>
+print(" join ".join(l1)) <b class="comments"># hello join i join am join Brook</b>
+print("😎".join(l1)) <b class="comments"># output: hello😎i😎am😎Brook</b>
+<b class="comments"># i hope you understand. if you dont, either you will understand by experience or use ai to write code that might use this method</b>
 
-<b class='comments'># Einstein: Peepo, if we can write everything using AI, then what is our need of learning Programming.  oh i know.i need to attend the AI course for that?</b>
-<b class='comments'># Peepo: exxactly. like in previous part, i(an AI robot) was not available but still you taught very well einstein.</b>
+<b class="comments"># Einstein: Peepo, if we can write everything using AI, then what is our need of learning Programming.  oh i know.i need to attend the AI course for that?</b>
+<b class="comments"># Peepo: exxactly. like in previous part, i(an AI robot) was not available but still you taught very well einstein.</b>
 
 
 </code>
-</pre><br>
+</pre><br />
 
-<pre class='code'>
+            <pre class="code">
 <code>
 #cleaner code
 
@@ -164,11 +140,11 @@ print("😎".join(l1))
 
 
 </code>
-</pre><br>
+</pre><br />
 
-OUTPUT:
+            OUTPUT:
 
-<pre class='OUTPUT'>
+            <pre class="OUTPUT">
 length of string is 120
 IN LOWERCASE:  hello      i am / peepo, i hope / must be having a exciting [] learning curve and please take a break after this lecture
 in uppercase:  HELLO      I AM / PEEPO, I HOPE / MUST BE HAVING A EXCITING [] LEARNING CURVE AND PLEASE TAKE A BREAK AFTER THIS LECTURE
@@ -185,46 +161,44 @@ hello😎i😎am😎Brook
 
 </pre>
 
-<button class="toggleBtn">Toggle IDE</button>
-<div class="iframeContainer" >
-<iframe  frameborder="0"></iframe>
-</div><br>
-            </pre><br>
-
-            <b class="Name">Peepo: </b><br>
+            <button class="toggleBtn">Toggle IDE</button>
+            <div class="iframeContainer">
+                <iframe frameborder="0"></iframe>
+            </div><br />
+            </pre><br />
+            <b class="Name">Peepo: </b><br />
             <pre class="english">let us see a real world example.
 
-<pre class='code'>
+<pre class="code">
 <code>
-<b class='comments'># Let's say we have a log file with user activities, and we want to extract the usernames.</b>
+<b class="comments"># Let's say we have a log file with user activities, and we want to extract the usernames.</b>
 log = "User1 logged in\nUser2 logged out\nUser3 logged in"
 lines = log.split('\n')
 usernames = [line.split()[0] for line in lines]
 print(usernames)  # ['User1', 'User2', 'User3']
 
-<b class='comments'># \n is newline sequence which allows you to print in next line without using new print statement. backslash i.e \ is an escape sequence which we will study about next lecture.</b>
-<b class='comments'># Try to understand this</b>
+<b class="comments"># \n is newline sequence which allows you to print in next line without using new print statement. backslash i.e \ is an escape sequence which we will study about next lecture.</b>
+<b class="comments"># Try to understand this</b>
 
 
-<b class='comments'># if code does not run in the IDE, try removing all comments.</b>
+<b class="comments"># if code does not run in the IDE, try removing all comments.</b>
 </code>
-</pre><br>
+</pre><br />
 
-OUTPUT:
+            OUTPUT:
 
-<pre class='OUTPUT'>
+            <pre class="OUTPUT">
 ['User1', 'User2', 'User3']
 
 </pre>
 
-<button class="toggleBtn">Toggle IDE</button>
-<div class="iframeContainer" >
-<iframe  frameborder="0"></iframe>
-</div><br>
+            <button class="toggleBtn">Toggle IDE</button>
+            <div class="iframeContainer">
+                <iframe frameborder="0"></iframe>
+            </div><br />
 
-            </pre><br>
-
-            <b class="Name">Peepo: </b><br>
+            </pre><br />
+            <b class="Name">Peepo: </b><br />
             <pre class="english hilightB">this is it. now lets do sets real quick
 
 sets are simple thing. it is like list where no item can repeat iselft like list =[0,0,0,5,4,0]  set = {0,5,4}  each item is unique in a set
@@ -243,33 +217,34 @@ Peepo: dont ever talk to me like that again. you will regret your every decision
 7. usually used to eliminate duplicate item from a data.
 8. Membership Testing: Check for membership in a collection efficiently.
 
-<pre class='code'>
+<pre class="code">
 <code>
 s1 = {1,2,3, "hello"}
-s2 = {3,4,5,6,6} <b class='comments'># i repeated 6 here but while you run the code. python will automaticallly merge the two sixes into one six</b>
+s2 = {3,4,5,6,6} <b class="comments"># i repeated 6 here but while you run the code. python will automaticallly merge the two sixes into one six</b>
 list = [45,5,8,4,5,7,8,"hello", "hello"]
 s3 = set(list)
 s1.add(4) 
-s1.add(1)  <b class='comments'># it already exists so it does nothing it wont create new item</b>
+s1.add(1)  <b class="comments"># it already exists so it does nothing it wont create new item</b>
 s1.remove(2)
 
 <pre class="comments"> union operator is reperesented by     |   </pre>
-print(s1 | s2)  <b class='comments'># combines both the sets without any duplication.</b>
+            print(s1 | s2) <b class="comments"># combines both the sets without any duplication.</b>
 
-<b class='comments'># intersection operator is represented by    &    (its not and symbol in python and is written as and only. )</b>
-print(s1 & s2)  <b class='comments'># return the item which is commen in both of them.</b>
+            <b class="comments"># intersection operator is represented by &amp; (its not and symbol in python and is
+                written as and only. )</b>
+            print(s1 &amp; s2) <b class="comments"># return the item which is commen in both of them.</b>
 
-print(s1-s2)  <b class='comments'># removes items of s2 from s1. if any</b>
-print(s2-s1)  <b class='comments'># removes items of s1 from s2. if any</b>
+            print(s1-s2) <b class="comments"># removes items of s2 from s1. if any</b>
+            print(s2-s1) <b class="comments"># removes items of s1 from s2. if any</b>
 
-<b class='comments'># frozen set is one which is immutable. its like no duplicate item tuple.</b>
-s = frozenset(s1 | s2)
+            <b class="comments"># frozen set is one which is immutable. its like no duplicate item tuple.</b>
+            s = frozenset(s1 | s2)
 
-</code>
-</pre><br>
+            </code>
+            </pre><br />
 
-Cleaner Code
-<pre class='code'> 
+            Cleaner Code
+            <pre class="code">
 <code>
 s1 = {1,2,3, "hello"}
 s2 = {3,4,5,6,6} 
@@ -281,16 +256,16 @@ s1.remove(2)
        
     
 print(s1 | s2)  
-print(s1 & s2)
+print(s1 &amp; s2)
 print(s1-s2)  
 print(s2-s1)
 s = frozenset(s1 | s2)
 
 </code>
-</pre><br>
-OUTPUT:
+</pre><br />
+            OUTPUT:
 
-<pre class='OUTPUT'>
+            <pre class="OUTPUT">
 {1, 3, 4, 5, 6, 'hello'}
 {3, 4}
 {1, 'hello'}
@@ -298,13 +273,12 @@ OUTPUT:
 
 </pre>
 
-<button class="toggleBtn">Toggle IDE</button>
-<div class="iframeContainer" >
-<iframe  frameborder="0"></iframe>
-</div><br>
-</pre><br>
-
-            <b class="Name">Peepo: </b><br>
+            <button class="toggleBtn">Toggle IDE</button>
+            <div class="iframeContainer">
+                <iframe frameborder="0"></iframe>
+            </div><br />
+            </pre><br />
+            <b class="Name">Peepo: </b><br />
             <pre class="english">one last thing before we go is know about enumerate function
 sometimes during for we if we want to know what index is the iteration in, we can use temporary variable
 l1 = [456,5,45,15,6,4]
@@ -314,26 +288,26 @@ for i in l1:
     index = index + 1
 
 we can make it easier with enumerate
-<pre class='code'>
+<pre class="code">
 <code>
-<b class='comments'># task = whenever 4rd index element comes print("fourth")</b>
+<b class="comments"># task = whenever 4rd index element comes print("fourth")</b>
 l2 = [561,44,854,1,2,7,89]
-for index,value in enumerate(l2):  <b class='comments'># enumerate will also give you index.... here index and value are variable. index/firstvariable will iterate range(0,len(l2)) and mark will hold the values.</b>
+for index,value in enumerate(l2):  <b class="comments"># enumerate will also give you index.... here index and value are variable. index/firstvariable will iterate range(0,len(l2)) and mark will hold the values.</b>
     print(index , value)
     if(index == 4):
         print(value , "is the" , index , "th element")
         print("fourth")
-<b class='comments'># try printing print(enumerate(l2)) see what it gives.(if you dont know what that is, that is the location of the element in the memory)</b>
+<b class="comments"># try printing print(enumerate(l2)) see what it gives.(if you dont know what that is, that is the location of the element in the memory)</b>
 
-<b class='comments'># you can aslo specify the start number</b>
+<b class="comments"># you can aslo specify the start number</b>
 for num,value in enumerate(l2, start = 1):
     print(num, value)
 </code>
-</pre><br>
+</pre><br />
 
-OUTPUT:
+            OUTPUT:
 
-<pre class='OUTPUT'>
+            <pre class="OUTPUT">
 0 561
 1 44
 2 854
@@ -353,34 +327,32 @@ fourth
 
 </pre>
 
-<button class="toggleBtn">Toggle IDE</button>
-<div class="iframeContainer" >
-<iframe  frameborder="0"></iframe>
-</div><br>
-            </pre><br>
-
-            <b class="Name">Peepo: </b><br>
-            <pre class="english">Good thing FINALLY the biggest chapter of Peepo and Einstein together. thanks Einstein for taking my place in first lecture. i hope you understand all. IF you have any problem ask PeepoBOt or any AI.</pre><br>
-        
-            <b class="Name">Peepo: </b><br>
-            <pre class="english">Now i want all of you to hop on your pc screen and actually try these. experiment on these. failure is best way to learn. if you have any trouble i am here to teach. also did you get the feeel about strings and sets? comment your feedback</pre><br>
-            
-            
-            <br><br><br>
-            
+            <button class="toggleBtn">Toggle IDE</button>
+            <div class="iframeContainer">
+                <iframe frameborder="0"></iframe>
+            </div><br />
+            </pre><br />
+            <b class="Name">Peepo: </b><br />
+            <pre
+                class="english">Good thing FINALLY the biggest chapter of Peepo and Einstein together. thanks Einstein for taking my place in first lecture. i hope you understand all. IF you have any problem ask PeepoBOt or any AI.</pre>
+            <br />
+            <b class="Name">Peepo: </b><br />
+            <pre
+                class="english">Now i want all of you to hop on your pc screen and actually try these. experiment on these. failure is best way to learn. if you have any trouble i am here to teach. also did you get the feeel about strings and sets? comment your feedback</pre>
+            <br />
+            <br /><br /><br />
             <b>SLide left for more images: </b>
             <pre class="english hilightPur">
                <b class="Name">Peepo:</b>
                 <div class="horizontal_scroll">
-                    <img src="" alt="meme1" class="images_scroll">
-                    <img src="" alt="fact1" class="images_scroll">
+                    <img alt="meme1" class="images_scroll" src=""/>
+                    <img alt="fact1" class="images_scroll" src=""/>
                 </div>
             </pre>
-            
             <h1 class="ending">Next Lecture: Escape sequences in Python(efficient)</h1>
-
         </div>
     </div>
 </body>
 <script src="../index.js"></script>
+
 </html>

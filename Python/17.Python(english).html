@@ -1,55 +1,33 @@
 <!DOCTYPE html>
-<html lang='en'>
+
+<html lang="en">
+
 <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <!-- style css -->
-    <link rel='stylesheet' href='../common_designs.css'>
-
     <!--font english-->
-    <link rel='preconnect' href='https://fonts.googleapis.com'>
-    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-    <link href='https://fonts.googleapis.com/css2?family=Cagliostro&family=Mukta&display=swap' rel='stylesheet'>
-
     <!-- font-hindi -->
-    <link rel='preconnect' href='https://fonts.googleapis.com'>
-    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-    <link href='https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&display=swap' rel='stylesheet'>
     <title>Map,Filter,Reduce in Python</title>
 </head>
-<body class='english'>
-    <div id='progress-bar-container'>
-        <img id='progress-bar' src='Image resource/boy.png' alt='Progress Indicator'>
+
+<body class="english">
+    <div id="progress-bar-container">
+        <img alt="Progress Indicator" id="progress-bar" src="Image resource/boy.png" />
     </div>
+    <div class="container">
+        <h1 class="heading english"><u>map,filter,reduce etc in Python</u></h1>
+        <div class="divider"></div>
 
-    <div id='overlay' class='overlay'>
-        <span id='closeButton' class='close-btn'>&times;</span>
-        <img id='overlayImage' class='overlay-img' src='' alt='Isolated Image'>
-        <div class='zoom-controls'>
-           <button id='zoomIn' class='zoom-btn'>+</button>
-           <button id='zoomOut' class='zoom-btn'>-</button>
-        </div>
-   </div>
-
-    <div class='container'>
-        <h1 class='heading english'><u>map,filter,reduce etc in Python</u></h1>
-        <div class='divider'></div>
-
-        <audio id='bgMusic' loop>
-             <source src='../TheEndingSong.mp3' type='audio/mpeg'>
-        </audio>
-
-        <div class='content'>
-
-<img src='Image resource\Peepo_teachingPY.PNG' alt='Welcome welcome_folks peepo teaching snake on his neck' class='images'><br>
-
-            <b class="Name">Peepo: </b><br>
-            <pre class="english">suppose you want to multiply each number of a list by 2 and then cube it. what would you do?</pre><br>
-
-            <b class="Name">Einstein: </b><br>
+        <div class="content">
+            <br />
+            <b class="Name">Peepo: </b><br />
+            <pre
+                class="english">suppose you want to multiply each number of a list by 2 and then cube it. what would you do?</pre>
+            <br />
+            <b class="Name">Einstein: </b><br />
             <pre class="english">
-<pre class='code'>
+<pre class="code">
 <code>
 Times2Cube = lambda x: (x*2)**3
 
@@ -60,22 +38,20 @@ for num in nums:
 
 print(cubedNums)
 </code>
-</pre><br>
+</pre><br />
 
-OUTPUT:
+            OUTPUT:
 
-<pre class='OUTPUT'>
+            <pre class="OUTPUT">
 [729000, 4096, 2744, 8, 64, 216, 1728, 2744, 5832]
 </pre>
 
-<button class="toggleBtn">Toggle IDE</button>
-<div class="iframeContainer" >
-<iframe  frameborder="0"></iframe>
-</div><br>
-            </pre><br>
-
-
-            <b class="Name">Peepo: </b><br>
+            <button class="toggleBtn">Toggle IDE</button>
+            <div class="iframeContainer">
+                <iframe frameborder="0"></iframe>
+            </div><br />
+            </pre><br />
+            <b class="Name">Peepo: </b><br />
             <pre class="english">sure you can do that but doing it takes a lot of time and increase number of lines of code.which makes your complex program hard to read
 So what we do then? whats the shortcut
 
@@ -86,71 +62,70 @@ Times2Cube = lambda x: (x*2)**3
 nums = [45,8,7,1,2,3,6,7,9]
 # variable = map(Function Name , List you want to map)
 
-cubedNums = map(Times2Cube , nums)   <b class='comments'># thats it.</b>
-print(cubedNums)  <b class='comments'># but it will print a map object we need to typecast it to a list</b>
-<b class='comments'># we can directly use</b>
+cubedNums = map(Times2Cube , nums)   <b class="comments"># thats it.</b>
+print(cubedNums)  <b class="comments"># but it will print a map object we need to typecast it to a list</b>
+<b class="comments"># we can directly use</b>
 cubedNums = list(map(Times2Cube , nums))
 print(cubedNums)
 </code>
 </pre>
 
-<pre class="code">
-    <b class='comments'># clean code</b>
+            <pre class="code">
+    <b class="comments"># clean code</b>
 Times2Cube = lambda x: (x*2)**3
 nums = [45,8,7,1,2,3,6,7,9]
 print( map(Times2Cube , nums)  ,  list(map(Times2Cube , nums)))
 
 </pre>
 
-<pre class="OUTPUT">
-&lt;map object at 0x000001D8AEAB6B30> 
+            <pre class="OUTPUT">
+&lt;map object at 0x000001D8AEAB6B30&gt; 
 [729000, 4096, 2744, 8, 64, 216, 1728, 2744, 5832]
 </pre>
-            </pre><br>
-        
-            <b class="Name">Peepo: </b><br>
+            </pre><br />
+            <b class="Name">Peepo: </b><br />
             <pre class="english">now lets see Filter.  not the instagram/snapchat filter. its like a water filter, bad minerals go, good remains. 
 so in lists we filter items we dont need.
 <pre class="code">
 
 l = [565,96,89,5,7,9,65454,8,9,8,]
    
-filterFunc = lambda x: x>80 
+filterFunc = lambda x: x&gt;80 
     
-filtered_l = list(filter(filterFunc , l))    <b class='comments'># it will check the function for each element if function returns true, filter will keep the element, if false, filter rempves that item</b> 
-print(l)   <b class='comments'># filter also return filter object so we typecast it to list()</b>
+filtered_l = list(filter(filterFunc , l))    <b class="comments"># it will check the function for each element if function returns true, filter will keep the element, if false, filter rempves that item</b> 
+print(l)   <b class="comments"># filter also return filter object so we typecast it to list()</b>
 print(filtered_l)
 </pre>
 
-<pre class="OUTPUT">
+            <pre class="OUTPUT">
 [565, 96, 89, 5, 7, 9, 65454, 8, 9, 8]
 [565, 96, 89, 65454]
 </pre>
-            </pre><br>
-
-            <b class="Name">Einstein: </b><br>
-            <pre class="english">if we want to convert it to list why python even returns filter/map object why not directly list? </pre><br>
-
-            <b class="Name">Peepo: </b><br>
-            <pre class="english">well its for efficiency of python and ours. because if we dont want list? we can typecast it into a tuple using tuple() .. a set using set() etccc. </pre><br>
-
-            <b class="Name">Peepo: </b><br>
-            <pre class="english hilightR">make you you give iterable object as argument in map/filter etc </pre><br>
-
-            <b class="Name">Peepo: </b><br>
+            </pre><br />
+            <b class="Name">Einstein: </b><br />
+            <pre
+                class="english">if we want to convert it to list why python even returns filter/map object why not directly list? </pre>
+            <br />
+            <b class="Name">Peepo: </b><br />
+            <pre
+                class="english">well its for efficiency of python and ours. because if we dont want list? we can typecast it into a tuple using tuple() .. a set using set() etccc. </pre>
+            <br />
+            <b class="Name">Peepo: </b><br />
+            <pre class="english hilightR">make you you give iterable object as argument in map/filter etc </pre><br />
+            <b class="Name">Peepo: </b><br />
             <pre class="english">now lets see reduce function
 <pre class="code">
-<b class='comments'>#******* remember we have to import reduce. ***********</b>
+<b class="comments">#******* remember we have to import reduce. ***********</b>
 from functools import reduce
 
 numbers = [1,2,3,4,5,6,7,8,9,10,11,12]
 
-sum = reduce(lambda x,y:x+y , numbers)  <b class='comments'># lets see how it works
+sum = reduce(lambda x,y:x+y , numbers)  <b class="comments"># lets see how it works
 <pre class="comments">'''
 first it will see first two values , as per the arguments of the lambda function here
-<b class='comments'># initially: </b>
+<b class="comments"># initially: </b>
 numbers = [1,2,3,4,5,6,7,8,9,10,11,12]
-<b class='comments'># now it sees first two numbers and throww them as arguments of function. which says to add both (can be anything)</b>
+<b class="comments"># now it sees first two numbers and throww them as arguments of function. which says to add both (can be anything)</b>
 numbers = [3 , 3,4,5,6,7,8,9,10,11,12] 
 on second iteration:
 numbers = [9 , 4,5,6,7,8,9,10,11,12] 
@@ -159,57 +134,57 @@ numbers = [58 , 11,12]
 numbers = [69 , 12]
 numbers = 81
 '''</pre>
-</b>
+            </b>
 
-print(sum)  <b class='comments'># OUTPUT = 81</b>
-<b class='comments'># thats how reduce works. depending on number of arguments. take the variables values from the list provided, and perform functions and replace those 3 items by the value returned by the function</b>
-
-
-
-
+            print(sum) <b class="comments"># OUTPUT = 81</b>
+            <b class="comments"># thats how reduce works. depending on number of arguments. take the variables values
+                from the list provided, and perform functions and replace those 3 items by the value returned by the
+                function</b>
 
 
 
-<b class='comments'># one more example</b>
 
-l2 = [1,2,3,4] <b class='comments'># yeah i dont like 16</b>
-<b class='comments'># we will add 5 to both and multiply with each other</b>
-add5Product = lambda a,b: (a+5)*(b+5)   <b class='comments'># a,b are variables just like x,y </b>
-<b class='comments'># get your calculator </b>
-newl2 = reduce(add5Product , l2)
-print(newl2)    <b class='comments'># OUTPUT: 3429</b> 
 
-<b class='comments'># and yeah reduce does not give reduce object 😂</b>
-</pre>
 
-<b>remember to import reduce. </b>
-            </pre><br>
 
-            <b class="Name">Peepo: </b><br>
-            <pre class="english">dont worry if you dont understand a thing in this lecture, things can work even without these . but when you see someone's code and see these map,filter etc things you must not get scared that what are these. and understand enough that googling them will make you remember things easy</pre><br>
+            <b class="comments"># one more example</b>
 
-            <b class="Name">Peepo: </b><br>
-            <pre class="english">Now i want all of you to hop on your pc screen and actually try these. experiment on these. failure is best way to learn. if you have any trouble i am here to teach. also did you get the feeel about these advanced maniputlative functions? comment your feedback</pre><br>
-            
-            
-            <br><br><br>
-            
+            l2 = [1,2,3,4] <b class="comments"># yeah i dont like 16</b>
+            <b class="comments"># we will add 5 to both and multiply with each other</b>
+            add5Product = lambda a,b: (a+5)*(b+5) <b class="comments"># a,b are variables just like x,y </b>
+            <b class="comments"># get your calculator </b>
+            newl2 = reduce(add5Product , l2)
+            print(newl2) <b class="comments"># OUTPUT: 3429</b>
+
+            <b class="comments"># and yeah reduce does not give reduce object 😂</b>
+            </pre>
+
+            <b>remember to import reduce. </b>
+            </pre><br />
+            <b class="Name">Peepo: </b><br />
+            <pre
+                class="english">dont worry if you dont understand a thing in this lecture, things can work even without these . but when you see someone's code and see these map,filter etc things you must not get scared that what are these. and understand enough that googling them will make you remember things easy</pre>
+            <br />
+            <b class="Name">Peepo: </b><br />
+            <pre
+                class="english">Now i want all of you to hop on your pc screen and actually try these. experiment on these. failure is best way to learn. if you have any trouble i am here to teach. also did you get the feeel about these advanced maniputlative functions? comment your feedback</pre>
+            <br />
+            <br /><br /><br />
             <b>SLide left for more images: </b>
-            <pre class="english ">
+            <pre class="english">
                <b class="Name">Peepo:</b>
                 <div class="horizontal_scroll">
-                    <img src="Image resource/python memes/Fact3.png" alt="meme1" class="images_scroll">
-                    <img src="Image resource/python memes/meme4.png" alt="fact1" class="images_scroll">
+                    <img alt="meme1" class="images_scroll" src="Image resource/python memes/Fact3.png"/>
+                    <img alt="fact1" class="images_scroll" src="Image resource/python memes/meme4.png"/>
                 </div>
             </pre>
-            
             <h1 class="ending">Next Lecture: accessing web data in Python</h1>
-            <p class="english">note that the lectures 18-  will be based on web analysing so might be interesting for you. and complex for begginers. but dont worry, you can just read throught it all dont need to understand in detail.just know whats going on</p>
-
-            
-
+            <p class="english">note that the lectures 18- will be based on web analysing so might be interesting for
+                you. and complex for begginers. but dont worry, you can just read throught it all dont need to
+                understand in detail.just know whats going on</p>
         </div>
     </div>
 </body>
 <script src="../index.js"></script>
+
 </html>
