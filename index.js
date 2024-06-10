@@ -53,7 +53,9 @@ const links = [
   { href: 'https://fonts.googleapis.com/css2?family=Cagliostro&family=Mukta&display=swap', rel: 'stylesheet' },
   { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
   { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: 'anonymous' },
-  { href: 'https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&display=swap', rel: 'stylesheet' }
+  { href: 'https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&display=swap', rel: 'stylesheet' },
+  { rel: 'stylesheet' , href: 'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css'},
+  { rel: 'stylesheet' , href: 'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/material-darker.min.css'},
 ];
 
 // Loop through the array and create link elements
@@ -70,6 +72,98 @@ links.forEach(linkDetails => {
 
   console.log('Link added to head:', link);
 });
+
+// create script elements
+const scriptSources = [
+  'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js',
+  'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/javascript/javascript.min.js',
+  'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.2/mode/python/python.min.js',
+  "https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/mode/clike/clike.min.js",
+  "https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/mode/sql/sql.min.js",
+  "https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/mode/xml/xml.min.js"
+];
+scriptSources.forEach(src => {
+  // Create a new script element
+  const script = document.createElement('script');
+
+  // Set the source of the script
+  script.src = src;
+
+  // Append the script element to the head
+  document.head.appendChild(script);
+});
+
+
+// Array to store CodeMirror instances
+let codeMirrorInstances = [];
+// Initializing CodeMirror for code
+document.addEventListener('DOMContentLoaded', function() {
+  // Dictionary mapping folder names to CodeMirror modes
+  const languageModes = {
+    'python': 'text/x-cython',
+    'java': 'text/x-java',
+    'javascript': 'text/javascript',
+    'sql': 'text/x-sqlite',
+    'xml': 'text/html'
+    // Add more mappings as needed
+  };
+
+  // Function to determine the language based on the folder name
+  function determineLanguageMode() {
+    const pathArray = window.location.pathname.split('/');
+    for (const folderName of pathArray) {
+      if (languageModes[folderName.toLowerCase()]) {
+        return languageModes[folderName.toLowerCase()];
+      }
+    }
+    return 'text/javascript'; // Default to JavaScript if no match
+  }
+
+  // Get the appropriate CodeMirror mode based on the folder name
+  const defaultCodeMirrorMode = determineLanguageMode();
+
+  const codeElements = document.querySelectorAll('pre.code');
+  codeElements.forEach((codeElement, index) => {
+    // Check if a specific language mode is set via the data-language attribute
+    const languageName = codeElement.getAttribute('data-language');
+    const customMode = languageName ? languageModes[languageName.toLowerCase()] : null;
+    const codeMirrorMode = customMode || defaultCodeMirrorMode;
+
+    // Check if the <pre> contains a <code> tag
+    let codeText = codeElement.textContent;
+    const codeTag = codeElement.querySelector('code');
+    if (codeTag) {
+      codeText = codeTag.textContent;
+    }
+
+    // Create a new <textarea> element
+    const textArea = document.createElement('textarea');
+    textArea.value = codeText;
+    codeElement.textContent = ''; // Clear the content of the <pre>
+    codeElement.appendChild(textArea); // Append the <textarea> to the <pre>
+
+    // Initialize CodeMirror
+    const codeMirror = CodeMirror.fromTextArea(textArea, {
+      lineNumbers: true,
+      mode: codeMirrorMode,
+      readOnly: true,
+      theme: 'material-darker',
+      lineWrapping: true
+    });
+
+    // Store the CodeMirror instance in the array
+    codeMirrorInstances.push(codeMirror);
+
+    // Resize CodeMirror to fit content height
+    codeMirror.on('change', () => {
+      codeMirror.setSize(null, codeMirror.getDoc().height + 'px');
+    });
+  });
+  addCopyButtons();
+});
+
+
+
 
 // adding body content
 const overlayDiv = document.createElement('div');
@@ -104,20 +198,19 @@ document.querySelector('div.content').insertBefore(img , document.querySelector(
 console.log('Content added to body');
 
 
-
 // Function to create a copy button for each <pre> element with class 'code'
 function addCopyButtons() {
   // Get all <pre> elements with class 'code'
   var codeElements = document.querySelectorAll("pre.code");
 
   // Loop through each <pre> element
-  codeElements.forEach(function(element) {
+  codeElements.forEach(function(element, index) {
     // Create a copy button
     var copyButton = document.createElement("button");
-    copyButton.innerHTML = "<img src='../images/CopyButtonSymbol.png' alt='Copy Code'>";
+    copyButton.innerHTML = `<img src='${getRelativePath("../images/CopyButtonSymbol.png")}' alt='Copy Code'>`;
     copyButton.title = "Copy Code Without Comments";
     copyButton.onclick = function() {
-      copyCodeWithoutComments(element);
+      copyCodeWithoutComments(index);
     };
 
     // Style the button
@@ -137,14 +230,13 @@ function addCopyButtons() {
   });
 }
 
-// Function to copy code without comments for a specific <pre> element
-function copyCodeWithoutComments(element) {
-  // Get the text content of the element
-  var code = element.innerText;
+// Function to copy code without comments for a specific CodeMirror instance
+function copyCodeWithoutComments(index) {
+  // Get the CodeMirror instance
+  var codeMirror = codeMirrorInstances[index];
 
-  // Remove comments from the code using regular expression
-  code = code.replace(/<pre class='comments'>(.*?)<\/pre>/gs, "");
-  code = code.replace("Copy Code Without Comments", "");
+  // Get the code from the CodeMirror instance
+  var code = codeMirror.getValue();
 
   // Copy the code without comments to the clipboard
   navigator.clipboard.writeText(code)
@@ -154,6 +246,8 @@ function copyCodeWithoutComments(element) {
     })
     .catch(err => console.error('Could not copy code: ', err));
 }
+
+
 
 // Function to display a toast message
 function showToast(message) {
@@ -188,10 +282,6 @@ function showToast(message) {
   }, 2000);
 }
 
-// Call the function to add copy buttons when the DOM is loaded
-document.addEventListener("DOMContentLoaded", function() {
-  addCopyButtons();
-});
 
 window.addEventListener('scroll', function() {
   // Change 80 to the percentage of the page height where you want the music to start playing

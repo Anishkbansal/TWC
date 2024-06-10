@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+    <title>Movie Tracker in Python</title>
+</head>
+<body class='english'>
+    <div id='progress-bar-container'>
+        <img id='progress-bar' src='Image resource/boy.png' alt='Progress Indicator'>
+    </div>
+
+    <div class='container'>
+        <h1 class='heading english'><u>Movie Tracker in Python</u></h1>
+        <div class='divider'></div>
+
+        <div class='content'>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Hi Guys,  Thank you all !  you actually survived till lecture 30</pre><br>
+
+            <b class="Name">Einstein: </b><br>
+            <pre class="english">We are at 30 already. thats crazy</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Yeah , feels amazing that our journey is more closer to the end! Everyone how about you go the review section of the Course and tell what you  learned here. might be useful for new users to trust.</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">SO!! lets build it. First we will build the database ->
+Einstein: but how to start building it? we have lot to build. how do we even built the ER diagram rest alone the database? 
+Peepo: well thinks about what is most important to you application. for this app we are building-> its a ting that will manage movies.  so we start with movies!
+We will create the sample table first!
+
+<img src="" alt="" class="images">
+
+<b class='comments'>-- and so on.....</b>
+
+
+Now! lets see which of these attribues are of movies only.   
+first the movie name itself , the lenght of movie , Rating of Movie , noOfPlays .   they are part of movies 
+other things like Genre , Produced By(production houses) , Artist(any one) deserves a dfferent table of their own so we can now make Movie entiy 
+
+this is our first table 
+<img src="" alt="" class="images">
+
+<b>this is not code this is me making diagram on a board</b>
+
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english"> DEFINING RELATIONS
+Now movies table belongs to Artist which belongs to Production    <b class='comments'># please please just pretend it this way. i know it does not work like it</b>
+And.. Genre belongs to lets see.  if Genre was connected to Production -> and you change genre to something else (suppose changed to Horror) -> this will make genre of all with that same production change too(to Horror)
+same with others but not Movies. becuase that will change genre of only that place which we want. 
+
+companies make meetings while creating such things! this is something simple we created. 
+            </pre><br>
+
+            <b class="Name">Einstein: </b><br>
+            <pre class="english">Wow its just sooo Easy. You just need to think about app's efficiency at the start. not doing something that might break the database.
+And ALWAYS DO BACKUP!
+            </pre><br>
+        
+            <b class="Name">Peepo: </b><br>
+            <pre class="english hilightB">so we just created a data model!
+<img src="" alt="" class="images">
+Now lets map it into Database! 
+so create a database! 
+<pre class="code" data-language="sql">
+CREATE TABLE Production(
+ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+name TEXT    <b class='comments'>-- we will not specify the length it can be anything</b>
+)
+
+<b class='comments'>--NOTNULL tells that the key cannot be NULL</b> 
+<b class='comments'>-- primary key makes the ID primary key</b>
+<b class='comments'>-- AUTOINCREMENT tells that we do not have to specify it. you do it yourself generate it yourself</b>
+<b class='comments'>-- UNIQUE tells that ID should be UNIQUE</b>
+
+<b class='comments'>-- click run </b>
+<b class='comments'>-- A TIP -> CREATE ENDS FIRST LIKE WE DID PRODUCTION FIRST NOW WE DO GENRE</b>
+
+<b class='comments'>-- Create a table genre i will not provide command.</b>
+
+<b class='comments'>-- now we create second last table. there is something different is that this contains foregion key</b>
+CREATE TABLE Artist(
+ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+name TEXT,
+Production_id INTEGER
+);
+
+
+CREATE TABLE Movie(
+ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+title TEXT,
+length INTEGER ,
+rating INTEGER,
+playCount INTEGER,
+Artist_id INTEGER,
+Genre_id INTEGER
+);
+
+<b class='comments'>-- Inserting the Data</b>
+
+INSERT INTO Production(name)values     <b class='comments'>-- I told you its not case sensetive</b>
+("Marvel"),
+("Warner Bros"),
+("DC Studios"),       
+("Disney"),
+("Paramount Pictures"),
+("Universal Pictures"),
+("20th Century Studios"),
+("Sony Pictures");
+<b class='comments'>-- we did not specify ID because it will be auo generated</b>
+
+
+INSERT INTO Genre(name) VALUES
+("Horror"),
+("Action"),
+("Fantasy"),
+("SuperHero"),
+("Comedy"),
+("Science fiction"),
+("Romance");
+
+<b class='comments'>-- technically when you actually build this database on your own, try to make the artist end point and movie 2nd last i mean just replace artist and movie</b>
+<b class='comments'>-- please note that these values will be imaginary. no production house can own a artist. its just for learning purposes thanks</b>
+INSERT INTO Artist(name , Production_id) VALUES
+("Robert Downey Jr." , 1),
+("Tom Holland" , 1),
+("Daniel Radcliffe" , 2),
+("Zachary Levi" , 3),
+("Johnny Depp" , 4),
+("Neel Sethi" , 4),
+("Andrew Garfeild" , 8),
+("Sam Neill" , 6);
+<b class='comments'>-- just add these numbers corrosponding to id in Production table</b>
+<b class='comments'>-- it might look tough inserting and matching but usually we write code that insert such stuff</b>
+
+<b class='comments'>-- while creating Artist we pretended that the artists work for production company and will only do movies by that company... I know i messed up but for learning, it works..</b>
+<b class='comments'>-- dont make the mistake I made and make your database thoughtfully</b>
+
+INSERT INTO Movie(title, length , rating, playCount , Artist_id , Genre_id) Values
+("IRON MAN" , 126 , 4.7 , 0 , 1 , 6),
+("Avengers:End Game" , 182 , 4.7 , 0 , 1 , 4),
+("The Amazing SpiderMan" , 136 , 4.6 , 0 , 7 , 4),
+("Shazam" , 132 , 4.2 , 0 , 4 , 4),
+("Pirates of the Caribbean" , 143 , 4.9 , 0 , 5 , 3),
+("The Jungle Book" , 106 , 4.5 , 0 , 6 , 3),
+("Harry Potter" , 152 , 4.8 , 0 , 3 , 3),
+("Jurrasic Park" , 127 , 4.7 , 0 , 8 , 6);
+
+<b class='comments'>-- replication are okay if they are numbers. (more efficient) because names take storage and longer time to read</b>
+
+</pre>
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Now, we have made our data, now lets join it , lets make relations like we did last time .
+
+SELECT Artist.name , Production.name from Artist join Production on Artist.Production_id = Production.ID;
+
+OUTPUT:
+<pre class="OUTPUT">
+Robert Downey Jr.	      Marvel
+Tom Holland	              Marvel
+Daniel Radcliffe	      Warner Bros
+Zachary Levi	          DC Studios
+Johnny Depp	              Disney
+Neel Sethi	              Disney
+Andrew Garfeild	          Sony Pictures
+Sam Neill	              Universal Pictures
+</pre>
+<b class='comments'>-- I hope this is understandable enoigh</b>
+
+<b class='comments'>-- SELECT data_we_want_to_show FROM table1_that_hold_data JOIN table2_that_hold_data ON how_the_tables_are_linked</b>
+
+SELECT Movie.title , Genre.name FROM Movie JOIN Genre on Movie.Genre_id = Genre.ID;
+
+OUTPUT:
+<pre class="OUTPUT">
+IRON MAN	                Science fiction
+Avengers:End Game	        SuperHero
+The Amazing SpiderMan	    SuperHero
+Shazam	                    SuperHero
+Pirates of the Caribbean	Fantasy
+The Jungle Book	            Fantasy
+Harry Potter                Fantasy
+Jurrasic Park               Science fiction
+</pre>
+
+
+<b class='comments'>-- lets make it complex</b>
+
+SELECT Production.name , Genre.name , Artist.name , Movie.*
+FROM Production JOIN Genre JOIN Artist JOIN Movie
+ON Production.ID = Artist.Production_id and Genre.ID = Movie.Genre_id and Artist.ID = Movie.Artist_id;  
+
+<b class='comments'>-- this may look complex at start but read carefully, read again , read again and you will understand what going on . you will catch the pattern</b>
+
+<img src="" alt="Final Database of Movies after Joining.Png" class="image">
+
+<!-- create video -->
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Congratulations We did it.</pre><br>
+
+            <b class="Name">Jenna: </b><br>
+            <pre class="english">yaay loved it! but missing Python. it switched to a database course real quick</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Dont worry we will do Python next. Lets see that in solved project of this lecture go there.</pre><br>
+
+            <b class="Name">Einstein: </b><br>
+            <pre class="english">Noice. We got a Solved project inside a SOlved project. (this lecture was a solved project) </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">khikhikhikhi , yeah but this was with sql only and the one you find in projects page will use Python.</pre><br>
+
+        </div>
+    </div>
+</body>
+<script src="../index.js"></script>
+</html>

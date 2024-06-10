@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+    <title>SQL Commands</title>
+</head>
+<body class='english'>
+    <div id='progress-bar-container'>
+        <img id='progress-bar' src='Image resource/girl.png' alt='Progress Indicator'>
+    </div>
+
+    <div class='container'>
+        <h1 class='heading english'><u>SQL Commands</u></h1>
+        <div class='divider'></div>
+
+        <div class='content'>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">hi everyone,  welcome to part 2 of the lecture. <b>previously!!</b> on <b>TALK WITH COMPUTER! PYTHON</b> , we learned about databases. they are used to make websited and store information. we saw DBMS and SQL . Now will I be able to teach how to use these Databases? Keep watching! I mean Keep Reading!</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english hilightR">We have downloaded SQLite browser in  previous part. Open it. it will be in path C:/Program Files/DB Browser for SQLite/DB Browser for SQLite.exe 
+(you can use anything mySql, oracle etc. we are using SQL because it is light and built in into Python.)
+
+Open the Browser -> Click on new Database -> Choose location you want to save your database to -> it will if you want to create a table just close that thing -> To write SQL commands, under the create database button there will be a row of options(like a ribbon) -> click on the 'Execute SQL' Button. -> There you can Write SQL commands  -> watch the video for ease and tutorial of SQL too.
+
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Here is the notes of SQL commands and what they do! You wont need detailed explanation since you already know Python. so i will be just telling what the command does and what are their syntax 
+
+<pre class="hilightPur">
+<b>most important each sql command should end with a semi-colon i.e ;</b>
+<b class='comments'># Command Notes used in video</b>
+<b class='comments'># it is not case sensetive</b>
+<b class='comments'>--  instead of # ,  -- is used for comments in SQL</b>
+1)
+<pre class="code" data-language="sql">
+CREATE TABLE Students(      <b class='comments'>-- to create a new table we use ' CREATE TABLE tableName ' .. then we open brackets. ()</b>
+    StudentID varchar(5), <b class='comments'>-- in the brackets we tell what attributes/column-heading we want. and specify the datatype. (int is a datatype and in brackets(memory size alloted to this unit)</b>
+    rollNo int(5),
+    name VARCHAR(128), <b class='comments'>-- this creates a attribute name with datatype varchar and maximum size it can go is 128 characters</b>
+    age VARCHAR(128),  <b class='comments'>-- this is like a schema</b>
+    subject VARCHAR(30)
+)</pre><br>
+2)
+<pre class="code">
+INSERT INTO Students (StudentID , rollNo , name , age , subject) VALUES
+("001" , 45 , "Rohit" , 17 , "Science"),
+("002" , 4 , "Brook" , 4 , Social Science);         <b class='comments'>-- use comma to add multiple rows at once or just reuse insert statement</b>
+<b class='comments'>-- i guess the language is pretty understandable. this will add rows and he values will corrospond to indexes. example -> indes of StudentID is zero -> its value will be value assigned at zero i.e 001</b>
+
+<b class='comments'>-- it is not necessary to include all attributes while inserting values</b>
+INSERT INTO Student ( StudentID , rollNO , subject) VALUES("002" , 69 , "History")  <b class='comments'>-- the things that does not have any value assigned will have Null value stored</b>
+
+<b class='comments'>-- if you want to include all the attributes, you can skip that part</b>
+INSERT INTO Students Values("003" , 89 , "Charanpreet" , 16 , "Science");   
+
+<b class='comments'>-- game -> find the error in above command</b>
+</pre><br>
+3) 
+<pre class="code">
+    <b class='comments'>-- deleting the row</b>
+DELETE FROM Students WHERE name = NULL ;  <b class='comments'>-- null is same as None.</b>
+<b class='comments'>-- delete form tableName , where-> telling what row to delete -> name = NONE   is a conditional</b>
+
+DELETE FROM Students WHERE rollNO &lt; 50;   <b class='comments'>-- delete each row where rollNo is greater than 50 . </b>
+ <b class='comments'>-- you can also do calculations</b>
+--Delete From Students Where (rollNo + StudentID)*2 &lt; 100 
+</pre>
+<b>while doing WHERE remember the Datatypes. do not add  greater than or less than to Strings</b>
+
+4)
+<pre class="code">
+<b class='comments'>-- edit the existing row or feild</b>
+UPDATE Students SET subject = "science" WHERE rollNo > 50;
+<b class='comments'>-- or</b>
+UPDATE Students SET RollNo = RollNo + 100 WHERE subject="science"
+
+<b class='comments'>-- to update precicely and uniquely, we creates attributes like StudentnID/serial NO . so that i can access each row individually.</b>
+</pre>
+
+5)
+<pre class="code">
+<b class='comments'>-- Now to read the data.</b>
+SELECT * FROM Students WHERE StudentID = "003";    <b class='comments'>-- SELECT is used to read.. * here, means all columns (you can specify that too try it) .. Where is optional (if not given , shows all rows)</b> 
+
+<b class='comments'>-- you can also tell how to show database.  means you can also sort it</b>
+SELECT * FROM Students ORDER BY rollNo;    <b class='comments'>-- show sorted database by rollNo's value in ascending order. -> alphabetically if string and  Null values comes first.</b>
+
+</pre>
+6)
+<pre class="code">
+<b class='comments'>-- how to add a column</b>
+
+<b class='comments'>-- ALTER TABLE TableName</b>
+<b class='comments'>-- ADD columnName datatype(size)</b>
+
+ALTER TABLE Students             
+ADD e_mail VARCHAR(128);         
+
+<b class='comments'>-- you can also write like this</b>
+ALTER TABLE Students ADD PhoneNumber VARCHAR(15);
+</pre>
+7)
+<pre class="code">
+<b class='comments'>-- how to delete the whole table</b>
+DROP TABLE Students    <b class='comments'>-- i am not executing this in my database since i dont want to delte this table</b>
+</pre>
+</pre>
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Lets see Python code to create some Data in SQL 
+we will write a python program to count number of students in the file.
+we first create file Students.txt and add students in a particular format . (the purpose is to teach you how things work)
+Students.txt -> 
+*** some text ***
+
+Student: Peepo@Twc.com 
+Student: Peepo@Twc.com
+Student: Peepo@Twc.com
+Student: Brook@Twc.com
+Student: Jenna@Twc.com
+Student: Jenna@Twc.com
+Student: Jenna@Twc.com
+Student: rohit@Twc.com
+Student: charn@Twc.com
+Student: charn@Twc.com
+Student: Einstein@Twc.com
+Student: ATM@gmail.com
+Student: bnvgb@gmail.com
+Student: bnvgb@gmail.com
+Student: RDJFromWish@gmail.com
+
+*** some text ***  
+
+<pre class='code'>
+<code>
+import sqlite3   <b class='comments'># importing library</b>
+
+<b class='comments'># Connect to the database (or create it if it doesn't exist)</b>
+conn = sqlite3.connect('studentdb.sqlite')    <b class='comments'># creates if does not exists</b>
+cur = conn.cursor()  <b class='comments'># cursor helps to execute commands</b>
+
+# Drop the Counts table if it already exists
+cur.execute('DROP TABLE IF EXISTS Counts')    <b class='comments'># syntax to execute sql commands</b>
+<b class='comments'># cur is our cursor as defined above</b>
+
+# Create a new Counts table with columns for the student's name and count
+cur.execute('''
+CREATE TABLE Counts (student TEXT, count INTEGER)''')
+
+file = "Students.txt"       
+fh = open(file)    <b class='comments'># opening students.txt</b>
+
+# Process each line in the file
+for line in fh:
+    <b class='comments'># if line not starts with Students:  format then skip it</b>
+    if not line.startswith('Student: '): continue      <b class='comments'># using our format to find students. </b>
+    parts = line.split()   <b class='comments'># split by words  => ["Student:" , "Peepo@Twc.com"] </b>
+    student = parts[1] <b class='comments'># getting the students</b>
+    cur.execute('SELECT count FROM Counts WHERE student = ? ', (student,)) <b class='comments'># this thing   (students,)  is a tuple.  its just Python syntax</b>
+    <b class='comments'># the ? here will be replaced by tuple which contains student. the ? is a placeholder. you can have mroe than one ? . just add more values in the tuple </b>
+    row = cur.fetchone()   <b class='comments'># this will be the information we get from database. the row will be a list</b>
+    if row is None:  <b class='comments'># is row does not exists, -> it will be None</b>
+        <b class='comments'># if the row is not there, we add that row!</b>
+        cur.execute('''INSERT INTO Counts (student, count)
+                VALUES (?, 1)''', (student,))
+    else:
+        cur.execute('UPDATE Counts SET count = count + 1 WHERE student = ?',
+                    (student,))     <b class='comments'># increase the count</b>
+        <b class='comments'># this will count number of times a certain student comes in the file. and store it into database</b>
+    conn.commit()   <b class='comments'># this will update things in database. it will write updated things in the disk(might take some time)</b>
+
+
+<b class='comments'># the database is created now lets read it. </b>
+data = 'SELECT student ,count FROM Counts Order BY count'
+
+for data in cur.execute(data):
+    print(str(data[0]), data[1])
+
+cur.close() <b class='comments'># close the cursos</b>
+</code>
+</pre><br>
+
+OUTPUT:
+
+<pre class='OUTPUT'>
+Brook@Twc.com 1
+rohit@Twc.com 1
+Einstein@Twc.com 1
+ATM@gmail.com 1
+RDJFromWish@gmail.com 1
+charn@Twc.com 2
+bnvgb@gmail.com 2
+Peepo@Twc.com 3
+Jenna@Twc.com 3
+
+</pre>
+
+            <img src="Image resource/databases/CountsDB_Pic.png" alt="" class="images">
+
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Project for you ->  the database we created .. the table Students.  yeah in that add a column email usign commands. fill the values. and then insert more rows of your choice. 
+1) count number of students with same age and print them in terminal in format    studentName -> age -> count     <b class='comments'># where count is number of students of same age.</b>
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">We are done guys. See you all in the next one.   and if you are having some problems I would recommend Practicing. writing some code on your own! , only copying the code that you understand! , practice is what you need. make problem/projects of your own and try to solve them</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Now i want all of you to hop on your pc screen and actually try these. experiment on these. failure is best way to learn. if you have any trouble i am here to teach. also did you get the feeel about SQL? comment your feedback</pre><br>
+            
+            
+            <br><br><br>
+
+            <h1 class="ending">Next Lecture: Data Models </h1>
+
+        </div>
+    </div>
+</body>
+<script src="../index.js"></script>
+</html>

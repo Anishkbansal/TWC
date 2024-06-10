@@ -7,3 +7,6 @@ ptoject for lect 20 woked out xml example
  explainjson structure video lect 21
  solved project lect 23 integrating voice system
  video in lect 27
+ sql video ch 28.5
+ video and images in lect 29
+ images in 28-30

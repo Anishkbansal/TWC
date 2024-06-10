@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+    <title>Movie Tracker Database With Python(solved)</title>
+</head>
+<body class='english'>
+    <div id='progress-bar-container'>
+        <img id='progress-bar' src='../../Image resource/girl.png' alt='Progress Indicator'>
+    </div>
+
+    <div class='container'>
+        <h1 class='heading english'><u>Movie Tracker Database With Python(solved)</u></h1>
+        <div class='divider'></div>
+
+        <div class='content'>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Hello everyone! welcome to this project.
+For this, we are gonna get some data as xml file(you can use text file(split the file by commas) , JSON , CSV etc anything) and put them in our database. 
+
+lets see our xml data 
+<pre class="code" data-language="xml">
+    &lt;data&gt;
+    &lt;movie&gt;
+        &lt;title&gt;IRON MAN&lt;/title&gt;
+        &lt;length&gt;126&lt;/length&gt;
+        &lt;rating&gt;4.7&lt;/rating&gt;
+        &lt;production&gt;Marvel&lt;/production&gt;
+        &lt;genre&gt;Science fiction&lt;/genre&gt;
+    &lt;/movie&gt;
+    &lt;movie&gt;
+        &lt;title&gt;Avengers: End Game&lt;/title&gt;
+        &lt;length&gt;182&lt;/length&gt;
+        &lt;rating&gt;4.7&lt;/rating&gt;
+        &lt;production&gt;Marvel&lt;/production&gt;
+        &lt;genre&gt;SuperHero&lt;/genre&gt;
+    &lt;/movie&gt;
+    &lt;movie&gt;
+         &lt;title&gt;Interstellar&lt;/title&gt;
+         &lt;length&gt;169&lt;/length&gt;
+         &lt;rating&gt;4.9&lt;/rating&gt;
+         &lt;production&gt;Warner Bros&lt;/production&gt;
+         &lt;genre&gt;Science fiction&lt;/genre&gt;
+    &lt;/movie&gt;
+    &lt;movie&gt;
+        &lt;title&gt;Pirates of the Caribbean&lt;/title&gt;
+        &lt;length&gt;143&lt;/length&gt;
+        &lt;rating&gt;4.9&lt;/rating&gt;
+        &lt;production&gt;Disney&lt;/production&gt;
+        &lt;genre&gt;Fantasy&lt;/genre&gt;
+    &lt;/movie&gt;
+    &lt;movie&gt;
+        &lt;title&gt;Harry Potter and the Philosopher's Stone&lt;/title&gt;
+        &lt;length&gt;152&lt;/length&gt;
+        &lt;rating&gt;4.8&lt;/rating&gt;
+        &lt;production&gt;Warner Bros&lt;/production&gt;
+        &lt;genre&gt;Fantasy&lt;/genre&gt;
+    &lt;/movie&gt;
+    &lt;movie&gt;
+        &lt;title&gt;Inception&lt;/title&gt;
+        &lt;length&gt;148&lt;/length&gt;
+        &lt;rating&gt;4.8&lt;/rating&gt;
+        &lt;production&gt;Warner Bros&lt;/production&gt;
+        &lt;genre&gt;Science fiction&lt;/genre&gt;
+    &lt;/movie&gt;
+    &lt;movie&gt;
+        &lt;title&gt;The Dark Knight&lt;/title&gt;
+        &lt;length&gt;152&lt;/length&gt;
+        &lt;rating&gt;4.9&lt;/rating&gt;
+        &lt;production&gt;Warner Bros&lt;/production&gt;
+        &lt;genre&gt;SuperHero&lt;/genre&gt;
+    &lt;/movie&gt;
+    &lt;movie&gt;
+        &lt;title&gt;Guardians of the Galaxy&lt;/title&gt;
+        &lt;length&gt;121&lt;/length&gt;
+        &lt;rating&gt;4.7&lt;/rating&gt;
+        &lt;production&gt;Marvel&lt;/production&gt;
+        &lt;genre&gt;Science fiction&lt;/genre&gt;
+    &lt;/movie&gt;
+    &lt;movie&gt;
+        &lt;title&gt;RRR&lt;/title&gt;
+        &lt;length&gt;187&lt;/length&gt;
+        &lt;rating&gt;4.8&lt;/rating&gt;
+        &lt;production&gt;DVV Entertainment&lt;/production&gt;
+        &lt;genre&gt;Action&lt;/genre&gt;
+    &lt;/movie&gt;
+    &lt;movie&gt;
+        &lt;title&gt;Star Wars: The Force Awakens&lt;/title&gt;
+        &lt;length&gt;138&lt;/length&gt;
+        &lt;rating&gt;4.7&lt;/rating&gt;
+        &lt;production&gt;Disney&lt;/production&gt;
+        &lt;genre&gt;Science fiction&lt;/genre&gt;
+    &lt;/movie&gt;
+    &lt;movie&gt;
+        &lt;title&gt;Avatar&lt;/title&gt;
+        &lt;length&gt;162&lt;/length&gt;
+        &lt;rating&gt;4.8&lt;/rating&gt;
+        &lt;production&gt;20th Century Fox&lt;/production&gt;
+        &lt;genre&gt;Science fiction&lt;/genre&gt;
+    &lt;/movie&gt;
+    &lt;movie&gt;
+        &lt;title&gt;Baahubali: The Beginning&lt;/title&gt;
+        &lt;length&gt;159&lt;/length&gt;
+        &lt;rating&gt;4.7&lt;/rating&gt;
+        &lt;production&gt;Arka Media Works&lt;/production&gt;
+        &lt;genre&gt;Fantasy&lt;/genre&gt;
+    &lt;/movie&gt;
+    &lt;movie&gt;
+        &lt;title&gt;Baahubali 2: The Conclusion&lt;/title&gt;
+        &lt;length&gt;171&lt;/length&gt;
+        &lt;rating&gt;4.8&lt;/rating&gt;
+        &lt;production&gt;Arka Media Works&lt;/production&gt;
+        &lt;genre&gt;Fantasy&lt;/genre&gt;
+    &lt;/movie&gt;
+    &lt;movie&gt;
+        &lt;title&gt;3 Idiots&lt;/title&gt;
+        &lt;length&gt;170&lt;/length&gt;
+        &lt;rating&gt;4.9&lt;/rating&gt;
+        &lt;production&gt;Vinod Chopra Films&lt;/production&gt;
+        &lt;genre&gt;Comedy&lt;/genre&gt;
+    &lt;/movie&gt;
+    &lt;!-- Add other movies in similar structure --&gt;
+&lt;/data&gt;
+</pre>
+
+
+<pre class='code'>
+<code>
+import sqlite3
+import xml.etree.ElementTree as ET
+
+
+conn = sqlite3.connect("moviesdb.sqlite")  <b class='comments'># create new database if not exists</b>
+cur = conn.cursor()
+<b class='comments'># we eed to create tables fresh everytime this program runs. so that if we want to make any changes in data like changing primary key we can do it easily by just changig this python code</b>
+cur.executescript('''
+DROP TABLE IF EXISTS Production;
+DROP TABLE IF EXISTS Genre;
+DROP Table IF EXISTS Movie;
+''')
+
+cur.execute('''
+CREATE TABLE Production (
+    ID INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,
+    name TEXT UNIQUE
+)''')
+
+cur.execute('''
+CREATE TABLE Genre (
+    ID INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,
+    genre TEXT UNIQUE
+)''')
+
+cur.execute('''
+CREATE TABLE Movie (
+    ID INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,
+    title TEXT UNIQUE,
+    length INTEGER,
+    rating REAL,
+    playCount INTEGER,
+    Production_id INTEGER,
+    Genre_id INTEGER
+)''')
+
+
+# Parse XML and insert data
+tree = ET.parse('movies.xml')
+root = tree.getroot()
+
+for movie in root.findall('movie'):
+    <b class='comments'># retreiving data from movie</b>
+    title = movie.find('title').text
+    length = int(movie.find('length').text)
+    rating = float(movie.find('rating').text)
+    production_name = movie.find('production').text
+    genre_name = movie.find('genre').text
+
+    <b class='comments'># we have retreived the data for one movie now we populate the database with this</b>
+
+    cur.execute('''INSERT OR IGNORE INTO Production(name) VALUES (?);''' , (production_name,)) 
+    <b class='comments'># we did insert or ignore so that the value does not repeat. one production house must occur once in database. there cannot be two production houses of same name</b>
+    <b class='comments'># so if the production already exists, it skips and if it does not it creates one.</b>
+    <b class='comments'># why? because the name is defined as UNIQUE while creating the table. </b>
+    <b class='comments'># now we want to know what the id is so that we can feed that into movie.</b>
+
+    <b class='comments'># so we will select this particular production row</b>
+    cur.execute(' SELECT ID FROM Production WHERE name = ?' , (production_name , ))
+    production_id = cur.fetchone()[0]   <b class='comments'># fetching the zeroeth index of the SELECTed row.</b>
+
+
+    cur.execute('''INSERT OR IGNORE INTO Genre(genre) VALUES (?); ''' , (genre_name , ))
+    cur.execute('''SELECT ID FROM Genre WHERE genre = ?''' , (genre_name , ))
+    genre_id = cur.fetchone()[0]
+
+    cur.execute('''INSERT INTO Movie (title, length, rating, Production_id, Genre_id)
+        VALUES (?, ?, ?, ?, ?)''', (title, length, rating, production_id, genre_id))
+
+    conn.commit()
+    <b class='comments'># commiting it</b>
+
+cur.execute('''SELECT Movie.title , Genre.genre , Production.name
+FROM Movie JOIN Production JOIN Genre ON Movie.genre_id = Genre.ID''') 
+<b class='comments'># you are familiar with this</b>
+
+l = cur.fetchall()
+for row in l:
+    print(row)
+   <b class='comments'># fetching everything and printing</b>
+
+conn.close()  <b class='comments'># close the connection</b>
+
+</code>
+</pre><br>
+
+OUTPUT:
+
+<pre class='OUTPUT'>
+
+('IRON MAN', 'Science fiction', 'Marvel')
+('Avengers: End Game', 'SuperHero', 'Marvel')
+('Interstellar', 'Science fiction', 'Warner Bros')
+('Pirates of the Caribbean', 'Fantasy', 'Disney')
+("Harry Potter and the Philosopher's Stone", 'Fantasy', 'Warner Bros')
+('Inception', 'Science fiction', 'Warner Bros')
+('The Dark Knight', 'SuperHero', 'Warner Bros')
+('Guardians of the Galaxy', 'Science fiction', 'Marvel')
+('RRR', 'Action', 'DVV Entertainment')
+('Star Wars: The Force Awakens', 'Science fiction', 'Disney')
+('Avatar', 'Science fiction', '20th Century Fox')
+('Baahubali: The Beginning', 'Fantasy', 'Arka Media Works')
+('Baahubali 2: The Conclusion', 'Fantasy', 'Arka Media Works')
+('3 Idiots', 'Comedy', 'Vinod Chopra Films')
+
+</pre>
+<b>there is some error in the above code that wont give you wanted output like i got. i tweaked some code to get this output you task is to find that error and correct it to get this output.
+HINT: the error(logical error) is in the last cur.execute where we are joining the tables.  hope you will find it. it is about giving another condition . you can ask ai about this but only after thinking for a while
+</b>
+            </pre><br>
+
+            <b class="Name">Jenna: </b><br>
+            <pre class="english">Hurray it works. now i know why you said that we dont have to remember id's and make data corrosping to them like we did in the lecture. and i remember that using numbers makes it faster to read and memory efficient</pre><br>
+
+            <b class="Name">Einstein: </b><br>
+            <pre class="english">THis project was great. </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">yeah! </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">SEE YOU ALL IN THE NEXT LECTURE. THANKS FOR STICKING AROUND</pre><br>
+
+        </div>
+    </div>
+</body>
+<script src="../../../index.js"></script>
+</html>

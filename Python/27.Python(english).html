@@ -63,8 +63,9 @@ class Dad:
 
 # Now let's create a Son class that inherits from Dad
 class Son(Dad):
+    <b class='comments'># Son class initializer</b>
     def __init__(self, name, age, favorite_food, hair_color, grade):   <b class='comments'># grade is son's own trait</b>
-        # Call the __init__ method of the Dad class
+        # Call the __init__ method of the Dad class  
         super().__init__(name, age, favorite_food, hair_color)  <b class='comments'># super()  is used to call init of parent class</b>
         <b class='comments'># this code allows son to have same variables as dad</b>
         self.grade = grade
@@ -74,7 +75,7 @@ class Son(Dad):
 
     # Override the go_White method from Dad
     def go_White(self):
-        print(f"{self.name} swears he'll never go bald!")
+        print(f"{self.name} swears he'll never go White!")
 
 # Create a Dad instance
 Anish = Dad("Anish", 45, "Ramen", "black")
@@ -110,7 +111,146 @@ Rohit swears he'll never go bald!
             <!-- dont forget to add a video explain this code -->
 
             <b class="Name">Peepo: </b><br>
-            <pre class="english"></pre><br>
+            <pre class="english">basically inheritance writes the methods of parent class into child class
+<pre class="code">
+class Parent():
+    def ClassParent():
+        print("this is parent's method")
+    def ClassParent2():
+        print("this is second method of parent")
+
+class Child(Parent):
+    def ClassChild():
+        print("this is child's method")
+
+    <b class='comments'># you can over write any parent's method</b>
+    def ClassParent2():
+        print("this method is overriden")
+
+    <b class='comments'># you can imagine the method of Parent class be written here</b>
+    #def ClassParent():
+    #    print("this is parent's method")
+
+
+Parent.ClassParent()
+Parent.ClassParent2()
+print("************")
+Child.ClassChild()  <b class='comments'># child's own method</b>
+Child.ClassParent2()  <b class='comments'># overriden method. can be seen as Child's own method</b>
+Child.ClassParent() <b class='comments'># this method is not defined only in parent class but still usable from child class</b>
+
+</pre>
+<pre class="OUTPUT">this is parent's method
+this is second method of parent
+************
+this is child's method
+this method is overriden
+this is parent's method</pre>
+            </pre><br>
+
+            <b class="Name">Einstein: </b><br>
+            <pre class="english">OKK, I think i understand. like parent has some property (methods) . that property will be pass on to the child along with some of child's own property.
+before child makes any transactions (code inside the class). he has to initialize a bank account(__init__). he then add his parent's details in it (super.__init__). and some of his own.(like self.grade in above example)
+(NOTE THAT INITIALISING DEPENDS ON YOUR CODE. CONSTRUCTORS ARE OPTIONAL)
+now if the child wants to acces some property, if the property is on child's name , he can access it. if it is on his parent's name, he can access that too. 
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Nice Einstein. lets see more examples 
+                <pre class="code">
+# Parent class
+class Animal:
+    def __init__(self, name):     <b class='comments'># we did not add canReproduce as an argument because we are defining them in the class itself not while creating object. </b>
+        self.name = name    <b class='comments'># we have to define name</b>
+        self.canReproduce = True   <b class='comments'># there is no need to define True and self.canReproduce is a variable</b>
+        self.canMove = True
+
+    def info(self):
+        print("tell us which animal to speak first.... ")
+        raise NotImplementedError("Subclass must implement abstract method")   <b class='comments'># this indicates that subclass must override this method</b>
+
+# Child class inheriting from Animal
+class Dog(Animal):
+    def __init__(self,name):
+        super().__init__()
+        self.hasWhiskers = True
+        self.fourLegs = True
+
+    def info(self):
+        return f"{self.name} says Woof!it has whiskers? {self.hasWhiskers} , fourLegs? {self.fourLegs}"
+    
+
+# Another child class inheriting from Animal
+class Cat(Animal):
+    def __init__(self,name):
+        super().__init__()
+        self.hasWhiskers = True
+        self.fourLegs = True
+        self.fallDamage = None
+
+    def info(self):
+        return f"{self.name} says Meow! it has whiskers? {self.hasWhiskers} , Fall Damage? {self.fallDamage}"
+
+# Create instances of Dog and Cat
+dog = Dog("Buddy")
+cat = Cat("Whiskers")
+
+# Call the speak method on each instance
+print(dog.info())
+print(cat.info())
+</pre>
+
+<pre class="OUTPUT">Buddy says Woof!it has whiskers? True , fourLegs? True
+Whiskers says Meow! it has whiskers? True , Fall Damage? None</pre>
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">lets define some things again 
+class -> template
+attribute -> variable in class 
+method -> function in class
+object -> instance 
+constructor -> runs when object is created 
+destructor -> runs when no refrences of object remains.(destroy object from memory)
+inheritance -> extending a class to make a new one 
+parent -> class thats extended
+child -> inherited class 
+super keywrod -> use to refer the parent class for example 
+<pre class="code">
+class parent():
+    def info():
+        print("this is a method in parent")
+
+class child(parent):
+    def info():
+        print("this is a method in child class")  <b class='comments'># we alll know this will override the info method in parent.</b>
+        super().info()   <b class='comments'># this call the info of parent class</b>
+        <b class='comments'># we redefined this method but here, we are calling the method from parent class</b>
+parent.info()
+child.info()
+</pre>
+<pre class="OUTPUT">this is a method in parent
+this is a method in child class
+this is a method in parent</pre>
+
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">lets see some inheritance types
+single inheritance -> when a subclass inherits single parent class/superclass  => class child(parent) 
+multiple inheritance -> when a subclass inherits multiple parent class/superclass => class child(parent1 , parent2 , parent3 , etc)
+multilevel inheritance -> when a subclass inherits another subclass => class child(parent1)   => class grandchild(child)     etc
+hybrid/multipath inheritance -> combination of multiple and multilevel inheritance
+heirarical inheritance -> multiple subclass inherited from single parent/super class.
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Now i want all of you to hop on your pc screen and actually try these. experiment on these. failure is best way to learn. if you have any trouble i am here to teach. also did you get the feeel about inheritance? comment your feedback</pre><br>
+            
+            
+            <br><br><br>
+            
+            <h1 class="ending">Next Lecture: Talking about Databases</h1>
 
         </div>
     </div>

@@ -294,6 +294,29 @@ output: returns sum of both the arguments
 
 </pre>
 
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">lets see decorators. what are decorators in Python?  they are used to modify the function. for example
+i have a function hello which prints hello. but when i run it i want good morning to be printing before the function starts. well i can do it manually in hello function but what if somewhere i want only hello to print? 
+basically decorator function takes a function as argument and returns modified version of it
+<pre class="code">
+def goodmorning(fx): <b class='comments'># giving function as argument</b>
+    def modify_fx(): <b class='comments'># creating a function to modify the function</b>
+        print("goodmorning")   
+        fx()     <b class='comments'># running the function provided in argument</b>
+        print("function was successfuly modified")
+    return modify_fx
+
+@goodmorning      <b class='comments'># syntax for decorator</b>
+def hello():
+    print("hello")
+
+hello()    <b class='comments'># calling the hello function</b>
+</pre>
+
+
+<b> if you dont understand the decorator dont worry you can work even without them.</b>
+            </pre><br>
+
             <button class="toggleBtn">Toggle IDE</button>
             <div class="iframeContainer">
                 <iframe frameborder="0"></iframe>

@@ -39,20 +39,18 @@ else, you are not an adult.
                 class="english">Nice work guys these are some good examples of if-else statements. or Conditionals</pre>
             <br />
             <b class="Name">Peepo: </b><br />
-            <pre
-                class="english">just like this the Conditionals in Python are that easy. lets have a look at the syntax
+            <pre class="english">just like this the Conditionals in Python are that easy. lets have a look at the syntax
 <pre class="code">
 <code>
 if(56+13&gt;106):     <pre class="comments"># if, just like we know, means if. in the brackets, it takes arguments that return boolean value. we studies that &gt; operator return boolean.and a colon at the end ':'</pre>
-            print(56+13, "is greater than ", 106)
+    print(56+13, "is greater than ", 106)
             <pre
                 class="comments"># if the condition in if statement inside the brackets is True, then, all the code under if statement will be executed.
-and did you notice that there is some space before the print statement here, well thats called indentation. its our way of telling Python that the code belongs to the if statement</pre>
+#and did you notice that there is some space before the print statement here, well thats called indentation. its our way of telling Python that the code belongs to the if statement</pre>
 
-            else:
-            <pre
-                class="comments"># if the argument of if statement is False, then the else statement will be executed. in Python, the else statement is completely Optional.</pre>
-            print(56+13 ," is not greater than. ", 136)
+else:
+    print(56+13 ," is not greater than. ", 136)
+    <pre class="comments"># if the argument of if statement is False, then the else statement will be executed. in Python, the else statement is completely Optional.</pre>
 
             </code>
             </pre><br />
@@ -77,13 +75,13 @@ and did you notice that there is some space before the print statement here, wel
 <code>
 morning = True
 if(morning):    <pre class="comments"># the argument here, is morning which is equals to True, so code in if stament will be executed</pre>
-            print("its morning")
+    print("its morning")
             </code>
             </pre><br />
 
-            OUTPUT:
+OUTPUT:
 
-            <pre class="OUTPUT">
+<pre class="OUTPUT">
 
 its morning
 
@@ -100,18 +98,18 @@ time = input("please tell what time it is in hours only (if its 12:45, type 12):
                 class="comments"># so here, user will type in some number and it will be stored in variable time as a string. </pre>
             <pre
                 class="comments"># to perform calculation on variable time, we need to convert it to an integer, so </pre>
-            time = int(time)
+time = int(time)
 
-            if(time&gt;=3):
-            print("Good morning Sir/Mam ")
-            if(time&gt;=12):
-            print("Good afternoon Sir/Mam")
-            if(time&gt;=18):
-            print("Good evening Sir/Mam")
-            if(time&gt;=24):
-            print("sir/mam please tell time according to earth, it has only 24 hours in a day.")
-            else:
-            print("Good Night Sir/Mam")
+if(time&gt;=3):
+    print("Good morning Sir/Mam ")
+if(time&gt;=12):
+    print("Good afternoon Sir/Mam")
+if(time&gt;=18):
+    print("Good evening Sir/Mam")
+if(time&gt;=24):
+    print("sir/mam please tell time according to earth, it has only 24 hours in a day.")
+else:
+    print("Good Night Sir/Mam")
 
             <pre
                 class="comments"># now lets try and run the program. you also type this and run it on your own pc or toggle IDE to copy paste and run. its fun </pre>
@@ -120,15 +118,15 @@ time = input("please tell what time it is in hours only (if its 12:45, type 12):
             </code>
             </pre><br />
 
-            OUTPUT:
+OUTPUT:
 
             <pre class="OUTPUT">
 
 please tell what time it is in hours only (if its 12:45, type 12): <i>15</i>   <pre class="comments"># the number you type here is up to you, I decided to type 15, you can even type anything even in english. but the int(), function will throw error and your program will stop.</pre>
-            Good morning Sir/Mam
-            Good afternoon Sir/Mam
+Good morning Sir/Mam
+Good afternoon Sir/Mam
 
-            <pre class="comments"># oops it forgot to add less than conditions. due to that our first two if statement were True, so both were executed
+<pre class="comments"># oops it forgot to add less than conditions. due to that our first two if statement were True, so both were executed
 lets alter it so that only one statement is true at a time.
 </pre>
             </pre>
@@ -137,24 +135,24 @@ lets alter it so that only one statement is true at a time.
 <code>
 
 if(time&gt;=3 and time&lt;12):   <pre class="comments"># the keyword 'and' will return True if both the operators returns True if even on of them is False, then the if statement will get False and would not execute</pre>
-            print("Good morning Sir/Mam ")
-            if(time&gt;=12 and time&lt;=18):
-            print("Good afternoon Sir/Mam")
-            if(time&gt;=18 and time&lt;=20):
-            print("Good evening Sir/Mam")
-            if(time&gt;24):
-            print("sir/mam please tell time according to earth, it has only 24 hours in a day.")
-            else:
-            print("Good Night Sir/Mam")
+    print("Good morning Sir/Mam ")
+if(time&gt;=12 and time&lt;=18):
+    print("Good afternoon Sir/Mam")
+if(time&gt;=18 and time&lt;=20):
+    print("Good evening Sir/Mam")
+if(time&gt;24):
+    print("sir/mam please tell time according to earth, it has only 24 hours in a day.")
+else:
+    print("Good Night Sir/Mam")
 
             </code>
             </pre><br />
 
-            OUTPUT:
+OUTPUT:
 
             <pre class="OUTPUT">
 please tell what time it is in hours only (if its 12:45, type 12): <i>19</i>  <pre class="comments"># i decided that the time is 19 now.</pre>
-            Good evening Sir/Mam
+Good evening Sir/Mam
             <pre
                 class="comments"># 19 is both greater than 18 and less than 20. you check that other if statements' argument is false at time  = 19</pre>
             </pre>
@@ -206,11 +204,11 @@ else:
             <pre class="OUTPUT">
 
 hey what do you like, food or drinks? <i>drinks</i>    <pre class="comments"># you can type anything i decided to type drinks</pre>
-            did you that you can drink your drink but not food your food? . anyways do you like your drinks hot or cold?
-            <i>cold</i>
-            oh nice you like cold
-            i like cold
-            second if statement executed
+did you that you can drink your drink but not food your food? . anyways do you like your drinks hot or cold?
+<i>cold</i>
+oh nice you like cold
+i like cold
+second if statement executed
 
             </pre>
             <button class="toggleBtn">Toggle IDE</button>

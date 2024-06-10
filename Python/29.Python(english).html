@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+    <title>Data Models</title>
+</head>
+<body class='english'>
+    <div id='progress-bar-container'>
+        <img id='progress-bar' src='Image resource/boy.png' alt='Progress Indicator'>
+    </div>
+
+    <div class='container'>
+        <h1 class='heading english'><u>Data Models</u></h1>
+        <div class='divider'></div>
+
+        <div class='content'>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Hi everyone. Hope you are enjoying these. We are almost at end of our Course.</pre><br>
+
+            <b class="Name">Einstein: </b><br>
+            <pre class="english">What i am a pro in Python already?</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">NO! you need to practice create projects. once the course ends I will be giving you all projects. so look up to it. It will help you improve a lot</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Lets get started with This Lecture. now I want you to suppose you are a company and want to publish a project.
+for that you would need to design a database. Often this is a teamWork where some people worry about database some about application some about interface etc.
+so we will learn basics of database design here to get you started. 
+the Purpose of database design is to for it to be easily understook and make things work together. Whether you're managing customer information, product catalogs, or employee records, a well-structured database ensures that data is organized, easily accessible, and, most importantly, reliable.
+, the process involves understanding the requirements of your application and translating them into a logical structure that can efficiently store and retrieve data. Think of it as building the foundation of a house – you want it to be solid and capable of supporting everything that rests upon it.
+
+One of the fundamental tools used in the database design process is the Entity-Relationship (ER) diagram. This visual representation helps us understand the relationships between different entities/tabels (refers to a distinct/unique object or concept about which data is stored in the database. ) in our database and how they interact with each other.
+
+Entities, in this context, represent the various objects or concepts we need to store information about – they could be anything from customers and orders to products and suppliers. Relationships, on the other hand, describe how these entities are connected to each other. For instance, a customer places an order, creating a relationship between the customer entity and the order entity.
+
+Now, let's tie it all together with an example. Imagine you're designing a database for an online bookstore. You'd likely have entities such as books, authors, customers, and orders. The relationships between these entities would be crucial – for instance, a customer can place many orders, but each order belongs to only one customer.
+By creating an ER diagram for our bookstore database, we can visualize these relationships and ensure that our database design accurately reflects the requirements of our application. This not only helps us in the initial stages of development but also serves as a valuable reference as the project evolves.
+In essence, the ER diagram serves as our compass
+
+<img src="" alt="" class="images">
+<b>this is a very short database but if you are working with something big application it will start to look overwhelming but that only on the surface.</b>
+</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Basic RUle : Dont't put same strign data in twice, use relationship instead. (same conceot of dont repeart youself). 
+example:
+you want a database to work for CPU's  you will have one table of CPU's  ,another table of CPU Types/Manufaturers etc.
+* Table CPU Types
+
+| id | type  |
+|----|-------|
+| 1  | AMD   |
+| 2  | Intel |
+
+<b class='comments'># we will create a relation between these two so that we can refrence intel when we write 2 and amd when we write 1</b>
+
+CPU             type/manufacturer        
+| id | model            | type_id |
+|----|------------------|---------|
+| 1  | Ryzen 5 5600G    | 1       |
+| 2  | Ryzen 7          | 1       |
+| 3  | i3 7th gen       | 2       |
+| 4  | Ryzen 3          | 1       |
+| 5  | i9 14th gen      | 2       |
+
+<b class='comments'># instead of repeating intel and amd again and again instead i wrote 1 and 2 to refrence them by using a relation because numbers take less space and are efficient to read by computer. (we will see how to create a relation after sometime) </b>
+
+# Creating the relationship:
+# In SQL, you would use a foreign key to establish the relationship between these tables.
+# For example, in the CPUs table, 'type_id' is a foreign key that references the 'id' in the CPU_Types table.
+
+***SQL*** 
+
+CREATE TABLE CPU_Types (
+    id INT PRIMARY KEY, <b class='comments'>-- I willl tell about types of keys at the end </b>
+    type VARCHAR(50)
+);
+INSERT INTO CPU_Types (id, type) VALUES (1, 'AMD'), (2, 'Intel');
+
+
+CREATE TABLE CPUs (
+    id INT PRIMARY KEY,
+    model VARCHAR(50),
+    type_id INT,
+    FOREIGN KEY (type_id) REFERENCES CPU_Types(id)
+);
+INSERT INTO CPUs (id, model, type_id) VALUES 
+(1, 'Ryzen 5 5600G', 1),
+(2, 'Ryzen 7', 1),
+(3, 'i3 7th gen', 2),
+(4, 'Ryzen 3', 1),
+(5, 'i9 14th gen', 2);
+
+-- View all data in CPU_Types
+SELECT * FROM CPU_Types;
+
+-- View all data in CPUs
+SELECT * FROM CPUs;
+
+--This query joins the CPUs table with the CPU_Types table to show the manufacturer name instead of the type_id.
+SELECT CPUs.id, CPUs.model, CPU_Types.type 
+FROM CPUs
+JOIN CPU_Types ON CPUs.type_id = CPU_Types.id;
+
+
+            </pre><br>
+
+            <!-- add a video -->
+
+            <b class="Name">Jeena: </b><br>
+            <pre class="english">But Peepo what is its used</pre><br>   
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Wel as i said do not repeat yourself with names, use numbers. and working with relations this way makes your database consistent. consistent database means that all the data from one part of database is compatible with other parts. 
+if i want to change AMD to amd -> i can do that easily and changes will reflect everywhere automatically. which saves a lot of time with large databases.
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Let me tell you about Keys
+Candidate Key :-> The minimal set of attributes that can uniquely identify a tuple is known as a candidate key. For Example, STUD_NO in STUDENT relation
+
+Primary Key:-> There can be more than one candidate key in relation out of which one can be chosen as the primary key. For Example, STUD_NO, as well as STUD_PHONE, are candidate keys for relation STUDENT but STUD_NO can be chosen as the primary key (only one out of many candidate keys). 
+
+Alternate Key :-> The candidate key other than the primary key is called an alternate key.
+
+Foreign Key :-> If an attribute can only take the values which are present as values of some other attribute, it will be a foreign key to the attribute to which it refers. The relation which is being referenced is called referenced relation and the corresponding attribute is called referenced attribute. The referenced attribute of the referenced relation should be the primary key to it.
+STUD_NO in STUDENT_COURSE is a 
+foreign key to STUD_NO in STUDENT relation
+
+Composite Key :-> Sometimes, a table might not have a single column/attribute that uniquely identifies all the records of a table. To uniquely identify rows of a table, a combination of two or more columns/attributes can be used.  It still can give duplicate values in rare cases. So, we need to find the optimal set of attributes that can uniquely identify rows in a table. the combination is called composite key
+FULLNAME + DOB can be combined 
+together to access the details of a student.
+
+Logical Key :-> A key that the "real world" might use to look up a row. For example, in a data model, a user's screen name might be a logical key that the program uses to look up their row multiple times.
+<!-- add necessary images -->
+</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Lets actually create something next lecture</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Now i want all of you to hop on your pc screen and actually try these. experiment on these. failure is best way to learn. if you have any trouble i am here to teach. also did you get the feeel about For Loops (Do you even read this anymore?)? comment your feedback</pre><br>
+            
+            
+            <br><br><br>
+            
+            <h1 class="ending">Next Lecture: Movie Tracker in Python(Solved Project)</h1>
+
+        </div>
+    </div>
+</body>
+<script src="../index.js"></script>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+    <title>Talking about Databases</title>
+</head>
+<body class='english'>
+    <div id='progress-bar-container'>
+        <img id='progress-bar' src='Image resource/boy.png' alt='Progress Indicator'>
+    </div>
+
+    <div class='container'>
+        <h1 class='heading english'><u>Talking about Databases</u></h1>
+        <div class='divider'></div>
+
+        <div class='content'>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Hi everyone, today we will learn about databases.. </pre><br>
+
+            <b class="Name">Jenna: </b><br>
+            <pre class="english">Peepo, this is Python class. not databases. did you sleep well last night? should i bring your batteries?</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">(throws board at Jenna) . NO! I am fine. dont mock me like that again. </pre><br>
+            <img src="Image resource/peepoAngry.png" alt="angry peepo" class="images_short">
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">I know this is a Python course. that is why we are going to learn about databases because Python is mainly used for data science and database management.</pre><br>
+
+            <b class="Name">Jenna: </b><br>
+            <pre class="english">OH, soryy :(</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">let us see relational databases first.
+a realtion is defined as set of tuples that have same attributes. a relation is usually described as a table
+which is organised into rows and columns.
+<img src="" alt="" class="images">
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english hilightR">Now there is a way to create or fast access large data using commands 
+WE call that SQL -> Structured Query Language. 
+it can Create table
+Retreive some data
+Insert/Update Data
+Delete Data
+together its called CRUD (create,read,update,delete)
+            </pre><br>
+            
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">In old times people wrote complex programs to access databases. which slowly turned into dabase applications like Oracle. and we now write easy code which gets transfered to database application which then access database. IT iS CALLED ABSTRACTION ->Abstraction in data structures is a technique of hiding the implementation details of a data structure from the user. This allows the user to focus on using the data structure without having to worry about how it is implemented.</pre><br>
+            <img src="" alt="" class="images">
+            
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">as told in the image, Oracle is a database management system that uses SQL to interact with the data 
+here is workflow -> user interacts with the application -> application server sends sql queries to oracle -> oracle DBMS processes the SQL -> The DBMS retrieves or modifies data in the database.-> The DBMS sends the results back to the application server. ->  The app displays the results to the user.
+            </pre><br>
+
+            <b class="Name">Einstein: </b><br>
+            <pre class="english">Not only Oracle but there are more database management systems like MySQL (different from SQL), PostgreSQL, Microsoft SQL Server, and IBM DB2. so in the above explanation you can replace oracle with any of these</pre><br>
+ 
+            <b class="Name">Brook: </b><br>
+            <pre class="english">Peepo you were begginer friendly at the start of the course why so complex now. </pre><br>
+            
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">1) Our users are not begginer anymore. 2) our users has become smart enough to understand these things. if you dont, read it again.  3) I dont want lectures to be big so that users loose intrest</pre><br>
+            
+            <b class="Name">Brook: </b><br>
+            <pre class="english">Woof!</pre><br>
+            
+            <b class="Name">Jenna: </b><br>
+            <pre class="english">But how do we actually use these database</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english hilightB">There are two roles in a project 
+application developer: makes the application 
+database administrator : monitors the database as the program runs
+
+DATABASE MODEL/SCHEMA: -> it is the format of the database. described formally. tables, fields, relationships, and constraints used to store and manage data. like the top row in a database which usually contains    eg: (s.no  , name , Grade , nationality ) etc . with schema we tell dbms that this is our heading row.. 
+basically data model is shape of our database 
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">MySQL is generally used in creating websites . but for this course we will learn with SQLite because it is lite(can be used for short things like programs running to play music in your car, or your phone). dont worry the knowledge you gain here, can be used in mySQL too.
+SQLite is fast.   the ease of using SQLite in this course is that it is built in inside Python and we need to just import it. 
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Before we begin, lets download SQLite browser first. it allows to directly manipulate SQLite files.
+
+1) go to http://sqlitebrowser.org/dl/
+2) You are not begginer anymore so instead of explaining i am just adding images. try following them.
+
+            <b>SLide left for more images: </b>
+            <pre class="english hilightPur">
+               <b class="Name">Peepo:</b>
+                <div class="horizontal_scroll">
+                    <img alt="image" class="images_scroll" src="Image resource/databases/downloadSQLite1.png"/>
+                    <img alt="fact1" class="images_scroll" src="Image resource/databases/downloadSQLite2.png "/>
+                    <img src="Image resource/databases/downloadSQLite3.png" alt="" class="images_scroll">
+                    <img src="Image resource/databases/downloadSQLite4.png" alt="" class="images_scroll">
+                    <img src="Image resource/databases/downloadSsQLite5.png" alt="" class="images_scroll">
+                </div>
+            </pre>
+            just Follow the flow and DOne
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Lets continue things in next lecture . we learned a bit about databases and some terms. lets use the database in next part
+and yeah remember to read the lectures in one go from now on.
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Now i want all of you to hop on your pc screen and actually try these. experiment on these. failure is best way to learn. if you have any trouble i am here to teach. also did you get the feeel about SQL? comment your feedback</pre><br>
+            
+            
+            <br><br><br>
+            
+            <h1 class="ending">Next Lecture: SQL Commands(part 2 of this lecture)</h1>
+
+            
+
+        </div>
+    </div>
+</body>
+<script src="../index.js"></script>
+</html>
