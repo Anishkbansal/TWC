@@ -1,12 +1,4 @@
-in lecture 9 make a pptfor better explain
 in lecture 13, make a recursion video
-add url in lect 18 line
-lect 19 beautiful soup install
-lect 20 data parsing ppt line 101 (define nodes and children too)
-ptoject for lect 20 woked out xml example
- explainjson structure video lect 21
- solved project lect 23 integrating voice system
  video in lect 27
  sql video ch 28.5
- video and images in lect 29
- images in 28-30
+video in lect 32

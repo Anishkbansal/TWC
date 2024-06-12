@@ -42,7 +42,7 @@ window.addEventListener('scroll', () => {
 
 //head tag 
 function getRelativePath(src) {
-  if (window.location.pathname.includes('Projects/lecture%20projects')) { return `../../${src}`;} 
+  if (window.location.pathname.includes('Projects/lecture%20projects') || window.location.pathname.includes('SubCourses/')) { return `../../${src}`;} 
   else { return src; }
 }
 
@@ -55,7 +55,7 @@ const links = [
   { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: 'anonymous' },
   { href: 'https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&display=swap', rel: 'stylesheet' },
   { rel: 'stylesheet' , href: 'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css'},
-  { rel: 'stylesheet' , href: 'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/material-darker.min.css'},
+  { rel: 'stylesheet' , href: 'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/darcula.min.css'},
 ];
 
 // Loop through the array and create link elements
@@ -147,8 +147,8 @@ document.addEventListener('DOMContentLoaded', function() {
       lineNumbers: true,
       mode: codeMirrorMode,
       readOnly: true,
-      theme: 'material-darker',
-      lineWrapping: true
+      theme: 'darcula',
+      lineWrapping: true,
     });
 
     // Store the CodeMirror instance in the array
@@ -161,9 +161,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   addCopyButtons();
 });
-
-
-
 
 // adding body content
 const overlayDiv = document.createElement('div');
@@ -188,14 +185,7 @@ audio.innerHTML = `
 `
 document.querySelector('div.container').appendChild(audio);
 
-// Create img element
-const img = document.createElement('img');
-img.src = getRelativePath("Image resource/Peepo_teachingPY.PNG")
-img.alt = 'Welcome welcome_folks peepo teaching snake on his neck';
-img.className = 'images';
-document.querySelector('div.content').insertBefore(img , document.querySelector('div.content').firstChild);
 
-console.log('Content added to body');
 
 
 // Function to create a copy button for each <pre> element with class 'code'

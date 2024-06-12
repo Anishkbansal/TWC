@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+    <title>Many to Many relationships, Indexes and Transactions</title>
+</head>
+<body class='english'>
+    <div id='progress-bar-container'>
+        <img id='progress-bar' src='Image resource/Einstein.png' alt='Progress Indicator'>
+    </div>
+
+    <div class='container'>
+        <h1 class='heading english'><u>Many to Many relationships, Indexes and Transactions</u></h1>
+        <div class='divider'></div>
+
+        <div class='content'>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">hi everyone. welcome back.  first we will see one to many relationships.  well we have already seen that. 
+I will be giving you a different example and you have to find which can fit as an example from our movie database from previous lecture. 
+
+now one to many is simple relationship. It is when a single record (a collection of items or data organized within a table within a set of fields)   is connected to  multiple records in another table
+for example. one Mother can have multiple children. lets see in this image.
+
+            <img src="Image resource/databases/Slide8.PNG" alt="" class="images">
+            <img src="Image resource/databases/Slide9.PNG" alt="" class="images">
+
+            </pre><br>
+
+            <h1 class="subheading">Many to Many relationship</h1>
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">see thats simple. now lets see Many to Many relationship
+In a many-to-many relationship, multiple records in one table can be related to multiple records in another table. For example, consider the relationship between Students and Courses. Each student can enroll in many courses, and each course can have many students
+To represent a many-to-many relationship, we need a junction table (also known as a bridge table or associative entity) to link the two tables.
+here is how many to many relationships proceed: 
+            </pre><br>
+
+            <img src="Image resource/databases/Slide10.PNG" alt="" class="images">
+            <img src="Image resource/databases/Slide11.PNG" alt="" class="images">
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">note that these are just a conceptual/logical thing. if you were to add multiple mothers to a child , this will cause that one to many relationships to turn into many to many. and this would require to reconstruct the whole database schema since you would need a junction table. 
+so these relationship types of many to many or one to many are just for our convenience while constructing the database
+<b>if you have any confusions, just forget that this line exists.</b>
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Create a database and lets create the user table(user can be teacher or student for a course) table. a course table and a junction/connector table  
+<pre class="code" data-language="sql">
+CREATE TABLE User(
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+    name TEXT,
+    email TEXT
+);
+
+CREATE TABLE Course(
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+    title TEXT
+);
+
+CREATE TABLE Member(
+    user_id INTEGER,
+    course_id INTEGER,
+    role INTEGER, 
+    PRIMARY KEY(user_id , course_id)
+);
+
+
+-- role column is optional. 
+
+</pre>
+            </pre><br>
+
+            <b class="Name">Einstein: </b><br>
+            <pre class="english">Peepo you put two primary keys </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">nah the primary wont be two columns but the combination of them for example 
+column1        column2 
+    1            1
+    2            2
+    3            3 
+
+
+primary key will be  -> 1,1 or 1,2 or 1,3 or 3,1 or 3,2 etc   different combination of those two column's fields.
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">lets insert data.   A HOMEWORK for you that try to insert data usign Python and xml.  i will be doing manually since its not big data but you do it since you are here to learn. and to learn youhave to work hard
+<pre class="code" data-language="sql">
+INSERT INTO User (name, email) VALUES 
+('Peepo' , 'Peepo@Twc.com'),
+('Brook' , 'Brook@Twc.com'),
+('Jenna' , 'Jenna@Twc.com'),
+('Raman' , 'Raman@gmail.com'),
+('Krishna' , 'Krishna@gmail.com');
+
+INSERT INTO Course(title) VALUES
+('Pytohn'),
+('C++'),
+('Java'),
+('SQL'),
+('Web Development'),
+('Designer');
+
+--letting 1 be the teacher and 0 be the student
+INSERT INTO Member (user_id , course_id , role) VALUES 
+(1 , 1 , 1),
+(1 , 4 , 1),
+(1 , 2 , 1);
+
+-- value1 -> Peepo will be taking the course Python as a teacher.. value2 -> Peepo will be taking the course SQL as a teacher... and so on
+
+INSERT INTO Member (user_id , course_id , role) VALUES
+(2 , 4 , 0),
+(2 , 5 , 0),
+(3 , 1 , 0),
+(3 , 2 , 0),
+(4 , 3 , 0),
+(5 , 1 , 1),
+(5 , 5 , 1),
+(5 , 6 , 1),
+(5 , 2 , 0);
+
+</pre>
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">See its the same thing no different. the difference is in just connector part and ideology.
+Lets join them 
+<pre class="code" data-language="sql">
+SELECT User.name , Member.role , Course.title
+FROM User JOIN Member JOIN Course
+ON Member.user_id = user.id AND Member.course_id = Course.id;
+</pre>
+
+<pre class="OUTPUT">
+<img src="Image resource/databases/Slide7.png" alt="" class="images">
+</pre>
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">why even use such things?  to get speed! it matters while working with large database. users wont like waiting 5 hours for their game/website to load.</pre><br>
+
+            <b class="Name">Einstein: </b><br>
+            <pre class="english">Peepo I wonder why we add Values in this syntax </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Well a row is just a tuple. so in Values we are adding tuples/rows we seperate the rows by commans. its that simple. </pre><br>
+
+            <h1 class="subheading">Indexes in SQL</h1>
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">before ending the lecture lets see about indexes . 
+well its all about speed management. and indexes make speed of data reteival go faster. its like index of a book. which have of page numbers written chapter wise that makes it easy for you to find that chapter. yes! lets see indexes in SQL
+
+In the context of databases, an index is a data structure that improves the speed of data retrieval operations on a database table at the cost of additional space and decreased performance on data modification operations such as INSERT, UPDATE, and DELETE.
+Without indexes, databases would need to scan through the entire table to find the rows that meet a particular condition, which can be very slow for large tables.
+
+Types of Indexes:
+Single-Column Index: An index created on a single column of a table.
+
+Composite Index: An index created on multiple columns of a table. Composite indexes can speed up queries that involve multiple columns in the index.
+
+Unique Index: An index where all values in the indexed column(s) must be unique. It enforces uniqueness for the indexed columns.
+
+Clustered Index: In some database systems (e.g., SQL Server), the data in the table is stored in the order of the indexed column(s). There can be only one clustered index per table.
+
+Non-Clustered Index: In contrast to clustered indexes, non-clustered indexes do not affect the order of the data in the table. Instead, they create a separate structure that contains the indexed column(s) and pointers to the corresponding rows in the table.
+
+When to Use Indexes:
+Use indexes on columns that are frequently used in WHERE clauses, JOIN conditions, or ORDER BY clauses.
+Use indexes on columns with high selectivity (i.e., columns with many distinct values).
+Consider creating indexes on foreign key columns, especially if they are frequently used in JOIN operations.
+
+<pre class="code" data-language="sql">
+CREATE TABLE Employees (
+    EmployeeID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE ,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    Department VARCHAR(50),
+    Salary DECIMAL(10, 2)
+);
+
+INSERT INTO Employees(FirstName , LastName , Department , Salary) VALUES
+('Peepo' , 'Robot'  , 'Teacher'  , 10000000000),
+('Rohit' , 'Nolan' , 'IT' , 10000),
+('Brook' , 'Dog' , 'Database' , 0.5),
+('Jenna' , 'Kaur' , 'IT' , 8000),
+('Jolyene' , 'Nolan' , 'IT' , 15000),
+('System' , 'Robot' , 'Teacher' , 1000000000000),
+('Brookie' , 'Dog' , 'Database' , 0.6);
+-- and so on...
+
+--Suppose we have thousands of records in this table. Now, let's say we frequently need to retrieve employees based on their last names.
+
+SELECT * FROM Employees WHERE LastName = 'Robot';
+-- without index it will take noticabely longer time if you have 1000's of employees 
+-- SQL OUTPUT: Execution finished without errors.
+-- Result: Result: 2 rows returned in 5ms
+
+--we will create an index for last name
+CREATE INDEX idx_LastName ON Employees (LastName);
+-- SQL OUTPUT: Execution finished without errors.
+-- Result: 2 rows returned in 2ms        difference of 3ms is huge with this short data. can have huge impact on big data
+-- but why is it faster? 
+-- this will tell database where to search when trying to search by lastname 
+-- sort all unique last names into different boxes. now isntead of checlong each item individually and returning one by one, computer can just find for that box and return items at once 
+
+
+SELECT * FROM Employees WHERE LastName = 'Robot';
+-- this will select all employees with last name but faster. since last name is an index and computer will only search data covered in index. which is always relatively smaller or same.
+
+</pre>
+            </pre><br>
+
+            <h1 class="subheading">Constraints in SQL</h1>
+            <b class="Name">Peepo: </b><br>
+            <pre class="english hilightR">We are done with indexes, now lets see what are constraints 
+well we all saw while creating an id we put NOT NULL AUTOINCREMENT etc.  these are constraints. lets what different constraints do .
+Constraints in SQL are rules that enforce data integrity and consistency within a database. They specify the limits or conditions for the data that can be inserted, updated, or deleted in a table
+
+1) Primary Key Constraint
+2) Unique Constraint
+3) Check Constraint: A check constraint imposes conditions on the values allowed in a column. It ensures that only values meeting the specified conditions can be inserted or updated in the column.
+<pre class="code" data-language="sql">
+CREATE TABLE Products (
+    ProductID INT PRIMARY KEY,
+    Price DECIMAL CHECK (Price > 0),
+    Quantity INT CHECK (Quantity >= 0 and Quantity &lt;= 10)
+);
+-- the value in Price attribute, should be greater than zero and value of quantity should be in range(0,11)
+</pre>
+
+4) Not Null Constraint
+5) Default Constraint: A default constraint specifies a default value for a column when no value is specified during INSERT.
+<pre class="code" data-language="sql">
+CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    Department VARCHAR(50) DEFAULT 'Unknown'
+);
+
+INSERT INTO Employees(EmployeeID , FirstName , LastName) VALUES( 1 , "Peepo" , "Robot") 
+
+-- the value of department in this row should be Null if Default was not provided but it will be "Unknown" now!
+</pre>
+
+Thats it you need to know now. if you want to know more you can search but you will know them eventually when you make projects.  
+<b>And yeah AI cant help you much with these database things since it is a sensetive thing and AI does not have proper context over your whole database or schema or what you are trying to accomplish</b>
+
+            </pre><br>
+
+            <h1 class="subheading">Transaction in Python</h1>
+            <b class="Name">Peepo: </b><br>
+            <pre class="english hilightG">Now lets see transactions(not money transactions) they are important.
+Transactions in SQL provide a way to group multiple SQL operations into a single unit of work that either completes successfully and commits all changes or fails and rolls back all changes. This ensures the integrity of the database and maintains consistency even in the presence of errors or failures
+
+transactions have ACID properties. 
+A -> Atomicity -> Transactions are atomic, meaning that they are treated as a single unit of work. Either all operations within the transaction are completed successfully and committed, or none of them are. If any operation within the transaction fails, the entire transaction is rolled back to its initial state.
+C -> Consistency -> Transactions ensure that the database remains in a consistent state before and after the transaction. All constraints, rules, and relationships defined in the database schema must be satisfied at the end of the transaction.
+I -> Isolation -> Transactions should be isolated from each other to prevent interference between concurrent transactions. Each transaction should operate independently of other transactions, as if it were the only transaction executing against the database.
+D -> Durability -> Once a transaction is committed, its changes are permanent and will survive system failures or crashes. The changes made by committed transactions should be stored persistently in the database and should not be lost.
+
+
+BEGIN TRANSACTION: Starts a new transaction.
+
+COMMIT: Marks the end of a successful transaction and makes all changes permanent. The COMMIT statement saves all the changes made during the transaction to the database.
+that is why we used cur.commit while making our Python project
+
+ROLLBACK: Rolls back the current transaction, undoing all changes made since the transaction started. The ROLLBACK statement is typically used when an error occurs or when the transaction cannot be completed successfully.
+
+SAVEPOINT: Establishes a named point within a transaction to which you can later roll back.
+
+Example: 
+<pre class="code" data-language="sql">
+CREATE TABLE Accounts (
+    AccountID INT PRIMARY KEY,
+    Balance DECIMAL(10, 2)
+);
+
+CREATE TABLE Transactions (
+    TransactionID INT PRIMARY KEY,
+    AccountID INT,
+    Amount DECIMAL(10, 2),
+    Type VARCHAR(20),
+    FOREIGN KEY (AccountID) REFERENCES Accounts(AccountID)
+);
+
+BEGIN TRANSACTION;
+
+UPDATE Accounts SET Balance = Balance - 100 WHERE AccountID = 123;
+INSERT INTO Transactions (AccountID, Amount, Type) VALUES (123, -100, 'Withdrawal');
+
+UPDATE Accounts SET Balance = Balance + 100 WHERE AccountID = 456;
+INSERT INTO Transactions (AccountID, Amount, Type) VALUES (456, 100, 'Deposit');
+
+COMMIT;
+
+
+</pre>
+In this example:
+
+We begin a new transaction.
+We deduct $100 from account 123 and record it as a withdrawal.
+We add $100 to account 456 and record it as a deposit.
+If all operations are successful, we commit the transaction, making the changes permanent.
+If an error occurs at any point, we can roll back the entire transaction, undoing all changes made since the transaction began
+
+<b>non money related example</b>
+Suppose we have a database table called Inventory that tracks the quantity of items in stock for a bookstore. We want to update the inventory when a customer places an order for books.
+
+CREATE TABLE Inventory (
+    BookID INT PRIMARY KEY,
+    BookName VARCHAR(100),
+    Quantity INT
+);
+
+CREATE TABLE OrderHistory (
+    OrderID INT PRIMARY KEY AUTO_INCREMENT,
+    BookID INT,
+    Quantity INT,
+    OrderDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (BookID) REFERENCES Inventory(BookID)
+);
+
+BEGIN TRANSACTION;
+
+UPDATE Inventory SET Quantity = Quantity - 1 WHERE BookID = 123;
+INSERT INTO OrderHistory (BookID, Quantity, OrderDate) VALUES (123, 1, NOW());
+
+COMMIT;
+            </pre><br>
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">no need to remeber these transactions, constraints just know that something like this exists. and this functionality is possible. if you know, then you can just make a search about how do I add a transaction in here to get this functionality
+plus you can learn the rest of your life. this course wont teach every little detail. no one can. knowledge comes in parts
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">this lecture has a short project so check that out please</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Now i want all of you to hop on your pc screen and actually try these. experiment on these. failure is best way to learn. if you have any trouble i am here to teach. also did you get the feeel about MANY TO MANY ? comment your feedback</pre><br>
+            
+            <!-- add a video pleaseeeeeee for each subheading -->
+            
+            <br><br><br>
+            
+            <h1 class="ending">Next Lecture: Data Visualisation in Python(Last [maybe] )</h1>
+
+        </div>
+    </div>
+</body>
+<script src="../index.js"></script>
+</html>

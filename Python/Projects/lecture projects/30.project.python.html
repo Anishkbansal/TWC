@@ -181,7 +181,7 @@ for movie in root.findall('movie'):
     <b class='comments'># we have retreived the data for one movie now we populate the database with this</b>
 
     cur.execute('''INSERT OR IGNORE INTO Production(name) VALUES (?);''' , (production_name,)) 
-    <b class='comments'># we did insert or ignore so that the value does not repeat. one production house must occur once in database. there cannot be two production houses of same name</b>
+    <b class='comments'># we did insert or ignore so that the value does not repeat. one production house must occur once in database. there cannot be two production houses of same name.. because what ignore does is check if executing this line cause some error, if it does it ignores the line and skips it</b>
     <b class='comments'># so if the production already exists, it skips and if it does not it creates one.</b>
     <b class='comments'># why? because the name is defined as UNIQUE while creating the table. </b>
     <b class='comments'># now we want to know what the id is so that we can feed that into movie.</b>

@@ -45,7 +45,7 @@ print(MyList)
 print(MyList[2])     <b class="comments"># Name[x] this is the syntax of getting the element at the given index. if you replace Name with the name of your list and x with the number of index you want to get.</b>
 print(MyList[5][0]) <b class="comments"># this code here means that get the element at index 5, and give zeroeth index element of <b>that</b> element</b>
 print(MyList[0][2])  <b class="comments"># String also behaves as a list in the backend (list of characters ) so this code will give 2nd index of element at the first index of MyList</b>
-print(MyList[2][-2])  <b class="comments"># you can even put negative indexes in this. 0 -1 will send to end of the list. so -1 index will be the last element of the list. -2 -&gt; 2nd last. i will put up and image of this. </b>
+print(MyList[2][-2])  <b class="comments"># you can even put negative indexes in this. -1 will send to end of the list. so -1 index will be the last element of the list. -2 -&gt; 2nd last. i will put up and image of this. </b>
 print(MyList[0:2])   <b class="comments"># Now this is called list slicing. we slice out a part from the list. and this is how we tell Python about what part to slice. </b>
 <b class="comments"># Name[initial:ending:iterate ] replacing Name with name of your list, .</b>
 <b class="comments"># initial with index you want to start slicing from, </b>
@@ -99,6 +99,9 @@ p
             <div class="iframeContainer">
                 <iframe frameborder="0"></iframe>
             </div><br />
+
+            <img src="Image resource/DataTypes/Slide1.PNG" alt="" class="images">
+
             </pre><br />
             <b class="Name">Einstein: </b><br />
             <pre
@@ -120,6 +123,8 @@ Lst.extend([56,56,True]) <b class="comments"># extend(l) add an List of items to
 
 print("List after using extend", Lst)
 
+Lst = [45,78,98,68, 65 , 56 , 56]  # lets shorten the list, its getting complicated
+
 Lst.insert(2, "imposter")  <b class="comments"># insert(x,y) is like big brother of append which also allowes you to specify the index you want to place the new element at</b>
 <b class="comments"># here, x or first argument will be the index number and second will be the item you want to insert</b>
 print("list after insert", Lst)
@@ -129,7 +134,7 @@ if("imposter" in Lst):
 <b class="comments"># so to avoid error we usually wrap the remove(x) in an if else statement. like did here</b>
 print("list after remove", Lst)
 
-item_popped = Lst.pop(4)   <b class="comments"># works same as remove but more flexible. and also it TAKES INDEX NUMBER AS ARGUMENT NOT THE ELEMENT ITSELF LIKE remove()...... (1) if no argument is provided, removes the last item. (2) returns the item removed which means you can store it in a variable</b>
+item_popped = Lst.pop(2)   <b class="comments"># works same as remove but more flexible. and also it TAKES INDEX NUMBER AS ARGUMENT NOT THE ELEMENT ITSELF LIKE remove()...... (1) if no argument is provided, removes the last item. (2) returns the item removed which means you can store it in a variable</b>
 print("popped ", item_popped, "from the list", Lst)
 
 print("the number 65 occurs at index, ", Lst.index(65))  <b class="comments"># returns the index of first occurenece of the item given as argument in the list. ERROR IF(ITEM NOT IN LIST)</b> 
@@ -142,7 +147,7 @@ print("List after reverse", Lst)
 Lst.sort()  <b class="comments"># sort the list form lowest to highest . You can also sort lists with strings in it. Try it please</b>
 print("list after sorting ", Lst)
 Lst.sort(reverse = True)  <b class="comments"># is the argument reverse=True is given it will sort the opposite. Highest to Lowest</b>
-print("list after reverse sorting, " Lst)
+print("list after reverse sorting, ", Lst)
 
 a = Lst    <b class="comments"># FOCUS HERE... this will NOT create new list called a with same element as Lst. infact this will give another name to Lst.</b>
 a.append("imposter2")  <b class="comments"># since a and Lst are same person. so weather you call Peepo is Dumb or ROBOT_TUTOR is dumb it means same thing so here also, appending a or appending using Lst is same as both refer to the same list</b>
@@ -150,12 +155,9 @@ print("list after appending by its new name 'a' ", Lst)
 
 b = Lst.copy()   <b class="comments"># if you actually wantt to create a copy of a list you can use copy(). now b is a different list.</b>
 
-listLength = Lst.len()   <b class="comments"># return number of items in the list as an integer</b>
+listLength = len(Lst)   <b class="comments"># return number of items in the list as an integer</b>
 print("length of the list is ", listLength)
 
-bo = Lst.contains("imposter2")    <b class="comments"># contains() checks is the item specified is present in the list or not . it returns a BOOLEAN value.</b>
-if bo:
-    Lst.remove("imposter2")
 
 Lst.clear()  <b class="comments"># takes nothing as argument and works exactly as the name suggest. clear all the item in the list</b>
 print("list after clearing", Lst)
@@ -171,9 +173,7 @@ print("is l1 greater than l2?", l1&gt;l2)
 print("is l2 equal to l3", l2==l3)
 
 print("l1+l2 will concatinate both lists ", l1+l2)
-print("l4*3 will be " l4*3)  <b class="comments"># multiplying will concatinate list with itself n number of times.if n is the number you multiply the list with</b>
-
-MAKE A PPT OF ALLL OF THIS!!!!!!!!!!
+print("l4*3 will be ", l4*3)  <b class="comments"># multiplying will concatinate list with itself n number of times.if n is the number you multiply the list with</b>
 </code>
 </pre><br />
 
@@ -193,6 +193,7 @@ print("List after using 3 append", Lst)
 Lst.extend([56,56,True])
 print("List after using extend", Lst)
 
+Lst = [45,78,98,68 , 65 , 56 , 56]
 
 Lst.insert(2, "imposter")  
 print("list after insert", Lst)
@@ -203,7 +204,7 @@ if("imposter" in Lst):
 print("list after remove", Lst)
 
 
-item_popped = Lst.pop(4)  
+item_popped = Lst.pop(2)  
 print("popped ", item_popped, "from the list", Lst)
 
 
@@ -216,7 +217,7 @@ print("List after reverse", Lst)
 Lst.sort()  
 print("list after sorting ", Lst)
 Lst.sort(reverse = True)  
-print("list after reverse sorting, " Lst)
+print("list after reverse sorting, ", Lst)
 
 
 a = Lst    
@@ -225,13 +226,8 @@ print("list after appending by its new name 'a' ", Lst)
 
 
 b = Lst.copy()
-listLength = Lst.len()   
+listLength = len(b)   
 print("length of the list is ", listLength)
-
-
-bo = Lst.contains("imposter2")    
-if bo:
-    Lst.remove("imposter2")
 
 
 Lst.clear()  
@@ -248,7 +244,7 @@ print("is l1 greater than l2?", l1&gt;l2)
 print("is l2 equal to l3", l2==l3)
 
 print("l1+l2 will concatinate both lists ", l1+l2)
-print("l4*3 will be " l4*3)
+print("l4*3 will be " ,l4*3)
 
 </code>
 </pre><br />
@@ -257,6 +253,25 @@ print("l4*3 will be " l4*3)
 
             <pre class="OUTPUT">
 
+[1, 35, 565, 65, 45, 56, 34, 21]
+List after using 3 append [1, 35, 565, 65, 45, 56, 34, 21, 103, 106, False]
+List after using extend [1, 35, 565, 65, 45, 56, 34, 21, 103, 106, False, 56, 56, True]
+list after insert [45, 78, 'imposter', 98, 68, 65, 56, 56]
+list after remove [45, 78, 98, 68, 65, 56, 56]
+popped  98 from the list [45, 78, 68, 65, 56, 56]
+the number 65 occurs at index,  3
+the number of times 56 occurs in this list is  2
+List after reverse [56, 56, 65, 68, 78, 45]
+list after sorting  [45, 56, 56, 65, 68, 78]
+list after reverse sorting,  [78, 68, 65, 56, 56, 45]
+list after appending by its new name 'a'  [78, 68, 65, 56, 56, 45, 'imposter2']
+length of the list is  7
+list after clearing []
+l1 is  [1, 2, 4, 5, -1, 0] l2 is  [1, 2, 3, 8, 5, 7] l3 is  [1, 2, 3, 8, 5, 7] l4 is  [1, 2]
+is l1 greater than l2? True
+is l2 equal to l3 True
+l1+l2 will concatinate both lists  [1, 2, 4, 5, -1, 0, 1, 2, 3, 8, 5, 7]
+l4*3 will be  [1, 2, 1, 2, 1, 2]
 
 </pre>
 
@@ -269,6 +284,10 @@ print("l4*3 will be " l4*3)
             <pre class="english hilightPur">
             <b class="Name">Peepo:</b>
                 <div class="horizontal_scroll">
+                    <img src="Image resource/DataTypes/Slide2.PNG" alt="" class="images">
+                    <img src="Image resource/DataTypes/Slide3.PNG" alt="" class="images">
+                    <img src="Image resource/DataTypes/Slide4.PNG" alt="" class="images">
+                    <img src="Image resource/DataTypes/Slide5.PNG" alt="" class="images">
                 </div>
             </pre>
 
@@ -293,14 +312,7 @@ and if you wanna know more about coding with AI. go to courses and select the AI
                 class="english">Now i want all of you to hop on your pc screen and actually try these. experiment on these. failure is best way to learn. if you have any trouble i am here to teach. also did you get the feeel about Lists? comment your feedback</pre>
             <br />
             <br /><br /><br />
-            <b>SLide left for more images: </b>
-            <pre class="english hilightR">
-               <b class="Name">Peepo:</b>
-                <div class="horizontal_scroll">
-                    <img alt="meme1" class="images_scroll" src=""/>
-                    <img alt="fact1" class="images_scroll" src=""/>
-                </div>
-            </pre>
+
             <h1 class="ending">Next Lecture: Tuples in Python(part 2 of this one.)</h1>
         </div>
     </div>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+    <title>Data Visualisation IN Python</title>
+</head>
+<body class='english'>
+    <div id='progress-bar-container'>
+        <img id='progress-bar' src='Image resource/boy.png' alt='Progress Indicator'>
+    </div>
+
+    <div class='container'>
+        <h1 class='heading english'><u>Data Visualisation IN Python</u></h1>
+        <div class='divider'></div>
+
+        <div class='content'>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Hi everyone welcome. Today we will be visualising data. you see reading in tables is boring so we make pie diagrams, bar graphs, line graphs etc. but how do we make that in Python?
+Why We Need Data Visualization
+Understanding Data: Visualization helps us understand large datasets quickly by transforming complex data into graphical representations.
+Identifying Patterns and Trends: It allows us to spot patterns, trends, and outliers that might not be apparent in raw data.
+Effective Communication: Visualizations can communicate findings and insights clearly and persuasively to a broader audience.
+Decision Making: Helps stakeholders make informed decisions based on data insights.
+
+lets see how it is done 
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">WE use the module matplotlib for data visualising. so download it first
+<pre class='code'>
+<code>
+import pandas as pd   #What is Pandas? Pandas is a Python library used for working with data sets. It has functions for analyzing, cleaning, exploring, and manipulating data
+import numpy as np   # NumPy, short for Numerical Python, is a Python library that is used for working with arrays. It is a popular library for scientific computing with Python
+import matplotlib.pyplot as plt   #used for plotting the graphs  
+import seaborn as sns    #Seaborn is a Python data visualization library based on matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics. 
+
+# Setting a seaborn style
+sns.set(style="whitegrid")
+
+#lets create a simple data to work with 
+# Create a dictionary with some data
+data = {
+    'Year': [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023],
+    'Sales': [200, 220, 240, 260, 280, 300, 320, 340, 360],
+    'Profit': [20, 30, 35, 40, 50, 60, 65, 70, 75],
+    'Customers': [100, 150, 200, 250, 300, 350, 400, 450, 500]
+}
+
+# Create a DataFrame
+df = pd.DataFrame(data)   <b class='comments'># pandas turn this dictionary data into beautiful and understandable table like structure</b>
+
+# Display the DataFrame
+print(df)
+
+</code>
+</pre><br>
+            </pre><br>
+
+            <h1 class="subheading">Line Plot</h1>
+            <b class="Name">Peepo: </b><br>
+            <pre class="english hilightB"><pre class="code">
+plt.figure(figsize=(10, 6))   #this creates a figure and specifies its size. a figure is a window which will hold your graph
+plt.plot(df['Year'], df['Sales'], marker='o', linestyle='-', color='b', label='Sales')
+# plt.plot(x-axis , y-axis , style)  this creates a line. first we give data of x-axis, then what to be on y-axis. then we define some optional line design such as line colour to be 'b' (blue) . marker 'o' point to be marked with o etc 
+plt.plot(df['Year'], df['Profit'], marker='o', linestyle='-', color='g', label='Profit')     # this creates another line
+plt.xlabel('Year')    # optional: labeling the x axis.  telling what x axis means
+plt.ylabel('Value')   
+plt.title('Sales and Profit Over Time')  # giving title/name to our graph 
+plt.legend() # this is a box that tell meaning of each line what does it stand for
+plt.grid(True)   # this gives a grid to the figure 
+plt.show()  # this shows the graph
+
+</pre>
+OUTPUT: 
+<img src="Image resource/DataVisualisation/Slide1.png" alt="" class="images">
+        </pre><br>
+
+        <h1 class="subheading hilightG">Bar Chart</h1>
+        <b class="Name">Peepo: </b><br>
+        <pre class="english">
+<pre class="code">
+plt.figure(figsize=(10, 6))
+plt.bar(df['Year'], df['Sales'], color='b', label='Sales')     <b class='comments'># in line we used plt.plot   for bar we are using plt.bar</b>
+plt.bar(df['Year'], df['Profit'] , color='g' , label="Profit")
+plt.xlabel('Year')
+plt.ylabel('Sales')
+plt.title('Sales by Year')
+plt.legend()
+plt.show()
+</pre>
+OUTPUT: 
+<img src="Image resource/DataVisualisation/Slide2.png" alt="" class="images">
+        </pre><br>
+
+        <h1 class="subheading hilightG">Histogram</h1>
+        <b class="Name">Peepo: </b><br>
+        <pre class="english">
+<pre class="code">
+# Generating some random data for demonstration
+data = np.random.randn(1000)
+
+plt.figure(figsize=(10, 6))
+plt.hist(data, bins=30, color='c', edgecolor='k', alpha=0.7)  # using plt.hist for histogram
+plt.xlabel('Value')
+plt.ylabel('Frequency')
+plt.title('Histogram of Random Data')
+plt.show()
+</pre>
+OUTPUT: 
+<img src="Image resource/DataVisualisation/Slide3.png" alt="" class="images">
+        </pre><br>
+
+        <h1 class="subheading hilightG">sactter plot</h1>
+        <b class="Name">Peepo: </b><br>
+        <pre class="english">
+<pre class="code">
+    # A scatter plot is useful for showing the relationship between two variables.
+plt.figure(figsize=(10, 6))
+plt.scatter(df['Sales'], df['Profit'], color='r', marker='x')   #using scatter for scatterplot
+plt.xlabel('Sales')
+plt.ylabel('Profit')
+plt.title('Profit vs Sales')
+plt.grid(True)
+plt.show()
+</pre>
+OUTPUT: 
+<img src="Image resource/DataVisualisation/Slide4.png" alt="" class="images">
+        </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">this was just matplotlib syntax. nothing difficult. 
+now lets see what if we had to retreive data from web, store that data in our database, and then plot a graph from that database 
+            </pre><br>
+
+            <b class="Name">Einstein: </b><br>
+            <pre class="english">We we dont use web directly. why store in a database</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">lets create a project.  
+we will retreive country's population data from web 
+store them in a database 
+retreive data from our database and then visualise it as a line graph depending on country chosen by the user 
+
+lets see . this is the link which contains our data <a href="https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&date=1960:2021&per_page=1000">https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&date=1960:2021&per_page=1000</a>      where you replace country_code with country code . how i know? I found out about a website world bank. i did some research and came to know that this is how i can get the data in json format 
+(its a big database)
+
+<pre class="code">
+import requests
+import sqlite3
+import json
+
+# Function to fetch data from the World Bank API with pagination
+def fetch_population_data():
+    url = "http://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&date=1960:2021&per_page=1000"
+    page = 1       # initial page selected to one 
+    all_data = []   # created empty list to store data 
+# world bank has data in different pages so we have to loop through all pages to make sure we have all data
+    while True:
+        response = requests.get(f"{url}&page={page}")   # get data for that page 
+        data = response.json()
+        all_data.extend(data[1])    # adding all that data from page in our list. it is index 1 because when you see the data it has a dictionary at index zero which tell about page info.
+
+        # Check if we have fetched all pages
+        if page >= data[0]['pages']:    # the zeroeth index contains page info and pages: has number of pages. so we dont want to go on a page which does not exists. 
+            break
+        page += 1           #incement the page
+
+    return all_data   # return that list
+
+# Fetch population data
+data = fetch_population_data()   <b class='comments'># you can print data to check its format and you might understand something</b>
+
+# Connect to SQLite database
+conn = sqlite3.connect('population_data.db')
+cursor = conn.cursor()
+
+# Create table
+cursor.execute('''
+CREATE TABLE IF NOT EXISTS population (
+    country_code TEXT,
+    country_name TEXT,
+    year INTEGER,
+    population INTEGER,
+    PRIMARY KEY (country_code, year)
+)
+''')
+
+# Create indexes for efficient data retrieval
+cursor.execute('CREATE INDEX IF NOT EXISTS idx_country_code ON population (country_code)')
+cursor.execute('CREATE INDEX IF NOT EXISTS idx_year ON population (year)')
+
+# Insert data into the database
+for entry in data:
+    country_code = entry['country']['id']
+    country_name = entry['country']['value']
+    year = int(entry['date'])
+    population = entry['value'] if entry['value'] is not None else 0
+    
+    cursor.execute('''
+    INSERT OR IGNORE INTO population (country_code, country_name, year, population)
+    VALUES (?, ?, ?, ?)
+    ''', (country_code, country_name, year, population))
+
+# Commit changes and close the connection
+conn.commit()
+conn.close()
+
+import matplotlib.pyplot as plt
+
+def get_population_data(country_names):
+    conn = sqlite3.connect('population_data.db')
+    cursor = conn.cursor()
+    
+    data = {}
+    for country_name in country_names:
+        cursor.execute('''
+        SELECT year, population FROM population
+        WHERE country_name = ?
+        ORDER BY year
+        ''', (country_name,))
+        
+        data[country_name] = cursor.fetchall()
+    
+    conn.close()
+    return data
+
+def plot_population_data(data, country_names):
+    plt.figure(figsize=(10, 6))
+    colors = ['b', 'g', 'r']
+    
+    for i, country_name in enumerate(country_names):
+        years = [row[0] for row in data[country_name]]  # read carefully
+        populations = [row[1] for row in data[country_name]]
+        plt.plot(years, populations, label=country_name, color=colors[i])
+    
+    plt.xlabel('Year')
+    plt.ylabel('Population')
+    plt.title('Population Over Years')
+    plt.legend()
+    plt.show()
+
+def main():
+    country_names = input("Enter up to 3 country names separated by commas: ").split(',')
+    country_names = [name.strip() for name in country_names if name.strip()]
+    
+    if len(country_names) > 3:
+        print("Please enter up to 3 country names.")
+        return
+    
+    data = get_population_data(country_names)
+    plot_population_data(data, country_names)
+
+if __name__ == '__main__':
+    main()
+</pre>
+
+<pre class="OUTPUT">
+Enter up to 3 country names separated by commas: <b class="interact">India , United Arab Emirates , United States</b>
+
+<img src="Image resource/DataVisualisation/Slide5.png" alt="" class="images">
+
+<b class='comments'># ATTEMPT 2</b>
+Enter up to 3 country names separated by commas: <b class="interact">China , India , United States</b>
+<img src="Image resource/DataVisualisation/Slide6.png" alt="" class="images">
+
+<b class='comments'># crazy to think that these three are world's most populated countries</b>
+
+</pre>
+
+<b class='comments'># you can modify this by also adding gdp data and using same colour but different line style to display it. and also you can raise error if the country does not matches with any or ask the question again when user gives more than 3 input.</b>
+<b>if you dont understand it on your own. which you could if you real carefully its not rocket science. its all what we have done until now. but if you dont just paste the whole code on chatgpt 4o and ask him. and if there is particualr part, copy that part and ask him in second prompt.</b>
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">PLEASE everyone do not copy paste this code unless you understand it.    you can go to the link of world bank do some research or ask ai about how world bank gives data and how you can retrieve it etc. </pre><br>
+
+            <b class="Name">Einstein: </b><br>
+            <pre class="english">Peepo dont worry people will understand i know you want them to understand it on their own. they are smart and they have already done all this. JUST read each line one by one , try to connect. </pre><br>
+
+        </div>
+    </div>
+</body>
+<script src="../index.js"></script>
+</html>

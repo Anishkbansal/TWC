@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+    <title>Interview Simulation</title>
+</head>
+<body class='english'>
+    <div id='progress-bar-container'>
+        <img id='progress-bar' src='Image resource/boy.png' alt='Progress Indicator'>
+    </div>
+
+    <div class='container'>
+        <h1 class='heading english'><u>Interview Simulation</u></h1>
+        <div class='divider'></div>
+
+        <div class='content'>
+
+            <b class="Name">Creator: </b><br>
+            <pre class="english">Hey Peepo, suppose you are a big company and you are organising an interview. behave as an interviewee and take my interview. ask one question about why they should select me in this world of ai.  simulate an interview with me . make it realistic. I am applying for job for a python developer. make the interview long. ask question that are asked in interviews about python and other things ask some python problems, lambda functions etc. some long and some short question. and the candidate is there for internship. do not keep it interactive. give me cadidate's possible answers too. the candidate does not have any degree or any collage background. he studies python online but have great skills. and is better than many collage students too. has build a good portfolio. (ask the candidate about why company should trust him since he does not have a degree)</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">nice idea sir, this would also give learners some idea. but who will volunteer to be out candidate.</pre><br>
+
+            <b class="Name">Brook: </b><br>
+            <pre class="english">Wooof! me Woof!</pre><br>
+            
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">ah... not sure about that. </pre><br>
+
+            <b class="Name">Einstein: </b><br>
+            <pre class="english">I can do this. lets start right away. (goes to interview)</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Good morning! Thank you for joining us today. My name is Peepo, and I’ll be conducting your interview. I see you’re applying for the Python Developer Internship position. Before we dive into the technical questions, could you briefly introduce yourself and tell us why you're interested in this role?</pre><br>
+
+            <b class="Name">Einstein: </b><br>
+            <pre class="english">(said confidentaly) Good morning! My name is Einstein. I’ve been studying Python and web development through various online courses and have completed several projects that I’m really proud of. I’m particularly interested in this internship because I want to apply my skills in a professional setting and contribute to a team working on innovative projects. I believe my hands-on experience and problem-solving abilities make me a strong candidate for this internship.(emphasising his self learning journey)</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">I see you don’t have a formal degree, which is quite common in the tech industry nowadays. Can you explain why we should consider you for this role in the world of AI and Python development despite not having a traditional educational background?</pre><br>
+
+            <b class="Name">Einstein: </b><br>
+            <pre class="english">Absolutely. While I don’t have a formal degree, I’ve dedicated significant time to learning Python and related technologies through online platforms. I’ve built a strong portfolio of projects that demonstrate my capabilities, such as [mention a few key projects]. These projects showcase my problem-solving skills, my ability to write clean and efficient code, and my passion for continuous learning. I believe practical experience and a strong portfolio can sometimes be more telling of one’s abilities than a degree.
+[please make your own answer about this ai question. since i am also new for this question. keep it short unlike me]               
+and about the question related to AI, well, AI cannot build full fledged projects right now, you definately need a developer. now the change because of AI is it can handle work of junior developer. which is really helpful. Why I am a better option than opting for AI, because i know how to use AI. I know about its capabilities. it can help us learn complex code, algorithms which cant be in our mind at all times, but we still need to know how and where to use those algorithms or code. if I cant, I would be no better than AI and a company would prefer AI over me. 
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Great, let's dive into some technical questions to better understand your skills
+What are some differences between lists and tuples in Python?
+            </pre><br>
+
+            <b class="Name">Einstein: </b><br>
+            <pre class="english">Lists are mutable, meaning they can be changed after their creation. Tuples, on the other hand, are immutable, meaning once they’re created, they can’t be altered. Lists are defined with square brackets [], whereas tuples are defined with parentheses ().</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Can you explain what a lambda function is in Python and provide an example of how you might use one?</pre><br>
+
+            <b class="Name">Einstein: </b><br>
+            <pre class="english">A lambda function is a small anonymous function defined with the lambda keyword. It can take any number of arguments but can only have one expression. It’s often used for short-term, throwaway functions.
+<pre class="code">
+square = lambda x: x * x
+print(square(5))  # Output: 25
+</pre>
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Let’s solve a coding problem. Write a Python function that takes a list of integers and returns a list containing only the even numbers.</pre><br>
+
+            <b class="Name">Einstein: </b><br>
+            <pre class="english"><pre class="code">def get_even_numbers(numbers):
+    return [num for num in numbers if num % 2 == 0]
+
+# Example usage:
+print(get_even_numbers([1, 2, 3, 4, 5, 6]))  # Output: [2, 4, 6]
+</pre></pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Explain the concept of inheritance in Python with an example.</pre><br>
+
+            <b class="Name">Einstein: </b><br>
+            <pre class="english">Inheritance allows a class to inherit attributes and methods from another class. This helps in reusability and organization of code.
+<pre class="code">
+class Animal:
+    def __init__(self, name):
+        self.name = name
+    
+    def speak(self):
+        raise NotImplementedError("Subclass must implement abstract method")
+
+class Dog(Animal):
+    def speak(self):
+        return f"{self.name} says Woof!"
+
+class Cat(Animal):
+    def speak(self):
+        return f"{self.name} says Meow!"
+
+# Example usage:
+dog = Dog("Buddy")
+cat = Cat("Whiskers")
+print(dog.speak())  # Output: Buddy says Woof!
+print(cat.speak())  # Output: Whiskers says Meow!
+
+</pre>
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Could you explain the difference between deep copy and shallow copy in Python?(Opps forgot to teach that during lectures)</pre><br>
+
+            <b class="Name">Einstein: </b><br>
+            <pre class="english">A shallow copy creates a new object but inserts references into it to the objects found in the original. A deep copy creates a new object and recursively copies all objects found in the original, making new instances of everything. which means if you change original list after shallow copying, it will also change the copied list as they both refrence same list.(different names of same person)
+<pre class="code">
+import copy
+
+original_list = [[1, 2, 3], [4, 5, 6]]
+shallow_copy = copy.copy(original_list)
+deep_copy = copy.deepcopy(original_list)
+
+original_list[0][0] = 'Changed'
+
+print(shallow_copy)  # Output: [['Changed', 2, 3], [4, 5, 6]]
+print(deep_copy)     # Output: [[1, 2, 3], [4, 5, 6]]
+
+</pre>
+            </pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Alright, nice. now, Can you describe a challenging problem you faced in one of your projects and how you solved it?</pre><br>
+
+            <b class="Name">Einstein: </b><br>
+            <pre class="english">[answer it on your own i dont have example for you all]</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Thank you for your detailed responses. Before we wrap up, do you have any questions for us?</pre><br>
+
+            <b class="Name">Einstein: </b><br>
+            <pre class="english">Yes, I’d like to know more about the team I would be working with and the types of projects you have in the pipeline. Additionally, what opportunities for learning and growth does your company offer to interns?</pre><br>
+
+            <b class="Name">Peepo: </b><br>
+            <pre class="english">Those are great questions. We have a diverse and collaborative team, and we’re working on several exciting projects, including AI-driven applications and data analysis tools. We also offer mentorship programs and regular workshops to help our interns grow professionally.
+
+Thank you for your time today. We’ll be in touch soon regarding the next steps.</pre><br>
+
+                <b class="Name">Creator: </b><br>
+                <pre class="english">Awesome everyone, *clapping. that was good. and yeah for those who were reading this interview, this was a simulation, a real interview might not match this and may be harder. so prepare well. also do not copy from this interview. PEACE!</pre><br>
+
+                <b class="Name">Einstein: </b><br>
+                <pre class="english">Thanks sir, PEACE</pre><br>
+
+                <b class="Name">Peepo: </b><br>
+                <pre class="english">(angry), hey sir said PEACE means the lecture is over, you should not speak after that!! you made his speech go wrong</pre><br>
+
+                <b class="Name">Einstein: </b><br>
+                <pre class="english">UM :( </pre><br>
+
+                <b class="Name">Creator: </b><br>
+                <pre class="english">hahah, dont worry Einstein, Peepo is overdoing it. Peepo you should not talk rude. Now everyone see you again! </pre><br>
+
+                <b class="Name">Peepo: </b><br>
+                <pre class="english">Soory sir, Sure sir,  (oh no i should not have spoken)</pre><br>
+                
+
+        </div>
+    </div>
+</body>
+<script src="../index.js"></script>
+</html>
